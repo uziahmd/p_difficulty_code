@@ -1,0 +1,18 @@
+{
+    "start": 1757842746.686654,
+    "end": 1757842752.965297,
+    "start-formatted": "2025-09-14 18:39 KST",
+    "end-formatted": "2025-09-14 18:39 KST",
+    "gpu": 2,
+    "pid": 5,
+    "thought": "",
+    "response": "```python\ndef solve():\n    import sys\n    input = sys.stdin.read\n    data = input().split()\n    \n    n = int(data[0])\n    l = int(data[1])\n    a = list(map(int, data[2:2 + n]))\n    \n    a.sort()\n    \n    max_gap = 0\n    for i in range(1, n):\n        gap = a[i] - a[i - 1]\n        if gap > max_gap:\n            max_gap = gap\n    \n    # Check the distance from the first lantern to the start of the street\n    first_gap = a[0] - 0\n    # Check the distance from the last lantern to the end of the street\n    last_gap = l - a[-1]\n    \n    max_gap = max(max_gap, first_gap, last_gap)\n    \n    d = max_gap / 2.0\n    print(\"{0:.10f}\".format(d))\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "def solve():\n    import sys\n    input = sys.stdin.read\n    data = input().split()\n    \n    n = int(data[0])\n    l = int(data[1])\n    a = list(map(int, data[2:2 + n]))\n    \n    a.sort()\n    \n    max_gap = 0\n    for i in range(1, n):\n        gap = a[i] - a[i - 1]\n        if gap > max_gap:\n            max_gap = gap\n    \n    # Check the distance from the first lantern to the start of the street\n    first_gap = a[0] - 0\n    # Check the distance from the last lantern to the end of the street\n    last_gap = l - a[-1]\n    \n    max_gap = max(max_gap, first_gap, last_gap)\n    \n    d = max_gap / 2.0\n    print(\"{0:.10f}\".format(d))",
+    "score": -1,
+    "metadata": {
+        "prompt_token_count": 454,
+        "completion_token_count": 200,
+        "thoughts_token_count": 0
+    }
+}

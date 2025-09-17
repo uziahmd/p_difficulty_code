@@ -1,0 +1,18 @@
+{
+    "start": 1757842711.4580433,
+    "end": 1757842717.183578,
+    "start-formatted": "2025-09-14 18:38 KST",
+    "end-formatted": "2025-09-14 18:38 KST",
+    "gpu": 2,
+    "pid": 6,
+    "thought": "Could not extract thought.",
+    "response": "import sys\n\ndef solve():\n    notes_order = [\"C\",\"C#\",\"D\",\"D#\",\"E\",\"F\",\"F#\",\"G\",\"G#\",\"A\",\"B\",\"H\"]\n    idx = {n:i for i,n in enumerate(notes_order)}\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    a,b,c = data[0], data[1], data[2]\n    arr = [a,b,c]\n    vals = [idx[x] for x in arr]\n    def dist(x,y):\n        d = (y - x) % 12\n        return d\n    is_major = False\n    is_minor = False\n    from itertools import permutations\n    for p in permutations(vals,3):\n        d1 = dist(p[0], p[1])\n        d2 = dist(p[1], p[2])\n        if d1==4 and d2==3:\n            is_major = True\n        if d1==3 and d2==4:\n            is_minor = True\n    if is_major:\n        print(\"major\")\n    elif is_minor:\n        print(\"minor\")\n    else:\n        print(\"strange\")\n\nif __name__ == \"__main__\":\n    solve()",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndef solve():\n    notes_order = [\"C\",\"C#\",\"D\",\"D#\",\"E\",\"F\",\"F#\",\"G\",\"G#\",\"A\",\"B\",\"H\"]\n    idx = {n:i for i,n in enumerate(notes_order)}\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    a,b,c = data[0], data[1], data[2]\n    arr = [a,b,c]\n    vals = [idx[x] for x in arr]\n    def dist(x,y):\n        d = (y - x) % 12\n        return d\n    is_major = False\n    is_minor = False\n    from itertools import permutations\n    for p in permutations(vals,3):\n        d1 = dist(p[0], p[1])\n        d2 = dist(p[1], p[2])\n        if d1==4 and d2==3:\n            is_major = True\n        if d1==3 and d2==4:\n            is_minor = True\n    if is_major:\n        print(\"major\")\n    elif is_minor:\n        print(\"minor\")\n    else:\n        print(\"strange\")\n\nif __name__ == \"__main__\":\n    solve()",
+    "score": -1,
+    "metadata": {
+        "prompt_token_count": 689,
+        "completion_token_count": 266,
+        "thoughts_token_count": 0
+    }
+}

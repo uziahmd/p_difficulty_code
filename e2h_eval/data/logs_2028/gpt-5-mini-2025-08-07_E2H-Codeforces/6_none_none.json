@@ -1,0 +1,18 @@
+{
+    "start": 1757842711.673385,
+    "end": 1757842716.3907285,
+    "start-formatted": "2025-09-14 18:38 KST",
+    "end-formatted": "2025-09-14 18:38 KST",
+    "gpu": 2,
+    "pid": 6,
+    "thought": "Could not extract thought.",
+    "response": "import sys\n\ndef solve():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    notes = data[:3]\n    order = [\"C\",\"C#\",\"D\",\"D#\",\"E\",\"F\",\"F#\",\"G\",\"G#\",\"A\",\"B\",\"H\"]\n    idx = {n:i for i,n in enumerate(order)}\n    vals = [idx[n] for n in notes]\n    def dist(a,b):\n        return (b - a) % 12\n    is_major = False\n    is_minor = False\n    # try all permutations as X,Y,Z\n    from itertools import permutations\n    for x,y,z in permutations(vals,3):\n        d1 = dist(x,y)\n        d2 = dist(y,z)\n        if d1 == 4 and d2 == 3:\n            is_major = True\n        if d1 == 3 and d2 == 4:\n            is_minor = True\n    if is_major:\n        print(\"major\")\n    elif is_minor:\n        print(\"minor\")\n    else:\n        print(\"strange\")\n\nif __name__ == \"__main__\":\n    solve()",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndef solve():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    notes = data[:3]\n    order = [\"C\",\"C#\",\"D\",\"D#\",\"E\",\"F\",\"F#\",\"G\",\"G#\",\"A\",\"B\",\"H\"]\n    idx = {n:i for i,n in enumerate(order)}\n    vals = [idx[n] for n in notes]\n    def dist(a,b):\n        return (b - a) % 12\n    is_major = False\n    is_minor = False\n    # try all permutations as X,Y,Z\n    from itertools import permutations\n    for x,y,z in permutations(vals,3):\n        d1 = dist(x,y)\n        d2 = dist(y,z)\n        if d1 == 4 and d2 == 3:\n            is_major = True\n        if d1 == 3 and d2 == 4:\n            is_minor = True\n    if is_major:\n        print(\"major\")\n    elif is_minor:\n        print(\"minor\")\n    else:\n        print(\"strange\")\n\nif __name__ == \"__main__\":\n    solve()",
+    "score": -1,
+    "metadata": {
+        "prompt_token_count": 689,
+        "completion_token_count": 247,
+        "thoughts_token_count": 0
+    }
+}

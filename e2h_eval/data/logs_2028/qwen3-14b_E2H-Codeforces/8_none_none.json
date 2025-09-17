@@ -1,0 +1,18 @@
+{
+    "start": 1757842746.2758663,
+    "end": 1757842753.2755516,
+    "start-formatted": "2025-09-14 18:39 KST",
+    "end-formatted": "2025-09-14 18:39 KST",
+    "gpu": 2,
+    "pid": 8,
+    "thought": "",
+    "response": "```python\nimport sys\n\ndef count_trailing_zeros(n):\n    count = 0\n    while n >= 5:\n        n //= 5\n        count += n\n    return count\n\ndef solve():\n    m = int(sys.stdin.readline())\n    \n    # Binary search to find the smallest n with at least m trailing zeros\n    low, high = 0, 5 * m\n    while low < high:\n        mid = (low + high) // 2\n        if count_trailing_zeros(mid) < m:\n            low = mid + 1\n        else:\n            high = mid\n    \n    # Check if there is any n with exactly m trailing zeros\n    if count_trailing_zeros(low) != m:\n        print(0)\n        return\n    \n    # Find the range of n's that have exactly m trailing zeros\n    start = low\n    while count_trailing_zeros(start) == m:\n        start += 1\n    \n    result = list(range(low, start))\n    print(len(result))\n    print(' '.join(map(str, result)))\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndef count_trailing_zeros(n):\n    count = 0\n    while n >= 5:\n        n //= 5\n        count += n\n    return count\n\ndef solve():\n    m = int(sys.stdin.readline())\n    \n    # Binary search to find the smallest n with at least m trailing zeros\n    low, high = 0, 5 * m\n    while low < high:\n        mid = (low + high) // 2\n        if count_trailing_zeros(mid) < m:\n            low = mid + 1\n        else:\n            high = mid\n    \n    # Check if there is any n with exactly m trailing zeros\n    if count_trailing_zeros(low) != m:\n        print(0)\n        return\n    \n    # Find the range of n's that have exactly m trailing zeros\n    start = low\n    while count_trailing_zeros(start) == m:\n        start += 1\n    \n    result = list(range(low, start))\n    print(len(result))\n    print(' '.join(map(str, result)))",
+    "score": -1,
+    "metadata": {
+        "prompt_token_count": 290,
+        "completion_token_count": 223,
+        "thoughts_token_count": 0
+    }
+}

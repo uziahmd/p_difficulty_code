@@ -1,0 +1,18 @@
+{
+    "start": 1757842773.807172,
+    "end": 1757842781.0859644,
+    "start-formatted": "2025-09-14 18:39 KST",
+    "end-formatted": "2025-09-14 18:39 KST",
+    "gpu": 2,
+    "pid": 14,
+    "thought": "",
+    "response": "```python\ndef solve():\n    import sys\n    input = sys.stdin.read\n    data = input().splitlines()\n    \n    n = int(data[0])\n    strings = data[1:]\n    \n    # We need to find a string s of length n such that all given strings are its prefixes or suffixes\n    # Try each string as a possible candidate for the full string s\n    for candidate in strings:\n        if len(candidate) == n:\n            # Check if all other strings are either prefix or suffix of this candidate\n            valid = True\n            for s in strings:\n                if s == candidate:\n                    continue\n                if not s == candidate[:len(s)] and not s == candidate[-len(s):]:\n                    valid = False\n                    break\n            if valid:\n                # Now determine which strings are prefixes and which are suffixes\n                result = []\n                for s in strings:\n                    if s == candidate:\n                        continue\n                    if s == candidate[:len(s)]:\n                        result.append('P')\n                    else:\n                        result.append('S')\n                print(''.join(result))\n                return\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "def solve():\n    import sys\n    input = sys.stdin.read\n    data = input().splitlines()\n    \n    n = int(data[0])\n    strings = data[1:]\n    \n    # We need to find a string s of length n such that all given strings are its prefixes or suffixes\n    # Try each string as a possible candidate for the full string s\n    for candidate in strings:\n        if len(candidate) == n:\n            # Check if all other strings are either prefix or suffix of this candidate\n            valid = True\n            for s in strings:\n                if s == candidate:\n                    continue\n                if not s == candidate[:len(s)] and not s == candidate[-len(s):]:\n                    valid = False\n                    break\n            if valid:\n                # Now determine which strings are prefixes and which are suffixes\n                result = []\n                for s in strings:\n                    if s == candidate:\n                        continue\n                    if s == candidate[:len(s)]:\n                        result.append('P')\n                    else:\n                        result.append('S')\n                print(''.join(result))\n                return",
+    "score": -1,
+    "metadata": {
+        "prompt_token_count": 580,
+        "completion_token_count": 233,
+        "thoughts_token_count": 0
+    }
+}

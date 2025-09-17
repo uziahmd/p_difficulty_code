@@ -1,0 +1,18 @@
+{
+    "start": 1757842746.0583787,
+    "end": 1757842751.8270776,
+    "start-formatted": "2025-09-14 18:39 KST",
+    "end-formatted": "2025-09-14 18:39 KST",
+    "gpu": 2,
+    "pid": 15,
+    "thought": "Could not extract thought.",
+    "response": "import sys\nfrom collections import deque\n\ndef solve():\n    data = sys.stdin.read().strip().split()\n    it = iter(data)\n    n = int(next(it)); m = int(next(it))\n    a = [0]*m; b=[0]*m; c=[0]*m\n    deg = [0]*(n+1)\n    for i in range(m):\n        ai = int(next(it)); bi = int(next(it)); ci = int(next(it))\n        a[i]=ai; b[i]=bi; c[i]=ci\n        deg[ai] += ci\n        deg[bi] += ci\n    need = [0]*(n+1)\n    for v in range(1, n+1):\n        if v==1 or v==n: continue\n        need[v] = deg[v]//2\n    used = [False]*m\n    ans = [0]*m\n    adj = [[] for _ in range(n+1)]\n    for i in range(m):\n        adj[a[i]].append(i)\n        adj[b[i]].append(i)\n    q = deque()\n    for v in range(1, n+1):\n        if v!=1 and v!=n and need[v]==0:\n            q.append(v)\n    while q:\n        v = q.popleft()\n        for ei in adj[v]:\n            if used[ei]: continue\n            used[ei]=True\n            u = a[ei]^b[ei]^v\n            if v==a[ei] and u==b[ei]:\n                # edge from v->u corresponds to direction 0 (a->b)\n                ans[ei]=0\n            else:\n                ans[ei]=1\n            # since flow goes out from v to u, we subtract c from need[u]\n            if u!=1 and u!=n:\n                need[u] -= c[ei]\n                if need[u]==0:\n                    q.append(u)\n    # print\n    out = \"\\n\".join(str(x) for x in ans)\n    print(out)\n\nif __name__ == \"__main__\":\n    solve()",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\nfrom collections import deque\n\ndef solve():\n    data = sys.stdin.read().strip().split()\n    it = iter(data)\n    n = int(next(it)); m = int(next(it))\n    a = [0]*m; b=[0]*m; c=[0]*m\n    deg = [0]*(n+1)\n    for i in range(m):\n        ai = int(next(it)); bi = int(next(it)); ci = int(next(it))\n        a[i]=ai; b[i]=bi; c[i]=ci\n        deg[ai] += ci\n        deg[bi] += ci\n    need = [0]*(n+1)\n    for v in range(1, n+1):\n        if v==1 or v==n: continue\n        need[v] = deg[v]//2\n    used = [False]*m\n    ans = [0]*m\n    adj = [[] for _ in range(n+1)]\n    for i in range(m):\n        adj[a[i]].append(i)\n        adj[b[i]].append(i)\n    q = deque()\n    for v in range(1, n+1):\n        if v!=1 and v!=n and need[v]==0:\n            q.append(v)\n    while q:\n        v = q.popleft()\n        for ei in adj[v]:\n            if used[ei]: continue\n            used[ei]=True\n            u = a[ei]^b[ei]^v\n            if v==a[ei] and u==b[ei]:\n                # edge from v->u corresponds to direction 0 (a->b)\n                ans[ei]=0\n            else:\n                ans[ei]=1\n            # since flow goes out from v to u, we subtract c from need[u]\n            if u!=1 and u!=n:\n                need[u] -= c[ei]\n                if need[u]==0:\n                    q.append(u)\n    # print\n    out = \"\\n\".join(str(x) for x in ans)\n    print(out)\n\nif __name__ == \"__main__\":\n    solve()",
+    "score": -1,
+    "metadata": {
+        "prompt_token_count": 643,
+        "completion_token_count": 446,
+        "thoughts_token_count": 0
+    }
+}

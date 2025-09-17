@@ -1,0 +1,18 @@
+{
+    "start": 1757842724.4021719,
+    "end": 1757842728.1699204,
+    "start-formatted": "2025-09-14 18:38 KST",
+    "end-formatted": "2025-09-14 18:38 KST",
+    "gpu": 2,
+    "pid": 12,
+    "thought": "Could not extract thought.",
+    "response": "import sys\nimport threading\ndef solve():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    it = iter(data)\n    x1 = int(next(it)); y1 = int(next(it))\n    x2 = int(next(it)); y2 = int(next(it))\n    n = int(next(it))\n    cnt = 0\n    for _ in range(n):\n        a = int(next(it)); b = int(next(it)); c = int(next(it))\n        v1 = a*x1 + b*y1 + c\n        v2 = a*x2 + b*y2 + c\n        if v1 < 0 and v2 > 0 or v1 > 0 and v2 < 0:\n            cnt += 1\n    print(cnt)\n\nif __name__ == \"__main__\":\n    solve()",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\nimport threading\ndef solve():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    it = iter(data)\n    x1 = int(next(it)); y1 = int(next(it))\n    x2 = int(next(it)); y2 = int(next(it))\n    n = int(next(it))\n    cnt = 0\n    for _ in range(n):\n        a = int(next(it)); b = int(next(it)); c = int(next(it))\n        v1 = a*x1 + b*y1 + c\n        v2 = a*x2 + b*y2 + c\n        if v1 < 0 and v2 > 0 or v1 > 0 and v2 < 0:\n            cnt += 1\n    print(cnt)\n\nif __name__ == \"__main__\":\n    solve()",
+    "score": -1,
+    "metadata": {
+        "prompt_token_count": 623,
+        "completion_token_count": 184,
+        "thoughts_token_count": 0
+    }
+}

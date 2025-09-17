@@ -1,0 +1,18 @@
+{
+    "start": 1757842723.8665767,
+    "end": 1757842727.5139446,
+    "start-formatted": "2025-09-14 18:38 KST",
+    "end-formatted": "2025-09-14 18:38 KST",
+    "gpu": 2,
+    "pid": 8,
+    "thought": "Could not extract thought.",
+    "response": "import sys\n\ndef count_trailing_zeros(n):\n    cnt = 0\n    d = 5\n    while d <= n:\n        cnt += n // d\n        d *= 5\n    return cnt\n\ndef solve():\n    data = sys.stdin.read().strip()\n    if not data:\n        return\n    m = int(data.strip())\n    lo = 0\n    hi = 5 * (m + 1)  # upper bound; safe\n    # find first n with count >= m\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if count_trailing_zeros(mid) >= m:\n            hi = mid\n        else:\n            lo = mid + 1\n    first = lo\n    if count_trailing_zeros(first) != m:\n        print(0)\n        return\n    res = []\n    for i in range(5):\n        if count_trailing_zeros(first + i) == m:\n            res.append(first + i)\n        else:\n            break\n    print(len(res))\n    if res:\n        print(\" \".join(map(str, res)))\n\nif __name__ == \"__main__\":\n    solve()",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndef count_trailing_zeros(n):\n    cnt = 0\n    d = 5\n    while d <= n:\n        cnt += n // d\n        d *= 5\n    return cnt\n\ndef solve():\n    data = sys.stdin.read().strip()\n    if not data:\n        return\n    m = int(data.strip())\n    lo = 0\n    hi = 5 * (m + 1)  # upper bound; safe\n    # find first n with count >= m\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if count_trailing_zeros(mid) >= m:\n            hi = mid\n        else:\n            lo = mid + 1\n    first = lo\n    if count_trailing_zeros(first) != m:\n        print(0)\n        return\n    res = []\n    for i in range(5):\n        if count_trailing_zeros(first + i) == m:\n            res.append(first + i)\n        else:\n            break\n    print(len(res))\n    if res:\n        print(\" \".join(map(str, res)))\n\nif __name__ == \"__main__\":\n    solve()",
+    "score": -1,
+    "metadata": {
+        "prompt_token_count": 277,
+        "completion_token_count": 254,
+        "thoughts_token_count": 0
+    }
+}

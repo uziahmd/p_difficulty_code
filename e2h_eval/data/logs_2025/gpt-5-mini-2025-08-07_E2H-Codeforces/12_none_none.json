@@ -1,0 +1,18 @@
+{
+    "start": 1757842722.9079032,
+    "end": 1757842726.440725,
+    "start-formatted": "2025-09-14 18:38 KST",
+    "end-formatted": "2025-09-14 18:38 KST",
+    "gpu": 2,
+    "pid": 12,
+    "thought": "Could not extract thought.",
+    "response": "import sys\nimport threading\n\ndef solve():\n    data = sys.stdin.read().strip().split()\n    it = iter(data)\n    try:\n        x1 = float(next(it)); y1 = float(next(it))\n    except StopIteration:\n        return\n    x2 = float(next(it)); y2 = float(next(it))\n    n = int(next(it))\n    cnt = 0\n    for _ in range(n):\n        a = float(next(it)); b = float(next(it)); c = float(next(it))\n        v1 = a * x1 + b * y1 + c\n        v2 = a * x2 + b * y2 + c\n        if v1 == 0 or v2 == 0:\n            # guaranteed not on a road per statement, but handle numerically\n            pass\n        if v1 * v2 < 0:\n            cnt += 1\n    print(cnt)\n\nif __name__ == \"__main__\":\n    solve()",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\nimport threading\n\ndef solve():\n    data = sys.stdin.read().strip().split()\n    it = iter(data)\n    try:\n        x1 = float(next(it)); y1 = float(next(it))\n    except StopIteration:\n        return\n    x2 = float(next(it)); y2 = float(next(it))\n    n = int(next(it))\n    cnt = 0\n    for _ in range(n):\n        a = float(next(it)); b = float(next(it)); c = float(next(it))\n        v1 = a * x1 + b * y1 + c\n        v2 = a * x2 + b * y2 + c\n        if v1 == 0 or v2 == 0:\n            # guaranteed not on a road per statement, but handle numerically\n            pass\n        if v1 * v2 < 0:\n            cnt += 1\n    print(cnt)\n\nif __name__ == \"__main__\":\n    solve()",
+    "score": -1,
+    "metadata": {
+        "prompt_token_count": 623,
+        "completion_token_count": 208,
+        "thoughts_token_count": 0
+    }
+}

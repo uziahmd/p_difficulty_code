@@ -1,0 +1,18 @@
+{
+    "start": 1757842726.5062854,
+    "end": 1757842732.0301938,
+    "start-formatted": "2025-09-14 18:38 KST",
+    "end-formatted": "2025-09-14 18:38 KST",
+    "gpu": 2,
+    "pid": 2,
+    "thought": "",
+    "response": "```python\ndef solve():\n    import sys\n    input = sys.stdin.read\n    data = input().strip().split()\n    \n    n = int(data[0])\n    k = int(data[1])\n    l = int(data[2])\n    c = int(data[3])\n    d = int(data[4])\n    p = int(data[5])\n    nl = int(data[6])\n    np = int(data[7])\n    \n    total_drink = k * l\n    total_lime_slices = c * d\n    total_salt = p\n    \n    toasts_by_drink = total_drink // nl\n    toasts_by_lime = total_lime_slices // n\n    toasts_by_salt = total_salt // np\n    \n    print(min(toasts_by_drink, toasts_by_lime, toasts_by_salt))\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "def solve():\n    import sys\n    input = sys.stdin.read\n    data = input().strip().split()\n    \n    n = int(data[0])\n    k = int(data[1])\n    l = int(data[2])\n    c = int(data[3])\n    d = int(data[4])\n    p = int(data[5])\n    nl = int(data[6])\n    np = int(data[7])\n    \n    total_drink = k * l\n    total_lime_slices = c * d\n    total_salt = p\n    \n    toasts_by_drink = total_drink // nl\n    toasts_by_lime = total_lime_slices // n\n    toasts_by_salt = total_salt // np\n    \n    print(min(toasts_by_drink, toasts_by_lime, toasts_by_salt))",
+    "score": -1,
+    "metadata": {
+        "prompt_token_count": 404,
+        "completion_token_count": 177,
+        "thoughts_token_count": 0
+    }
+}

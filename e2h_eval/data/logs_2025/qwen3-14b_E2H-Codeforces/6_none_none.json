@@ -1,0 +1,18 @@
+{
+    "start": 1757842723.3602023,
+    "end": 1757842732.7684693,
+    "start-formatted": "2025-09-14 18:38 KST",
+    "end-formatted": "2025-09-14 18:38 KST",
+    "gpu": 2,
+    "pid": 6,
+    "thought": "",
+    "response": "```python\ndef solve():\n    import sys\n\n    # Define the order of notes\n    notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'B', 'H']\n\n    # Map each note to its index\n    note_to_index = {note: idx for idx, note in enumerate(notes)}\n\n    # Read input\n    input_line = sys.stdin.readline().strip()\n    chord = input_line.split()\n\n    # Get indices of the three notes\n    a, b, c = chord\n    i, j, k = note_to_index[a], note_to_index[b], note_to_index[c]\n\n    # Function to calculate distance from note1 to note2 (cyclic)\n    def distance(note1, note2):\n        return (note2 - note1) % 12\n\n    # Generate all permutations of the three notes\n    from itertools import permutations\n    for perm in permutations([i, j, k]):\n        x, y, z = perm\n        d1 = distance(x, y)\n        d2 = distance(y, z)\n        if d1 == 4 and d2 == 3:\n            print(\"major\")\n            return\n        if d1 == 3 and d2 == 4:\n            print(\"minor\")\n            return\n\n    print(\"strange\")\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "def solve():\n    import sys\n\n    # Define the order of notes\n    notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'B', 'H']\n\n    # Map each note to its index\n    note_to_index = {note: idx for idx, note in enumerate(notes)}\n\n    # Read input\n    input_line = sys.stdin.readline().strip()\n    chord = input_line.split()\n\n    # Get indices of the three notes\n    a, b, c = chord\n    i, j, k = note_to_index[a], note_to_index[b], note_to_index[c]\n\n    # Function to calculate distance from note1 to note2 (cyclic)\n    def distance(note1, note2):\n        return (note2 - note1) % 12\n\n    # Generate all permutations of the three notes\n    from itertools import permutations\n    for perm in permutations([i, j, k]):\n        x, y, z = perm\n        d1 = distance(x, y)\n        d2 = distance(y, z)\n        if d1 == 4 and d2 == 3:\n            print(\"major\")\n            return\n        if d1 == 3 and d2 == 4:\n            print(\"minor\")\n            return\n\n    print(\"strange\")",
+    "score": -1,
+    "metadata": {
+        "prompt_token_count": 702,
+        "completion_token_count": 296,
+        "thoughts_token_count": 0
+    }
+}

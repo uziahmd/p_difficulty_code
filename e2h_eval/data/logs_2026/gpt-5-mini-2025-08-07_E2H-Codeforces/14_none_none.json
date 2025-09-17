@@ -1,0 +1,18 @@
+{
+    "start": 1757842734.9286432,
+    "end": 1757842741.3910556,
+    "start-formatted": "2025-09-14 18:38 KST",
+    "end-formatted": "2025-09-14 18:39 KST",
+    "gpu": 2,
+    "pid": 14,
+    "thought": "Could not extract thought.",
+    "response": "import sys\n\ndef solve():\n    data = sys.stdin.read().splitlines()\n    if not data:\n        return\n    n = int(data[0].strip())\n    arr = [line.strip() for line in data[1:1+2*n-2]]\n    # group by length\n    bylen = {}\n    for s in arr:\n        bylen.setdefault(len(s), []).append(s)\n    # candidate s: from longest strings (length n-1), there are two strings a,b\n    a, b = bylen[n-1][0], bylen[n-1][1]\n    candidates = [a + b[-1], b + a[-1]]\n    def try_candidate(candidate):\n        assigned = {}\n        res = []\n        used = {}\n        for i, s in enumerate(arr):\n            l = len(s)\n            # check if s equals prefix of candidate of length l\n            is_pref = candidate[:l] == s\n            is_suf = candidate[-l:] == s\n            if is_pref and not is_suf:\n                res.append('P')\n            elif is_suf and not is_pref:\n                res.append('S')\n            elif is_pref and is_suf:\n                # need to decide using counts: there are exactly two strings of each length\n                # assign one P and one S for duplicates\n                key = (l, s)\n                cnt = used.get(key, 0)\n                if cnt == 0:\n                    res.append('P')\n                    used[key] = 1\n                else:\n                    res.append('S')\n                    used[key] = 2\n            else:\n                return None\n        return res\n    for cand in candidates:\n        ans = try_candidate(cand)\n        if ans is not None:\n            print(''.join(ans))\n            return\n\nif __name__ == \"__main__\":\n    solve()",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndef solve():\n    data = sys.stdin.read().splitlines()\n    if not data:\n        return\n    n = int(data[0].strip())\n    arr = [line.strip() for line in data[1:1+2*n-2]]\n    # group by length\n    bylen = {}\n    for s in arr:\n        bylen.setdefault(len(s), []).append(s)\n    # candidate s: from longest strings (length n-1), there are two strings a,b\n    a, b = bylen[n-1][0], bylen[n-1][1]\n    candidates = [a + b[-1], b + a[-1]]\n    def try_candidate(candidate):\n        assigned = {}\n        res = []\n        used = {}\n        for i, s in enumerate(arr):\n            l = len(s)\n            # check if s equals prefix of candidate of length l\n            is_pref = candidate[:l] == s\n            is_suf = candidate[-l:] == s\n            if is_pref and not is_suf:\n                res.append('P')\n            elif is_suf and not is_pref:\n                res.append('S')\n            elif is_pref and is_suf:\n                # need to decide using counts: there are exactly two strings of each length\n                # assign one P and one S for duplicates\n                key = (l, s)\n                cnt = used.get(key, 0)\n                if cnt == 0:\n                    res.append('P')\n                    used[key] = 1\n                else:\n                    res.append('S')\n                    used[key] = 2\n            else:\n                return None\n        return res\n    for cand in candidates:\n        ans = try_candidate(cand)\n        if ans is not None:\n            print(''.join(ans))\n            return\n\nif __name__ == \"__main__\":\n    solve()",
+    "score": -1,
+    "metadata": {
+        "prompt_token_count": 583,
+        "completion_token_count": 394,
+        "thoughts_token_count": 0
+    }
+}

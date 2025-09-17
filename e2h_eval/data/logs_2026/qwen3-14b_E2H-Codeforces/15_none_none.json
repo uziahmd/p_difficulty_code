@@ -1,0 +1,18 @@
+{
+    "start": 1757842787.0566633,
+    "end": 1757842798.5201933,
+    "start-formatted": "2025-09-14 18:39 KST",
+    "end-formatted": "2025-09-14 18:39 KST",
+    "gpu": 2,
+    "pid": 15,
+    "thought": "",
+    "response": "```python\nimport sys\nimport threading\nfrom collections import deque\n\ndef solve():\n    sys.setrecursionlimit(1 << 25)\n    n, m = map(int, sys.stdin.readline().split())\n    edges = []\n    graph = [[] for _ in range(n + 1)]\n    for i in range(m):\n        a, b, c = map(int, sys.stdin.readline().split())\n        edges.append((a, b, c))\n        graph[a].append((b, i))\n        graph[b].append((a, i))\n\n    # We will perform a DFS to assign directions and ensure no cycles\n    # We need to build a directed acyclic graph (DAG) with vertex 1 as the root\n    # and all other vertices having in-degree equal to out-degree except for source and sink\n\n    # To ensure no cycles, we can perform a topological sort or use DFS with a visited set\n    # Here, we'll use DFS and assign directions accordingly\n\n    direction = [0] * m  # 0 means ai -> bi, 1 means bi -> ai\n    visited = [False] * (n + 1)\n\n    def dfs(u):\n        visited[u] = True\n        for v, idx in graph[u]:\n            if not visited[v]:\n                # Assign direction from u to v\n                a, b, c = edges[idx]\n                if a == u and b == v:\n                    direction[idx] = 0\n                elif b == u and a == v:\n                    direction[idx] = 1\n                else:\n                    # This should not happen since the graph is undirected and we are traversing it properly\n                    pass\n                dfs(v)\n\n    dfs(1)\n\n    for d in direction:\n        print(d)\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\nimport threading\nfrom collections import deque\n\ndef solve():\n    sys.setrecursionlimit(1 << 25)\n    n, m = map(int, sys.stdin.readline().split())\n    edges = []\n    graph = [[] for _ in range(n + 1)]\n    for i in range(m):\n        a, b, c = map(int, sys.stdin.readline().split())\n        edges.append((a, b, c))\n        graph[a].append((b, i))\n        graph[b].append((a, i))\n\n    # We will perform a DFS to assign directions and ensure no cycles\n    # We need to build a directed acyclic graph (DAG) with vertex 1 as the root\n    # and all other vertices having in-degree equal to out-degree except for source and sink\n\n    # To ensure no cycles, we can perform a topological sort or use DFS with a visited set\n    # Here, we'll use DFS and assign directions accordingly\n\n    direction = [0] * m  # 0 means ai -> bi, 1 means bi -> ai\n    visited = [False] * (n + 1)\n\n    def dfs(u):\n        visited[u] = True\n        for v, idx in graph[u]:\n            if not visited[v]:\n                # Assign direction from u to v\n                a, b, c = edges[idx]\n                if a == u and b == v:\n                    direction[idx] = 0\n                elif b == u and a == v:\n                    direction[idx] = 1\n                else:\n                    # This should not happen since the graph is undirected and we are traversing it properly\n                    pass\n                dfs(v)\n\n    dfs(1)\n\n    for d in direction:\n        print(d)",
+    "score": -1,
+    "metadata": {
+        "prompt_token_count": 689,
+        "completion_token_count": 372,
+        "thoughts_token_count": 0
+    }
+}

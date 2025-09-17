@@ -1,0 +1,18 @@
+{
+    "start": 1757842727.5144007,
+    "end": 1757842734.367601,
+    "start-formatted": "2025-09-14 18:38 KST",
+    "end-formatted": "2025-09-14 18:38 KST",
+    "gpu": 2,
+    "pid": 9,
+    "thought": "Could not extract thought.",
+    "response": "import sys\n\ndef solve():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    it = iter(data)\n    n = int(next(it))\n    l = next(it).strip()\n    r = next(it).strip()\n    posL = {}\n    posR = {}\n    qL = []\n    qR = []\n    for i, ch in enumerate(l, start=1):\n        if ch == '?':\n            qL.append(i)\n        else:\n            posL.setdefault(ch, []).append(i)\n    for i, ch in enumerate(r, start=1):\n        if ch == '?':\n            qR.append(i)\n        else:\n            posR.setdefault(ch, []).append(i)\n    res = []\n    # match same letters\n    for ch, lst in posL.items():\n        if ch in posR:\n            other = posR[ch]\n            m = min(len(lst), len(other))\n            for i in range(m):\n                res.append((lst[i], other[i]))\n            posL[ch] = lst[m:]\n            posR[ch] = other[m:]\n    # match remaining left specific to right '?'\n    for ch, lst in posL.items():\n        for idx in lst:\n            if qR:\n                res.append((idx, qR.pop()))\n            else:\n                break\n    # match remaining right specific to left '?'\n    for ch, lst in posR.items():\n        for idx in lst:\n            if qL:\n                res.append((qL.pop(), idx))\n            else:\n                break\n    # match remaining '?' with '?'\n    while qL and qR:\n        res.append((qL.pop(), qR.pop()))\n    print(len(res))\n    out = sys.stdout\n    for a, b in res:\n        out.write(f\"{a} {b}\\n\")\n\nif __name__ == \"__main__\":\n    solve()",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndef solve():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    it = iter(data)\n    n = int(next(it))\n    l = next(it).strip()\n    r = next(it).strip()\n    posL = {}\n    posR = {}\n    qL = []\n    qR = []\n    for i, ch in enumerate(l, start=1):\n        if ch == '?':\n            qL.append(i)\n        else:\n            posL.setdefault(ch, []).append(i)\n    for i, ch in enumerate(r, start=1):\n        if ch == '?':\n            qR.append(i)\n        else:\n            posR.setdefault(ch, []).append(i)\n    res = []\n    # match same letters\n    for ch, lst in posL.items():\n        if ch in posR:\n            other = posR[ch]\n            m = min(len(lst), len(other))\n            for i in range(m):\n                res.append((lst[i], other[i]))\n            posL[ch] = lst[m:]\n            posR[ch] = other[m:]\n    # match remaining left specific to right '?'\n    for ch, lst in posL.items():\n        for idx in lst:\n            if qR:\n                res.append((idx, qR.pop()))\n            else:\n                break\n    # match remaining right specific to left '?'\n    for ch, lst in posR.items():\n        for idx in lst:\n            if qL:\n                res.append((qL.pop(), idx))\n            else:\n                break\n    # match remaining '?' with '?'\n    while qL and qR:\n        res.append((qL.pop(), qR.pop()))\n    print(len(res))\n    out = sys.stdout\n    for a, b in res:\n        out.write(f\"{a} {b}\\n\")\n\nif __name__ == \"__main__\":\n    solve()",
+    "score": -1,
+    "metadata": {
+        "prompt_token_count": 824,
+        "completion_token_count": 399,
+        "thoughts_token_count": 0
+    }
+}

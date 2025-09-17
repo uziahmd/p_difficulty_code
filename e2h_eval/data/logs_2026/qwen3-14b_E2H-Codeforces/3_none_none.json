@@ -1,0 +1,18 @@
+{
+    "start": 1757842732.0306706,
+    "end": 1757842741.3847659,
+    "start-formatted": "2025-09-14 18:38 KST",
+    "end-formatted": "2025-09-14 18:39 KST",
+    "gpu": 2,
+    "pid": 3,
+    "thought": "",
+    "response": "```python\ndef solve():\n    import sys\n    input = sys.stdin.read\n    data = input().splitlines()\n    \n    n = int(data[0])\n    grid = data[1:]\n    \n    # Check if n is odd (as per problem statement, it should be)\n    if n % 2 == 0:\n        print(\"NO\")\n        return\n    \n    # Get the two diagonal characters\n    diag1_char = grid[0][0]\n    diag2_char = grid[0][n - 1]\n    \n    # If diagonals are not the same, it's not an X\n    if diag1_char != diag2_char:\n        print(\"NO\")\n        return\n    \n    # Character for non-diagonal cells\n    other_char = None\n    \n    for i in range(n):\n        for j in range(n):\n            if i == j or i + j == n - 1:\n                # On diagonal\n                if grid[i][j] != diag1_char:\n                    print(\"NO\")\n                    return\n            else:\n                # Not on diagonal\n                if other_char is None:\n                    other_char = grid[i][j]\n                elif grid[i][j] != other_char:\n                    print(\"NO\")\n                    return\n    \n    # Ensure that the diagonal character is different from the other character\n    if diag1_char == other_char:\n        print(\"NO\")\n    else:\n        print(\"YES\")\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "def solve():\n    import sys\n    input = sys.stdin.read\n    data = input().splitlines()\n    \n    n = int(data[0])\n    grid = data[1:]\n    \n    # Check if n is odd (as per problem statement, it should be)\n    if n % 2 == 0:\n        print(\"NO\")\n        return\n    \n    # Get the two diagonal characters\n    diag1_char = grid[0][0]\n    diag2_char = grid[0][n - 1]\n    \n    # If diagonals are not the same, it's not an X\n    if diag1_char != diag2_char:\n        print(\"NO\")\n        return\n    \n    # Character for non-diagonal cells\n    other_char = None\n    \n    for i in range(n):\n        for j in range(n):\n            if i == j or i + j == n - 1:\n                # On diagonal\n                if grid[i][j] != diag1_char:\n                    print(\"NO\")\n                    return\n            else:\n                # Not on diagonal\n                if other_char is None:\n                    other_char = grid[i][j]\n                elif grid[i][j] != other_char:\n                    print(\"NO\")\n                    return\n    \n    # Ensure that the diagonal character is different from the other character\n    if diag1_char == other_char:\n        print(\"NO\")\n    else:\n        print(\"YES\")",
+    "score": -1,
+    "metadata": {
+        "prompt_token_count": 463,
+        "completion_token_count": 296,
+        "thoughts_token_count": 0
+    }
+}

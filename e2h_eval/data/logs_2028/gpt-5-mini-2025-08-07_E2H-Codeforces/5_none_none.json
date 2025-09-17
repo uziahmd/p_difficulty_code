@@ -1,0 +1,18 @@
+{
+    "start": 1757842724.013685,
+    "end": 1757842727.0190063,
+    "start-formatted": "2025-09-14 18:38 KST",
+    "end-formatted": "2025-09-14 18:38 KST",
+    "gpu": 2,
+    "pid": 5,
+    "thought": "Could not extract thought.",
+    "response": "import sys\nimport math\n\ndef solve():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    it = iter(data)\n    n = int(next(it))\n    l = int(next(it))\n    a = [int(next(it)) for _ in range(n)]\n    a.sort()\n    max_gap = 0.0\n    for i in range(1, n):\n        diff = a[i] - a[i-1]\n        if diff > max_gap:\n            max_gap = diff\n    # need half of max gap between adjacent lanterns\n    radius = max_gap / 2.0\n    # consider edges\n    left = a[0] - 0\n    right = l - a[-1]\n    radius = max(radius, left, right)\n    print(\"{:.10f}\".format(radius))\n\nif __name__ == \"__main__\":\n    solve()",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\nimport math\n\ndef solve():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    it = iter(data)\n    n = int(next(it))\n    l = int(next(it))\n    a = [int(next(it)) for _ in range(n)]\n    a.sort()\n    max_gap = 0.0\n    for i in range(1, n):\n        diff = a[i] - a[i-1]\n        if diff > max_gap:\n            max_gap = diff\n    # need half of max gap between adjacent lanterns\n    radius = max_gap / 2.0\n    # consider edges\n    left = a[0] - 0\n    right = l - a[-1]\n    radius = max(radius, left, right)\n    print(\"{:.10f}\".format(radius))\n\nif __name__ == \"__main__\":\n    solve()",
+    "score": -1,
+    "metadata": {
+        "prompt_token_count": 412,
+        "completion_token_count": 195,
+        "thoughts_token_count": 0
+    }
+}

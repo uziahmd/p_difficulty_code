@@ -1,0 +1,18 @@
+{
+    "start": 1757842726.2106192,
+    "end": 1757842731.6016166,
+    "start-formatted": "2025-09-14 18:38 KST",
+    "end-formatted": "2025-09-14 18:38 KST",
+    "gpu": 2,
+    "pid": 9,
+    "thought": "Could not extract thought.",
+    "response": "import sys\n\ndef solve():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    it = iter(data)\n    n = int(next(it))\n    l = list(next(it).strip())\n    r = list(next(it).strip())\n    from collections import defaultdict, deque\n    left_pos = defaultdict(deque)\n    right_pos = defaultdict(deque)\n    left_q = deque()\n    right_q = deque()\n    for i, ch in enumerate(l, start=1):\n        if ch == '?':\n            left_q.append(i)\n        else:\n            left_pos[ch].append(i)\n    for i, ch in enumerate(r, start=1):\n        if ch == '?':\n            right_q.append(i)\n        else:\n            right_pos[ch].append(i)\n    res = []\n    # match same letters\n    for c in map(chr, range(ord('a'), ord('z')+1)):\n        L = left_pos[c]\n        R = right_pos[c]\n        while L and R:\n            res.append((L.popleft(), R.popleft()))\n    # match left specific to right ?\n    for c in map(chr, range(ord('a'), ord('z')+1)):\n        L = left_pos[c]\n        while L and right_q:\n            res.append((L.popleft(), right_q.popleft()))\n    # match left ? to right specific\n    for c in map(chr, range(ord('a'), ord('z')+1)):\n        R = right_pos[c]\n        while R and left_q:\n            res.append((left_q.popleft(), R.popleft()))\n    # match ? with ?\n    while left_q and right_q:\n        res.append((left_q.popleft(), right_q.popleft()))\n    # output\n    out = []\n    out.append(str(len(res)))\n    for a,b in res:\n        out.append(f\"{a} {b}\")\n    sys.stdout.write(\"\\n\".join(out))\n\nif __name__ == \"__main__\":\n    solve()",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndef solve():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    it = iter(data)\n    n = int(next(it))\n    l = list(next(it).strip())\n    r = list(next(it).strip())\n    from collections import defaultdict, deque\n    left_pos = defaultdict(deque)\n    right_pos = defaultdict(deque)\n    left_q = deque()\n    right_q = deque()\n    for i, ch in enumerate(l, start=1):\n        if ch == '?':\n            left_q.append(i)\n        else:\n            left_pos[ch].append(i)\n    for i, ch in enumerate(r, start=1):\n        if ch == '?':\n            right_q.append(i)\n        else:\n            right_pos[ch].append(i)\n    res = []\n    # match same letters\n    for c in map(chr, range(ord('a'), ord('z')+1)):\n        L = left_pos[c]\n        R = right_pos[c]\n        while L and R:\n            res.append((L.popleft(), R.popleft()))\n    # match left specific to right ?\n    for c in map(chr, range(ord('a'), ord('z')+1)):\n        L = left_pos[c]\n        while L and right_q:\n            res.append((L.popleft(), right_q.popleft()))\n    # match left ? to right specific\n    for c in map(chr, range(ord('a'), ord('z')+1)):\n        R = right_pos[c]\n        while R and left_q:\n            res.append((left_q.popleft(), R.popleft()))\n    # match ? with ?\n    while left_q and right_q:\n        res.append((left_q.popleft(), right_q.popleft()))\n    # output\n    out = []\n    out.append(str(len(res)))\n    for a,b in res:\n        out.append(f\"{a} {b}\")\n    sys.stdout.write(\"\\n\".join(out))\n\nif __name__ == \"__main__\":\n    solve()",
+    "score": -1,
+    "metadata": {
+        "prompt_token_count": 824,
+        "completion_token_count": 421,
+        "thoughts_token_count": 0
+    }
+}
