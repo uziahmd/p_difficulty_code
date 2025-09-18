@@ -1,20 +1,20 @@
-{"task_id": "E2H_CF1031A", "status": "passed", "elapsed_ms": 16, "error": null}
-{"task_id": "E2H_CF151A", "status": "passed", "elapsed_ms": 14, "error": null}
-{"task_id": "E2H_CF404A", "status": "passed", "elapsed_ms": 18, "error": null}
-{"task_id": "E2H_CF339B", "status": "passed", "elapsed_ms": 13, "error": null}
-{"task_id": "E2H_CF492B", "status": "passed", "elapsed_ms": 14, "error": null}
+{"task_id": "E2H_CF1031A", "status": "passed", "elapsed_ms": 10, "error": null}
+{"task_id": "E2H_CF151A", "status": "passed", "elapsed_ms": 7, "error": null}
+{"task_id": "E2H_CF404A", "status": "passed", "elapsed_ms": 25, "error": null}
+{"task_id": "E2H_CF339B", "status": "passed", "elapsed_ms": 10, "error": null}
+{"task_id": "E2H_CF492B", "status": "passed", "elapsed_ms": 13, "error": null}
 {"task_id": "E2H_CF88A", "status": "passed", "elapsed_ms": 38, "error": null}
-{"task_id": "E2H_CF173A", "status": "passed", "elapsed_ms": 85, "error": null}
-{"task_id": "E2H_CF633B", "status": "passed", "elapsed_ms": 38, "error": null}
-{"task_id": "E2H_CF1141D", "status": "failed", "elapsed_ms": 6, "error": "AssertionError: Expected '5\\n7 8\\n4 9\\n2 2\\n9 10\\n3 1', got '5\\n2 2\\n3 1\\n4 9\\n9 10\\n7 8'\n"}
-{"task_id": "E2H_CF1767D", "status": "failed", "elapsed_ms": 8, "error": "AssertionError: Expected '4 5 6 7', got '5 6 7 8'\n"}
-{"task_id": "E2H_CF822C", "status": "passed", "elapsed_ms": 457, "error": null}
-{"task_id": "E2H_CF498A", "status": "passed", "elapsed_ms": 14, "error": null}
+{"task_id": "E2H_CF173A", "status": "passed", "elapsed_ms": 105, "error": null}
+{"task_id": "E2H_CF633B", "status": "passed", "elapsed_ms": 36, "error": null}
+{"task_id": "E2H_CF1141D", "status": "failed", "elapsed_ms": 4, "error": "AssertionError: Expected '5\\n7 8\\n4 9\\n2 2\\n9 10\\n3 1', got '5\\n2 2\\n3 1\\n4 9\\n9 10\\n7 8'\n"}
+{"task_id": "E2H_CF1767D", "status": "failed", "elapsed_ms": 10, "error": "AssertionError: Expected '4 5 6 7', got '5 6 7 8'\n"}
+{"task_id": "E2H_CF822C", "status": "passed", "elapsed_ms": 265, "error": null}
+{"task_id": "E2H_CF498A", "status": "passed", "elapsed_ms": 12, "error": null}
 {"task_id": "E2H_CF1846E2", "status": "failed", "elapsed_ms": null, "error": null}
-{"task_id": "E2H_CF1092C", "status": "passed", "elapsed_ms": 38, "error": null}
-{"task_id": "E2H_CF270E", "status": "failed", "elapsed_ms": 11, "error": "AssertionError: Expected '0\\n0\\n1\\n1\\n0', got '0\\n0\\n0\\n1\\n0'\n"}
+{"task_id": "E2H_CF1092C", "status": "passed", "elapsed_ms": 62, "error": null}
+{"task_id": "E2H_CF270E", "status": "failed", "elapsed_ms": 30, "error": "AssertionError: Expected '0\\n0\\n1\\n1\\n0', got '0\\n0\\n0\\n1\\n0'\n"}
 {"task_id": "E2H_CF1146D", "status": "failed", "elapsed_ms": 11, "error": "AssertionError: Expected '19', got '36'\n"}
-{"task_id": "E2H_CF808E", "status": "failed", "elapsed_ms": 13, "error": "AssertionError: Expected '990', got '970'\n"}
-{"task_id": "E2H_CF980E", "status": "failed", "elapsed_ms": 8, "error": "AssertionError: Expected '1 3 4', got '4 5 6'\n"}
-{"task_id": "E2H_CF409I", "status": "failed", "elapsed_ms": 10, "error": "AssertionError: Expected '0010', got '0100000'\n"}
-{"task_id": "E2H_CF1709F", "status": "failed", "elapsed_ms": 9, "error": "NameError: name 'unknown' is not defined\n"}
+{"task_id": "E2H_CF808E", "status": "failed", "elapsed_ms": 12, "error": "AssertionError: Expected '990', got '970'\n"}
+{"task_id": "E2H_CF980E", "status": "failed", "elapsed_ms": 11, "error": "AssertionError: Expected '1 3 4', got '4 5 6'\n"}
+{"task_id": "E2H_CF409I", "status": "failed", "elapsed_ms": 9, "error": "AssertionError: Expected '0010', got '0100000'\n"}
+{"task_id": "E2H_CF1709F", "status": "failed", "elapsed_ms": 4, "error": "NameError: name 'unknown' is not defined\n"}

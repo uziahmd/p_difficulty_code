@@ -1,0 +1,24 @@
+{
+    "start": 1758094560.4031749,
+    "end": 1758094565.5101652,
+    "start-formatted": "2025-09-17 16:36 KST",
+    "end-formatted": "2025-09-17 16:36 KST",
+    "gpu": 2,
+    "pid": 7,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Rudolf and Snowflakes (hard version)\n\nThis is the hard version of the problem. The only difference is that in this version $$$n \\le 10^{18}$$$.One winter morning, Rudolf was looking thoughtfully out the window, watching the falling snowflakes. He quickly noticed a certain symmetry in the configuration of the snowflakes. And like a true mathematician, Rudolf came up with a mathematical model of a snowflake.He defined a snowflake as an undirected graph constructed according to the following rules:   Initially, the graph has only one vertex.  Then, more vertices are added to the graph. The initial vertex is connected by edges to $$$k$$$ new vertices ($$$k > 1$$$).  Each vertex that is connected to only one other vertex is connected by edges to $$$k$$$ more new vertices. This step should be done at least once. The smallest possible snowflake for $$$k = 4$$$ is shown in the figure.  After some mathematical research, Rudolf realized that such snowflakes may not have any number of vertices. Help Rudolf check whether a snowflake with $$$n$$$ vertices can exist.\n\n## Input\nThe first line of the input contains an integer $$$t$$$ ($$$1 \\le t \\le 10^4$$$) — the number of test cases.Then follow the descriptions of the test cases.The first line of each test case contains an integer $$$n$$$ ($$$1 \\le n \\le 10^{18}$$$) — the number of vertices for which it is necessary to check the existence of a snowflake.\n\n## Output\nOutput $$$t$$$ lines, each of which is the answer to the corresponding test case — \"YES\" if there exists such $$$k > 1$$$ that a snowflake with the given number of vertices can be constructed; \"NO\" otherwise.\n\n## Example\n### Input\n['9\\n1\\n2\\n3\\n6\\n13\\n15\\n255\\n10101\\n1000000000000000000']\n\n### Output\n['NO\\nNO\\nNO\\nNO\\nYES\\nYES\\nYES\\nYES\\nNO']\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a very easy question."
+        }
+    ],
+    "thought": "Could not extract thought.",
+    "response": "import sys\nimport math\n\ndef is_snowflake(n):\n    if n < 7:\n        return False\n    # Try k from 2 upwards. For k>=2, sum = 1 + k + k^2 + ... + k^m for m>=2 (at least one expansion)\n    # That equals (k^(m+1)-1)/(k-1)\n    # We need some m>=2 such that sum == n\n    # Bound k: k^2 + k +1 <= n -> k <= sqrt(n)\n    max_k = int(n**0.5) + 2\n    for k in range(2, max_k+1):\n        val = 1 + k + k*k\n        if val > n:\n            break\n        cur = val\n        p = k*k\n        while cur < n:\n            p *= k\n            if p > n*(k-1)+1:\n                break\n            cur += p\n        if cur == n:\n            return True\n    # Also consider k large where m=2 only gives n = 1+k+k^2; we've covered up to sqrt(n)\n    return False\n\ndata = sys.stdin.read().strip().split()\nt = int(data[0])\nout = []\nfor i in range(1, t+1):\n    n = int(data[i])\n    out.append(\"YES\" if is_snowflake(n) else \"NO\")\nprint(\"\\n\".join(out))",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\nimport math\n\ndef is_snowflake(n):\n    if n < 7:\n        return False\n    # Try k from 2 upwards. For k>=2, sum = 1 + k + k^2 + ... + k^m for m>=2 (at least one expansion)\n    # That equals (k^(m+1)-1)/(k-1)\n    # We need some m>=2 such that sum == n\n    # Bound k: k^2 + k +1 <= n -> k <= sqrt(n)\n    max_k = int(n**0.5) + 2\n    for k in range(2, max_k+1):\n        val = 1 + k + k*k\n        if val > n:\n            break\n        cur = val\n        p = k*k\n        while cur < n:\n            p *= k\n            if p > n*(k-1)+1:\n                break\n            cur += p\n        if cur == n:\n            return True\n    # Also consider k large where m=2 only gives n = 1+k+k^2; we've covered up to sqrt(n)\n    return False\n\ndata = sys.stdin.read().strip().split()\nt = int(data[0])\nout = []\nfor i in range(1, t+1):\n    n = int(data[i])\n    out.append(\"YES\" if is_snowflake(n) else \"NO\")\nprint(\"\\n\".join(out))",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 537,
+        "completion_token_count": 315,
+        "thoughts_token_count": 0
+    }
+}

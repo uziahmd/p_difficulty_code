@@ -1,0 +1,25 @@
+{
+    "start": 1758100896.8377526,
+    "end": 1758100907.2261734,
+    "start-formatted": "2025-09-17 18:21 KST",
+    "end-formatted": "2025-09-17 18:21 KST",
+    "gpu": 2,
+    "pid": 17,
+    "use_openrouter": true,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Prefixes and Suffixes\n\nIvan wants to play a game with you. He picked some string $$$s$$$ of length $$$n$$$ consisting only of lowercase Latin letters. You don't know this string. Ivan has informed you about all its improper prefixes and suffixes (i.e. prefixes and suffixes of lengths from $$$1$$$ to $$$n-1$$$), but he didn't tell you which strings are prefixes and which are suffixes.Ivan wants you to guess which of the given $$$2n-2$$$ strings are prefixes of the given string and which are suffixes. It may be impossible to guess the string Ivan picked (since multiple strings may give the same set of suffixes and prefixes), but Ivan will accept your answer if there is at least one string that is consistent with it. Let the game begin!\n\n## Input\nThe first line of the input contains one integer number $$$n$$$ ($$$2 \\le n \\le 100$$$) — the length of the guessed string $$$s$$$.The next $$$2n-2$$$ lines are contain prefixes and suffixes, one per line. Each of them is the string of length from $$$1$$$ to $$$n-1$$$ consisting only of lowercase Latin letters. They can be given in arbitrary order.It is guaranteed that there are exactly $$$2$$$ strings of each length from $$$1$$$ to $$$n-1$$$. It is also guaranteed that these strings are prefixes and suffixes of some existing string of length $$$n$$$.\n\n## Output\nPrint one string of length $$$2n-2$$$ — the string consisting only of characters 'P' and 'S'. The number of characters 'P' should be equal to the number of characters 'S'. The $$$i$$$-th character of this string should be 'P' if the $$$i$$$-th of the input strings is the prefix and 'S' otherwise.If there are several possible answers, you can print any.\n\n## Example\n### Input\n['5\\nba\\na\\nabab\\na\\naba\\nbaba\\nab\\naba', '3\\na\\naa\\naa\\na', '2\\na\\nc']\n\n### Output\n['SPPSPSPS', 'PPSS', 'PS']\n\n## Note\nThe only string which Ivan can guess in the first example is \"ababa\".The only string which Ivan can guess in the second example is \"aaa\". Answers \"SPSP\", \"SSPP\" and \"PSPS\" are also acceptable.In the third example Ivan can guess the string \"ac\" or the string \"ca\". The answer \"SP\" is also acceptable.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nfrom collections import defaultdict\n\ndef solve():\n    n = int(input())\n    prefix = defaultdict(list)\n    suffix = defaultdict(list)\n\n    for i in range(2*n-2):\n        s = input()\n        prefix[len(s)].append(s)\n        suffix[len(s)].append(s)\n\n    ans = ['P'] * (2*n - 2)\n    for i in range(1, n):\n        for s in prefix[i]:\n            if s in suffix[n-i]:\n                ans[prefix[i].index(s)] = 'S'\n                ans[suffix[n-i].index(s)] = 'S'\n\n    print(''.join(ans))\n\nt = 1\nfor _ in range(t):\n    solve()\n```\n\nThis script reads the input from standard input and prints the desired output to standard output. It uses a `defaultdict` to store the prefixes and suffixes of different lengths, and then iterates over the prefixes and suffixes to determine which ones are prefixes and which ones are suffixes. The result is stored in a list and then printed to the standard output.",
+    "ground_truth": "N/A",
+    "extracted_answer": "from collections import defaultdict\n\ndef solve():\n    n = int(input())\n    prefix = defaultdict(list)\n    suffix = defaultdict(list)\n\n    for i in range(2*n-2):\n        s = input()\n        prefix[len(s)].append(s)\n        suffix[len(s)].append(s)\n\n    ans = ['P'] * (2*n - 2)\n    for i in range(1, n):\n        for s in prefix[i]:\n            if s in suffix[n-i]:\n                ans[prefix[i].index(s)] = 'S'\n                ans[suffix[n-i].index(s)] = 'S'\n\n    print(''.join(ans))\n\nt = 1\nfor _ in range(t):\n    solve()",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 657,
+        "completion_token_count": 224,
+        "thoughts_token_count": 0
+    }
+}

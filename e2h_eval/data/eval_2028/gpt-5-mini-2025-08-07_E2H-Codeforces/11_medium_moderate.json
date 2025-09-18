@@ -1,0 +1,24 @@
+{
+    "start": 1758094555.7803018,
+    "end": 1758094570.630529,
+    "start-formatted": "2025-09-17 16:35 KST",
+    "end-formatted": "2025-09-17 16:36 KST",
+    "gpu": 2,
+    "pid": 11,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Soft Drinking\n\nThis winter is so cold in Nvodsk! A group of n friends decided to buy k bottles of a soft drink called \"Take-It-Light\" to warm up a bit. Each bottle has l milliliters of the drink. Also they bought c limes and cut each of them into d slices. After that they found p grams of salt.To make a toast, each friend needs nl milliliters of the drink, a slice of lime and np grams of salt. The friends want to make as many toasts as they can, provided they all drink the same amount. How many toasts can each friend make?\n\n## Input\nThe first and only line contains positive integers n, k, l, c, d, p, nl, np, not exceeding 1000 and no less than 1. The numbers are separated by exactly one space.\n\n## Output\nPrint a single integer — the number of toasts each friend can make.\n\n## Example\n### Input\n['3 4 5 10 8 100 3 1', '5 100 10 1 19 90 4 3', '10 1000 1000 25 23 1 50 1']\n\n### Output\n['2', '3', '0']\n\n## Note\nA comment to the first sample: Overall the friends have 4 * 5 = 20 milliliters of the drink, it is enough to make 20 / 3 = 6 toasts. The limes are enough for 10 * 8 = 80 toasts and the salt is enough for 100 / 1 = 100 toasts. However, there are 3 friends in the group, so the answer is min(6, 80, 100) / 3 = 2.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a moderately difficult question."
+        }
+    ],
+    "thought": "**Crafting Python code**\n\nI’m thinking about how to structure this Python code for processing integers. If there are exactly 8 integers, I'll compute once and print the result. If there are multiples of 8, I’ll treat them as separate test cases and ensure each result is on a new line. I’ll use `sys.stdin.read().split()` to handle input and need to manage edge cases, like whitespace and trailing newlines, while ensuring proper integer division. I’m also considering how to handle cases that aren’t divisible by 8.",
+    "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nnums = list(map(int, data))\n\noutputs = []\nif len(nums) % 8 != 0:\n    # If not a multiple of 8, process only the first 8 integers (standard single-case input)\n    nums = nums[:8]\n\nfor i in range(0, len(nums), 8):\n    n, k, l, c, d, p, nl, np = nums[i:i+8]\n    total_drink = k * l\n    toasts_drink = total_drink // nl\n    toasts_limes = c * d\n    toasts_salt = p // np\n    max_toasts_each = min(toasts_drink, toasts_limes, toasts_salt) // n\n    outputs.append(str(max_toasts_each))\n\nsys.stdout.write(\"\\n\".join(outputs))",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nnums = list(map(int, data))\n\noutputs = []\nif len(nums) % 8 != 0:\n    # If not a multiple of 8, process only the first 8 integers (standard single-case input)\n    nums = nums[:8]\n\nfor i in range(0, len(nums), 8):\n    n, k, l, c, d, p, nl, np = nums[i:i+8]\n    total_drink = k * l\n    toasts_drink = total_drink // nl\n    toasts_limes = c * d\n    toasts_salt = p // np\n    max_toasts_each = min(toasts_drink, toasts_limes, toasts_salt) // n\n    outputs.append(str(max_toasts_each))\n\nsys.stdout.write(\"\\n\".join(outputs))",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 483,
+        "completion_token_count": 713,
+        "thoughts_token_count": 512
+    }
+}

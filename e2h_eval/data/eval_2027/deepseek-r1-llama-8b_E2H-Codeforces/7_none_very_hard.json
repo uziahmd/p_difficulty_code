@@ -1,0 +1,25 @@
+{
+    "start": 1758100899.617095,
+    "end": 1758100917.2062387,
+    "start-formatted": "2025-09-17 18:21 KST",
+    "end-formatted": "2025-09-17 18:21 KST",
+    "gpu": 2,
+    "pid": 7,
+    "use_openrouter": true,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Rudolf and Snowflakes (hard version)\n\nThis is the hard version of the problem. The only difference is that in this version $$$n \\le 10^{18}$$$.One winter morning, Rudolf was looking thoughtfully out the window, watching the falling snowflakes. He quickly noticed a certain symmetry in the configuration of the snowflakes. And like a true mathematician, Rudolf came up with a mathematical model of a snowflake.He defined a snowflake as an undirected graph constructed according to the following rules:   Initially, the graph has only one vertex.  Then, more vertices are added to the graph. The initial vertex is connected by edges to $$$k$$$ new vertices ($$$k > 1$$$).  Each vertex that is connected to only one other vertex is connected by edges to $$$k$$$ more new vertices. This step should be done at least once. The smallest possible snowflake for $$$k = 4$$$ is shown in the figure.  After some mathematical research, Rudolf realized that such snowflakes may not have any number of vertices. Help Rudolf check whether a snowflake with $$$n$$$ vertices can exist.\n\n## Input\nThe first line of the input contains an integer $$$t$$$ ($$$1 \\le t \\le 10^4$$$) — the number of test cases.Then follow the descriptions of the test cases.The first line of each test case contains an integer $$$n$$$ ($$$1 \\le n \\le 10^{18}$$$) — the number of vertices for which it is necessary to check the existence of a snowflake.\n\n## Output\nOutput $$$t$$$ lines, each of which is the answer to the corresponding test case — \"YES\" if there exists such $$$k > 1$$$ that a snowflake with the given number of vertices can be constructed; \"NO\" otherwise.\n\n## Example\n### Input\n['9\\n1\\n2\\n3\\n6\\n13\\n15\\n255\\n10101\\n1000000000000000000']\n\n### Output\n['NO\\nNO\\nNO\\nNO\\nYES\\nYES\\nYES\\nYES\\nNO']\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a very hard question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\ndef check(n, k):\n    if n == 1:\n        return False\n    if n % 2 == 0:\n        return True\n    if k == 2:\n        return n == 3\n    if k == 3:\n        return n == 4 or (n - 6) % 12 == 0\n    if k == 4:\n        return n == 5 or (n - 8) % 24 == 0\n    return n % (k - 2) == 5\n\ndef main():\n    t = int(input())\n    for _ in range(t):\n        n = int(input())\n        ans = \"NO\"\n        for k in range(3, 100):\n            if k > 2 and check(n, k):\n                ans = \"YES\"\n                break\n        print(ans)\n\nif __name__ == \"__main__\":\n    main()\n```\n\nThis script defines a helper function `check(n, k)` to determine whether a snowflake with `n` vertices can exist for a given `k`. It then uses this function in the `main()` function to read input from standard input and print the desired outputs to standard output.\n\nThe `check(n, k)` function works by checking the possible cases for `n` and `k`. If `n` is 1, it's impossible to construct a snowflake. If `n` is even, we can always construct a snowflake. If `n` is odd, we need to handle the special cases for `k = 2`, `k = 3`, and `k = 4`. For other values of `k`, we use the fact that the number of new vertices added at each step is `k - 2`, and we can calculate the number of vertices that can be constructed using this pattern.",
+    "ground_truth": "N/A",
+    "extracted_answer": "def check(n, k):\n    if n == 1:\n        return False\n    if n % 2 == 0:\n        return True\n    if k == 2:\n        return n == 3\n    if k == 3:\n        return n == 4 or (n - 6) % 12 == 0\n    if k == 4:\n        return n == 5 or (n - 8) % 24 == 0\n    return n % (k - 2) == 5\n\ndef main():\n    t = int(input())\n    for _ in range(t):\n        n = int(input())\n        ans = \"NO\"\n        for k in range(3, 100):\n            if k > 2 and check(n, k):\n                ans = \"YES\"\n                break\n        print(ans)\n\nif __name__ == \"__main__\":\n    main()",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 565,
+        "completion_token_count": 383,
+        "thoughts_token_count": 0
+    }
+}

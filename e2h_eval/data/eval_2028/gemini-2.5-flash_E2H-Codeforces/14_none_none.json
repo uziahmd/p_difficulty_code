@@ -1,0 +1,24 @@
+{
+    "start": 1758011288.4157083,
+    "end": 1758011294.0951824,
+    "start-formatted": "2025-09-16 17:28 KST",
+    "end-formatted": "2025-09-16 17:28 KST",
+    "gpu": 2,
+    "pid": 14,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# A Trivial Problem\n\nMr. Santa asks all the great programmers of the world to solve a trivial problem. He gives them an integer m and asks for the number of positive integers n, such that the factorial of n ends with exactly m zeroes. Are you among those great programmers who can solve this problem?\n\n## Input\nThe only line of input contains an integer m (1 ≤ m ≤ 100 000) — the required number of trailing zeroes in factorial.\n\n## Output\nFirst print k — the number of values of n such that the factorial of n ends with m zeroes. Then print these k integers in increasing order.\n\n## Example\n### Input\n['1', '5']\n\n### Output\n['5\\n5 6 7 8 9', '0']\n\n## Note\nThe factorial of n is equal to the product of all integers from 1 to n inclusive, that is n! = 1·2·3·...·n.In the first sample, 5! = 120, 6! = 720, 7! = 5040, 8! = 40320 and 9! = 362880.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments."
+        }
+    ],
+    "thought": "",
+    "response": "```python\ndef count_trailing_zeros(n):\n    count = 0\n    i = 5\n    while n // i >= 1:\n        count += n // i\n        i *= 5\n    return count\n\nm = int(input())\n\nresults = []\nlow = 1\nhigh = 5 * m # An upper bound, since n! has at least n/5 zeros.\n             # For m = 100,000, max n is around 400,000.\n             # 5 * m is a safe upper bound.\n\n# Binary search for the smallest n such that count_trailing_zeros(n) >= m\nans_start = -1\nwhile low <= high:\n    mid = (low + high) // 2\n    zeros = count_trailing_zeros(mid)\n    if zeros >= m:\n        ans_start = mid\n        high = mid - 1\n    else:\n        low = mid + 1\n\nif ans_start == -1:\n    print(0)\nelse:\n    # Check if count_trailing_zeros(ans_start) is exactly m\n    if count_trailing_zeros(ans_start) == m:\n        # If it is, then ans_start, ans_start+1, ans_start+2, ans_start+3, ans_start+4\n        # will all have exactly m zeros, because the number of zeros only changes\n        # when n is a multiple of 5.\n        print(5)\n        print(ans_start, ans_start + 1, ans_start + 2, ans_start + 3, ans_start + 4)\n    else:\n        print(0)\n\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "def count_trailing_zeros(n):\n    count = 0\n    i = 5\n    while n // i >= 1:\n        count += n // i\n        i *= 5\n    return count\n\nm = int(input())\n\nresults = []\nlow = 1\nhigh = 5 * m # An upper bound, since n! has at least n/5 zeros.\n             # For m = 100,000, max n is around 400,000.\n             # 5 * m is a safe upper bound.\n\n# Binary search for the smallest n such that count_trailing_zeros(n) >= m\nans_start = -1\nwhile low <= high:\n    mid = (low + high) // 2\n    zeros = count_trailing_zeros(mid)\n    if zeros >= m:\n        ans_start = mid\n        high = mid - 1\n    else:\n        low = mid + 1\n\nif ans_start == -1:\n    print(0)\nelse:\n    # Check if count_trailing_zeros(ans_start) is exactly m\n    if count_trailing_zeros(ans_start) == m:\n        # If it is, then ans_start, ans_start+1, ans_start+2, ans_start+3, ans_start+4\n        # will all have exactly m zeros, because the number of zeros only changes\n        # when n is a multiple of 5.\n        print(5)\n        print(ans_start, ans_start + 1, ans_start + 2, ans_start + 3, ans_start + 4)\n    else:\n        print(0)",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 394,
+        "completion_token_count": 392,
+        "thoughts_token_count": 0
+    }
+}

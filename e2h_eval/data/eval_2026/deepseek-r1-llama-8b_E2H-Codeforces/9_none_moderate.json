@@ -1,0 +1,25 @@
+{
+    "start": 1758100935.176401,
+    "end": 1758100951.1556501,
+    "start-formatted": "2025-09-17 18:22 KST",
+    "end-formatted": "2025-09-17 18:22 KST",
+    "gpu": 2,
+    "pid": 9,
+    "use_openrouter": true,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Selling Souvenirs\n\nAfter several latest reforms many tourists are planning to visit Berland, and Berland people understood that it's an opportunity to earn money and changed their jobs to attract tourists. Petya, for example, left the IT corporation he had been working for and started to sell souvenirs at the market.This morning, as usual, Petya will come to the market. Petya has n different souvenirs to sell; ith souvenir is characterised by its weight wi and cost ci. Petya knows that he might not be able to carry all the souvenirs to the market. So Petya wants to choose a subset of souvenirs such that its total weight is not greater than m, and total cost is maximum possible.Help Petya to determine maximum possible total cost.\n\n## Input\nThe first line contains two integers n and m (1 ≤ n ≤ 100000, 1 ≤ m ≤ 300000) — the number of Petya's souvenirs and total weight that he can carry to the market.Then n lines follow. ith line contains two integers wi and ci (1 ≤ wi ≤ 3, 1 ≤ ci ≤ 109) — the weight and the cost of ith souvenir.\n\n## Output\nPrint one number — maximum possible total cost of souvenirs that Petya can carry to the market.\n\n## Example\n### Input\n['1 1\\n2 1', '2 2\\n1 3\\n2 2', '4 3\\n3 10\\n2 7\\n2 8\\n1 1']\n\n### Output\n['0', '3', '10']\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a moderately difficult question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nimport sys\n\ndef solve(n, m, items):\n    # Sort the items by weight-to-cost ratio in descending order\n    items.sort(key=lambda x: (x[0], -x[1]))\n\n    max_cost = 0\n    current_weight = 0\n\n    for item in items:\n        if current_weight + item[0] <= m:\n            current_weight += item[0]\n            max_cost += item[1]\n\n    return max_cost\n\n\nif __name__ == \"__main__\":\n    input_lines = sys.stdin.read().splitlines()\n    n, m = map(int, input_lines[0].split())\n    items = []\n\n    for line in input_lines[1:]:\n        w, c = map(int, line.split())\n        items.append((w, c))\n\n    results = []\n\n    for i in range(1, 4):\n        filtered_items = [(w, c) for w, c in items if w == i]\n        results.append(str(solve(len(filtered_items), m, filtered_items)))\n\n    print(\"\\n\".join(results))\n```\n\nThis script reads the input from standard input, sorts the items by their weight-to-cost ratio in descending order, and then iterates over the sorted items to find the maximum possible total cost. It repeats this process for each possible weight category (1, 2, or 3) and prints the results.\n\nNote that this solution has a time complexity of O(n log n) due to the sorting step, where n is the number of items. The subsequent iteration over the sorted items has a linear time complexity, but it does not affect the overall time complexity.",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndef solve(n, m, items):\n    # Sort the items by weight-to-cost ratio in descending order\n    items.sort(key=lambda x: (x[0], -x[1]))\n\n    max_cost = 0\n    current_weight = 0\n\n    for item in items:\n        if current_weight + item[0] <= m:\n            current_weight += item[0]\n            max_cost += item[1]\n\n    return max_cost\n\n\nif __name__ == \"__main__\":\n    input_lines = sys.stdin.read().splitlines()\n    n, m = map(int, input_lines[0].split())\n    items = []\n\n    for line in input_lines[1:]:\n        w, c = map(int, line.split())\n        items.append((w, c))\n\n    results = []\n\n    for i in range(1, 4):\n        filtered_items = [(w, c) for w, c in items if w == i]\n        results.append(str(solve(len(filtered_items), m, filtered_items)))\n\n    print(\"\\n\".join(results))",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 481,
+        "completion_token_count": 338,
+        "thoughts_token_count": 0
+    }
+}

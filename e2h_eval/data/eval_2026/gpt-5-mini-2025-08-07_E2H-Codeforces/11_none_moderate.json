@@ -1,0 +1,24 @@
+{
+    "start": 1758094529.3423526,
+    "end": 1758094535.9717877,
+    "start-formatted": "2025-09-17 16:35 KST",
+    "end-formatted": "2025-09-17 16:35 KST",
+    "gpu": 2,
+    "pid": 11,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Soft Drinking\n\nThis winter is so cold in Nvodsk! A group of n friends decided to buy k bottles of a soft drink called \"Take-It-Light\" to warm up a bit. Each bottle has l milliliters of the drink. Also they bought c limes and cut each of them into d slices. After that they found p grams of salt.To make a toast, each friend needs nl milliliters of the drink, a slice of lime and np grams of salt. The friends want to make as many toasts as they can, provided they all drink the same amount. How many toasts can each friend make?\n\n## Input\nThe first and only line contains positive integers n, k, l, c, d, p, nl, np, not exceeding 1000 and no less than 1. The numbers are separated by exactly one space.\n\n## Output\nPrint a single integer — the number of toasts each friend can make.\n\n## Example\n### Input\n['3 4 5 10 8 100 3 1', '5 100 10 1 19 90 4 3', '10 1000 1000 25 23 1 50 1']\n\n### Output\n['2', '3', '0']\n\n## Note\nA comment to the first sample: Overall the friends have 4 * 5 = 20 milliliters of the drink, it is enough to make 20 / 3 = 6 toasts. The limes are enough for 10 * 8 = 80 toasts and the salt is enough for 100 / 1 = 100 toasts. However, there are 3 friends in the group, so the answer is min(6, 80, 100) / 3 = 2.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a moderately difficult question."
+        }
+    ],
+    "thought": "Could not extract thought.",
+    "response": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    # The problem's typical input is a single line with 8 integers.\n    # But the prompt's example shows multiple test cases; handle both:\n    vals = list(map(int, data))\n    out_lines = []\n    # If exactly 8 numbers, treat as one test case. Otherwise, if length is multiple of 8, process all.\n    if len(vals) % 8 != 0:\n        # Fallback: try to process only the first 8\n        vals = vals[:8]\n        length = 1\n    else:\n        length = len(vals) // 8\n    for i in range(length):\n        n, k, l, c, d, p, nl, np = vals[i*8:(i+1)*8]\n        total_drink = k * l\n        drink_toasts = total_drink // nl\n        lime_toasts = (c * d)\n        salt_toasts = p // np\n        max_toasts_per_friend = min(drink_toasts, lime_toasts, salt_toasts) // n\n        out_lines.append(str(max_toasts_per_friend))\n    sys.stdout.write(\"\\n\".join(out_lines))\n\nif __name__ == \"__main__\":\n    main()",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    # The problem's typical input is a single line with 8 integers.\n    # But the prompt's example shows multiple test cases; handle both:\n    vals = list(map(int, data))\n    out_lines = []\n    # If exactly 8 numbers, treat as one test case. Otherwise, if length is multiple of 8, process all.\n    if len(vals) % 8 != 0:\n        # Fallback: try to process only the first 8\n        vals = vals[:8]\n        length = 1\n    else:\n        length = len(vals) // 8\n    for i in range(length):\n        n, k, l, c, d, p, nl, np = vals[i*8:(i+1)*8]\n        total_drink = k * l\n        drink_toasts = total_drink // nl\n        lime_toasts = (c * d)\n        salt_toasts = p // np\n        max_toasts_per_friend = min(drink_toasts, lime_toasts, salt_toasts) // n\n        out_lines.append(str(max_toasts_per_friend))\n    sys.stdout.write(\"\\n\".join(out_lines))\n\nif __name__ == \"__main__\":\n    main()",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 483,
+        "completion_token_count": 286,
+        "thoughts_token_count": 0
+    }
+}

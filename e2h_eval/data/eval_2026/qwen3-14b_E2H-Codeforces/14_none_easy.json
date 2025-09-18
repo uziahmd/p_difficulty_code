@@ -1,0 +1,24 @@
+{
+    "start": 1758004949.0663104,
+    "end": 1758004966.950898,
+    "start-formatted": "2025-09-16 15:42 KST",
+    "end-formatted": "2025-09-16 15:42 KST",
+    "gpu": 2,
+    "pid": 14,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# A Trivial Problem\n\nMr. Santa asks all the great programmers of the world to solve a trivial problem. He gives them an integer m and asks for the number of positive integers n, such that the factorial of n ends with exactly m zeroes. Are you among those great programmers who can solve this problem?\n\n## Input\nThe only line of input contains an integer m (1 ≤ m ≤ 100 000) — the required number of trailing zeroes in factorial.\n\n## Output\nFirst print k — the number of values of n such that the factorial of n ends with m zeroes. Then print these k integers in increasing order.\n\n## Example\n### Input\n['1', '5']\n\n### Output\n['5\\n5 6 7 8 9', '0']\n\n## Note\nThe factorial of n is equal to the product of all integers from 1 to n inclusive, that is n! = 1·2·3·...·n.In the first sample, 5! = 120, 6! = 720, 7! = 5040, 8! = 40320 and 9! = 362880.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is an easy question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nimport sys\n\ndef count_trailing_zeros(n):\n    count = 0\n    while n >= 5:\n        n //= 5\n        count += n\n    return count\n\ndef find_numbers_with_m_trailing_zeros(m):\n    low = 0\n    high = 5 * m\n    result = []\n\n    while low <= high:\n        mid = (low + high) // 2\n        tz = count_trailing_zeros(mid)\n        if tz < m:\n            low = mid + 1\n        else:\n            high = mid - 1\n\n    # Now find all numbers from low to high that have exactly m trailing zeros\n    start = low\n    end = high\n    res = []\n    for n in range(start, end + 1):\n        if count_trailing_zeros(n) == m:\n            res.append(n)\n    return res\n\ndef main():\n    m = int(sys.stdin.readline())\n    numbers = find_numbers_with_m_trailing_zeros(m)\n    print(len(numbers))\n    if numbers:\n        print(' '.join(map(str, numbers)))\n\nif __name__ == \"__main__\":\n    main()\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndef count_trailing_zeros(n):\n    count = 0\n    while n >= 5:\n        n //= 5\n        count += n\n    return count\n\ndef find_numbers_with_m_trailing_zeros(m):\n    low = 0\n    high = 5 * m\n    result = []\n\n    while low <= high:\n        mid = (low + high) // 2\n        tz = count_trailing_zeros(mid)\n        if tz < m:\n            low = mid + 1\n        else:\n            high = mid - 1\n\n    # Now find all numbers from low to high that have exactly m trailing zeros\n    start = low\n    end = high\n    res = []\n    for n in range(start, end + 1):\n        if count_trailing_zeros(n) == m:\n            res.append(n)\n    return res\n\ndef main():\n    m = int(sys.stdin.readline())\n    numbers = find_numbers_with_m_trailing_zeros(m)\n    print(len(numbers))\n    if numbers:\n        print(' '.join(map(str, numbers)))\n\nif __name__ == \"__main__\":\n    main()",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 385,
+        "completion_token_count": 239,
+        "thoughts_token_count": 0
+    }
+}

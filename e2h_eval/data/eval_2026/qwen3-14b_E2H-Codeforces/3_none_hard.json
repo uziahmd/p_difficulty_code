@@ -1,0 +1,24 @@
+{
+    "start": 1758004922.4266295,
+    "end": 1758004939.4621098,
+    "start-formatted": "2025-09-16 15:42 KST",
+    "end-formatted": "2025-09-16 15:42 KST",
+    "gpu": 2,
+    "pid": 3,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Vanya and Lanterns\n\nVanya walks late at night along a straight street of length l, lit by n lanterns. Consider the coordinate system with the beginning of the street corresponding to the point 0, and its end corresponding to the point l. Then the i-th lantern is at the point ai. The lantern lights all points of the street that are at the distance of at most d from it, where d is some positive number, common for all lanterns. Vanya wonders: what is the minimum light radius d should the lanterns have to light the whole street?\n\n## Input\nThe first line contains two integers n, l (1 ≤ n ≤ 1000, 1 ≤ l ≤ 109) — the number of lanterns and the length of the street respectively. The next line contains n integers ai (0 ≤ ai ≤ l). Multiple lanterns can be located at the same point. The lanterns may be located at the ends of the street.\n\n## Output\nPrint the minimum light radius d, needed to light the whole street. The answer will be considered correct if its absolute or relative error doesn't exceed 10 - 9.\n\n## Example\n### Input\n['7 15\\n15 5 3 7 9 14 0', '2 5\\n2 5']\n\n### Output\n['2.5000000000', '2.0000000000']\n\n## Note\nConsider the second sample. At d = 2 the first lantern will light the segment [0, 4] of the street, and the second lantern will light segment [3, 5]. Thus, the whole street will be lit.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a hard question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nimport sys\n\ndef main():\n    import sys\n    input = sys.stdin.read\n    data = input().split('\\n')\n    \n    for line in data:\n        if not line.strip():\n            continue\n        n, l = map(int, line.split())\n        a = list(map(int, data[data.index(line) + 1].split()))\n        a.sort()\n        \n        max_d = 0.0\n        \n        # Check the first segment from 0 to a[0]\n        max_d = max(max_d, a[0])\n        \n        # Check segments between lanterns\n        for i in range(1, n):\n            gap = (a[i] - a[i - 1]) / 2.0\n            max_d = max(max_d, gap)\n        \n        # Check the last segment from a[-1] to l\n        max_d = max(max_d, l - a[-1])\n        \n        print(\"{0:.10f}\".format(max_d))\n\nif __name__ == \"__main__\":\n    main()\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndef main():\n    import sys\n    input = sys.stdin.read\n    data = input().split('\\n')\n    \n    for line in data:\n        if not line.strip():\n            continue\n        n, l = map(int, line.split())\n        a = list(map(int, data[data.index(line) + 1].split()))\n        a.sort()\n        \n        max_d = 0.0\n        \n        # Check the first segment from 0 to a[0]\n        max_d = max(max_d, a[0])\n        \n        # Check segments between lanterns\n        for i in range(1, n):\n            gap = (a[i] - a[i - 1]) / 2.0\n            max_d = max(max_d, gap)\n        \n        # Check the last segment from a[-1] to l\n        max_d = max(max_d, l - a[-1])\n        \n        print(\"{0:.10f}\".format(max_d))\n\nif __name__ == \"__main__\":\n    main()",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 495,
+        "completion_token_count": 219,
+        "thoughts_token_count": 0
+    }
+}

@@ -1,0 +1,20 @@
+{"task_id": "E2H_CF1031A", "status": "passed", "elapsed_ms": 12, "error": null}
+{"task_id": "E2H_CF404A", "status": "failed", "elapsed_ms": 5, "error": "EOFError: EOF when reading a line\n"}
+{"task_id": "E2H_CF492B", "status": "passed", "elapsed_ms": 7, "error": null}
+{"task_id": "E2H_CF173A", "status": "failed", "elapsed_ms": 5, "error": "EOFError: EOF when reading a line\n"}
+{"task_id": "E2H_CF1141D", "status": "failed", "elapsed_ms": 4, "error": "AssertionError: Expected '5\\n7 8\\n4 9\\n2 2\\n9 10\\n3 1', got '5\\n3 3\\n9 10\\n4 9\\n6 2\\n7 8'\n"}
+{"task_id": "E2H_CF822C", "status": "failed", "elapsed_ms": 5, "error": "ValueError: not enough values to unpack (expected 2, got 0)\n"}
+{"task_id": "E2H_CF1846E2", "status": "failed", "elapsed_ms": 4, "error": "EOFError: EOF when reading a line\n"}
+{"task_id": "E2H_CF270E", "status": "failed", "elapsed_ms": 5, "error": "ValueError: not enough values to unpack (expected 2, got 0)\n"}
+{"task_id": "E2H_CF808E", "status": "failed", "elapsed_ms": 4, "error": "ValueError: not enough values to unpack (expected 2, got 0)\n"}
+{"task_id": "E2H_CF409I", "status": "failed", "elapsed_ms": 6, "error": "IndexError: list index out of range\n"}
+{"task_id": "E2H_CF151A", "status": "failed", "elapsed_ms": 5, "error": "ValueError: not enough values to unpack (expected 8, got 0)\n"}
+{"task_id": "E2H_CF339B", "status": "passed", "elapsed_ms": 5, "error": null}
+{"task_id": "E2H_CF88A", "status": "failed", "elapsed_ms": 5, "error": "EOFError: EOF when reading a line\n"}
+{"task_id": "E2H_CF633B", "status": "failed", "elapsed_ms": 5, "error": "EOFError: EOF when reading a line\n"}
+{"task_id": "E2H_CF1767D", "status": "failed", "elapsed_ms": 4, "error": "EOFError: EOF when reading a line\n"}
+{"task_id": "E2H_CF498A", "status": "failed", "elapsed_ms": 6, "error": "EOFError: EOF when reading a line\n"}
+{"task_id": "E2H_CF1092C", "status": "failed", "elapsed_ms": 6, "error": "EOFError: EOF when reading a line\n"}
+{"task_id": "E2H_CF1146D", "status": "failed", "elapsed_ms": 6, "error": "  File \"<string>\", line 421\n    min_pos = [float('inf')] * a\n    ^^^^^^^\nIndentationError: expected an indented block after 'for' statement on line 328\n"}
+{"task_id": "E2H_CF980E", "status": "failed", "elapsed_ms": 4, "error": "ValueError: not enough values to unpack (expected 2, got 0)\n"}
+{"task_id": "E2H_CF1709F", "status": "failed", "elapsed_ms": 8, "error": "AssertionError: Expected '3', got '1'\n"}

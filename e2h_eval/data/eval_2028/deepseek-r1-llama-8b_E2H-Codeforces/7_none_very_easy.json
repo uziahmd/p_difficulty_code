@@ -1,0 +1,25 @@
+{
+    "start": 1758100894.635148,
+    "end": 1758100911.9891875,
+    "start-formatted": "2025-09-17 18:21 KST",
+    "end-formatted": "2025-09-17 18:21 KST",
+    "gpu": 2,
+    "pid": 7,
+    "use_openrouter": true,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Rudolf and Snowflakes (hard version)\n\nThis is the hard version of the problem. The only difference is that in this version $$$n \\le 10^{18}$$$.One winter morning, Rudolf was looking thoughtfully out the window, watching the falling snowflakes. He quickly noticed a certain symmetry in the configuration of the snowflakes. And like a true mathematician, Rudolf came up with a mathematical model of a snowflake.He defined a snowflake as an undirected graph constructed according to the following rules:   Initially, the graph has only one vertex.  Then, more vertices are added to the graph. The initial vertex is connected by edges to $$$k$$$ new vertices ($$$k > 1$$$).  Each vertex that is connected to only one other vertex is connected by edges to $$$k$$$ more new vertices. This step should be done at least once. The smallest possible snowflake for $$$k = 4$$$ is shown in the figure.  After some mathematical research, Rudolf realized that such snowflakes may not have any number of vertices. Help Rudolf check whether a snowflake with $$$n$$$ vertices can exist.\n\n## Input\nThe first line of the input contains an integer $$$t$$$ ($$$1 \\le t \\le 10^4$$$) — the number of test cases.Then follow the descriptions of the test cases.The first line of each test case contains an integer $$$n$$$ ($$$1 \\le n \\le 10^{18}$$$) — the number of vertices for which it is necessary to check the existence of a snowflake.\n\n## Output\nOutput $$$t$$$ lines, each of which is the answer to the corresponding test case — \"YES\" if there exists such $$$k > 1$$$ that a snowflake with the given number of vertices can be constructed; \"NO\" otherwise.\n\n## Example\n### Input\n['9\\n1\\n2\\n3\\n6\\n13\\n15\\n255\\n10101\\n1000000000000000000']\n\n### Output\n['NO\\nNO\\nNO\\nNO\\nYES\\nYES\\nYES\\nYES\\nNO']\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a very easy question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\ndef check(n, k):\n    if n == 1:\n        return False\n    if n == 2:\n        return False\n    if n == 3:\n        return False\n    a = [0] * (k + 1)\n    a[1] = 1\n    a[2] = k\n    i = 3\n    while True:\n        a[i] = a[i - 1] * k + k - 1\n        if a[i] >= n:\n            break\n        i += 1\n    return a[i] == n\n\ndef main():\n    t = int(input())\n    for _ in range(t):\n        n = int(input())\n        k = 2\n        while k < n:\n            if check(n, k):\n                print(\"YES\")\n                break\n            k += 1\n        else:\n            print(\"NO\")\n\nif __name__ == \"__main__\":\n    main()\n```\n\nThis script first checks if the number of vertices is 1, 2 or 3. If it is, it prints \"NO\" because a snowflake with less than 4 vertices cannot exist.\n\nThen it initializes an array `a` to store the number of vertices at each step. It starts with `a[1] = 1` and `a[2] = k`, which are the base cases. Then it calculates `a[i]` for `i >= 3` by multiplying `a[i-1]` by `k` and adding `k-1`.\n\nFinally, it checks if `a[i]` equals `n` for any `i`. If it does, it prints \"YES\". If it doesn't, it means that no snowflake with `n` vertices can exist, so it prints \"NO\".",
+    "ground_truth": "N/A",
+    "extracted_answer": "def check(n, k):\n    if n == 1:\n        return False\n    if n == 2:\n        return False\n    if n == 3:\n        return False\n    a = [0] * (k + 1)\n    a[1] = 1\n    a[2] = k\n    i = 3\n    while True:\n        a[i] = a[i - 1] * k + k - 1\n        if a[i] >= n:\n            break\n        i += 1\n    return a[i] == n\n\ndef main():\n    t = int(input())\n    for _ in range(t):\n        n = int(input())\n        k = 2\n        while k < n:\n            if check(n, k):\n                print(\"YES\")\n                break\n            k += 1\n        else:\n            print(\"NO\")\n\nif __name__ == \"__main__\":\n    main()",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 565,
+        "completion_token_count": 377,
+        "thoughts_token_count": 0
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "start": 1758004908.8098528,
+    "end": 1758004927.090881,
+    "start-formatted": "2025-09-16 15:41 KST",
+    "end-formatted": "2025-09-16 15:42 KST",
+    "gpu": 2,
+    "pid": 13,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Chord\n\nVasya studies music. He has learned lots of interesting stuff. For example, he knows that there are 12 notes: C, C#, D, D#, E, F, F#, G, G#, A, B, H. He also knows that the notes are repeated cyclically: after H goes C again, and before C stands H. We will consider the C note in the row's beginning and the C note after the H similar and we will identify them with each other. The distance between the notes along the musical scale is measured in tones: between two consecutive notes there's exactly one semitone, that is, 0.5 tone. The distance is taken from the lowest tone to the uppest one, that is, the distance between C and E is 4 semitones and between E and C is 8 semitonesVasya also knows what a chord is. A chord is an unordered set of no less than three notes. However, for now Vasya only works with triads, that is with the chords that consist of exactly three notes. He can already distinguish between two types of triads — major and minor.Let's define a major triad. Let the triad consist of notes X, Y and Z. If we can order the notes so as the distance along the musical scale between X and Y equals 4 semitones and the distance between Y and Z is 3 semitones, then the triad is major. The distance between X and Z, accordingly, equals 7 semitones.A minor triad is different in that the distance between X and Y should be 3 semitones and between Y and Z — 4 semitones.For example, the triad \"C E G\" is major: between C and E are 4 semitones, and between E and G are 3 semitones. And the triplet \"C# B F\" is minor, because if we order the notes as \"B C# F\", than between B and C# will be 3 semitones, and between C# and F — 4 semitones.Help Vasya classify the triad the teacher has given to him.\n\n## Input\nThe only line contains 3 space-separated notes in the above-given notation.\n\n## Output\nPrint \"major\" if the chord is major, \"minor\" if it is minor, and \"strange\" if the teacher gave Vasya some weird chord which is neither major nor minor. Vasya promises you that the answer will always be unambiguous. That is, there are no chords that are both major and minor simultaneously.\n\n## Example\n### Input\n['C E G', 'C# B F', 'A B H']\n\n### Output\n['major', 'minor', 'strange']\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a moderately difficult question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\ndef note_to_index(note):\n    notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'B', 'H']\n    return notes.index(note)\n\ndef distance(a, b):\n    return (b - a) % 12\n\ndef classify_chord(notes):\n    # Convert notes to their indices\n    indices = [note_to_index(note) for note in notes]\n    \n    # Try all permutations of the three notes\n    from itertools import permutations\n    for perm in permutations(indices):\n        x, y, z = perm\n        d1 = distance(x, y)\n        d2 = distance(y, z)\n        if d1 == 4 and d2 == 3:\n            return \"major\"\n        if d1 == 3 and d2 == 4:\n            return \"minor\"\n    return \"strange\"\n\n# Read input\nimport sys\ninput_line = sys.stdin.read().strip()\nnotes = input_line.split()\n\n# Classify and print result\nprint(classify_chord(notes))\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "def note_to_index(note):\n    notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'B', 'H']\n    return notes.index(note)\n\ndef distance(a, b):\n    return (b - a) % 12\n\ndef classify_chord(notes):\n    # Convert notes to their indices\n    indices = [note_to_index(note) for note in notes]\n    \n    # Try all permutations of the three notes\n    from itertools import permutations\n    for perm in permutations(indices):\n        x, y, z = perm\n        d1 = distance(x, y)\n        d2 = distance(y, z)\n        if d1 == 4 and d2 == 3:\n            return \"major\"\n        if d1 == 3 and d2 == 4:\n            return \"minor\"\n    return \"strange\"\n\n# Read input\nimport sys\ninput_line = sys.stdin.read().strip()\nnotes = input_line.split()\n\n# Classify and print result\nprint(classify_chord(notes))",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 687,
+        "completion_token_count": 239,
+        "thoughts_token_count": 0
+    }
+}

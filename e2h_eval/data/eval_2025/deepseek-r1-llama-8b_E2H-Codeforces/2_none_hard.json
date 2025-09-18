@@ -1,0 +1,25 @@
+{
+    "start": 1758100894.63484,
+    "end": 1758100910.615542,
+    "start-formatted": "2025-09-17 18:21 KST",
+    "end-formatted": "2025-09-17 18:21 KST",
+    "gpu": 2,
+    "pid": 2,
+    "use_openrouter": true,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Valera and X\n\nValera is a little boy. Yesterday he got a huge Math hometask at school, so Valera didn't have enough time to properly learn the English alphabet for his English lesson. Unfortunately, the English teacher decided to have a test on alphabet today. At the test Valera got a square piece of squared paper. The length of the side equals n squares (n is an odd number) and each unit square contains some small letter of the English alphabet.Valera needs to know if the letters written on the square piece of paper form letter \"X\". Valera's teacher thinks that the letters on the piece of paper form an \"X\", if:  on both diagonals of the square paper all letters are the same;  all other squares of the paper (they are not on the diagonals) contain the same letter that is different from the letters on the diagonals. Help Valera, write the program that completes the described task for him.\n\n## Input\nThe first line contains integer n (3 ≤ n < 300; n is odd). Each of the next n lines contains n small English letters — the description of Valera's paper.\n\n## Output\nPrint string \"YES\", if the letters on the paper form letter \"X\". Otherwise, print string \"NO\". Print the strings without quotes.\n\n## Example\n### Input\n['5\\nxooox\\noxoxo\\nsoxoo\\noxoxo\\nxooox', '3\\nwsw\\nsws\\nwsw', '3\\nxpx\\npxp\\nxpe']\n\n### Output\n['NO', 'YES', 'NO']\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a hard question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\ndef check_x(n, grid):\n    # Check if the first diagonal is 'X'\n    diagonal1 = all(row[i] == grid[0][0] for i, row in enumerate(grid))\n    diagonal2 = all(row[n - i - 1] == grid[0][0] for i, row in enumerate(grid))\n\n    # Check if both diagonals are 'X'\n    if not (diagonal1 and diagonal2):\n        return False\n\n    # Check if the rest of the grid is filled with a different character\n    for i in range(1, n - 1):\n        for j in range(1, n - 1):\n            if grid[i][j] != grid[0][0]:\n                return False\n\n    # Check if the corners are 'X'\n    for i in range(1, n - 1):\n        if grid[i][i] != grid[0][0] or grid[i][n - i - 1] != grid[0][0]:\n            return False\n\n    return True\n\n\nn = int(input())\ngrid = [list(input().strip()) for _ in range(n)]\n\noutput = []\nfor g in grid:\n    output.append('YES' if check_x(n, g) else 'NO')\n\nprint('\\n'.join(output))\n```\n\nThis script reads the input from standard input, processes it according to the problem description, and prints the result to standard output. It uses a helper function `check_x` to check if the given grid forms an 'X'. The function checks the diagonals, the rest of the grid, and the corners to determine if the grid is an 'X'.",
+    "ground_truth": "N/A",
+    "extracted_answer": "def check_x(n, grid):\n    # Check if the first diagonal is 'X'\n    diagonal1 = all(row[i] == grid[0][0] for i, row in enumerate(grid))\n    diagonal2 = all(row[n - i - 1] == grid[0][0] for i, row in enumerate(grid))\n\n    # Check if both diagonals are 'X'\n    if not (diagonal1 and diagonal2):\n        return False\n\n    # Check if the rest of the grid is filled with a different character\n    for i in range(1, n - 1):\n        for j in range(1, n - 1):\n            if grid[i][j] != grid[0][0]:\n                return False\n\n    # Check if the corners are 'X'\n    for i in range(1, n - 1):\n        if grid[i][i] != grid[0][0] or grid[i][n - i - 1] != grid[0][0]:\n            return False\n\n    return True\n\n\nn = int(input())\ngrid = [list(input().strip()) for _ in range(n)]\n\noutput = []\nfor g in grid:\n    output.append('YES' if check_x(n, g) else 'NO')\n\nprint('\\n'.join(output))",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 464,
+        "completion_token_count": 346,
+        "thoughts_token_count": 0
+    }
+}

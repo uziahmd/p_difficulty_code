@@ -1,0 +1,24 @@
+{
+    "start": 1758011285.102305,
+    "end": 1758011287.5767577,
+    "start-formatted": "2025-09-16 17:28 KST",
+    "end-formatted": "2025-09-16 17:28 KST",
+    "gpu": 2,
+    "pid": 3,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Vanya and Lanterns\n\nVanya walks late at night along a straight street of length l, lit by n lanterns. Consider the coordinate system with the beginning of the street corresponding to the point 0, and its end corresponding to the point l. Then the i-th lantern is at the point ai. The lantern lights all points of the street that are at the distance of at most d from it, where d is some positive number, common for all lanterns. Vanya wonders: what is the minimum light radius d should the lanterns have to light the whole street?\n\n## Input\nThe first line contains two integers n, l (1 ≤ n ≤ 1000, 1 ≤ l ≤ 109) — the number of lanterns and the length of the street respectively. The next line contains n integers ai (0 ≤ ai ≤ l). Multiple lanterns can be located at the same point. The lanterns may be located at the ends of the street.\n\n## Output\nPrint the minimum light radius d, needed to light the whole street. The answer will be considered correct if its absolute or relative error doesn't exceed 10 - 9.\n\n## Example\n### Input\n['7 15\\n15 5 3 7 9 14 0', '2 5\\n2 5']\n\n### Output\n['2.5000000000', '2.0000000000']\n\n## Note\nConsider the second sample. At d = 2 the first lantern will light the segment [0, 4] of the street, and the second lantern will light segment [3, 5]. Thus, the whole street will be lit.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a very easy question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\ndef solve():\n    n, l = map(int, input().split())\n    a = list(map(int, input().split()))\n    a.sort()\n\n    max_gap = 0\n    for i in range(1, n):\n        max_gap = max(max_gap, a[i] - a[i-1])\n\n    # Radius needed for the gaps between lanterns\n    d_gap = max_gap / 2.0\n\n    # Radius needed to cover the beginning of the street\n    d_start = a[0] - 0\n\n    # Radius needed to cover the end of the street\n    d_end = l - a[n-1]\n\n    # The minimum radius d is the maximum of these three requirements\n    result = max(d_gap, d_start, d_end)\n\n    print(f\"{result:.10f}\")\n\nif __name__ == '__main__':\n    solve()\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "def solve():\n    n, l = map(int, input().split())\n    a = list(map(int, input().split()))\n    a.sort()\n\n    max_gap = 0\n    for i in range(1, n):\n        max_gap = max(max_gap, a[i] - a[i-1])\n\n    # Radius needed for the gaps between lanterns\n    d_gap = max_gap / 2.0\n\n    # Radius needed to cover the beginning of the street\n    d_start = a[0] - 0\n\n    # Radius needed to cover the end of the street\n    d_end = l - a[n-1]\n\n    # The minimum radius d is the maximum of these three requirements\n    result = max(d_gap, d_start, d_end)\n\n    print(f\"{result:.10f}\")\n\nif __name__ == '__main__':\n    solve()",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 510,
+        "completion_token_count": 216,
+        "thoughts_token_count": 0
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "start": 1758094563.6131065,
+    "end": 1758094576.6819732,
+    "start-formatted": "2025-09-17 16:36 KST",
+    "end-formatted": "2025-09-17 16:36 KST",
+    "gpu": 2,
+    "pid": 11,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Soft Drinking\n\nThis winter is so cold in Nvodsk! A group of n friends decided to buy k bottles of a soft drink called \"Take-It-Light\" to warm up a bit. Each bottle has l milliliters of the drink. Also they bought c limes and cut each of them into d slices. After that they found p grams of salt.To make a toast, each friend needs nl milliliters of the drink, a slice of lime and np grams of salt. The friends want to make as many toasts as they can, provided they all drink the same amount. How many toasts can each friend make?\n\n## Input\nThe first and only line contains positive integers n, k, l, c, d, p, nl, np, not exceeding 1000 and no less than 1. The numbers are separated by exactly one space.\n\n## Output\nPrint a single integer — the number of toasts each friend can make.\n\n## Example\n### Input\n['3 4 5 10 8 100 3 1', '5 100 10 1 19 90 4 3', '10 1000 1000 25 23 1 50 1']\n\n### Output\n['2', '3', '0']\n\n## Note\nA comment to the first sample: Overall the friends have 4 * 5 = 20 milliliters of the drink, it is enough to make 20 / 3 = 6 toasts. The limes are enough for 10 * 8 = 80 toasts and the salt is enough for 100 / 1 = 100 toasts. However, there are 3 friends in the group, so the answer is min(6, 80, 100) / 3 = 2.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a very hard question."
+        }
+    ],
+    "thought": "**Clarifying input/output requirements**\n\nI need to finalize the code for the CF problem \"Soft Drinking,\" but I’m unsure if it’s 110A or 151A — I think it might be 151A since it's a common problem. The input format specifies a single line with positive integers n, k, l, c, d, p, nl, and np. However, the example suggests multiple test cases, listing multiple inputs. This might indicate a need to handle multiple lines, so I'll read everything from stdin and parse the integers accordingly.",
+    "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit()\nnums = list(map(int, data))\nout_lines = []\ni = 0\nwhile i + 7 < len(nums):\n    n, k, l, c, d, p, nl, np = nums[i:i+8]\n    total_drink = k * l\n    drink_toasts = total_drink // nl\n    lime_slices = c * d\n    salt_toasts = p // np\n    total_possible = min(drink_toasts, lime_slices, salt_toasts)\n    out_lines.append(str(total_possible // n))\n    i += 8\nsys.stdout.write(\"\\n\".join(out_lines))",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit()\nnums = list(map(int, data))\nout_lines = []\ni = 0\nwhile i + 7 < len(nums):\n    n, k, l, c, d, p, nl, np = nums[i:i+8]\n    total_drink = k * l\n    drink_toasts = total_drink // nl\n    lime_slices = c * d\n    salt_toasts = p // np\n    total_possible = min(drink_toasts, lime_slices, salt_toasts)\n    out_lines.append(str(total_possible // n))\n    i += 8\nsys.stdout.write(\"\\n\".join(out_lines))",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 483,
+        "completion_token_count": 606,
+        "thoughts_token_count": 448
+    }
+}

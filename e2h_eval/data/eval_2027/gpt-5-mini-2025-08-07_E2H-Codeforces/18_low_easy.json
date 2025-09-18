@@ -1,0 +1,24 @@
+{
+    "start": 1758094613.1544065,
+    "end": 1758094657.9218078,
+    "start-formatted": "2025-09-17 16:36 KST",
+    "end-formatted": "2025-09-17 16:37 KST",
+    "gpu": 2,
+    "pid": 18,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Frog Jumping\n\nA frog is initially at position $$$0$$$ on the number line. The frog has two positive integers $$$a$$$ and $$$b$$$. From a position $$$k$$$, it can either jump to position $$$k+a$$$ or $$$k-b$$$.Let $$$f(x)$$$ be the number of distinct integers the frog can reach if it never jumps on an integer outside the interval $$$[0, x]$$$. The frog doesn't need to visit all these integers in one trip, that is, an integer is counted if the frog can somehow reach it if it starts from $$$0$$$.Given an integer $$$m$$$, find $$$\\sum_{i=0}^{m} f(i)$$$. That is, find the sum of all $$$f(i)$$$ for $$$i$$$ from $$$0$$$ to $$$m$$$.\n\n## Input\nThe first line contains three integers $$$m, a, b$$$ ($$$1 \\leq m \\leq 10^9, 1 \\leq a,b \\leq 10^5$$$).\n\n## Output\nPrint a single integer, the desired sum.\n\n## Example\n### Input\n['7 5 3', '1000000000 1 2019', '100 100000 1', '6 4 5']\n\n### Output\n['19', '500000001500000001', '101', '10']\n\n## Note\nIn the first example, we must find $$$f(0)+f(1)+\\ldots+f(7)$$$. We have $$$f(0) = 1, f(1) = 1, f(2) = 1, f(3) = 1, f(4) = 1, f(5) = 3, f(6) = 3, f(7) = 8$$$. The sum of these values is $$$19$$$.In the second example, we have $$$f(i) = i+1$$$, so we want to find $$$\\sum_{i=0}^{10^9} i+1$$$.In the third example, the frog can't make any jumps in any case.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is an easy question."
+        }
+    ],
+    "thought": "**Evaluating Frog Jumping Problem**\n\nI'm recalling the standard CF Frog Jumping problem, where we need to calculate the minimal distance to each remainder. I think it involves using Dijkstra's algorithm. From a remainder r, I can move to (r + b) % a with cost b. Adding a to r is like a self-loop, so that’s irrelevant. \n\nThe minimal value with remainder r is about finding the combinations of b and a to satisfy certain conditions. Wait, can using negative b help? I’m considering reachable positions without an upper bound while keeping them non-negative.",
+    "response": "```python\nimport sys\nimport heapq\n\ndata = list(map(int, sys.stdin.read().strip().split()))\nif len(data) < 3:\n    sys.exit(0)\nm, a, b = data[0], data[1], data[2]\n\nINF = 10**30\ndist = [INF] * a\ndist[0] = 0\npq = [(0, 0)]\nwhile pq:\n    d, u = heapq.heappop(pq)\n    if d != dist[u]:\n        continue\n    v = (u + b) % a\n    nd = d + b\n    if nd < dist[v]:\n        dist[v] = nd\n        heapq.heappush(pq, (nd, v))\n\nres = 0\nfor d in dist:\n    if d > m:\n        continue\n    t = m - d\n    q = t // a\n    # sum_{x=0..t} (1 + floor(x/a)) = (t+1) + sum_{x=0..t} floor(x/a)\n    # sum floor = a * q*(q-1)/2 + q*(t - q*a + 1)\n    sum_floor = a * q * (q - 1) // 2 + q * (t - q * a + 1)\n    contrib = (t + 1) + sum_floor\n    res += contrib\n\nprint(res)\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\nimport heapq\n\ndata = list(map(int, sys.stdin.read().strip().split()))\nif len(data) < 3:\n    sys.exit(0)\nm, a, b = data[0], data[1], data[2]\n\nINF = 10**30\ndist = [INF] * a\ndist[0] = 0\npq = [(0, 0)]\nwhile pq:\n    d, u = heapq.heappop(pq)\n    if d != dist[u]:\n        continue\n    v = (u + b) % a\n    nd = d + b\n    if nd < dist[v]:\n        dist[v] = nd\n        heapq.heappush(pq, (nd, v))\n\nres = 0\nfor d in dist:\n    if d > m:\n        continue\n    t = m - d\n    q = t // a\n    # sum_{x=0..t} (1 + floor(x/a)) = (t+1) + sum_{x=0..t} floor(x/a)\n    # sum floor = a * q*(q-1)/2 + q*(t - q*a + 1)\n    sum_floor = a * q * (q - 1) // 2 + q * (t - q * a + 1)\n    contrib = (t + 1) + sum_floor\n    res += contrib\n\nprint(res)",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 559,
+        "completion_token_count": 1591,
+        "thoughts_token_count": 1280
+    }
+}
