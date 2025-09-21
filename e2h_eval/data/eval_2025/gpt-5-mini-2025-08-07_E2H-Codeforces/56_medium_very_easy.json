@@ -1,0 +1,25 @@
+{
+    "start": 1758290609.074757,
+    "end": 1758290631.1717052,
+    "start-formatted": "2025-09-19 23:03 KST",
+    "end-formatted": "2025-09-19 23:03 KST",
+    "gpu": 2,
+    "pid": 56,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Guard Duty (easy)\n\nThe Rebel fleet is afraid that the Empire might want to strike back again. Princess Heidi needs to know if it is possible to assign R Rebel spaceships to guard B bases so that every base has exactly one guardian and each spaceship has exactly one assigned base (in other words, the assignment is a perfect matching). Since she knows how reckless her pilots are, she wants to be sure that any two (straight) paths – from a base to its assigned spaceship – do not intersect in the galaxy plane (that is, in 2D), and so there is no risk of collision.\n\n## Input\nThe first line contains two space-separated integers R, B(1 ≤ R, B ≤ 10). For 1 ≤ i ≤ R, the i + 1-th line contains two space-separated integers xi and yi (|xi|, |yi| ≤ 10000) denoting the coordinates of the i-th Rebel spaceship. The following B lines have the same format, denoting the position of bases. It is guaranteed that no two points coincide and that no three points are on the same line.\n\n## Output\nIf it is possible to connect Rebel spaceships and bases so as satisfy the constraint, output Yes, otherwise output No (without quote).\n\n## Example\n### Input\n['3 3\\n0 0\\n2 0\\n3 1\\n-2 1\\n0 3\\n2 2', '2 1\\n1 0\\n2 2\\n3 1']\n\n### Output\n['Yes', 'No']\n\n## Note\nFor the first example, one possible way is to connect the Rebels and bases in order.For the second example, there is no perfect matching between Rebels and bases.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a very easy question."
+        }
+    ],
+    "thought": "**Exploring non-crossing matchings**\n\nI'm considering red and blue points and whether there exists a non-crossing perfect matching when points are in general position. I believe it's true for equal numbers of red and blue points. If they're equal, I can find non-crossing matches using segments that connect different colors. The divide-and-conquer method could help here, splitting segments correctly. I've seen examples: if red doesn’t equal blue, the answer is no; if they are equal, the answer is yes. But could any configurations make it impossible?",
+    "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nit = iter(data)\nR = int(next(it))\nB = int(next(it))\n# consume coordinates (not needed for decision)\ncoords_needed = 2 * (R + B)\nfor _ in range(coords_needed):\n    try:\n        next(it)\n    except StopIteration:\n        break\nprint(\"Yes\" if R == B else \"No\")",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nit = iter(data)\nR = int(next(it))\nB = int(next(it))\n# consume coordinates (not needed for decision)\ncoords_needed = 2 * (R + B)\nfor _ in range(coords_needed):\n    try:\n        next(it)\n    except StopIteration:\n        break\nprint(\"Yes\" if R == B else \"No\")",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 464,
+        "completion_token_count": 804,
+        "thoughts_token_count": 704
+    }
+}

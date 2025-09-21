@@ -1,0 +1,25 @@
+{
+    "start": 1758290632.3623633,
+    "end": 1758290658.309588,
+    "start-formatted": "2025-09-19 23:03 KST",
+    "end-formatted": "2025-09-19 23:04 KST",
+    "gpu": 2,
+    "pid": 47,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Neko does Maths\n\nNeko loves divisors. During the latest number theory lesson, he got an interesting exercise from his math teacher.Neko has two integers $$$a$$$ and $$$b$$$. His goal is to find a non-negative integer $$$k$$$ such that the least common multiple of $$$a+k$$$ and $$$b+k$$$ is the smallest possible. If there are multiple optimal integers $$$k$$$, he needs to choose the smallest one.Given his mathematical talent, Neko had no trouble getting Wrong Answer on this problem. Can you help him solve it?\n\n## Input\nThe only line contains two integers $$$a$$$ and $$$b$$$ ($$$1 \\le a, b \\le 10^9$$$).\n\n## Output\nPrint the smallest non-negative integer $$$k$$$ ($$$k \\ge 0$$$) such that the lowest common multiple of $$$a+k$$$ and $$$b+k$$$ is the smallest possible.If there are many possible integers $$$k$$$ giving the same value of the least common multiple, print the smallest one.\n\n## Example\n### Input\n['6 10', '21 31', '5 10']\n\n### Output\n['2', '9', '0']\n\n## Note\nIn the first test, one should choose $$$k = 2$$$, as the least common multiple of $$$6 + 2$$$ and $$$10 + 2$$$ is $$$24$$$, which is the smallest least common multiple possible.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is an easy question."
+        }
+    ],
+    "thought": "**Analyzing input for CF problems**\n\nI see that previous solutions for computational problems often handle multiple test cases. The example input looks odd: \"['6 10', '21 31', '5 10']\", which suggests producing multiple output lines. I’ll need to write a Python script that processes standard input and outputs accordingly. It’s important to manage both single pairs and multiple pairs, reading the data, parsing integers, and handling any edge cases like trailing newlines or odd inputs. This should cover all scenarios needed for the task!",
+    "response": "import sys\nfrom math import gcd, isqrt\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\n\nout_lines = []\nn = len(data)\ni = 0\nwhile i + 1 < n:\n    a = int(data[i]); b = int(data[i+1]); i += 2\n    if a == b:\n        out_lines.append(\"0\")\n        continue\n    if a > b:\n        a, b = b, a\n    d = b - a\n    best_k = 0\n    best_lcm = 10**40\n    r = isqrt(d)\n    for x in range(1, r+1):\n        if d % x == 0:\n            for g in (x, d//x):\n                k = (-a) % g\n                na = a + k\n                nb = b + k\n                gg = gcd(na, nb)\n                l = na // gg * nb\n                if l < best_lcm or (l == best_lcm and k < best_k):\n                    best_lcm = l\n                    best_k = k\n    out_lines.append(str(best_k))\n\nsys.stdout.write(\"\\n\".join(out_lines))",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\nfrom math import gcd, isqrt\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\n\nout_lines = []\nn = len(data)\ni = 0\nwhile i + 1 < n:\n    a = int(data[i]); b = int(data[i+1]); i += 2\n    if a == b:\n        out_lines.append(\"0\")\n        continue\n    if a > b:\n        a, b = b, a\n    d = b - a\n    best_k = 0\n    best_lcm = 10**40\n    r = isqrt(d)\n    for x in range(1, r+1):\n        if d % x == 0:\n            for g in (x, d//x):\n                k = (-a) % g\n                na = a + k\n                nb = b + k\n                gg = gcd(na, nb)\n                l = na // gg * nb\n                if l < best_lcm or (l == best_lcm and k < best_k):\n                    best_lcm = l\n                    best_k = k\n    out_lines.append(str(best_k))\n\nsys.stdout.write(\"\\n\".join(out_lines))",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 406,
+        "completion_token_count": 1417,
+        "thoughts_token_count": 1152
+    }
+}

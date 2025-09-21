@@ -1,0 +1,25 @@
+{
+    "start": 1758284926.2778711,
+    "end": 1758284940.4374514,
+    "start-formatted": "2025-09-19 21:28 KST",
+    "end-formatted": "2025-09-19 21:29 KST",
+    "gpu": 2,
+    "pid": 47,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Neko does Maths\n\nNeko loves divisors. During the latest number theory lesson, he got an interesting exercise from his math teacher.Neko has two integers $$$a$$$ and $$$b$$$. His goal is to find a non-negative integer $$$k$$$ such that the least common multiple of $$$a+k$$$ and $$$b+k$$$ is the smallest possible. If there are multiple optimal integers $$$k$$$, he needs to choose the smallest one.Given his mathematical talent, Neko had no trouble getting Wrong Answer on this problem. Can you help him solve it?\n\n## Input\nThe only line contains two integers $$$a$$$ and $$$b$$$ ($$$1 \\le a, b \\le 10^9$$$).\n\n## Output\nPrint the smallest non-negative integer $$$k$$$ ($$$k \\ge 0$$$) such that the lowest common multiple of $$$a+k$$$ and $$$b+k$$$ is the smallest possible.If there are many possible integers $$$k$$$ giving the same value of the least common multiple, print the smallest one.\n\n## Example\n### Input\n['6 10', '21 31', '5 10']\n\n### Output\n['2', '9', '0']\n\n## Note\nIn the first test, one should choose $$$k = 2$$$, as the least common multiple of $$$6 + 2$$$ and $$$10 + 2$$$ is $$$24$$$, which is the smallest least common multiple possible.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a moderately difficult question."
+        }
+    ],
+    "thought": "Could not extract thought.",
+    "response": "```python\nimport sys\nfrom math import gcd, isqrt\n\ndata = list(map(int, sys.stdin.read().strip().split()))\nif not data:\n    sys.exit(0)\npairs = []\nif len(data) == 2:\n    pairs = [tuple(data)]\nelse:\n    it = iter(data)\n    for x, y in zip(it, it):\n        pairs.append((x, y))\nout = []\nfor a, b in pairs:\n    if a == b:\n        out.append(\"0\")\n        continue\n    if a > b:\n        a, b = b, a\n    d = b - a\n    best_k = 0\n    best_lcm = (a * b) // gcd(a, b)\n    # enumerate divisors of d\n    i = 1\n    while i <= isqrt(d):\n        if d % i == 0:\n            for g in (i, d // i):\n                k = (-a) % g\n                A = a + k\n                B = b + k\n                g0 = gcd(A, B)\n                l = (A // g0) * B\n                if l < best_lcm or (l == best_lcm and k < best_k):\n                    best_lcm = l\n                    best_k = k\n        i += 1\n    out.append(str(best_k))\nsys.stdout.write(\"\\n\".join(out))\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\nfrom math import gcd, isqrt\n\ndata = list(map(int, sys.stdin.read().strip().split()))\nif not data:\n    sys.exit(0)\npairs = []\nif len(data) == 2:\n    pairs = [tuple(data)]\nelse:\n    it = iter(data)\n    for x, y in zip(it, it):\n        pairs.append((x, y))\nout = []\nfor a, b in pairs:\n    if a == b:\n        out.append(\"0\")\n        continue\n    if a > b:\n        a, b = b, a\n    d = b - a\n    best_k = 0\n    best_lcm = (a * b) // gcd(a, b)\n    # enumerate divisors of d\n    i = 1\n    while i <= isqrt(d):\n        if d % i == 0:\n            for g in (i, d // i):\n                k = (-a) % g\n                A = a + k\n                B = b + k\n                g0 = gcd(A, B)\n                l = (A // g0) * B\n                if l < best_lcm or (l == best_lcm and k < best_k):\n                    best_lcm = l\n                    best_k = k\n        i += 1\n    out.append(str(best_k))\nsys.stdout.write(\"\\n\".join(out))",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 407,
+        "completion_token_count": 877,
+        "thoughts_token_count": 576
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "start": 1758338120.0396056,
+    "end": 1758338142.13555,
+    "start-formatted": "2025-09-20 12:15 KST",
+    "end-formatted": "2025-09-20 12:15 KST",
+    "gpu": 2,
+    "pid": 53,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# You're Given a String...\n\nYou're given a string of lower-case Latin letters. Your task is to find the length of its longest substring that can be met in the string at least twice. These occurrences can overlap (see sample test 2).\n\n## Input\nThe first input line contains the string. It's guaranteed, that the string is non-empty, consists of lower-case Latin letters, and its length doesn't exceed 100.\n\n## Output\nOutput one number — length of the longest substring that can be met in the string at least twice.\n\n## Example\n### Input\n['abcd', 'ababa', 'zzz']\n\n### Output\n['0', '3', '2']\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a hard question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nfrom collections import defaultdict\n\ndef longest_substring_twice(s):\n    n = len(s)\n    seen = defaultdict(set)\n\n    # Try all possible substring lengths from n-1 down to 1\n    for length in range(n - 1, 0, -1):\n        for i in range(n - length + 1):\n            substr = s[i:i+length]\n            seen[substr].add(i)\n            if len(seen[substr]) >= 2:\n                return length\n    return 0\n\nif __name__ == \"__main__\":\n    import sys\n    input_str = sys.stdin.read().strip()\n    print(longest_substring_twice(input_str))\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "from collections import defaultdict\n\ndef longest_substring_twice(s):\n    n = len(s)\n    seen = defaultdict(set)\n\n    # Try all possible substring lengths from n-1 down to 1\n    for length in range(n - 1, 0, -1):\n        for i in range(n - length + 1):\n            substr = s[i:i+length]\n            seen[substr].add(i)\n            if len(seen[substr]) >= 2:\n                return length\n    return 0\n\nif __name__ == \"__main__\":\n    import sys\n    input_str = sys.stdin.read().strip()\n    print(longest_substring_twice(input_str))",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 244,
+        "completion_token_count": 145,
+        "thoughts_token_count": 0
+    }
+}

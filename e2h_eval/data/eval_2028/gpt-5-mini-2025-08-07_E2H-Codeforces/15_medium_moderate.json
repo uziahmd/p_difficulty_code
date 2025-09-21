@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nout_lines = []\ni = 0\nwhile i < len(data):\n    n = int(data[i]); s = data[i+1]; i += 2\n    ones = s.count('1')\n    zeros = len(s) - ones\n    L = 1 << ones\n    R = (1 << n) - (1 << zeros) + 1\n    out_lines.append(\" \".join(map(str, range(L, R+1))))\nsys.stdout.write(\"\\n\".join(out_lines))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nout_lines = []\ni = 0\nwhile i < len(data):\n    n = int(data[i]); s = data[i+1]; i += 2\n    ones = s.count('1')\n    zeros = len(s) - ones\n    L = 1 << ones\n    R = (1 << n) - (1 << zeros) + 1\n    out_lines.append(\" \".join(map(str, range(L, R+1))))\nsys.stdout.write(\"\\n\".join(out_lines))",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 712,
         "completion_token_count": 8005,

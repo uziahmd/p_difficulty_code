@@ -1,0 +1,25 @@
+{
+    "start": 1758284935.185606,
+    "end": 1758284969.4624138,
+    "start-formatted": "2025-09-19 21:28 KST",
+    "end-formatted": "2025-09-19 21:29 KST",
+    "gpu": 2,
+    "pid": 38,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Node Pairs\n\nLet's call an ordered pair of nodes $$$(u, v)$$$ in a directed graph unidirectional if $$$u \\neq v$$$, there exists a path from $$$u$$$ to $$$v$$$, and there are no paths from $$$v$$$ to $$$u$$$.A directed graph is called $$$p$$$-reachable if it contains exactly $$$p$$$ ordered pairs of nodes $$$(u, v)$$$ such that $$$u < v$$$ and $$$u$$$ and $$$v$$$ are reachable from each other. Find the minimum number of nodes required to create a $$$p$$$-reachable directed graph.Also, among all such $$$p$$$-reachable directed graphs with the minimum number of nodes, let $$$G$$$ denote a graph which maximizes the number of unidirectional pairs of nodes. Find this number.\n\n## Input\nThe first and only line contains a single integer $$$p$$$ ($$$0 \\le p \\le 2 \\cdot 10^5$$$) — the number of ordered pairs of nodes.\n\n## Output\nPrint a single line containing two integers — the minimum number of nodes required to create a $$$p$$$-reachable directed graph, and the maximum number of unidirectional pairs of nodes among all such $$$p$$$-reachable directed graphs with the minimum number of nodes.\n\n## Example\n### Input\n['3', '4', '0']\n\n### Output\n['3 0', '5 6', '0 0']\n\n## Note\nIn the first test case, the minimum number of nodes required to create a $$$3$$$-reachable directed graph is $$$3$$$. Among all $$$3$$$-reachable directed graphs with $$$3$$$ nodes, the following graph $$$G$$$ is one of the graphs with the maximum number of unidirectional pairs of nodes, which is $$$0$$$.   \n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is an easy question."
+        }
+    ],
+    "thought": "**Evaluating graph parameters**\n\nI’m working through the math to maximize S with constraints. Given n chosen, S is influenced by n and p, and I want to maximize S by maximizing n. First, I recognize that S is fixed if n is minimal. For p=0, it seems that minimal nodes can indeed be zero. When dealing with p>0, the algorithm involves finding the maximum k with C(k,2) less than or equal to p. If k is zero, I should return 0 0, and if p is one, then k can be two.",
+    "response": "import sys, math\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nps = list(map(int, data))\n\nout_lines = []\nfor p in ps:\n    if p == 0:\n        out_lines.append(\"0 0\")\n        continue\n    # max k with C(k,2) <= p\n    k = int((1 + math.isqrt(1 + 8 * p)) // 2)\n    # adjust k to be safe\n    while k * (k - 1) // 2 > p:\n        k -= 1\n    while (k + 1) * k // 2 <= p:\n        k += 1\n    rem = p - k * (k - 1) // 2\n    if rem == 0:\n        n = k\n    else:\n        # find minimal t with C(t,2) >= rem\n        # solve t*(t-1)/2 >= rem\n        t = int((1 + math.isqrt(1 + 8 * rem)) // 2)\n        while t * (t - 1) // 2 < rem:\n            t += 1\n        while t > 0 and (t - 1) * (t - 2) // 2 >= rem:\n            t -= 1\n        n = k + t\n    unidirectional = (n * n - n - 2 * p) // 2\n    out_lines.append(f\"{n} {unidirectional}\")\n\nsys.stdout.write(\"\\n\".join(out_lines))",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys, math\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nps = list(map(int, data))\n\nout_lines = []\nfor p in ps:\n    if p == 0:\n        out_lines.append(\"0 0\")\n        continue\n    # max k with C(k,2) <= p\n    k = int((1 + math.isqrt(1 + 8 * p)) // 2)\n    # adjust k to be safe\n    while k * (k - 1) // 2 > p:\n        k -= 1\n    while (k + 1) * k // 2 <= p:\n        k += 1\n    rem = p - k * (k - 1) // 2\n    if rem == 0:\n        n = k\n    else:\n        # find minimal t with C(t,2) >= rem\n        # solve t*(t-1)/2 >= rem\n        t = int((1 + math.isqrt(1 + 8 * rem)) // 2)\n        while t * (t - 1) // 2 < rem:\n            t += 1\n        while t > 0 and (t - 1) * (t - 2) // 2 >= rem:\n            t -= 1\n        n = k + t\n    unidirectional = (n * n - n - 2 * p) // 2\n    out_lines.append(f\"{n} {unidirectional}\")\n\nsys.stdout.write(\"\\n\".join(out_lines))",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 495,
+        "completion_token_count": 1940,
+        "thoughts_token_count": 1600
+    }
+}

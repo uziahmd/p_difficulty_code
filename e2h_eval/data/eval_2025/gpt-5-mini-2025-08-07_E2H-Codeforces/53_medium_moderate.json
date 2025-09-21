@@ -1,0 +1,25 @@
+{
+    "start": 1758290644.139282,
+    "end": 1758290666.996745,
+    "start-formatted": "2025-09-19 23:04 KST",
+    "end-formatted": "2025-09-19 23:04 KST",
+    "gpu": 2,
+    "pid": 53,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# You're Given a String...\n\nYou're given a string of lower-case Latin letters. Your task is to find the length of its longest substring that can be met in the string at least twice. These occurrences can overlap (see sample test 2).\n\n## Input\nThe first input line contains the string. It's guaranteed, that the string is non-empty, consists of lower-case Latin letters, and its length doesn't exceed 100.\n\n## Output\nOutput one number — length of the longest substring that can be met in the string at least twice.\n\n## Example\n### Input\n['abcd', 'ababa', 'zzz']\n\n### Output\n['0', '3', '2']\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a moderately difficult question."
+        }
+    ],
+    "thought": "**Considering substring approach**\n\nI'm thinking about using a loop with an updated start index and maybe a suffix array or automaton, but for n <= 100, brute force should work just fine. My plan is to check each possible length from n-1 down to 1, identify repeating substrings, and track them with a set or dictionary. The complexity is O(n^2 * L), but that’s manageable. I’ll also need to handle edge cases and multiple test cases, ensuring I read input correctly without confusion.",
+    "response": "import sys, ast\n\ndef longest_repeating(s: str) -> int:\n    n = len(s)\n    for L in range(n - 1, 0, -1):\n        seen = set()\n        for i in range(0, n - L + 1):\n            sub = s[i:i+L]\n            if sub in seen:\n                return L\n            seen.add(sub)\n    return 0\n\ndata = sys.stdin.read()\nif not data:\n    sys.exit(0)\ndata_strip = data.strip()\n\nstrings = []\nused_list_syntax = False\nif data_strip.startswith('['):\n    try:\n        arr = ast.literal_eval(data_strip)\n        if isinstance(arr, list):\n            strings = [x for x in arr if isinstance(x, str)]\n            used_list_syntax = True\n        else:\n            strings = [str(arr)]\n    except Exception:\n        strings = [line.strip() for line in data.splitlines() if line.strip()]\nelse:\n    strings = [line.strip() for line in data.splitlines() if line.strip()]\n\nresults = [str(longest_repeating(s)) for s in strings]\n\nif used_list_syntax:\n    print(repr(results))\nelse:\n    print(\"\\n\".join(results))",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys, ast\n\ndef longest_repeating(s: str) -> int:\n    n = len(s)\n    for L in range(n - 1, 0, -1):\n        seen = set()\n        for i in range(0, n - L + 1):\n            sub = s[i:i+L]\n            if sub in seen:\n                return L\n            seen.add(sub)\n    return 0\n\ndata = sys.stdin.read()\nif not data:\n    sys.exit(0)\ndata_strip = data.strip()\n\nstrings = []\nused_list_syntax = False\nif data_strip.startswith('['):\n    try:\n        arr = ast.literal_eval(data_strip)\n        if isinstance(arr, list):\n            strings = [x for x in arr if isinstance(x, str)]\n            used_list_syntax = True\n        else:\n            strings = [str(arr)]\n    except Exception:\n        strings = [line.strip() for line in data.splitlines() if line.strip()]\nelse:\n    strings = [line.strip() for line in data.splitlines() if line.strip()]\n\nresults = [str(longest_repeating(s)) for s in strings]\n\nif used_list_syntax:\n    print(repr(results))\nelse:\n    print(\"\\n\".join(results))",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 232,
+        "completion_token_count": 1224,
+        "thoughts_token_count": 960
+    }
+}

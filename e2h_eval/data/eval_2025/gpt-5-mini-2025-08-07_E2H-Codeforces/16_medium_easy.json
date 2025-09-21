@@ -15,7 +15,7 @@
     "response": "```unknown\nimport sys\n\ndata = list(map(int, sys.stdin.read().split()))\nif not data:\n    sys.exit(0)\nit = iter(data)\nx1 = next(it); y1 = next(it)\nx2 = next(it); y2 = next(it)\nn = next(it)\ncnt = 0\nfor _ in range(n):\n    a = next(it); b = next(it); c = next(it)\n    s1 = a * x1 + b * y1 + c\n    s2 = a * x2 + b * y2 + c\n    if s1 < 0 < s2 or s2 < 0 < s1:\n        cnt += 1\nprint(cnt)\n```",
     "ground_truth": "N/A",
     "extracted_answer": "unknown\nimport sys\n\ndata = list(map(int, sys.stdin.read().split()))\nif not data:\n    sys.exit(0)\nit = iter(data)\nx1 = next(it); y1 = next(it)\nx2 = next(it); y2 = next(it)\nn = next(it)\ncnt = 0\nfor _ in range(n):\n    a = next(it); b = next(it); c = next(it)\n    s1 = a * x1 + b * y1 + c\n    s2 = a * x2 + b * y2 + c\n    if s1 < 0 < s2 or s2 < 0 < s1:\n        cnt += 1\nprint(cnt)",
-    "score": 0,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 608,
         "completion_token_count": 733,

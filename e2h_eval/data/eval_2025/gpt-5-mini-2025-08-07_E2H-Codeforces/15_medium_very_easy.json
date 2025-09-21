@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nn = int(data[0])\ns = data[1].strip()\n\nneed_less = [0] * (n + 1)\nneed_greater = [0] * (n + 1)\nneed_less[0] = 1\nneed_greater[0] = 1\nfor k in range(1, n + 1):\n    if s[k-1] == '0':\n        need_less[k] = need_less[k-1]\n        need_greater[k] = need_greater[k-1] * 2\n    else:\n        need_less[k] = need_less[k-1] * 2\n        need_greater[k] = need_greater[k-1]\n\ntotal_less = 0\ntotal_greater = 0\nfor i in range(n):\n    if s[i] == '1':\n        total_less += need_less[i]\n    else:\n        total_greater += need_greater[i]\n\nL = total_less + 1\nR = (1 << n) - total_greater\nif L > R:\n    print()\nelse:\n    print(\" \".join(str(x) for x in range(L, R + 1)))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nn = int(data[0])\ns = data[1].strip()\n\nneed_less = [0] * (n + 1)\nneed_greater = [0] * (n + 1)\nneed_less[0] = 1\nneed_greater[0] = 1\nfor k in range(1, n + 1):\n    if s[k-1] == '0':\n        need_less[k] = need_less[k-1]\n        need_greater[k] = need_greater[k-1] * 2\n    else:\n        need_less[k] = need_less[k-1] * 2\n        need_greater[k] = need_greater[k-1]\n\ntotal_less = 0\ntotal_greater = 0\nfor i in range(n):\n    if s[i] == '1':\n        total_less += need_less[i]\n    else:\n        total_greater += need_greater[i]\n\nL = total_less + 1\nR = (1 << n) - total_greater\nif L > R:\n    print()\nelse:\n    print(\" \".join(str(x) for x in range(L, R + 1)))",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 712,
         "completion_token_count": 5714,

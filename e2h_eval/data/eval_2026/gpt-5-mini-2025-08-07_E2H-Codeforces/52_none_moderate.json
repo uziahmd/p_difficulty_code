@@ -1,0 +1,25 @@
+{
+    "start": 1758294602.5744832,
+    "end": 1758294607.0630639,
+    "start-formatted": "2025-09-20 00:10 KST",
+    "end-formatted": "2025-09-20 00:10 KST",
+    "gpu": 2,
+    "pid": 52,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# New Year Candles\n\nVasily the Programmer loves romance, so this year he decided to illuminate his room with candles.Vasily has a candles.When Vasily lights up a new candle, it first burns for an hour and then it goes out. Vasily is smart, so he can make b went out candles into a new candle. As a result, this new candle can be used like any other new candle.Now Vasily wonders: for how many hours can his candles light up the room if he acts optimally well? Help him find this number.\n\n## Input\nThe single line contains two integers, a and b (1 ≤ a ≤ 1000; 2 ≤ b ≤ 1000).\n\n## Output\nPrint a single integer — the number of hours Vasily can light up the room for.\n\n## Example\n### Input\n['4 2', '6 3']\n\n### Output\n['7', '8']\n\n## Note\nConsider the first sample. For the first four hours Vasily lights up new candles, then he uses four burned out candles to make two new ones and lights them up. When these candles go out (stop burning), Vasily can make another candle. Overall, Vasily can light up the room for 7 hours.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a moderately difficult question."
+        }
+    ],
+    "thought": "Could not extract thought.",
+    "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\n\nout_lines = []\nit = iter(data)\npairs = []\n# If input contains pairs per line or single pair\nvals = list(map(int, data))\nif len(vals) == 2:\n    pairs = [tuple(vals)]\nelse:\n    # treat as multiple test cases given as consecutive pairs\n    if len(vals) % 2 != 0:\n        # in case first token is number of tests\n        t = vals[0]\n        rest = vals[1:]\n        for i in range(t):\n            a = rest[2*i]; b = rest[2*i+1]\n            pairs.append((a,b))\n    else:\n        for i in range(0, len(vals), 2):\n            pairs.append((vals[i], vals[i+1]))\n\nfor a, b in pairs:\n    hours = 0\n    candles = a\n    leftovers = 0\n    while candles > 0:\n        hours += candles\n        leftovers += candles\n        candles = leftovers // b\n        leftovers = leftovers % b\n    out_lines.append(str(hours))\n\nsys.stdout.write(\"\\n\".join(out_lines))",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\n\nout_lines = []\nit = iter(data)\npairs = []\n# If input contains pairs per line or single pair\nvals = list(map(int, data))\nif len(vals) == 2:\n    pairs = [tuple(vals)]\nelse:\n    # treat as multiple test cases given as consecutive pairs\n    if len(vals) % 2 != 0:\n        # in case first token is number of tests\n        t = vals[0]\n        rest = vals[1:]\n        for i in range(t):\n            a = rest[2*i]; b = rest[2*i+1]\n            pairs.append((a,b))\n    else:\n        for i in range(0, len(vals), 2):\n            pairs.append((vals[i], vals[i+1]))\n\nfor a, b in pairs:\n    hours = 0\n    candles = a\n    leftovers = 0\n    while candles > 0:\n        hours += candles\n        leftovers += candles\n        candles = leftovers // b\n        leftovers = leftovers % b\n    out_lines.append(str(hours))\n\nsys.stdout.write(\"\\n\".join(out_lines))",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 358,
+        "completion_token_count": 258,
+        "thoughts_token_count": 0
+    }
+}

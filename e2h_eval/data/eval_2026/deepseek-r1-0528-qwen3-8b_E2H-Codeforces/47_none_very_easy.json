@@ -1,0 +1,25 @@
+{
+    "start": 1758293036.033228,
+    "end": 1758293079.0137508,
+    "start-formatted": "2025-09-19 23:43 KST",
+    "end-formatted": "2025-09-19 23:44 KST",
+    "gpu": 2,
+    "pid": 47,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Neko does Maths\n\nNeko loves divisors. During the latest number theory lesson, he got an interesting exercise from his math teacher.Neko has two integers $$$a$$$ and $$$b$$$. His goal is to find a non-negative integer $$$k$$$ such that the least common multiple of $$$a+k$$$ and $$$b+k$$$ is the smallest possible. If there are multiple optimal integers $$$k$$$, he needs to choose the smallest one.Given his mathematical talent, Neko had no trouble getting Wrong Answer on this problem. Can you help him solve it?\n\n## Input\nThe only line contains two integers $$$a$$$ and $$$b$$$ ($$$1 \\le a, b \\le 10^9$$$).\n\n## Output\nPrint the smallest non-negative integer $$$k$$$ ($$$k \\ge 0$$$) such that the lowest common multiple of $$$a+k$$$ and $$$b+k$$$ is the smallest possible.If there are many possible integers $$$k$$$ giving the same value of the least common multiple, print the smallest one.\n\n## Example\n### Input\n['6 10', '21 31', '5 10']\n\n### Output\n['2', '9', '0']\n\n## Note\nIn the first test, one should choose $$$k = 2$$$, as the least common multiple of $$$6 + 2$$$ and $$$10 + 2$$$ is $$$24$$$, which is the smallest least common multiple possible.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a very easy question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nimport sys\nimport math\n\ndef find_optimal_k(a, b):\n    if a == b:\n        return 0  # LCM(a, a) is a, and k=0 is the smallest possible\n\n    # Let d = gcd(a, b)\n    d = math.gcd(a, b)\n    # Let x = a/d, y = b/d, then LCM(a, b) = (a*b)/d = d*x*y\n    # We want to minimize LCM(a + k, b + k) = (a + k)(b + k) / gcd(a + k, b + k)\n    # Let's denote c = a + k, d = b + k => d - c = b - a\n    # So we are looking for c such that gcd(c, c + (b - a)) is maximized\n    # Which is equivalent to finding c such that gcd(c, b - a) is maximized\n    # The maximum possible gcd is (b - a), so we want c to be a multiple of (b - a)\n    # So the smallest non-negative k is (b - a) - a if a < b, or (a - b) - b if b < a\n    # But since k >= 0, we need to choose the smallest non-negative k such that a + k is divisible by (b - a)\n\n    diff = abs(b - a)\n    if diff == 0:\n        return 0\n\n    # Find the smallest k >= 0 such that (a + k) % diff == 0\n    # That is, k = (-a) % diff\n    k = (-a) % diff\n    return k\n\ndef main():\n    a, b = map(int, sys.stdin.read().split())\n    print(find_optimal_k(a, b))\n\nif __name__ == \"__main__\":\n    main()\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\nimport math\n\ndef find_optimal_k(a, b):\n    if a == b:\n        return 0  # LCM(a, a) is a, and k=0 is the smallest possible\n\n    # Let d = gcd(a, b)\n    d = math.gcd(a, b)\n    # Let x = a/d, y = b/d, then LCM(a, b) = (a*b)/d = d*x*y\n    # We want to minimize LCM(a + k, b + k) = (a + k)(b + k) / gcd(a + k, b + k)\n    # Let's denote c = a + k, d = b + k => d - c = b - a\n    # So we are looking for c such that gcd(c, c + (b - a)) is maximized\n    # Which is equivalent to finding c such that gcd(c, b - a) is maximized\n    # The maximum possible gcd is (b - a), so we want c to be a multiple of (b - a)\n    # So the smallest non-negative k is (b - a) - a if a < b, or (a - b) - b if b < a\n    # But since k >= 0, we need to choose the smallest non-negative k such that a + k is divisible by (b - a)\n\n    diff = abs(b - a)\n    if diff == 0:\n        return 0\n\n    # Find the smallest k >= 0 such that (a + k) % diff == 0\n    # That is, k = (-a) % diff\n    k = (-a) % diff\n    return k\n\ndef main():\n    a, b = map(int, sys.stdin.read().split())\n    print(find_optimal_k(a, b))\n\nif __name__ == \"__main__\":\n    main()",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 406,
+        "completion_token_count": 404,
+        "thoughts_token_count": 0
+    }
+}

@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nn = int(data[0])\ns = data[1].strip()\n\nminLess = [0] * (n)\nminGreat = [0] * (n)\nminLess[0] = 1\nminGreat[0] = 1\nfor k in range(1, n):\n    if s[k-1] == '1':\n        minLess[k] = minLess[k-1] * 2\n    else:\n        minLess[k] = minLess[k-1]\n    if s[k-1] == '0':\n        minGreat[k] = minGreat[k-1] * 2\n    else:\n        minGreat[k] = minGreat[k-1]\n\nreqLess = 0\nreqGreat = 0\nfor i in range(1, n+1):\n    if s[i-1] == '1':\n        reqLess += minLess[i-1]\n    else:\n        reqGreat += minGreat[i-1]\n\nN = 1 << n\nL = reqLess + 1\nR = N - reqGreat\nif L > R:\n    print()\nelse:\n    print(\" \".join(str(x) for x in range(L, R+1)))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nn = int(data[0])\ns = data[1].strip()\n\nminLess = [0] * (n)\nminGreat = [0] * (n)\nminLess[0] = 1\nminGreat[0] = 1\nfor k in range(1, n):\n    if s[k-1] == '1':\n        minLess[k] = minLess[k-1] * 2\n    else:\n        minLess[k] = minLess[k-1]\n    if s[k-1] == '0':\n        minGreat[k] = minGreat[k-1] * 2\n    else:\n        minGreat[k] = minGreat[k-1]\n\nreqLess = 0\nreqGreat = 0\nfor i in range(1, n+1):\n    if s[i-1] == '1':\n        reqLess += minLess[i-1]\n    else:\n        reqGreat += minGreat[i-1]\n\nN = 1 << n\nL = reqLess + 1\nR = N - reqGreat\nif L > R:\n    print()\nelse:\n    print(\" \".join(str(x) for x in range(L, R+1)))",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 712,
         "completion_token_count": 3930,

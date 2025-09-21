@@ -1,0 +1,25 @@
+{
+    "start": 1758284916.9597952,
+    "end": 1758284924.7352,
+    "start-formatted": "2025-09-19 21:28 KST",
+    "end-formatted": "2025-09-19 21:28 KST",
+    "gpu": 2,
+    "pid": 53,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# You're Given a String...\n\nYou're given a string of lower-case Latin letters. Your task is to find the length of its longest substring that can be met in the string at least twice. These occurrences can overlap (see sample test 2).\n\n## Input\nThe first input line contains the string. It's guaranteed, that the string is non-empty, consists of lower-case Latin letters, and its length doesn't exceed 100.\n\n## Output\nOutput one number — length of the longest substring that can be met in the string at least twice.\n\n## Example\n### Input\n['abcd', 'ababa', 'zzz']\n\n### Output\n['0', '3', '2']\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a very easy question."
+        }
+    ],
+    "thought": "**Implementing search function**\n\nI need to find the second occurrence of something by first finding the first one at position p. Then, I’ll search again starting right after that point, at p+1. If I can't find it (so if the result isn’t -1), then I’m done. I’ll go through the lengths in descending order and break early if I find what I'm looking for. If there's no occurrence found, I’ll print 0. Each output for multiple input lines should be on its own line.",
+    "response": "import sys\n\ndata = [line.rstrip(\"\\n\") for line in sys.stdin.readlines()]\nif not data:\n    sys.exit(0)\n\nout_lines = []\nfor s in data:\n    if s == \"\":\n        out_lines.append(\"0\")\n        continue\n    n = len(s)\n    ans = 0\n    for L in range(n, 0, -1):\n        found = False\n        for i in range(0, n - L + 1):\n            sub = s[i:i+L]\n            first = s.find(sub)\n            if first != -1:\n                second = s.find(sub, first + 1)\n                if second != -1:\n                    ans = L\n                    found = True\n                    break\n        if found:\n            break\n    out_lines.append(str(ans))\n\nsys.stdout.write(\"\\n\".join(out_lines))",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndata = [line.rstrip(\"\\n\") for line in sys.stdin.readlines()]\nif not data:\n    sys.exit(0)\n\nout_lines = []\nfor s in data:\n    if s == \"\":\n        out_lines.append(\"0\")\n        continue\n    n = len(s)\n    ans = 0\n    for L in range(n, 0, -1):\n        found = False\n        for i in range(0, n - L + 1):\n            sub = s[i:i+L]\n            first = s.find(sub)\n            if first != -1:\n                second = s.find(sub, first + 1)\n                if second != -1:\n                    ans = L\n                    found = True\n                    break\n        if found:\n            break\n    out_lines.append(str(ans))\n\nsys.stdout.write(\"\\n\".join(out_lines))",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 232,
+        "completion_token_count": 438,
+        "thoughts_token_count": 256
+    }
+}

@@ -15,7 +15,7 @@
     "response": "```python\nn = int(input())\ngrid = [input().strip() for _ in range(n)]\n\n# Check if all characters on the diagonals are the same\ndiag1_char = grid[0][0]\ndiag2_char = grid[0][n-1]\n\nfor i in range(n):\n    if grid[i][i] != diag1_char or grid[i][n-1-i] != diag2_char:\n        print(\"NO\")\n        exit()\n\n# Check if all non-diagonal characters are the same and different from diagonal characters\nother_char = grid[0][1]\nfor i in range(n):\n    for j in range(n):\n        if i == j or i + j == n - 1:\n            continue\n        if grid[i][j] != other_char:\n            print(\"NO\")\n            exit()\n\n# Check if other_char is different from diagonal characters\nif other_char == diag1_char or other_char == diag2_char:\n    print(\"NO\")\nelse:\n    print(\"YES\")\n```",
     "ground_truth": "N/A",
     "extracted_answer": "n = int(input())\ngrid = [input().strip() for _ in range(n)]\n\n# Check if all characters on the diagonals are the same\ndiag1_char = grid[0][0]\ndiag2_char = grid[0][n-1]\n\nfor i in range(n):\n    if grid[i][i] != diag1_char or grid[i][n-1-i] != diag2_char:\n        print(\"NO\")\n        exit()\n\n# Check if all non-diagonal characters are the same and different from diagonal characters\nother_char = grid[0][1]\nfor i in range(n):\n    for j in range(n):\n        if i == j or i + j == n - 1:\n            continue\n        if grid[i][j] != other_char:\n            print(\"NO\")\n            exit()\n\n# Check if other_char is different from diagonal characters\nif other_char == diag1_char or other_char == diag2_char:\n    print(\"NO\")\nelse:\n    print(\"YES\")",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 439,
         "completion_token_count": 211,

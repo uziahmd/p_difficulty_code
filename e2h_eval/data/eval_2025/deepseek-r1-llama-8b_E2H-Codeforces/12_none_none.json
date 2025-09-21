@@ -16,7 +16,7 @@
     "response": "```python\nimport sys\n\ndef solve():\n    n, m = map(int, input().split())\n    a = list(map(int, input().split()))\n\n    last = 0\n    ans = 0\n    for i in range(m):\n        if a[i] > last:\n            ans += a[i] - last\n        else:\n            ans += n - last + a[i]\n        last = a[i]\n\n    ans += n - last\n    print(ans)\n\nif __name__ == \"__main__\":\n    t = 1\n    while t > 0:\n        solve()\n        t -= 1\n```\n\nThis script will read the input from standard input and print the desired output to standard output. The `solve` function implements the logic of the problem. It first reads the number of houses `n` and tasks `m`, then reads the house numbers for each task. It keeps track of the last house visited and calculates the minimum time needed to complete all tasks by iterating through the house numbers. Finally, it prints the result.",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndef solve():\n    n, m = map(int, input().split())\n    a = list(map(int, input().split()))\n\n    last = 0\n    ans = 0\n    for i in range(m):\n        if a[i] > last:\n            ans += a[i] - last\n        else:\n            ans += n - last + a[i]\n        last = a[i]\n\n    ans += n - last\n    print(ans)\n\nif __name__ == \"__main__\":\n    t = 1\n    while t > 0:\n        solve()\n        t -= 1",
-    "score": -1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 493,
         "completion_token_count": 217,

@@ -15,7 +15,7 @@
     "response": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    it = iter(data)\n    x1 = int(next(it)); y1 = int(next(it))\n    x2 = int(next(it)); y2 = int(next(it))\n    n = int(next(it))\n    cnt = 0\n    for _ in range(n):\n        a = int(next(it)); b = int(next(it)); c = int(next(it))\n        v1 = a*x1 + b*y1 + c\n        v2 = a*x2 + b*y2 + c\n        if v1 < 0 and v2 > 0 or v1 > 0 and v2 < 0:\n            cnt += 1\n    print(cnt)\n\nif __name__ == \"__main__\":\n    main()",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    it = iter(data)\n    x1 = int(next(it)); y1 = int(next(it))\n    x2 = int(next(it)); y2 = int(next(it))\n    n = int(next(it))\n    cnt = 0\n    for _ in range(n):\n        a = int(next(it)); b = int(next(it)); c = int(next(it))\n        v1 = a*x1 + b*y1 + c\n        v2 = a*x2 + b*y2 + c\n        if v1 < 0 and v2 > 0 or v1 > 0 and v2 < 0:\n            cnt += 1\n    print(cnt)\n\nif __name__ == \"__main__\":\n    main()",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 609,
         "completion_token_count": 373,

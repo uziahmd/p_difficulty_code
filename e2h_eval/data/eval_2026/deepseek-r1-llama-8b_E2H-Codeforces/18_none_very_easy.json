@@ -16,7 +16,7 @@
     "response": "```python\nimport sys\n\ndef solve():\n    m, a, b = map(int, input().split())\n    ans = 0\n    for i in range(m + 1):\n        j = min(i + a, m)\n        k = max(0, i - b)\n        if j >= k:\n            ans += (j - k + 1)\n    print(ans)\n\nif __name__ == \"__main__\":\n    t = 1\n    for _ in range(t):\n        solve()\n```\n\nThis script defines a function `solve` that reads the input, calculates the sum of `f(i)` for `i` from `0` to `m`, and prints the result. The main part of the script is a loop that calls `solve` once for each test case. Since there is only one test case in this problem, the loop only runs once.\n\nThe time complexity of this script is O(m), where m is the input number, because it needs to iterate over all numbers from 0 to m. The space complexity is O(1) because it uses a constant amount of space to store the variables.",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndef solve():\n    m, a, b = map(int, input().split())\n    ans = 0\n    for i in range(m + 1):\n        j = min(i + a, m)\n        k = max(0, i - b)\n        if j >= k:\n            ans += (j - k + 1)\n    print(ans)\n\nif __name__ == \"__main__\":\n    t = 1\n    for _ in range(t):\n        solve()",
-    "score": -1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 582,
         "completion_token_count": 235,

@@ -16,7 +16,7 @@
     "response": "```python\ndef get_winning_numbers(n, s):\n    count_ones = sum(1 for c in s if c == '1')\n    low = 2 ** (n - count_ones)\n    high = 2 ** n - 2 ** count_ones + 1\n\n    winning_numbers = []\n    for i in range(low, high + 1):\n        winning_numbers.append(i)\n\n    return ' '.join(map(str, winning_numbers))\n\n\ndef main():\n    n = int(input())\n    s = input()\n    print(get_winning_numbers(n, s))\n\n\nif __name__ == \"__main__\":\n    t = 1\n    for _ in range(t):\n        main()\n```\n\nThis script first calculates the number of phases where the team with a higher skill level wins. It then uses this information to determine the range of winning numbers and prints them out. The `get_winning_numbers` function takes the length of the string and the string itself as input and returns a string containing the winning numbers separated by spaces.",
     "ground_truth": "N/A",
     "extracted_answer": "def get_winning_numbers(n, s):\n    count_ones = sum(1 for c in s if c == '1')\n    low = 2 ** (n - count_ones)\n    high = 2 ** n - 2 ** count_ones + 1\n\n    winning_numbers = []\n    for i in range(low, high + 1):\n        winning_numbers.append(i)\n\n    return ' '.join(map(str, winning_numbers))\n\n\ndef main():\n    n = int(input())\n    s = input()\n    print(get_winning_numbers(n, s))\n\n\nif __name__ == \"__main__\":\n    t = 1\n    for _ in range(t):\n        main()",
-    "score": -1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 693,
         "completion_token_count": 213,

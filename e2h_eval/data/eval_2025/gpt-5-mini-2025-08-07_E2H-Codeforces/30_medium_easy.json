@@ -1,0 +1,25 @@
+{
+    "start": 1758291148.023799,
+    "end": 1758291190.2587318,
+    "start-formatted": "2025-09-19 23:12 KST",
+    "end-formatted": "2025-09-19 23:13 KST",
+    "gpu": 2,
+    "pid": 30,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# TV Game\n\nThere is a new TV game on BerTV. In this game two players get a number A consisting of 2n digits. Before each turn players determine who will make the next move. Each player should make exactly n moves. On it's turn i-th player takes the leftmost digit of A and appends it to his or her number Si. After that this leftmost digit is erased from A. Initially the numbers of both players (S1 and S2) are «empty». Leading zeroes in numbers A, S1, S2 are allowed. In the end of the game the first player gets S1 dollars, and the second gets S2 dollars.One day Homer and Marge came to play the game. They managed to know the number A beforehand. They want to find such sequence of their moves that both of them makes exactly n moves and which maximizes their total prize. Help them.\n\n## Input\nThe first line contains integer n (1 ≤ n ≤ 18). The second line contains integer A consisting of exactly 2n digits. This number can have leading zeroes.\n\n## Output\nOutput the line of 2n characters «H» and «M» — the sequence of moves of Homer and Marge, which gives them maximum possible total prize. Each player must make exactly n moves. If there are several solutions, output any of them.\n\n## Example\n### Input\n['2\\n1234', '2\\n9911']\n\n### Output\n['HHMM', 'HMHM']\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is an easy question."
+        }
+    ],
+    "thought": "Could not extract thought.",
+    "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nn = int(data[0])\nA = data[1].strip()\ndigits = [int(c) for c in A]\nN = 2 * n\npow10 = [10 ** (n - 1 - j) for j in range(n)]\n\nNEG = -10**30\ndp = [NEG] * (n + 1)\ndp[0] = 0\nparent = [[None] * (n + 1) for _ in range(N + 1)]\n\nfor pos in range(N):\n    d = digits[pos]\n    dp_next = [NEG] * (n + 1)\n    for h in range(0, n + 1):\n        if dp[h] == NEG:\n            continue\n        m = pos - h\n        # assign to Homer\n        if h < n:\n            newh = h + 1\n            val = dp[h] + d * pow10[h]\n            if val > dp_next[newh]:\n                dp_next[newh] = val\n                parent[pos + 1][newh] = (h, 'H')\n        # assign to Marge\n        if m < n:\n            newh = h\n            val = dp[h] + d * pow10[m]\n            if val > dp_next[newh]:\n                dp_next[newh] = val\n                parent[pos + 1][newh] = (h, 'M')\n    dp = dp_next\n\nres_chars = []\nh = n\npos = N\nwhile pos > 0:\n    prev = parent[pos][h]\n    if prev is None:\n        break\n    ph, ch = prev\n    res_chars.append(ch)\n    h = ph\n    pos -= 1\n\nres = ''.join(reversed(res_chars))\nprint(res)",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nn = int(data[0])\nA = data[1].strip()\ndigits = [int(c) for c in A]\nN = 2 * n\npow10 = [10 ** (n - 1 - j) for j in range(n)]\n\nNEG = -10**30\ndp = [NEG] * (n + 1)\ndp[0] = 0\nparent = [[None] * (n + 1) for _ in range(N + 1)]\n\nfor pos in range(N):\n    d = digits[pos]\n    dp_next = [NEG] * (n + 1)\n    for h in range(0, n + 1):\n        if dp[h] == NEG:\n            continue\n        m = pos - h\n        # assign to Homer\n        if h < n:\n            newh = h + 1\n            val = dp[h] + d * pow10[h]\n            if val > dp_next[newh]:\n                dp_next[newh] = val\n                parent[pos + 1][newh] = (h, 'H')\n        # assign to Marge\n        if m < n:\n            newh = h\n            val = dp[h] + d * pow10[m]\n            if val > dp_next[newh]:\n                dp_next[newh] = val\n                parent[pos + 1][newh] = (h, 'M')\n    dp = dp_next\n\nres_chars = []\nh = n\npos = N\nwhile pos > 0:\n    prev = parent[pos][h]\n    if prev is None:\n        break\n    ph, ch = prev\n    res_chars.append(ch)\n    h = ph\n    pos -= 1\n\nres = ''.join(reversed(res_chars))\nprint(res)",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 411,
+        "completion_token_count": 2576,
+        "thoughts_token_count": 2176
+    }
+}

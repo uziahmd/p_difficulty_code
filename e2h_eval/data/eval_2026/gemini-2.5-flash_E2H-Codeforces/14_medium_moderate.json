@@ -15,7 +15,7 @@
     "response": "```python\nimport sys\n\ndef count_trailing_zeroes(n):\n    count = 0\n    power_of_5 = 5\n    while n >= power_of_5:\n        count += n // power_of_5\n        power_of_5 *= 5\n    return count\n\ndef solve():\n    m = int(sys.stdin.readline())\n\n    low = 1\n    high = 5 * m # A sufficiently large upper bound for n (n is approximately 4m)\n    \n    ans_n = -1\n\n    while low <= high:\n        mid = (low + high) // 2\n        zeroes = count_trailing_zeroes(mid)\n\n        if zeroes >= m:\n            ans_n = mid\n            high = mid - 1\n        else:\n            low = mid + 1\n\n    if ans_n != -1 and count_trailing_zeroes(ans_n) == m:\n        results = [ans_n + i for i in range(5)]\n        print(5)\n        print(*results)\n    else:\n        print(0)\n\nsolve()\n\n```",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndef count_trailing_zeroes(n):\n    count = 0\n    power_of_5 = 5\n    while n >= power_of_5:\n        count += n // power_of_5\n        power_of_5 *= 5\n    return count\n\ndef solve():\n    m = int(sys.stdin.readline())\n\n    low = 1\n    high = 5 * m # A sufficiently large upper bound for n (n is approximately 4m)\n    \n    ans_n = -1\n\n    while low <= high:\n        mid = (low + high) // 2\n        zeroes = count_trailing_zeroes(mid)\n\n        if zeroes >= m:\n            ans_n = mid\n            high = mid - 1\n        else:\n            low = mid + 1\n\n    if ans_n != -1 and count_trailing_zeroes(ans_n) == m:\n        results = [ans_n + i for i in range(5)]\n        print(5)\n        print(*results)\n    else:\n        print(0)\n\nsolve()",
-    "score": 1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 404,
         "completion_token_count": 259,

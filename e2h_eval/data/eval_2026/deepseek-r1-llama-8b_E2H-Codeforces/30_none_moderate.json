@@ -1,0 +1,25 @@
+{
+    "start": 1758292173.2932136,
+    "end": 1758292207.6977909,
+    "start-formatted": "2025-09-19 23:29 KST",
+    "end-formatted": "2025-09-19 23:30 KST",
+    "gpu": 2,
+    "pid": 30,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# TV Game\n\nThere is a new TV game on BerTV. In this game two players get a number A consisting of 2n digits. Before each turn players determine who will make the next move. Each player should make exactly n moves. On it's turn i-th player takes the leftmost digit of A and appends it to his or her number Si. After that this leftmost digit is erased from A. Initially the numbers of both players (S1 and S2) are «empty». Leading zeroes in numbers A, S1, S2 are allowed. In the end of the game the first player gets S1 dollars, and the second gets S2 dollars.One day Homer and Marge came to play the game. They managed to know the number A beforehand. They want to find such sequence of their moves that both of them makes exactly n moves and which maximizes their total prize. Help them.\n\n## Input\nThe first line contains integer n (1 ≤ n ≤ 18). The second line contains integer A consisting of exactly 2n digits. This number can have leading zeroes.\n\n## Output\nOutput the line of 2n characters «H» and «M» — the sequence of moves of Homer and Marge, which gives them maximum possible total prize. Each player must make exactly n moves. If there are several solutions, output any of them.\n\n## Example\n### Input\n['2\\n1234', '2\\n9911']\n\n### Output\n['HHMM', 'HMHM']\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a moderately difficult question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nimport sys\n\ndef read_input():\n    n = int(input())\n    A = input()\n    return n, A\n\ndef calculate_prize(A, n):\n    prize = [0] * (n + 1)\n    for i in range(2 * n):\n        if i // 2 < n:\n            prize[i // 2 + 1] = max(prize[i // 2 + 1], prize[i // 2] + int(A[i]))\n        else:\n            prize[n] = max(prize[n], prize[i // 2] + int(A[i]))\n    return prize[n], prize\n\ndef reconstruct_sequence(n, A, prize, dp):\n    sequence = [''] * n\n    for i in range(2 * n - 1, -1, -1):\n        if i == 2 * n - 1:\n            sequence[-1] = 'H' if int(A[i]) > int(A[i + 1]) else 'M'\n        elif i // 2 < n and prize[i] == prize[i + 1] + int(A[i]):\n            sequence[-1] = 'H' if dp[i + 1][i // 2 + 1] else 'M'\n            sequence[-2] = 'M' if dp[i + 1][i // 2 + 1] else 'H'\n        else:\n            sequence[-1] = 'H'\n    return ''.join(sequence)\n\ndef main():\n    n, A = read_input()\n    prize, dp = calculate_prize(A, n)\n    print(reconstruct_sequence(n, A, prize, dp))\n\nif __name__ == \"__main__\":\n    main()\n```\n\nThis script first reads the input from standard input, then calculates the maximum prize that Homer and Marge can get. The `calculate_prize` function uses dynamic programming to build up a table of the maximum prize that Homer and Marge can get at each step. The `reconstruct_sequence` function then uses this table to reconstruct the optimal sequence of moves. Finally, the script prints out the optimal sequence of moves.\n\nNote that this script assumes that the input is well-formed and does not contain any errors. If you want to add error checking, you can use the `try`/`except` block to catch any exceptions that may be raised when reading the input or calculating the prize.",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndef read_input():\n    n = int(input())\n    A = input()\n    return n, A\n\ndef calculate_prize(A, n):\n    prize = [0] * (n + 1)\n    for i in range(2 * n):\n        if i // 2 < n:\n            prize[i // 2 + 1] = max(prize[i // 2 + 1], prize[i // 2] + int(A[i]))\n        else:\n            prize[n] = max(prize[n], prize[i // 2] + int(A[i]))\n    return prize[n], prize\n\ndef reconstruct_sequence(n, A, prize, dp):\n    sequence = [''] * n\n    for i in range(2 * n - 1, -1, -1):\n        if i == 2 * n - 1:\n            sequence[-1] = 'H' if int(A[i]) > int(A[i + 1]) else 'M'\n        elif i // 2 < n and prize[i] == prize[i + 1] + int(A[i]):\n            sequence[-1] = 'H' if dp[i + 1][i // 2 + 1] else 'M'\n            sequence[-2] = 'M' if dp[i + 1][i // 2 + 1] else 'H'\n        else:\n            sequence[-1] = 'H'\n    return ''.join(sequence)\n\ndef main():\n    n, A = read_input()\n    prize, dp = calculate_prize(A, n)\n    print(reconstruct_sequence(n, A, prize, dp))\n\nif __name__ == \"__main__\":\n    main()",
+    "score": -1,
+    "metadata": {
+        "prompt_token_count": 441,
+        "completion_token_count": 494,
+        "thoughts_token_count": 0
+    }
+}

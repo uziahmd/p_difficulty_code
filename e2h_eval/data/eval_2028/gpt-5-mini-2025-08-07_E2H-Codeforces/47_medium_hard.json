@@ -1,0 +1,25 @@
+{
+    "start": 1758290634.5588439,
+    "end": 1758290658.3377824,
+    "start-formatted": "2025-09-19 23:03 KST",
+    "end-formatted": "2025-09-19 23:04 KST",
+    "gpu": 2,
+    "pid": 47,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Neko does Maths\n\nNeko loves divisors. During the latest number theory lesson, he got an interesting exercise from his math teacher.Neko has two integers $$$a$$$ and $$$b$$$. His goal is to find a non-negative integer $$$k$$$ such that the least common multiple of $$$a+k$$$ and $$$b+k$$$ is the smallest possible. If there are multiple optimal integers $$$k$$$, he needs to choose the smallest one.Given his mathematical talent, Neko had no trouble getting Wrong Answer on this problem. Can you help him solve it?\n\n## Input\nThe only line contains two integers $$$a$$$ and $$$b$$$ ($$$1 \\le a, b \\le 10^9$$$).\n\n## Output\nPrint the smallest non-negative integer $$$k$$$ ($$$k \\ge 0$$$) such that the lowest common multiple of $$$a+k$$$ and $$$b+k$$$ is the smallest possible.If there are many possible integers $$$k$$$ giving the same value of the least common multiple, print the smallest one.\n\n## Example\n### Input\n['6 10', '21 31', '5 10']\n\n### Output\n['2', '9', '0']\n\n## Note\nIn the first test, one should choose $$$k = 2$$$, as the least common multiple of $$$6 + 2$$$ and $$$10 + 2$$$ is $$$24$$$, which is the smallest least common multiple possible.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a hard question."
+        }
+    ],
+    "thought": "**Analyzing a math problem**\n\nI'm looking at the \"Neko does Maths\" problem, where the goal is to minimize lcm(a+k, b+k). I can assume a <= b and set d = |a-b|. If a equals b, lcm = a+k is minimized at k=0. Otherwise, the gcd(a+k, b+k) divides d. Let’s find the divisors of d and compute k to ensure it’s non-negative. This approach uses Python’s int to handle large numbers, since the calculations could approach 4e18, which is manageable.",
+    "response": "import sys, math\n\ndef solve_pair(a, b):\n    if a == b:\n        return 0\n    if a > b:\n        a, b = b, a\n    d = b - a\n    best_k = 0\n    best_lcm = (a * b) // math.gcd(a, b)\n    i = 1\n    while i * i <= d:\n        if d % i == 0:\n            for g in (i, d // i):\n                k = (-a) % g\n                aa = a + k\n                bb = b + k\n                l = aa // math.gcd(aa, bb) * bb\n                if l < best_lcm or (l == best_lcm and k < best_k):\n                    best_lcm = l\n                    best_k = k\n        i += 1\n    return best_k\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    vals = list(map(int, data))\n    outputs = []\n    if len(vals) == 2:\n        outputs.append(str(solve_pair(vals[0], vals[1])))\n    else:\n        for i in range(0, len(vals), 2):\n            a = vals[i]\n            b = vals[i+1]\n            outputs.append(str(solve_pair(a, b)))\n    sys.stdout.write(\"\\n\".join(outputs))\n\nif __name__ == \"__main__\":\n    main()",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys, math\n\ndef solve_pair(a, b):\n    if a == b:\n        return 0\n    if a > b:\n        a, b = b, a\n    d = b - a\n    best_k = 0\n    best_lcm = (a * b) // math.gcd(a, b)\n    i = 1\n    while i * i <= d:\n        if d % i == 0:\n            for g in (i, d // i):\n                k = (-a) % g\n                aa = a + k\n                bb = b + k\n                l = aa // math.gcd(aa, bb) * bb\n                if l < best_lcm or (l == best_lcm and k < best_k):\n                    best_lcm = l\n                    best_k = k\n        i += 1\n    return best_k\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    vals = list(map(int, data))\n    outputs = []\n    if len(vals) == 2:\n        outputs.append(str(solve_pair(vals[0], vals[1])))\n    else:\n        for i in range(0, len(vals), 2):\n            a = vals[i]\n            b = vals[i+1]\n            outputs.append(str(solve_pair(a, b)))\n    sys.stdout.write(\"\\n\".join(outputs))\n\nif __name__ == \"__main__\":\n    main()",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 406,
+        "completion_token_count": 1083,
+        "thoughts_token_count": 768
+    }
+}

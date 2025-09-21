@@ -15,7 +15,7 @@
     "response": "I don't have enough details to reconstruct the exact rules from the description and samples. Could you please either\n- paste the original problem statement (or a link), or\n- give the precise formal rules that map a golorp name to the constraints and what it means for a sequence to fit,\n\nso I can implement a correct solver?",
     "ground_truth": "N/A",
     "extracted_answer": "I don't have enough details to reconstruct the exact rules from the description and samples. Could you please either\n- paste the original problem statement (or a link), or\n- give the precise formal rules that map a golorp name to the constraints and what it means for a sequence to fit,\n\nso I can implement a correct solver?",
-    "score": 1,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 503,
         "completion_token_count": 4553,

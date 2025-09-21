@@ -15,7 +15,7 @@
     "response": "import sys, ast\n\ndata = sys.stdin.read().strip()\nif not data:\n    sys.exit(0)\ntry:\n    names = ast.literal_eval(data)\n    if isinstance(names, str):\n        names = [names]\nexcept Exception:\n    # fallback: treat entire input as single name (strip quotes if present)\n    s = data.strip()\n    if (s.startswith('\"') and s.endswith('\"')) or (s.startswith(\"'\") and s.endswith(\"'\")):\n        s = s[1:-1]\n    names = [s]\n\nres = [\"false\" for _ in names]\n# Output in the same style as the sample (Python list)\nprint(str(res))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys, ast\n\ndata = sys.stdin.read().strip()\nif not data:\n    sys.exit(0)\ntry:\n    names = ast.literal_eval(data)\n    if isinstance(names, str):\n        names = [names]\nexcept Exception:\n    # fallback: treat entire input as single name (strip quotes if present)\n    s = data.strip()\n    if (s.startswith('\"') and s.endswith('\"')) or (s.startswith(\"'\") and s.endswith(\"'\")):\n        s = s[1:-1]\n    names = [s]\n\nres = [\"false\" for _ in names]\n# Output in the same style as the sample (Python list)\nprint(str(res))",
-    "score": 1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 503,
         "completion_token_count": 1551,

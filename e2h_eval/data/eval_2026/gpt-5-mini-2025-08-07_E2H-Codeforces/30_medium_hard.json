@@ -1,0 +1,25 @@
+{
+    "start": 1758290889.6018283,
+    "end": 1758290918.58322,
+    "start-formatted": "2025-09-19 23:08 KST",
+    "end-formatted": "2025-09-19 23:08 KST",
+    "gpu": 2,
+    "pid": 30,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# TV Game\n\nThere is a new TV game on BerTV. In this game two players get a number A consisting of 2n digits. Before each turn players determine who will make the next move. Each player should make exactly n moves. On it's turn i-th player takes the leftmost digit of A and appends it to his or her number Si. After that this leftmost digit is erased from A. Initially the numbers of both players (S1 and S2) are «empty». Leading zeroes in numbers A, S1, S2 are allowed. In the end of the game the first player gets S1 dollars, and the second gets S2 dollars.One day Homer and Marge came to play the game. They managed to know the number A beforehand. They want to find such sequence of their moves that both of them makes exactly n moves and which maximizes their total prize. Help them.\n\n## Input\nThe first line contains integer n (1 ≤ n ≤ 18). The second line contains integer A consisting of exactly 2n digits. This number can have leading zeroes.\n\n## Output\nOutput the line of 2n characters «H» and «M» — the sequence of moves of Homer and Marge, which gives them maximum possible total prize. Each player must make exactly n moves. If there are several solutions, output any of them.\n\n## Example\n### Input\n['2\\n1234', '2\\n9911']\n\n### Output\n['HHMM', 'HMHM']\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a hard question."
+        }
+    ],
+    "thought": "**Evaluating player strategies**\n\nI'm trying to maximize the sum of numbers by assigning positions to players. The sum involves the digits chosen by Homer and Marge, creating two n-digit numbers from a total of 2n digits. I'm thinking about using dynamic programming as I process the digits, choosing which player takes each digit and considering weights based on position in their number. For Homer, each digit he takes has a specific weight related to its position, which adds complexity.",
+    "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nn = int(data[0])\nA = data[1].strip()\ndigits = [int(c) for c in A]\n# Precompute powers of 10\npow10 = [10 ** k for k in range(n)]\n# dp[i][j] = best total when Homer has taken i digits, Marge j digits\ndp = [[0] * (n + 1) for _ in range(n + 1)]\nchoice = [[''] * (n + 1) for _ in range(n + 1)]\nfor i in range(n, -1, -1):\n    for j in range(n, -1, -1):\n        if i == n and j == n:\n            dp[i][j] = 0\n            continue\n        pos = i + j\n        best = None\n        bestc = ''\n        if i < n:\n            val = dp[i + 1][j] + digits[pos] * pow10[n - 1 - i]\n            best = val\n            bestc = 'H'\n        if j < n:\n            val2 = dp[i][j + 1] + digits[pos] * pow10[n - 1 - j]\n            if best is None or val2 > best:\n                best = val2\n                bestc = 'M'\n        dp[i][j] = best\n        choice[i][j] = bestc\n\n# Reconstruct sequence\ni = j = 0\nres = []\nwhile i + j < 2 * n:\n    c = choice[i][j]\n    res.append(c)\n    if c == 'H':\n        i += 1\n    else:\n        j += 1\n\nprint(''.join(res))",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nn = int(data[0])\nA = data[1].strip()\ndigits = [int(c) for c in A]\n# Precompute powers of 10\npow10 = [10 ** k for k in range(n)]\n# dp[i][j] = best total when Homer has taken i digits, Marge j digits\ndp = [[0] * (n + 1) for _ in range(n + 1)]\nchoice = [[''] * (n + 1) for _ in range(n + 1)]\nfor i in range(n, -1, -1):\n    for j in range(n, -1, -1):\n        if i == n and j == n:\n            dp[i][j] = 0\n            continue\n        pos = i + j\n        best = None\n        bestc = ''\n        if i < n:\n            val = dp[i + 1][j] + digits[pos] * pow10[n - 1 - i]\n            best = val\n            bestc = 'H'\n        if j < n:\n            val2 = dp[i][j + 1] + digits[pos] * pow10[n - 1 - j]\n            if best is None or val2 > best:\n                best = val2\n                bestc = 'M'\n        dp[i][j] = best\n        choice[i][j] = bestc\n\n# Reconstruct sequence\ni = j = 0\nres = []\nwhile i + j < 2 * n:\n    c = choice[i][j]\n    res.append(c)\n    if c == 'H':\n        i += 1\n    else:\n        j += 1\n\nprint(''.join(res))",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 411,
+        "completion_token_count": 1475,
+        "thoughts_token_count": 1088
+    }
+}

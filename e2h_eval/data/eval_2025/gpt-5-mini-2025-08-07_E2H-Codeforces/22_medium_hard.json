@@ -1,0 +1,25 @@
+{
+    "start": 1758290636.9807663,
+    "end": 1758290649.9946907,
+    "start-formatted": "2025-09-19 23:03 KST",
+    "end-formatted": "2025-09-19 23:04 KST",
+    "gpu": 2,
+    "pid": 22,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Marks\n\nVasya, or Mr. Vasily Petrov is a dean of a department in a local university. After the winter exams he got his hands on a group's gradebook.Overall the group has n students. They received marks for m subjects. Each student got a mark from 1 to 9 (inclusive) for each subject.Let's consider a student the best at some subject, if there is no student who got a higher mark for this subject. Let's consider a student successful, if there exists a subject he is the best at.Your task is to find the number of successful students in the group.\n\n## Input\nThe first input line contains two integers n and m (1 ≤ n, m ≤ 100) — the number of students and the number of subjects, correspondingly. Next n lines each containing m characters describe the gradebook. Each character in the gradebook is a number from 1 to 9. Note that the marks in a rows are not sepatated by spaces.\n\n## Output\nPrint the single number — the number of successful students in the given group.\n\n## Example\n### Input\n['3 3\\n223\\n232\\n112', '3 5\\n91728\\n11828\\n11111']\n\n### Output\n['2', '3']\n\n## Note\nIn the first sample test the student number 1 is the best at subjects 1 and 3, student 2 is the best at subjects 1 and 2, but student 3 isn't the best at any subject.In the second sample test each student is the best at at least one subject.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a hard question."
+        }
+    ],
+    "thought": "**Crafting Python code**\n\nI need to address the edge cases, like whether lines may contain extra spaces. In Python, I can calculate column maxima and determine success conditions. I’ll implement that without comments since the focus is on the code snippet itself. I also need to handle possible blank lines while reading input. Using `sys.stdin.read().split()` will help, allowing me to split by whitespace and correctly identify the numeric tokens along with the grade strings. That should efficiently manage the valid input!",
+    "response": "import sys\n\ndata = sys.stdin.read().split()\nif not data:\n    sys.exit(0)\nn = int(data[0]); m = int(data[1])\nrows = data[2:2+n]\ncol_max = [max(rows[i][j] for i in range(n)) for j in range(m)]\nsuccessful = 0\nfor i in range(n):\n    for j in range(m):\n        if rows[i][j] == col_max[j]:\n            successful += 1\n            break\nprint(successful)",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndata = sys.stdin.read().split()\nif not data:\n    sys.exit(0)\nn = int(data[0]); m = int(data[1])\nrows = data[2:2+n]\ncol_max = [max(rows[i][j] for i in range(n)) for j in range(m)]\nsuccessful = 0\nfor i in range(n):\n    for j in range(m):\n        if rows[i][j] == col_max[j]:\n            successful += 1\n            break\nprint(successful)",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 427,
+        "completion_token_count": 499,
+        "thoughts_token_count": 384
+    }
+}

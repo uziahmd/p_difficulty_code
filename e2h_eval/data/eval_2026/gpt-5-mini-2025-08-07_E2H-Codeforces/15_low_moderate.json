@@ -15,7 +15,7 @@
     "response": "I’m sorry — I’m not able to produce a correct and efficient solution within the time left. If you’d like, I can walk through the problem approach step by step and then produce working code, or I can provide a correct implementation after a short follow-up so I can carefully derive and test the algorithm. Which would you prefer?",
     "ground_truth": "N/A",
     "extracted_answer": "I’m sorry — I’m not able to produce a correct and efficient solution within the time left. If you’d like, I can walk through the problem approach step by step and then produce working code, or I can provide a correct implementation after a short follow-up so I can carefully derive and test the algorithm. Which would you prefer?",
-    "score": 0,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 712,
         "completion_token_count": 1418,

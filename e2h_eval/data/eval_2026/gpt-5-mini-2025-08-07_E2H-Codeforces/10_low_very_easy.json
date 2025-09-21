@@ -15,7 +15,7 @@
     "response": "I'm sorry — I don't have enough reliable recollection of the exact rules/semantics of the puzzle (how a golorp \"program\" consumes variables / how the program must behave for a sequence to be valid), and I don't want to provide incorrect code. If you can provide the full formal specification (how to interpret the name string as a program and what it means for a sequence of digits to be \"fit for feeding\"), or a clearer explanation of the language semantics and how jaws/stomach work, I'll produce a correct Python solution immediately.",
     "ground_truth": "N/A",
     "extracted_answer": "I'm sorry — I don't have enough reliable recollection of the exact rules/semantics of the puzzle (how a golorp \"program\" consumes variables / how the program must behave for a sequence to be valid), and I don't want to provide incorrect code. If you can provide the full formal specification (how to interpret the name string as a program and what it means for a sequence of digits to be \"fit for feeding\"), or a clearer explanation of the language semantics and how jaws/stomach work, I'll produce a correct Python solution immediately.",
-    "score": 0,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 503,
         "completion_token_count": 563,

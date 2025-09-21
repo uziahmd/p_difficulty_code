@@ -1,0 +1,25 @@
+{
+    "start": 1758292062.8601086,
+    "end": 1758292090.6290271,
+    "start-formatted": "2025-09-19 23:27 KST",
+    "end-formatted": "2025-09-19 23:28 KST",
+    "gpu": 2,
+    "pid": 52,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# New Year Candles\n\nVasily the Programmer loves romance, so this year he decided to illuminate his room with candles.Vasily has a candles.When Vasily lights up a new candle, it first burns for an hour and then it goes out. Vasily is smart, so he can make b went out candles into a new candle. As a result, this new candle can be used like any other new candle.Now Vasily wonders: for how many hours can his candles light up the room if he acts optimally well? Help him find this number.\n\n## Input\nThe single line contains two integers, a and b (1 ≤ a ≤ 1000; 2 ≤ b ≤ 1000).\n\n## Output\nPrint a single integer — the number of hours Vasily can light up the room for.\n\n## Example\n### Input\n['4 2', '6 3']\n\n### Output\n['7', '8']\n\n## Note\nConsider the first sample. For the first four hours Vasily lights up new candles, then he uses four burned out candles to make two new ones and lights them up. When these candles go out (stop burning), Vasily can make another candle. Overall, Vasily can light up the room for 7 hours.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a hard question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\ndef new_year_candles(a, b):\n    \"\"\"\n    Calculate the total hours that Vasily can light up the room for.\n\n    :param a: The initial number of candles.\n    :param b: The number of candles that can be made from one burned out candle.\n    :return: The total hours that Vasily can light up the room for.\n    \"\"\"\n    # Calculate the initial hours\n    hours = a\n    \n    # Calculate the additional hours\n    while a >= b:\n        # Calculate the additional hours from the burned out candles\n        additional_hours = (a // b) + (a % b)\n        \n        # Update the total hours\n        hours += additional_hours\n        \n        # Update the remaining candles\n        a = additional_hours + ((a // b) * (b - 1))\n    \n    return hours\n\n# Read the input from standard input\ninput_str = input()\n\n# Split the input into two integers\na, b = map(int, input_str.split())\n\n# Print the result to standard output\nprint(new_year_candles(a, b))\n```\n\nThis script reads an input string from the standard input, splits it into two integers `a` and `b`, and then calls the `new_year_candles` function with these values. The function calculates the total hours that Vasily can light up the room for and returns this value. The result is then printed to the standard output.",
+    "ground_truth": "N/A",
+    "extracted_answer": "def new_year_candles(a, b):\n    \"\"\"\n    Calculate the total hours that Vasily can light up the room for.\n\n    :param a: The initial number of candles.\n    :param b: The number of candles that can be made from one burned out candle.\n    :return: The total hours that Vasily can light up the room for.\n    \"\"\"\n    # Calculate the initial hours\n    hours = a\n    \n    # Calculate the additional hours\n    while a >= b:\n        # Calculate the additional hours from the burned out candles\n        additional_hours = (a // b) + (a % b)\n        \n        # Update the total hours\n        hours += additional_hours\n        \n        # Update the remaining candles\n        a = additional_hours + ((a // b) * (b - 1))\n    \n    return hours\n\n# Read the input from standard input\ninput_str = input()\n\n# Split the input into two integers\na, b = map(int, input_str.split())\n\n# Print the result to standard output\nprint(new_year_candles(a, b))",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 386,
+        "completion_token_count": 294,
+        "thoughts_token_count": 0
+    }
+}

@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = [line.rstrip('\\n') for line in sys.stdin.read().splitlines() if line.strip() != '']\nif not data:\n    sys.exit(0)\nn = int(data[0])\ngrid = data[1:1+n]\n\ndiag_char = grid[0][0]\nother_char = grid[0][n-1]\nok = diag_char != other_char\n\nfor i in range(n):\n    if len(grid[i]) != n:\n        ok = False\n        break\n    for j in range(n):\n        if i == j or i + j == n - 1:\n            if grid[i][j] != diag_char:\n                ok = False\n                break\n        else:\n            if grid[i][j] != other_char:\n                ok = False\n                break\n    if not ok:\n        break\n\nprint(\"YES\" if ok else \"NO\")",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = [line.rstrip('\\n') for line in sys.stdin.read().splitlines() if line.strip() != '']\nif not data:\n    sys.exit(0)\nn = int(data[0])\ngrid = data[1:1+n]\n\ndiag_char = grid[0][0]\nother_char = grid[0][n-1]\nok = diag_char != other_char\n\nfor i in range(n):\n    if len(grid[i]) != n:\n        ok = False\n        break\n    for j in range(n):\n        if i == j or i + j == n - 1:\n            if grid[i][j] != diag_char:\n                ok = False\n                break\n        else:\n            if grid[i][j] != other_char:\n                ok = False\n                break\n    if not ok:\n        break\n\nprint(\"YES\" if ok else \"NO\")",
-    "score": 1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 424,
         "completion_token_count": 320,

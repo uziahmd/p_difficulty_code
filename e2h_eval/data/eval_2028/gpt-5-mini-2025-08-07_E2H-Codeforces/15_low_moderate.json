@@ -15,7 +15,7 @@
     "response": "I'm sorry — I couldn't produce a correct and efficient solution within the time available.",
     "ground_truth": "N/A",
     "extracted_answer": "I'm sorry — I couldn't produce a correct and efficient solution within the time available.",
-    "score": 0,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 712,
         "completion_token_count": 1558,

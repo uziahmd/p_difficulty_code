@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nn = int(data[0])\ns = data[1].strip()\n\nL = [0] * (n + 1)\nR = [0] * (n + 1)\nL[0] = 1\nR[0] = 1\nfor d in range(1, n + 1):\n    if s[d-1] == '0':\n        L[d] = L[d-1]\n        R[d] = 2 * R[d-1]\n    else:\n        L[d] = 2 * L[d-1]\n        R[d] = R[d-1]\n\nA = 0\nB = 0\nfor i in range(1, n + 1):\n    if s[i-1] == '1':\n        A += L[i-1]\n    else:\n        B += R[i-1]\n\nN = 1 << n\nlow = A + 1\nhigh = N - B\nlow = max(low, 1)\nhigh = min(high, N)\nif low > high:\n    print()\nelse:\n    print(\" \".join(str(x) for x in range(low, high + 1)))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nn = int(data[0])\ns = data[1].strip()\n\nL = [0] * (n + 1)\nR = [0] * (n + 1)\nL[0] = 1\nR[0] = 1\nfor d in range(1, n + 1):\n    if s[d-1] == '0':\n        L[d] = L[d-1]\n        R[d] = 2 * R[d-1]\n    else:\n        L[d] = 2 * L[d-1]\n        R[d] = R[d-1]\n\nA = 0\nB = 0\nfor i in range(1, n + 1):\n    if s[i-1] == '1':\n        A += L[i-1]\n    else:\n        B += R[i-1]\n\nN = 1 << n\nlow = A + 1\nhigh = N - B\nlow = max(low, 1)\nhigh = min(high, N)\nif low > high:\n    print()\nelse:\n    print(\" \".join(str(x) for x in range(low, high + 1)))",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 711,
         "completion_token_count": 6288,

@@ -1,360 +1,1080 @@
-{"task_id": "E2H_CF1031A_low_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF1031A_low_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF1031A_low_moderate", "status": "passed", "error": null}
-{"task_id": "E2H_CF1031A_low_none", "status": "passed", "error": null}
-{"task_id": "E2H_CF1031A_low_very_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF1031A_low_very_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF1031A_medium_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF1031A_medium_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF1031A_medium_moderate", "status": "passed", "error": null}
-{"task_id": "E2H_CF1031A_medium_none", "status": "passed", "error": null}
-{"task_id": "E2H_CF1031A_medium_very_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF1031A_medium_very_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF1031A_none_easy", "status": "failed", "error": "Wrong output for test case 1: expected '8', got '17'"}
-{"task_id": "E2H_CF1031A_none_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmp76sporjl.py\", line 15, in <module>\n    for _ in range(int(input())):\nValueError: invalid literal for int() with base 10: '3 3 1\\r'\n"}
-{"task_id": "E2H_CF1031A_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '8', got '21'"}
-{"task_id": "E2H_CF1031A_none_none", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpxx0ihph0.py\", line 14, in <module>\n    for _ in range(int(input())):\nValueError: invalid literal for int() with base 10: '3 3 1\\r'\n"}
-{"task_id": "E2H_CF1031A_none_very_easy", "status": "failed", "error": "  File \"/tmp/tmpub7m12rw.py\", line 47\n    global total_cells\n    ^^^^^^^^^^^^^^^^^^\nSyntaxError: name 'total_cells' is used prior to global declaration\n"}
-{"task_id": "E2H_CF1031A_none_very_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpylik_mti.py\", line 15, in <module>\n    for _ in range(int(input())):\nValueError: invalid literal for int() with base 10: '3 3 1\\r'\n"}
-{"task_id": "E2H_CF404A_low_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF404A_low_hard", "status": "failed", "error": "Wrong output for test case 2: expected 'YES', got 'NO'"}
-{"task_id": "E2H_CF404A_low_moderate", "status": "passed", "error": null}
-{"task_id": "E2H_CF404A_low_none", "status": "passed", "error": null}
-{"task_id": "E2H_CF404A_low_very_easy", "status": "failed", "error": "Wrong output for test case 2: expected 'YES', got 'NO'"}
-{"task_id": "E2H_CF404A_low_very_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF404A_medium_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF404A_medium_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF404A_medium_moderate", "status": "passed", "error": null}
-{"task_id": "E2H_CF404A_medium_none", "status": "passed", "error": null}
-{"task_id": "E2H_CF404A_medium_very_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF404A_medium_very_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF404A_none_easy", "status": "failed", "error": "Wrong output for test case 2: expected 'YES', got 'NO'"}
-{"task_id": "E2H_CF404A_none_hard", "status": "failed", "error": "Wrong output for test case 2: expected 'YES', got 'NO'"}
-{"task_id": "E2H_CF404A_none_moderate", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmphadagpqx.py\", line 32, in <module>\n    main()\n  File \"/tmp/tmphadagpqx.py\", line 27, in main\n    result = check_x(n, grid)\n  File \"/tmp/tmphadagpqx.py\", line 4, in check_x\n    raise ValueError(\"Invalid grid size\")\nValueError: Invalid grid size\n"}
-{"task_id": "E2H_CF404A_none_none", "status": "failed", "error": "Wrong output for test case 2: expected 'YES', got 'NO'"}
-{"task_id": "E2H_CF404A_none_very_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpfmfjv24n.py\", line 27, in <module>\n    print(check_x(n, []))\n  File \"/tmp/tmpfmfjv24n.py\", line 4, in check_x\n    row = input()\nEOFError: EOF when reading a line\n"}
-{"task_id": "E2H_CF404A_none_very_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpb0ytohjg.py\", line 34, in <module>\n    main()\n  File \"/tmp/tmpb0ytohjg.py\", line 30, in main\n    print(check_x(n, grid))\n  File \"/tmp/tmpb0ytohjg.py\", line 15, in check_x\n    other_squares = [cell for i in range(n) for j in range(n) if i != j and i != n-j-1]\n  File \"/tmp/tmpb0ytohjg.py\", line 15, in <listcomp>\n    other_squares = [cell for i in range(n) for j in range(n) if i != j and i != n-j-1]\nNameError: name 'cell' is not defined\n"}
-{"task_id": "E2H_CF492B_low_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF492B_low_hard", "status": "failed", "error": "Wrong output for test case 2: expected '2.0000000000', got '1.5000000000'"}
-{"task_id": "E2H_CF492B_low_moderate", "status": "failed", "error": "Wrong output for test case 3: expected '22258199.5000000000', got '22258199.4999999851'"}
-{"task_id": "E2H_CF492B_low_none", "status": "failed", "error": "Wrong output for test case 2: expected '2.0000000000', got '1.5000000000'"}
-{"task_id": "E2H_CF492B_low_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '2.5000000000', got '14.0000000000'"}
-{"task_id": "E2H_CF492B_low_very_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF492B_medium_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF492B_medium_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF492B_medium_moderate", "status": "passed", "error": null}
-{"task_id": "E2H_CF492B_medium_none", "status": "passed", "error": null}
-{"task_id": "E2H_CF492B_medium_very_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF492B_medium_very_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF492B_none_easy", "status": "failed", "error": "Wrong output for test case 1: expected '2.5000000000', got '14.999999999126885'"}
-{"task_id": "E2H_CF492B_none_hard", "status": "failed", "error": "Wrong output for test case 1: expected '2.5000000000', got '1.0350983390'"}
-{"task_id": "E2H_CF492B_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '2.5000000000', got '14.999999999126885'"}
-{"task_id": "E2H_CF492B_none_none", "status": "failed", "error": "Wrong output for test case 1: expected '2.5000000000', got '2.0000000000'"}
-{"task_id": "E2H_CF492B_none_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '2.5000000000', got '14.999999999126885'"}
-{"task_id": "E2H_CF492B_none_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '2.5000000000', got '6.000000000349246'"}
-{"task_id": "E2H_CF173A_low_easy", "status": "failed", "error": "Wrong output for test case 1: expected '3 2', got '2 3'"}
-{"task_id": "E2H_CF173A_low_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpaxlflyvt.py\", line 57, in <module>\n    main()\n  File \"/tmp/tmpaxlflyvt.py\", line 39, in main\n    a_char = A[i]\nIndexError: string index out of range\n"}
-{"task_id": "E2H_CF173A_low_moderate", "status": "passed", "error": null}
-{"task_id": "E2H_CF173A_low_none", "status": "passed", "error": null}
-{"task_id": "E2H_CF173A_low_very_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF173A_low_very_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF173A_medium_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF173A_medium_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF173A_medium_moderate", "status": "failed", "error": "Wrong output for test case 3: expected '7 8', got '5 10'"}
-{"task_id": "E2H_CF173A_medium_none", "status": "failed", "error": "Wrong output for test case 1: expected '3 2', got '7 6'"}
-{"task_id": "E2H_CF173A_medium_very_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF173A_medium_very_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF173A_none_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpaeagefhw.py\", line 49, in <module>\n    solve()\n  File \"/tmp/tmpaeagefhw.py\", line 29, in solve\n    (input()[nikephoros_index] == 'P' and input()[polycarpus_index] == 'R') or\nEOFError: EOF when reading a line\n"}
-{"task_id": "E2H_CF173A_none_hard", "status": "failed", "error": "Wrong output for test case 1: expected '3 2', got '2 3'"}
-{"task_id": "E2H_CF173A_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '3 2', got '2 1'"}
-{"task_id": "E2H_CF173A_none_none", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpp02kxykv.py\", line 45, in <module>\n    solve()\n  File \"/tmp/tmpp02kxykv.py\", line 34, in solve\n    if input()[nikephoros_index] == 'R' and input()[polycarpus_index] == 'S':\nEOFError: EOF when reading a line\n"}
-{"task_id": "E2H_CF173A_none_very_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpizqeezxl.py\", line 41, in <module>\n    rock_paper_scissors()\n  File \"/tmp/tmpizqeezxl.py\", line 31, in rock_paper_scissors\n    if sequence_a[i] != sequence_b[i]:\nIndexError: string index out of range\n"}
-{"task_id": "E2H_CF173A_none_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '3 2', got '2 1'"}
-{"task_id": "E2H_CF1141D_low_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got ''"}
-{"task_id": "E2H_CF1141D_low_hard", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '5\n4\n2 2\n3 1\n4 9\n7 8'"}
-{"task_id": "E2H_CF1141D_low_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '17\n2 2\n3 1\n4 9\n9 10\n7 8\n1 1\n2 2\n3 3\n4 4\n5 5\n6 6\n7 7\n8 8\n9 9\n10 10'"}
-{"task_id": "E2H_CF1141D_low_none", "status": "failed", "error": "  File \"/tmp/tmpojwm7xnr.py\", line 64\n    question_left = l_counts.get('?', 0) - (used_left[25] if 'a'... No, wait: after processing non-? colors, the ? counts remain as they were except when they were part of same-color pairs. Wait, no: same-color pairs only involve specific colors, not ?. So after step 1, l_counts['?'] remains as it was initially, minus any same-color pairs where both were '?'. Wait, no: same-color pairs for '?' would have been handled in step 2, but in our initial code, we didn't process '?' yet.\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ^\nSyntaxError: unterminated string literal (detected at line 64)\n"}
-{"task_id": "E2H_CF1141D_low_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '7'"}
-{"task_id": "E2H_CF1141D_low_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '5'"}
-{"task_id": "E2H_CF1141D_medium_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '5\n2 2\n3 1\n4 9\n9 10\n7 8'"}
-{"task_id": "E2H_CF1141D_medium_hard", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '5\n2 2\n3 1\n4 9\n9 10\n7 8'"}
-{"task_id": "E2H_CF1141D_medium_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '10\n2 2\n3 1\n4 9\n9 10\n7 8\n1 3\n5 4\n6 5\n8 6\n10 7'"}
-{"task_id": "E2H_CF1141D_medium_none", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '10\n3 1\n4 9\n9 10\n2 2\n7 8\n1 3\n8 4\n6 5\n5 6\n10 7'"}
-{"task_id": "E2H_CF1141D_medium_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '5\n2 2\n3 1\n4 9\n9 10\n7 8'"}
-{"task_id": "E2H_CF1141D_medium_very_hard", "status": "failed", "error": "  File \"/tmp/tmpbuw7ts6r.py\", line 85\n    del right_available[c_left][c_left] -= take\n                                        ^^\nSyntaxError: invalid syntax\n"}
-{"task_id": "E2H_CF1141D_none_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '13\n1 11\n1 11\n1 11\n2 12\n1 11\n11 1\n11 1\n11 1\n11 1\n1 11\n2 11\n1 11\n1 11'"}
-{"task_id": "E2H_CF1141D_none_hard", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '13\n1 11\n1 11\n1 11\n2 12\n1 11\n11 1\n11 1\n11 1\n11 1\n1 11\n2 11\n1 11\n1 11'"}
-{"task_id": "E2H_CF1141D_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '13\n1 11\n1 11\n1 11\n2 12\n1 11\n11 1\n11 1\n11 1\n11 1\n1 11\n2 11\n1 11\n1 11'"}
-{"task_id": "E2H_CF1141D_none_none", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpnqb007ex.py\", line 37, in <module>\n    solve()\n  File \"/tmp/tmpnqb007ex.py\", line 13, in solve\n    if l[i] not in left or right[l[i]] < right[r[i]]:\nKeyError: 't'\n"}
-{"task_id": "E2H_CF1141D_none_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '10\n1 1\n2 2\n3 3\n4 4\n5 5\n6 6\n7 7\n8 8\n9 9\n10 10'"}
-{"task_id": "E2H_CF1141D_none_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '13\n1 11\n1 11\n1 11\n2 12\n1 11\n11 1\n11 1\n11 1\n11 1\n1 11\n2 11\n1 11\n1 11'"}
-{"task_id": "E2H_CF822C_low_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmp3jkbhqwd.py\", line 96, in <module>\n    main()\n  File \"/tmp/tmp3jkbhqwd.py\", line 55, in main\n    min_c = min(c_i + candidates[left][2], min_c)\nUnboundLocalError: local variable 'min_c' referenced before assignment\n"}
-{"task_id": "E2H_CF822C_low_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF822C_low_moderate", "status": "passed", "error": null}
-{"task_id": "E2H_CF822C_low_none", "status": "failed", "error": "Wrong output for test case 1: expected '5', got '1'"}
-{"task_id": "E2H_CF822C_low_very_easy", "status": "failed", "error": "  File \"/tmp/tmpd70q8kyh.py\", line 67\n    total_cost = c_i + (j's cost)\n                         ^\nSyntaxError: unterminated string literal (detected at line 67)\n"}
-{"task_id": "E2H_CF822C_low_very_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF822C_medium_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpqtjmvqth.py\", line 129, in <module>\n    main()\n  File \"/tmp/tmpqtjmvqth.py\", line 115, in main\n    if sorted_l_list[j][2] == min_cost_l and sorted_l_list[j][4] != vouchers.index(voucher):\nIndexError: tuple index out of range\n"}
-{"task_id": "E2H_CF822C_medium_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF822C_medium_moderate", "status": "passed", "error": null}
-{"task_id": "E2H_CF822C_medium_none", "status": "passed", "error": null}
-{"task_id": "E2H_CF822C_medium_very_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF822C_medium_very_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF822C_none_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5', got '-1'"}
-{"task_id": "E2H_CF822C_none_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF822C_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '5', got '-1'"}
-{"task_id": "E2H_CF822C_none_none", "status": "failed", "error": "Wrong output for test case 1: expected '5', got '8'"}
-{"task_id": "E2H_CF822C_none_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5', got '-1'"}
-{"task_id": "E2H_CF822C_none_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '5', got '-1'"}
-{"task_id": "E2H_CF1846E2_low_easy", "status": "failed", "error": "Wrong output for test case 1: expected 'NO\r\nNO\r\nNO\r\nNO\r\nYES\r\nYES\r\nYES\r\nYES\r\nNO', got 'NO\nNO\nNO\nNO\nNO\nNO\nNO\nNO\nNO'"}
-{"task_id": "E2H_CF1846E2_low_hard", "status": "failed", "error": "Timeout on test case 1"}
-{"task_id": "E2H_CF1846E2_low_moderate", "status": "failed", "error": "  File \"/tmp/tmp1zasgbst.py\", line 1\n    This code reads each test case, checks if it's a valid snowflake using the `is_snowflake` function, and prints \"YES\" or \"NO\" accordingly.\n                                                ^\nSyntaxError: unterminated string literal (detected at line 1)\n"}
-{"task_id": "E2H_CF1846E2_low_none", "status": "failed", "error": "Wrong output for test case 1: expected 'NO\r\nNO\r\nNO\r\nNO\r\nYES\r\nYES\r\nYES\r\nYES\r\nNO', got 'NO\nNO\nYES\nNO\nYES\nYES\nYES\nNO\nNO'"}
-{"task_id": "E2H_CF1846E2_low_very_easy", "status": "failed", "error": "Timeout on test case 1"}
-{"task_id": "E2H_CF1846E2_low_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected 'NO\r\nNO\r\nNO\r\nNO\r\nYES\r\nYES\r\nYES\r\nYES\r\nNO', got 'NO\nNO\nNO\nNO\nNO\nNO\nNO\nNO\nNO'"}
-{"task_id": "E2H_CF1846E2_medium_easy", "status": "failed", "error": "Wrong output for test case 1: expected 'NO\r\nNO\r\nNO\r\nNO\r\nYES\r\nYES\r\nYES\r\nYES\r\nNO', got 'NO\nNO\nNO\nNO\nYES\nYES\nYES\nYES\nNO'"}
-{"task_id": "E2H_CF1846E2_medium_hard", "status": "failed", "error": "Wrong output for test case 1: expected 'NO\r\nNO\r\nNO\r\nNO\r\nYES\r\nYES\r\nYES\r\nYES\r\nNO', got 'NO\nNO\nNO\nNO\nYES\nYES\nYES\nYES\nNO'"}
-{"task_id": "E2H_CF1846E2_medium_moderate", "status": "failed", "error": "Timeout on test case 1"}
-{"task_id": "E2H_CF1846E2_medium_none", "status": "failed", "error": "Wrong output for test case 1: expected 'NO\r\nNO\r\nNO\r\nNO\r\nYES\r\nYES\r\nYES\r\nYES\r\nNO', got 'NO\nNO\nNO\nYES\nYES\nYES\nYES\nYES\nYES'"}
-{"task_id": "E2H_CF1846E2_medium_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected 'NO\r\nNO\r\nNO\r\nNO\r\nYES\r\nYES\r\nYES\r\nYES\r\nNO', got 'NO\nNO\nNO\nNO\nYES\nYES\nYES\nYES\nNO'"}
-{"task_id": "E2H_CF1846E2_medium_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected 'NO\r\nNO\r\nNO\r\nNO\r\nYES\r\nYES\r\nYES\r\nYES\r\nNO', got 'NO\nNO\nYES\nYES\nYES\nYES\nYES\nYES\nYES'"}
-{"task_id": "E2H_CF1846E2_none_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpj_dlsdz2.py\", line 33, in <module>\n    main()\n  File \"/tmp/tmpj_dlsdz2.py\", line 25, in main\n    if check(n, k):\n  File \"/tmp/tmpj_dlsdz2.py\", line 13, in check\n    a[i] = a[i - 1] * k + k - 1\nIndexError: list assignment index out of range\n"}
-{"task_id": "E2H_CF1846E2_none_hard", "status": "failed", "error": "Timeout on test case 1"}
-{"task_id": "E2H_CF1846E2_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected 'NO\r\nNO\r\nNO\r\nNO\r\nYES\r\nYES\r\nYES\r\nYES\r\nNO', got 'YES\nNO\nNO\nNO\nNO\nNO\nNO\nNO\nNO'"}
-{"task_id": "E2H_CF1846E2_none_none", "status": "failed", "error": "Timeout on test case 1"}
-{"task_id": "E2H_CF1846E2_none_very_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpsy0b9iur.py\", line 33, in <module>\n    main()\n  File \"/tmp/tmpsy0b9iur.py\", line 25, in main\n    if check(n, k):\n  File \"/tmp/tmpsy0b9iur.py\", line 13, in check\n    a[i] = a[i - 1] * k + k - 1\nIndexError: list assignment index out of range\n"}
-{"task_id": "E2H_CF1846E2_none_very_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpqndgnbnt.py\", line 56, in <module>\n    main()\n  File \"/tmp/tmpqndgnbnt.py\", line 19, in main\n    if F[f] > n:\nIndexError: list index out of range\n"}
-{"task_id": "E2H_CF270E_low_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmp7fk5opey.py\", line 111, in <module>\n    main()\n  File \"/tmp/tmp7fk5opey.py\", line 28, in main\n    for v, c in edges[u]:\nTypeError: cannot unpack non-iterable int object\n"}
-{"task_id": "E2H_CF270E_low_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpgylgts39.py\", line 45, in <module>\n    main()\n  File \"/tmp/tmpgylgts39.py\", line 29, in main\n    for (v, c) in edges[u]:\nTypeError: cannot unpack non-iterable int object\n"}
-{"task_id": "E2H_CF270E_low_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '1\r\n0\r\n1', got '1\n1\n1'"}
-{"task_id": "E2H_CF270E_low_none", "status": "failed", "error": "Wrong output for test case 1: expected '1\r\n0\r\n1', got '1\n0\n1'"}
-{"task_id": "E2H_CF270E_low_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '1\r\n0\r\n1', got '0\n1\n0'"}
-{"task_id": "E2H_CF270E_low_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '1\r\n0\r\n1', got '1\n0\n1'"}
-{"task_id": "E2H_CF270E_medium_easy", "status": "failed", "error": "Wrong output for test case 1: expected '1\r\n0\r\n1', got '0\n0\n0'"}
-{"task_id": "E2H_CF270E_medium_hard", "status": "failed", "error": "Wrong output for test case 1: expected '1\r\n0\r\n1', got '1\n0\n1'"}
-{"task_id": "E2H_CF270E_medium_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '1\r\n0\r\n1', got '1\n0\n1'"}
-{"task_id": "E2H_CF270E_medium_none", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpvww12b7v.py\", line 50, in <module>\n    main()\n  File \"/tmp/tmpvww12b7v.py\", line 31, in main\n    for (v, c) in adj[u]:\nNameError: name 'adj' is not defined\n"}
-{"task_id": "E2H_CF270E_medium_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '1\r\n0\r\n1', got '1\n1\n1'"}
-{"task_id": "E2H_CF270E_medium_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '1\r\n0\r\n1', got '1\n1\n1'"}
-{"task_id": "E2H_CF270E_none_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpx0prhtjc.py\", line 33, in <module>\n    solve()\n  File \"/tmp/tmpx0prhtjc.py\", line 29, in solve\n    dfs(0, -1, graph, edges)\n  File \"/tmp/tmpx0prhtjc.py\", line 10, in dfs\n    dfs(v, u, graph, edges)\n  File \"/tmp/tmpx0prhtjc.py\", line 10, in dfs\n    dfs(v, u, graph, edges)\n  File \"/tmp/tmpx0prhtjc.py\", line 15, in dfs\n    direction[edges[(u-1)*n + v]] = 0\nIndexError: list index out of range\n"}
-{"task_id": "E2H_CF270E_none_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpn99id02t.py\", line 82, in <module>\n    print_directions(g, edges)\n  File \"/tmp/tmpn99id02t.py\", line 62, in print_directions\n    if g[u][v][1] > 0:\nIndexError: list index out of range\n"}
-{"task_id": "E2H_CF270E_none_moderate", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmp7csyw6vs.py\", line 57, in <module>\n    solve()\n  File \"/tmp/tmp7csyw6vs.py\", line 54, in solve\n    u, v, c = flow[i]\nValueError: not enough values to unpack (expected 3, got 2)\n"}
-{"task_id": "E2H_CF270E_none_none", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpepcp7rif.py\", line 29, in <module>\n    dfs(1, -1, graph, edges)\n  File \"/tmp/tmpepcp7rif.py\", line 10, in dfs\n    dfs(v, u, graph, edges)\n  File \"/tmp/tmpepcp7rif.py\", line 10, in dfs\n    dfs(v, u, graph, edges)\n  File \"/tmp/tmpepcp7rif.py\", line 15, in dfs\n    direction[edges[(u-1)*n + v]] = 0\nIndexError: list index out of range\n"}
-{"task_id": "E2H_CF270E_none_very_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpeobg41e1.py\", line 35, in <module>\n    flow[par[i][0][0]][i] -= par[i][1]\nTypeError: 'int' object is not subscriptable\n"}
-{"task_id": "E2H_CF270E_none_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '1\r\n0\r\n1', got '[Errno 2] No such file or directory: 'input.txt''"}
-{"task_id": "E2H_CF808E_low_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF808E_low_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF808E_low_moderate", "status": "failed", "error": "Wrong output for test case 2: expected '3', got '2'"}
-{"task_id": "E2H_CF808E_low_none", "status": "failed", "error": "Wrong output for test case 2: expected '3', got '2'"}
-{"task_id": "E2H_CF808E_low_very_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF808E_low_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '0', got '2'"}
-{"task_id": "E2H_CF808E_medium_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpivj1bc9f.py\", line 89, in <module>\n    main()\n  File \"/tmp/tmpivj1bc9f.py\", line 67, in main\n    current_sum = prefix2[best_b] + prefix1[a]\nIndexError: list index out of range\n"}
-{"task_id": "E2H_CF808E_medium_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpkr56xl1h.py\", line 92, in <module>\n    if (total_p > total_m):\nNameError: name 'total_m' is not defined. Did you mean: 'total_p'?\n"}
-{"task_id": "E2H_CF808E_medium_moderate", "status": "passed", "error": null}
-{"task_id": "E2H_CF808E_medium_none", "status": "passed", "error": null}
-{"task_id": "E2H_CF808E_medium_very_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF808E_medium_very_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF808E_none_easy", "status": "failed", "error": "Wrong output for test case 1: expected '0', got '1'"}
-{"task_id": "E2H_CF808E_none_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF808E_none_moderate", "status": "passed", "error": null}
-{"task_id": "E2H_CF808E_none_none", "status": "failed", "error": "Wrong output for test case 3: expected '10', got '17'"}
-{"task_id": "E2H_CF808E_none_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '0', got '1'"}
-{"task_id": "E2H_CF808E_none_very_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF409I_low_easy", "status": "failed", "error": "  File \"/tmp/tmp2zuh5evj.py\", line 4580\n    stack.append(new_val\n                ^\nSyntaxError: '(' was never closed\n"}
-{"task_id": "E2H_CF409I_low_hard", "status": "failed", "error": "Wrong output for test case 1: expected '0010', got '0010\nfalse\n0250341\n0101'"}
-{"task_id": "E2H_CF409I_low_moderate", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpei3506gc.py\", line 333, in <module>\n    main()\n  File \"/tmp/tmpei3506gc.py\", line 85, in main\n    if grid[height][x + direction] == '\\n':\nIndexError: list index out of range\n"}
-{"task_id": "E2H_CF409I_low_none", "status": "failed", "error": "Timeout on test case 1"}
-{"task_id": "E2H_CF409I_low_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '0010', got 'false'"}
-{"task_id": "E2H_CF409I_low_very_hard", "status": "failed", "error": "  File \"/tmp/tmpjb5md2bz.py\", line 28\n    if i, j in visited:\n        ^\nSyntaxError: invalid syntax\n"}
-{"task_id": "E2H_CF409I_medium_easy", "status": "failed", "error": "Wrong output for test case 1: expected '0010', got 'false'"}
-{"task_id": "E2H_CF409I_medium_hard", "status": "failed", "error": "Wrong output for test case 1: expected '0010', got 'false'"}
-{"task_id": "E2H_CF409I_medium_moderate", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpfikh0bjq.py\", line 173, in <module>\n    main()\n  File \"/tmp/tmpfikh0bjq.py\", line 91, in main\n    if not valid:\nUnboundLocalError: local variable 'valid' referenced before assignment\n"}
-{"task_id": "E2H_CF409I_medium_none", "status": "failed", "error": "  File \"/tmp/tmpx9epn8p_.py\", line 102\n    elif cmd == '!'':\n                   ^\nSyntaxError: unterminated string literal (detected at line 102)\n"}
-{"task_id": "E2H_CF409I_medium_very_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpdj3j5n9j.py\", line 59, in <module>\n    main()\n  File \"/tmp/tmpdj3j5n9j.py\", line 51, in main\n    if backtrack(0, []):\nTypeError: unhashable type: 'list'\n"}
-{"task_id": "E2H_CF409I_medium_very_hard", "status": "failed", "error": "Timeout on test case 1"}
-{"task_id": "E2H_CF409I_none_easy", "status": "failed", "error": "Wrong output for test case 1: expected '0010', got 'false'"}
-{"task_id": "E2H_CF409I_none_hard", "status": "failed", "error": "Wrong output for test case 1: expected '0010', got ''"}
-{"task_id": "E2H_CF409I_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '0010', got 'false'"}
-{"task_id": "E2H_CF409I_none_none", "status": "failed", "error": "Wrong output for test case 1: expected '0010', got 'false'"}
-{"task_id": "E2H_CF409I_none_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '0010', got 'false'"}
-{"task_id": "E2H_CF409I_none_very_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpy7ez9927.py\", line 78, in <module>\n    print(get_min_seq(s))\n  File \"/tmp/tmpy7ez9927.py\", line 37, in get_min_seq\n    dp[i][j] = dp[i - 1][j] + '0'\nTypeError: unsupported operand type(s) for +: 'NoneType' and 'str'\n"}
-{"task_id": "E2H_CF151A_low_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF151A_low_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF151A_low_moderate", "status": "passed", "error": null}
-{"task_id": "E2H_CF151A_low_none", "status": "passed", "error": null}
-{"task_id": "E2H_CF151A_low_very_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF151A_low_very_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF151A_medium_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF151A_medium_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF151A_medium_moderate", "status": "passed", "error": null}
-{"task_id": "E2H_CF151A_medium_none", "status": "passed", "error": null}
-{"task_id": "E2H_CF151A_medium_very_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF151A_medium_very_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF151A_none_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmp8w2fbhdl.py\", line 28, in <module>\n    print(soft_drinking())\n  File \"/tmp/tmp8w2fbhdl.py\", line 3, in soft_drinking\n    n, k, l, c, d, p, nl, np = map(int, input().split())\nEOFError: EOF when reading a line\n"}
-{"task_id": "E2H_CF151A_none_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmp2xo4_cto.py\", line 31, in <module>\n    output = soft_drinking()\n  File \"/tmp/tmp2xo4_cto.py\", line 3, in soft_drinking\n    n, k, l, c, d, p, nl, np = map(int, input().split())\nEOFError: EOF when reading a line\n"}
-{"task_id": "E2H_CF151A_none_moderate", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmp67gvotlo.py\", line 28, in <module>\n    print(soft_drinking())\n  File \"/tmp/tmp67gvotlo.py\", line 3, in soft_drinking\n    n, k, l, c, d, p, nl, np = map(int, input().split())\nEOFError: EOF when reading a line\n"}
-{"task_id": "E2H_CF151A_none_none", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmp2q7sfgju.py\", line 28, in <module>\n    print(soft_drinking())\n  File \"/tmp/tmp2q7sfgju.py\", line 3, in soft_drinking\n    n, k, l, c, d, p, nl, np = map(int, input().split())\nEOFError: EOF when reading a line\n"}
-{"task_id": "E2H_CF151A_none_very_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmphrar2yrh.py\", line 28, in <module>\n    print(soft_drinking())\n  File \"/tmp/tmphrar2yrh.py\", line 3, in soft_drinking\n    n, k, l, c, d, p, nl, np = map(int, input().split())\nEOFError: EOF when reading a line\n"}
-{"task_id": "E2H_CF151A_none_very_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpvc0q7442.py\", line 28, in <module>\n    print(soft_drinking())\n  File \"/tmp/tmpvc0q7442.py\", line 3, in soft_drinking\n    n, k, l, c, d, p, nl, np = map(int, input().split())\nEOFError: EOF when reading a line\n"}
-{"task_id": "E2H_CF339B_low_easy", "status": "failed", "error": "Wrong output for test case 2: expected '2', got '6'"}
-{"task_id": "E2H_CF339B_low_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF339B_low_moderate", "status": "passed", "error": null}
-{"task_id": "E2H_CF339B_low_none", "status": "passed", "error": null}
-{"task_id": "E2H_CF339B_low_very_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF339B_low_very_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF339B_medium_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF339B_medium_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF339B_medium_moderate", "status": "passed", "error": null}
-{"task_id": "E2H_CF339B_medium_none", "status": "passed", "error": null}
-{"task_id": "E2H_CF339B_medium_very_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF339B_medium_very_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF339B_none_easy", "status": "failed", "error": "Wrong output for test case 1: expected '6', got '5'"}
-{"task_id": "E2H_CF339B_none_hard", "status": "failed", "error": "Wrong output for test case 1: expected '6', got '12'"}
-{"task_id": "E2H_CF339B_none_moderate", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpyvfmiyod.py\", line 23, in <module>\n    t = int(input())\nValueError: invalid literal for int() with base 10: '4 3\\r'\n"}
-{"task_id": "E2H_CF339B_none_none", "status": "failed", "error": "Wrong output for test case 1: expected '6', got '7'"}
-{"task_id": "E2H_CF339B_none_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '6', got '7'"}
-{"task_id": "E2H_CF339B_none_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '6', got '7'"}
-{"task_id": "E2H_CF88A_low_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF88A_low_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF88A_low_moderate", "status": "passed", "error": null}
-{"task_id": "E2H_CF88A_low_none", "status": "failed", "error": "Wrong output for test case 2: expected 'minor', got 'strange'"}
-{"task_id": "E2H_CF88A_low_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected 'major', got 'minor'"}
-{"task_id": "E2H_CF88A_low_very_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpuchh6d7t.py\", line 43, in <module>\n    if is_major(notes):\n  File \"/tmp/tmpuchh6d7t.py\", line 13, in is_major\n    d1 = get_distance(a, b)\n  File \"/tmp/tmpuchh6d7t.py\", line 8, in get_distance\n    return (b - a) % 12\nTypeError: unsupported operand type(s) for -: 'str' and 'str'\n"}
-{"task_id": "E2H_CF88A_medium_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF88A_medium_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF88A_medium_moderate", "status": "passed", "error": null}
-{"task_id": "E2H_CF88A_medium_none", "status": "passed", "error": null}
-{"task_id": "E2H_CF88A_medium_very_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF88A_medium_very_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF88A_none_easy", "status": "failed", "error": "Wrong output for test case 2: expected 'minor', got 'strange'"}
-{"task_id": "E2H_CF88A_none_hard", "status": "failed", "error": "Wrong output for test case 1: expected 'major', got 'minor\nminor\nminor\nminor\nminor\nminor\nminor\nminor\nminor\nminor\nminor\nminor'"}
-{"task_id": "E2H_CF88A_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected 'major', got 'minor\nminor\nminor\nminor\nminor\nminor\nminor\nminor\nminor\nminor\nminor\nminor'"}
-{"task_id": "E2H_CF88A_none_none", "status": "failed", "error": "Wrong output for test case 2: expected 'minor', got 'strange'"}
-{"task_id": "E2H_CF88A_none_very_easy", "status": "failed", "error": "Wrong output for test case 2: expected 'minor', got 'strange'"}
-{"task_id": "E2H_CF88A_none_very_hard", "status": "failed", "error": "  File \"/tmp/tmp5v_qhpld.py\", line 2\n    python chord.py < input.txt\n           ^^^^^\nSyntaxError: invalid syntax\n"}
-{"task_id": "E2H_CF633B_low_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '5\n5 6 7 8 9'"}
-{"task_id": "E2H_CF633B_low_hard", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '1\n5'"}
-{"task_id": "E2H_CF633B_low_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '1\n5'"}
-{"task_id": "E2H_CF633B_low_none", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '1\n5'"}
-{"task_id": "E2H_CF633B_low_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '0'"}
-{"task_id": "E2H_CF633B_low_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '5\n5 6 7 8 9'"}
-{"task_id": "E2H_CF633B_medium_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '5\n5 6 7 8 9'"}
-{"task_id": "E2H_CF633B_medium_hard", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '5\n5 6 7 8 9'"}
-{"task_id": "E2H_CF633B_medium_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '5\n5 6 7 8 9'"}
-{"task_id": "E2H_CF633B_medium_none", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '1 5'"}
-{"task_id": "E2H_CF633B_medium_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '5\n5 6 7 8 9'"}
-{"task_id": "E2H_CF633B_medium_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '5\n5 6 7 8 9'"}
-{"task_id": "E2H_CF633B_none_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '5\n5 6 7 8 9'"}
-{"task_id": "E2H_CF633B_none_hard", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '0'"}
-{"task_id": "E2H_CF633B_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '5\n5 6 7 8 9'"}
-{"task_id": "E2H_CF633B_none_none", "status": "failed", "error": "Timeout on test case 1"}
-{"task_id": "E2H_CF633B_none_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '4\n1 2 3 4'"}
-{"task_id": "E2H_CF633B_none_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '0'"}
-{"task_id": "E2H_CF1767D_low_easy", "status": "failed", "error": "Wrong output for test case 1: expected '4 5 6 7', got '1 2 3 4 5 6 7 8'"}
-{"task_id": "E2H_CF1767D_low_hard", "status": "failed", "error": "  File \"/tmp/tmp9k5wbekn.py\", line 13\n    for i in range(0, size // (1 << (level+1)))):\n                                               ^\nSyntaxError: unmatched ')'\n"}
-{"task_id": "E2H_CF1767D_low_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '4 5 6 7', got ''"}
-{"task_id": "E2H_CF1767D_low_none", "status": "failed", "error": "Wrong output for test case 1: expected '4 5 6 7', got '0 1 2 3 4 5 6 7'"}
-{"task_id": "E2H_CF1767D_low_very_easy", "status": "failed", "error": "  File \"/tmp/tmphq20m7qi.py\", line 2\n    The code reads the input values and initializes the possible winners list for each phase. It then iterates through each phase, updating the possible winners based on whether higher or lower-skilled teams win. The final possible winners after the last phase are printed, representing all teams that can potentially win the tournament under some permutation of skills. This approach efficiently tracks the possible winners at each stage, ensuring that the solution is both correct and optimal for the given constraints.\n        ^^^^\nSyntaxError: invalid syntax\n"}
-{"task_id": "E2H_CF1767D_low_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '4 5 6 7', got ''"}
-{"task_id": "E2H_CF1767D_medium_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpeidfonlu.py\", line 119, in <module>\n    main()\n  File \"/tmp/tmpeidfonlu.py\", line 73, in main\n    if s[i] == '0':\nIndexError: string index out of range\n"}
-{"task_id": "E2H_CF1767D_medium_hard", "status": "failed", "error": "Wrong output for test case 1: expected '4 5 6 7', got '6'"}
-{"task_id": "E2H_CF1767D_medium_moderate", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpm8iilhtm.py\", line 88, in <module>\n    main()\n  File \"/tmp/tmpm8iilhtm.py\", line 20, in main\n    path[x].append((current, i))\nIndexError: list index out of range\n"}
-{"task_id": "E2H_CF1767D_medium_none", "status": "failed", "error": "Wrong output for test case 1: expected '4 5 6 7', got '6'"}
-{"task_id": "E2H_CF1767D_medium_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '4 5 6 7', got ''"}
-{"task_id": "E2H_CF1767D_medium_very_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmp7we323ar.py\", line 85, in <module>\n    main()\n  File \"/tmp/tmp7we323ar.py\", line 81, in main\n    print(' '.join(map(str, group)), end=' ')\nTypeError: 'int' object is not iterable\n"}
-{"task_id": "E2H_CF1767D_none_easy", "status": "failed", "error": "Wrong output for test case 1: expected '4 5 6 7', got '4 5 6'"}
-{"task_id": "E2H_CF1767D_none_hard", "status": "failed", "error": "Wrong output for test case 1: expected '4 5 6 7', got ''"}
-{"task_id": "E2H_CF1767D_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '4 5 6 7', got '3 4 5 6'"}
-{"task_id": "E2H_CF1767D_none_none", "status": "failed", "error": "Wrong output for test case 1: expected '4 5 6 7', got '2 3 4 5'"}
-{"task_id": "E2H_CF1767D_none_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '4 5 6 7', got '4 5 6'"}
-{"task_id": "E2H_CF1767D_none_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '4 5 6 7', got ''"}
-{"task_id": "E2H_CF498A_low_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF498A_low_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF498A_low_moderate", "status": "passed", "error": null}
-{"task_id": "E2H_CF498A_low_none", "status": "passed", "error": null}
-{"task_id": "E2H_CF498A_low_very_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF498A_low_very_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF498A_medium_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF498A_medium_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF498A_medium_moderate", "status": "passed", "error": null}
-{"task_id": "E2H_CF498A_medium_none", "status": "passed", "error": null}
-{"task_id": "E2H_CF498A_medium_very_easy", "status": "passed", "error": null}
-{"task_id": "E2H_CF498A_medium_very_hard", "status": "passed", "error": null}
-{"task_id": "E2H_CF498A_none_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpnnrda1q5.py\", line 74, in <module>\n    main()\n  File \"/tmp/tmpnnrda1q5.py\", line 70, in main\n    distance = count_blocks(x1, y1, x2, y2, roads)\n  File \"/tmp/tmpnnrda1q5.py\", line 55, in count_blocks\n    intersection_x = (b * x1 - b * y1 - c) / (a * b - a * y1)\nZeroDivisionError: division by zero\n"}
-{"task_id": "E2H_CF498A_none_hard", "status": "failed", "error": "Wrong output for test case 1: expected '2', got '0'"}
-{"task_id": "E2H_CF498A_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '2', got '0'"}
-{"task_id": "E2H_CF498A_none_none", "status": "failed", "error": "Wrong output for test case 1: expected '2', got '-1'"}
-{"task_id": "E2H_CF498A_none_very_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpzea49h6s.py\", line 74, in <module>\n    main()\n  File \"/tmp/tmpzea49h6s.py\", line 70, in main\n    distance = count_blocks(x1, y1, x2, y2, roads)\n  File \"/tmp/tmpzea49h6s.py\", line 55, in count_blocks\n    intersection_x = (b * x1 - b * y1 - c) / (a * b - a * y1)\nZeroDivisionError: division by zero\n"}
-{"task_id": "E2H_CF498A_none_very_hard", "status": "failed", "error": "Wrong output for test case 3: expected '0', got '10'"}
-{"task_id": "E2H_CF1092C_low_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpebd6660r.py\", line 68, in <module>\n    s = input().strip()\nEOFError: EOF when reading a line\n"}
-{"task_id": "E2H_CF1092C_low_hard", "status": "failed", "error": "Wrong output for test case 1: expected 'SPPSPSPS', got 'PSSSSPSS'"}
-{"task_id": "E2H_CF1092C_low_moderate", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpt4oxbew5.py\", line 39, in <module>\n    s = correct_prefix + correct_suffix[1:]\nNameError: name 'correct_suffix' is not defined. Did you mean: 'correct_prefix'?\n"}
-{"task_id": "E2H_CF1092C_low_none", "status": "failed", "error": "Wrong output for test case 1: expected 'SPPSPSPS', got 'SSPSSSSS'"}
-{"task_id": "E2H_CF1092C_low_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected 'SPPSPSPS', got ''"}
-{"task_id": "E2H_CF1092C_low_very_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpmdxxpf7a.py\", line 11, in <module>\n    suffixes[l].add(prefixes[l])\nTypeError: unhashable type: 'set'\n"}
-{"task_id": "E2H_CF1092C_medium_easy", "status": "failed", "error": "Wrong output for test case 1: expected 'SPPSPSPS', got 'PP'"}
-{"task_id": "E2H_CF1092C_medium_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmppyadp6ay.py\", line 81, in <module>\n    prev_p, prev_q = assignments[l+1]\nKeyError: 3\n"}
-{"task_id": "E2H_CF1092C_medium_moderate", "status": "failed", "error": "Wrong output for test case 1: expected 'SPPSPSPS', got 'SSPPSPSSSS'"}
-{"task_id": "E2H_CF1092C_medium_none", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmp31l9p6jb.py\", line 47, in <module>\n    main()\n  File \"/tmp/tmp31l9p6jb.py\", line 32, in main\n    result, p_final, s_final = backtrack(1, None, None)\n  File \"/tmp/tmp31l9p6jb.py\", line 21, in backtrack\n    if p.startswith(current_p) and s.startswith(current_s):\nTypeError: startswith first arg must be str or a tuple of str, not NoneType\n"}
-{"task_id": "E2H_CF1092C_medium_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected 'SPPSPSPS', got 'PPSPPPPS'"}
-{"task_id": "E2H_CF1092C_medium_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected 'SPPSPSPS', got 'SPPPPSPP'"}
-{"task_id": "E2H_CF1092C_none_easy", "status": "failed", "error": "Wrong output for test case 1: expected 'SPPSPSPS', got 'SSSPP'"}
-{"task_id": "E2H_CF1092C_none_hard", "status": "failed", "error": "Wrong output for test case 1: expected 'SPPSPSPS', got 'PPPPPPPP'"}
-{"task_id": "E2H_CF1092C_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected 'SPPSPSPS', got 'SSSPP'"}
-{"task_id": "E2H_CF1092C_none_none", "status": "failed", "error": "Wrong output for test case 1: expected 'SPPSPSPS', got 'PPPPPPPP'"}
-{"task_id": "E2H_CF1092C_none_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected 'SPPSPSPS', got 'SSSPP'"}
-{"task_id": "E2H_CF1092C_none_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected 'SPPSPSPS', got 'PPPPPPPP'"}
-{"task_id": "E2H_CF1146D_low_easy", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '3'"}
-{"task_id": "E2H_CF1146D_low_hard", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '34'"}
-{"task_id": "E2H_CF1146D_low_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '16'"}
-{"task_id": "E2H_CF1146D_low_none", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '8'"}
-{"task_id": "E2H_CF1146D_low_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '16'"}
-{"task_id": "E2H_CF1146D_low_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '2'"}
-{"task_id": "E2H_CF1146D_medium_easy", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '3'"}
-{"task_id": "E2H_CF1146D_medium_hard", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '5'"}
-{"task_id": "E2H_CF1146D_medium_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '19', got ''"}
-{"task_id": "E2H_CF1146D_medium_none", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpo5c8ufm7.py\", line 171, in <module>\n    main()\n  File \"/tmp/tmpo5c8ufm7.py\", line 142, in main\n    m, a, b = map(int, sys.stdin.readline().split())\nValueError: not enough values to unpack (expected 3, got 0)\n"}
-{"task_id": "E2H_CF1146D_medium_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '36'"}
-{"task_id": "E2H_CF1146D_medium_very_hard", "status": "failed", "error": "Timeout on test case 1"}
-{"task_id": "E2H_CF1146D_none_easy", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '15'"}
-{"task_id": "E2H_CF1146D_none_hard", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '13'"}
-{"task_id": "E2H_CF1146D_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '13'"}
-{"task_id": "E2H_CF1146D_none_none", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '11'"}
-{"task_id": "E2H_CF1146D_none_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '19', got ''"}
-{"task_id": "E2H_CF1146D_none_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '13'"}
-{"task_id": "E2H_CF980E_low_easy", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got '1 2 3 4 6'"}
-{"task_id": "E2H_CF980E_low_hard", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got '0 0 0 5'"}
-{"task_id": "E2H_CF980E_low_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got '1'"}
-{"task_id": "E2H_CF980E_low_none", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got '1 2 3 4 5 6'"}
-{"task_id": "E2H_CF980E_low_very_easy", "status": "failed", "error": "Timeout on test case 1"}
-{"task_id": "E2H_CF980E_low_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got '3 4 5'"}
-{"task_id": "E2H_CF980E_medium_easy", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got '1 2 3'"}
-{"task_id": "E2H_CF980E_medium_hard", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got '4 5 6'"}
-{"task_id": "E2H_CF980E_medium_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got '1 2 3 4 5 6'"}
-{"task_id": "E2H_CF980E_medium_none", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got '1 2 3'"}
-{"task_id": "E2H_CF980E_medium_very_easy", "status": "failed", "error": "Wrong output for test case 2: expected '1 3 4 5', got '1 3 4 6'"}
-{"task_id": "E2H_CF980E_medium_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got 'Impossible'"}
-{"task_id": "E2H_CF980E_none_easy", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got '6 6 6'"}
-{"task_id": "E2H_CF980E_none_hard", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got ''"}
-{"task_id": "E2H_CF980E_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got '2 3 4 5 6'"}
-{"task_id": "E2H_CF980E_none_none", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got ''"}
-{"task_id": "E2H_CF980E_none_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got '6 6 6'"}
-{"task_id": "E2H_CF980E_none_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got '1'"}
-{"task_id": "E2H_CF1709F_low_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpimg22zhn.py\", line 159, in <module>\n    main()\n  File \"/tmp/tmpimg22zhn.py\", line 22, in main\n    trie[l].append(s)\nIndexError: list index out of range\n"}
-{"task_id": "E2H_CF1709F_low_hard", "status": "failed", "error": "Wrong output for test case 1: expected '3', got ''"}
-{"task_id": "E2H_CF1709F_low_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '3', got '0'"}
-{"task_id": "E2H_CF1709F_low_none", "status": "failed", "error": "  File \"/tmp/tmpi86eq1sx.py\", line 2\n    The code implements a dynamic programming approach to count the number of valid assignments of \\( c_s \\) values. It processes each length from 1 to \\( n \\) and updates the DP state for each possible minimum value of \\( c_s \\). The result is obtained by checking the state corresponding to the maximum length with the exact count \\( f \\). The solution efficiently handles the constraints and computes the result modulo \\( 998244353 \\).\n                                                                                                    ^\nSyntaxError: unexpected character after line continuation character\n"}
-{"task_id": "E2H_CF1709F_low_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '3', got '2'"}
-{"task_id": "E2H_CF1709F_low_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '3', got ''"}
-{"task_id": "E2H_CF1709F_medium_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmph475dig3.py\", line 67, in <module>\n    main()\n  File \"/tmp/tmph475dig3.py\", line 60, in main\n    dp[i][x] = sum(dp[child][min(x - m, k)] for child in node.values() if node != child)\n  File \"/tmp/tmph475dig3.py\", line 60, in <genexpr>\n    dp[i][x] = sum(dp[child][min(x - m, k)] for child in node.values() if node != child)\nTypeError: list indices must be integers or slices, not dict\n"}
-{"task_id": "E2H_CF1709F_medium_hard", "status": "failed", "error": "Wrong output for test case 2: expected '36871576', got '560'"}
-{"task_id": "E2H_CF1709F_medium_moderate", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpo5xz_n3j.py\", line 103, in <module>\n    main()\n  File \"/tmp/tmpo5xz_n3j.py\", line 99, in main\n    res = (res + root_dp[a]) % MOD\nIndexError: list index out of range\n"}
-{"task_id": "E2H_CF1709F_medium_none", "status": "failed", "error": "Wrong output for test case 1: expected '3', got '0'"}
-{"task_id": "E2H_CF1709F_medium_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '3', got '1'"}
-{"task_id": "E2H_CF1709F_medium_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '3', got '0'"}
-{"task_id": "E2H_CF1709F_none_easy", "status": "failed", "error": "Wrong output for test case 1: expected '3', got ''"}
-{"task_id": "E2H_CF1709F_none_hard", "status": "failed", "error": "Timeout on test case 1"}
-{"task_id": "E2H_CF1709F_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '3', got '5'"}
-{"task_id": "E2H_CF1709F_none_none", "status": "failed", "error": "Wrong output for test case 2: expected '36871576', got '105'"}
-{"task_id": "E2H_CF1709F_none_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '3', got '1'"}
-{"task_id": "E2H_CF1709F_none_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '3', got '41762403'"}
+{"task_id": "E2H_CF1031A_low_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1031A_low_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1031A_low_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1031A_low_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1031A_low_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1031A_low_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1031A_medium_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1031A_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1031A_medium_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1031A_medium_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1031A_medium_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1031A_medium_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1031A_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1031A_none_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1031A_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1031A_none_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1031A_none_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1031A_none_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF404A_low_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF404A_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF404A_low_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF404A_low_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF404A_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF404A_low_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF404A_medium_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF404A_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF404A_medium_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF404A_medium_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF404A_medium_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF404A_medium_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF404A_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF404A_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF404A_none_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF404A_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF404A_none_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF404A_none_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF492B_low_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF492B_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF492B_low_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF492B_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF492B_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF492B_low_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF492B_medium_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF492B_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF492B_medium_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF492B_medium_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF492B_medium_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF492B_medium_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF492B_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF492B_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF492B_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF492B_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF492B_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF492B_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF173A_low_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF173A_low_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF173A_low_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF173A_low_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF173A_low_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF173A_low_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF173A_medium_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF173A_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF173A_medium_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF173A_medium_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF173A_medium_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF173A_medium_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF173A_none_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF173A_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF173A_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF173A_none_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF173A_none_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF173A_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1141D_low_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1141D_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1141D_low_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1141D_low_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1141D_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1141D_low_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1141D_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1141D_medium_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1141D_medium_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1141D_medium_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1141D_medium_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1141D_medium_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1141D_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1141D_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1141D_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1141D_none_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1141D_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1141D_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF822C_low_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF822C_low_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF822C_low_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF822C_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF822C_low_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF822C_low_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF822C_medium_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF822C_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF822C_medium_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF822C_medium_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF822C_medium_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF822C_medium_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF822C_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF822C_none_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF822C_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF822C_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF822C_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF822C_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1846E2_low_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1846E2_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1846E2_low_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1846E2_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1846E2_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1846E2_low_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1846E2_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1846E2_medium_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1846E2_medium_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1846E2_medium_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1846E2_medium_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1846E2_medium_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1846E2_none_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1846E2_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1846E2_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1846E2_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1846E2_none_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1846E2_none_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF270E_low_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF270E_low_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF270E_low_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF270E_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF270E_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF270E_low_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF270E_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF270E_medium_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF270E_medium_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF270E_medium_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF270E_medium_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF270E_medium_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF270E_none_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF270E_none_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF270E_none_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF270E_none_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF270E_none_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF270E_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF808E_low_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF808E_low_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF808E_low_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF808E_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF808E_low_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF808E_low_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF808E_medium_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF808E_medium_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF808E_medium_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF808E_medium_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF808E_medium_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF808E_medium_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF808E_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF808E_none_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF808E_none_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF808E_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF808E_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF808E_none_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF409I_low_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF409I_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF409I_low_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF409I_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF409I_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF409I_low_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF409I_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF409I_medium_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF409I_medium_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF409I_medium_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF409I_medium_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF409I_medium_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF409I_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF409I_none_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF409I_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF409I_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF409I_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF409I_none_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF151A_low_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF151A_low_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF151A_low_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF151A_low_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF151A_low_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF151A_low_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF151A_medium_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF151A_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF151A_medium_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF151A_medium_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF151A_medium_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF151A_medium_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF151A_none_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF151A_none_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF151A_none_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF151A_none_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF151A_none_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF151A_none_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF339B_low_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF339B_low_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF339B_low_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF339B_low_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF339B_low_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF339B_low_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF339B_medium_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF339B_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF339B_medium_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF339B_medium_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF339B_medium_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF339B_medium_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF339B_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF339B_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF339B_none_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF339B_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF339B_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF339B_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF88A_low_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF88A_low_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF88A_low_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF88A_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF88A_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF88A_low_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF88A_medium_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF88A_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF88A_medium_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF88A_medium_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF88A_medium_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF88A_medium_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF88A_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF88A_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF88A_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF88A_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF88A_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF88A_none_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF633B_low_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF633B_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF633B_low_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF633B_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF633B_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF633B_low_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF633B_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF633B_medium_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF633B_medium_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF633B_medium_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF633B_medium_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF633B_medium_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF633B_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF633B_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF633B_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF633B_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF633B_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF633B_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1767D_low_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1767D_low_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1767D_low_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1767D_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1767D_low_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1767D_low_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1767D_medium_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1767D_medium_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1767D_medium_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1767D_medium_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1767D_medium_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1767D_medium_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1767D_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1767D_none_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1767D_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1767D_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1767D_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1767D_none_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF498A_low_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF498A_low_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF498A_low_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF498A_low_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF498A_low_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF498A_low_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF498A_medium_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF498A_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF498A_medium_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF498A_medium_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF498A_medium_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF498A_medium_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF498A_none_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF498A_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF498A_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF498A_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF498A_none_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF498A_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1092C_low_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1092C_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1092C_low_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1092C_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1092C_low_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1092C_low_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1092C_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1092C_medium_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1092C_medium_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1092C_medium_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1092C_medium_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1092C_medium_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1092C_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1092C_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1092C_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1092C_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1092C_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1092C_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1146D_low_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1146D_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1146D_low_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1146D_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1146D_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1146D_low_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1146D_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1146D_medium_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1146D_medium_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1146D_medium_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1146D_medium_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1146D_medium_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1146D_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1146D_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1146D_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1146D_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1146D_none_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1146D_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF980E_low_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF980E_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF980E_low_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF980E_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF980E_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF980E_low_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF980E_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF980E_medium_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF980E_medium_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF980E_medium_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF980E_medium_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF980E_medium_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF980E_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF980E_none_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF980E_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF980E_none_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF980E_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF980E_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1709F_low_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1709F_low_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1709F_low_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1709F_low_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1709F_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1709F_low_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1709F_medium_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1709F_medium_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1709F_medium_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1709F_medium_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1709F_medium_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1709F_medium_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1709F_none_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1709F_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1709F_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1709F_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1709F_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1709F_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1152A_low_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1152A_low_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1152A_low_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1152A_low_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1152A_low_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1152A_low_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1152A_medium_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1152A_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1152A_medium_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1152A_medium_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1152A_medium_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1152A_medium_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1152A_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1152A_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1152A_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1152A_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1152A_none_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1152A_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF152A_low_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF152A_low_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF152A_low_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF152A_low_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF152A_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF152A_low_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF152A_medium_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF152A_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF152A_medium_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF152A_medium_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF152A_medium_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF152A_medium_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF152A_none_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF152A_none_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF152A_none_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF152A_none_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF152A_none_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF152A_none_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1191B_low_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1191B_low_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1191B_low_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1191B_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1191B_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1191B_low_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1191B_medium_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1191B_medium_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1191B_medium_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1191B_medium_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1191B_medium_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1191B_medium_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1191B_none_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1191B_none_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1191B_none_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1191B_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1191B_none_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1191B_none_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF915B_low_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF915B_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF915B_low_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF915B_low_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF915B_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF915B_low_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF915B_medium_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF915B_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF915B_medium_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF915B_medium_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF915B_medium_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF915B_medium_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF915B_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF915B_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF915B_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF915B_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF915B_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF915B_none_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF646B_low_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF646B_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF646B_low_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF646B_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF646B_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF646B_low_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF646B_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF646B_medium_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF646B_medium_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF646B_medium_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF646B_medium_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF646B_medium_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF646B_none_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF646B_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF646B_none_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF646B_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF646B_none_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF646B_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1355C_low_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1355C_low_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1355C_low_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1355C_low_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1355C_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1355C_low_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1355C_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1355C_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1355C_medium_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1355C_medium_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1355C_medium_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1355C_medium_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1355C_none_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1355C_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1355C_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1355C_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1355C_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1355C_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF934C_low_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF934C_low_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF934C_low_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF934C_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF934C_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF934C_low_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF934C_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF934C_medium_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF934C_medium_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF934C_medium_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF934C_medium_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF934C_medium_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF934C_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF934C_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF934C_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF934C_none_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF934C_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF934C_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF336D_low_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF336D_low_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF336D_low_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF336D_low_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF336D_low_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF336D_low_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF336D_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF336D_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF336D_medium_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF336D_medium_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF336D_medium_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF336D_medium_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF336D_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF336D_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF336D_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF336D_none_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF336D_none_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF336D_none_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF464C_low_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF464C_low_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF464C_low_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF464C_low_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF464C_low_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF464C_low_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF464C_medium_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF464C_medium_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF464C_medium_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF464C_medium_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF464C_medium_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF464C_medium_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF464C_none_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF464C_none_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF464C_none_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF464C_none_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF464C_none_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF464C_none_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF31E_low_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF31E_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF31E_low_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF31E_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF31E_low_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF31E_low_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF31E_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF31E_medium_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF31E_medium_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF31E_medium_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF31E_medium_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF31E_medium_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF31E_none_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF31E_none_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF31E_none_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF31E_none_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF31E_none_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF31E_none_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF401A_low_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF401A_low_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF401A_low_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF401A_low_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF401A_low_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF401A_low_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF401A_medium_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF401A_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF401A_medium_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF401A_medium_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF401A_medium_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF401A_medium_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF401A_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF401A_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF401A_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF401A_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF401A_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF401A_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1095B_low_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1095B_low_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1095B_low_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1095B_low_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1095B_low_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1095B_low_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1095B_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1095B_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1095B_medium_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1095B_medium_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1095B_medium_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1095B_medium_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1095B_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1095B_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1095B_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1095B_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1095B_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1095B_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF169B_low_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF169B_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF169B_low_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF169B_low_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF169B_low_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF169B_low_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF169B_medium_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF169B_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF169B_medium_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF169B_medium_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF169B_medium_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF169B_medium_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF169B_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF169B_none_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF169B_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF169B_none_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF169B_none_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF169B_none_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF808B_low_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF808B_low_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF808B_low_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF808B_low_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF808B_low_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF808B_low_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF808B_medium_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF808B_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF808B_medium_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF808B_medium_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF808B_medium_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF808B_medium_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF808B_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF808B_none_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF808B_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF808B_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF808B_none_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF808B_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF353C_low_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF353C_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF353C_low_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF353C_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF353C_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF353C_low_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF353C_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF353C_medium_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF353C_medium_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF353C_medium_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF353C_medium_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF353C_medium_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF353C_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF353C_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF353C_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF353C_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF353C_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF353C_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1452D_low_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1452D_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1452D_low_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1452D_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1452D_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1452D_low_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1452D_medium_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1452D_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1452D_medium_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1452D_medium_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1452D_medium_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1452D_medium_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1452D_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1452D_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1452D_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1452D_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1452D_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1452D_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF892D_low_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF892D_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF892D_low_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF892D_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF892D_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF892D_low_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF892D_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF892D_medium_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF892D_medium_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF892D_medium_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF892D_medium_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF892D_medium_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF892D_none_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF892D_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF892D_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF892D_none_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF892D_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF892D_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1763E_low_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1763E_low_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1763E_low_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1763E_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1763E_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1763E_low_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1763E_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1763E_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1763E_medium_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1763E_medium_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1763E_medium_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1763E_medium_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1763E_none_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1763E_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1763E_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1763E_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1763E_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1763E_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1333E_low_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1333E_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1333E_low_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1333E_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1333E_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1333E_low_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1333E_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1333E_medium_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1333E_medium_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1333E_medium_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1333E_medium_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1333E_medium_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1333E_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1333E_none_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1333E_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1333E_none_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1333E_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1333E_none_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1542E2_low_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1542E2_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1542E2_low_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1542E2_low_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1542E2_low_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1542E2_low_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1542E2_medium_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1542E2_medium_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1542E2_medium_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1542E2_medium_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1542E2_medium_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1542E2_medium_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1542E2_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1542E2_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1542E2_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1542E2_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1542E2_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1542E2_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1162A_low_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1162A_low_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1162A_low_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1162A_low_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1162A_low_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1162A_low_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1162A_medium_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1162A_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1162A_medium_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1162A_medium_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1162A_medium_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1162A_medium_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1162A_none_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1162A_none_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1162A_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1162A_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1162A_none_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1162A_none_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1769B1_low_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1769B1_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1769B1_low_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1769B1_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1769B1_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1769B1_low_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1769B1_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1769B1_medium_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1769B1_medium_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1769B1_medium_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1769B1_medium_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1769B1_medium_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1769B1_none_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1769B1_none_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1769B1_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1769B1_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1769B1_none_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1769B1_none_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF960A_low_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF960A_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF960A_low_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF960A_low_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF960A_low_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF960A_low_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF960A_medium_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF960A_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF960A_medium_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF960A_medium_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF960A_medium_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF960A_medium_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF960A_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF960A_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF960A_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF960A_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF960A_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF960A_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1006B_low_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1006B_low_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1006B_low_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1006B_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1006B_low_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1006B_low_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1006B_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1006B_medium_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1006B_medium_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1006B_medium_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1006B_medium_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1006B_medium_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1006B_none_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1006B_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1006B_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1006B_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1006B_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1006B_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF736A_low_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF736A_low_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF736A_low_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF736A_low_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF736A_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF736A_low_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF736A_medium_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF736A_medium_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF736A_medium_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF736A_medium_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF736A_medium_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF736A_medium_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF736A_none_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF736A_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF736A_none_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF736A_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF736A_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF736A_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF447C_low_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF447C_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF447C_low_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF447C_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF447C_low_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF447C_low_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF447C_medium_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF447C_medium_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF447C_medium_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF447C_medium_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF447C_medium_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF447C_medium_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF447C_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF447C_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF447C_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF447C_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF447C_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF447C_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1152C_low_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1152C_low_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1152C_low_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1152C_low_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1152C_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1152C_low_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1152C_medium_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1152C_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1152C_medium_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1152C_medium_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1152C_medium_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1152C_medium_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1152C_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1152C_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1152C_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1152C_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1152C_none_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1152C_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF61C_low_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF61C_low_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF61C_low_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF61C_low_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF61C_low_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF61C_low_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF61C_medium_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF61C_medium_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF61C_medium_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF61C_medium_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF61C_medium_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF61C_medium_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF61C_none_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF61C_none_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF61C_none_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF61C_none_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF61C_none_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF61C_none_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF60C_low_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF60C_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF60C_low_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF60C_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF60C_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF60C_low_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF60C_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF60C_medium_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF60C_medium_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF60C_medium_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF60C_medium_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF60C_medium_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF60C_none_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF60C_none_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF60C_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF60C_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF60C_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF60C_none_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1762E_low_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1762E_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1762E_low_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1762E_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1762E_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1762E_low_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1762E_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1762E_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF1762E_medium_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1762E_medium_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1762E_medium_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1762E_medium_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1762E_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1762E_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1762E_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1762E_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1762E_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1762E_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF141A_low_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF141A_low_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF141A_low_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF141A_low_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF141A_low_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF141A_low_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF141A_medium_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF141A_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF141A_medium_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF141A_medium_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF141A_medium_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF141A_medium_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF141A_none_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF141A_none_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF141A_none_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF141A_none_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF141A_none_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF141A_none_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF379A_low_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF379A_low_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF379A_low_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF379A_low_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF379A_low_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF379A_low_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF379A_medium_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF379A_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF379A_medium_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF379A_medium_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF379A_medium_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF379A_medium_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF379A_none_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF379A_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF379A_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF379A_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF379A_none_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF379A_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF23A_low_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF23A_low_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF23A_low_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF23A_low_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF23A_low_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF23A_low_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF23A_medium_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF23A_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF23A_medium_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF23A_medium_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF23A_medium_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF23A_medium_very_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF23A_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF23A_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF23A_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF23A_none_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF23A_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF23A_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF820B_low_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF820B_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF820B_low_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF820B_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF820B_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF820B_low_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF820B_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF820B_medium_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF820B_medium_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF820B_medium_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF820B_medium_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF820B_medium_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF820B_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF820B_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF820B_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF820B_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF820B_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF820B_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1009B_low_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1009B_low_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1009B_low_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1009B_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1009B_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1009B_low_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1009B_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1009B_medium_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1009B_medium_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1009B_medium_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1009B_medium_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1009B_medium_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1009B_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1009B_none_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1009B_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1009B_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1009B_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1009B_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF958E1_low_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF958E1_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF958E1_low_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF958E1_low_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF958E1_low_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF958E1_low_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF958E1_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF958E1_medium_hard", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF958E1_medium_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF958E1_medium_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF958E1_medium_very_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF958E1_medium_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF958E1_none_easy", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF958E1_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF958E1_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF958E1_none_none", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF958E1_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF958E1_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF222D_low_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF222D_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF222D_low_moderate", "score": 1, "status": "passed", "error": null}
+{"task_id": "E2H_CF222D_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF222D_low_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF222D_low_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF222D_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF222D_medium_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF222D_medium_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF222D_medium_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF222D_medium_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF222D_medium_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF222D_none_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF222D_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF222D_none_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF222D_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF222D_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF222D_none_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF557D_low_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF557D_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF557D_low_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF557D_low_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF557D_low_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF557D_low_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF557D_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF557D_medium_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF557D_medium_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF557D_medium_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF557D_medium_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF557D_medium_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF557D_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF557D_none_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF557D_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF557D_none_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF557D_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF557D_none_very_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1866H_low_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1866H_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1866H_low_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1866H_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1866H_low_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1866H_low_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1866H_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1866H_medium_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1866H_medium_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1866H_medium_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1866H_medium_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1866H_medium_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1866H_none_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1866H_none_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1866H_none_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1866H_none_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1866H_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1866H_none_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1129C_low_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1129C_low_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1129C_low_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1129C_low_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1129C_low_very_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1129C_low_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1129C_medium_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1129C_medium_hard", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1129C_medium_moderate", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1129C_medium_none", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1129C_medium_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1129C_medium_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1129C_none_easy", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1129C_none_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1129C_none_moderate", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1129C_none_none", "score": -1, "status": "failed", "error": "No output/compilation error"}
+{"task_id": "E2H_CF1129C_none_very_easy", "score": 0, "status": "failed", "error": "Wrong output"}
+{"task_id": "E2H_CF1129C_none_very_hard", "score": -1, "status": "failed", "error": "No output/compilation error"}

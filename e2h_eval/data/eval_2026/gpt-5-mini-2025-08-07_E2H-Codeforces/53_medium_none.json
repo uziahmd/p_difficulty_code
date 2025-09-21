@@ -1,0 +1,25 @@
+{
+    "start": 1758290656.6161435,
+    "end": 1758290680.0226865,
+    "start-formatted": "2025-09-19 23:04 KST",
+    "end-formatted": "2025-09-19 23:04 KST",
+    "gpu": 2,
+    "pid": 53,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# You're Given a String...\n\nYou're given a string of lower-case Latin letters. Your task is to find the length of its longest substring that can be met in the string at least twice. These occurrences can overlap (see sample test 2).\n\n## Input\nThe first input line contains the string. It's guaranteed, that the string is non-empty, consists of lower-case Latin letters, and its length doesn't exceed 100.\n\n## Output\nOutput one number — length of the longest substring that can be met in the string at least twice.\n\n## Example\n### Input\n['abcd', 'ababa', 'zzz']\n\n### Output\n['0', '3', '2']\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments."
+        }
+    ],
+    "thought": "**Producing Python script**\n\nI need to create a Python script for the \"Longest Repeating Substring\" problem. The input format shows a list of strings, likely indicating multiple lines or test cases. I should ensure the script handles multiple non-empty lines and prints results appropriately.\n\nI'll read from standard input and print the results for each line. The example indicates input as a string list like “['abcd', 'ababa', 'zzz']” with outputs like “['0', '3', '2']”. I’ll also ensure to strip and check for empty lines.",
+    "response": "import sys, ast\n\ndata = sys.stdin.read()\nif not data.strip():\n    sys.exit()\ns_list = None\ntxt = data.strip()\ntry:\n    parsed = ast.literal_eval(txt)\n    if isinstance(parsed, list):\n        s_list = [str(x) for x in parsed]\n    else:\n        s_list = [str(parsed)]\nexcept Exception:\n    lines = [line.strip() for line in txt.splitlines() if line.strip()]\n    if len(lines) == 1:\n        s_list = [lines[0]]\n    else:\n        s_list = lines\n\nout_lines = []\nfor s in s_list:\n    n = len(s)\n    ans = 0\n    for L in range(n-1, 0, -1):\n        seen = set()\n        found = False\n        for i in range(0, n - L + 1):\n            sub = s[i:i+L]\n            if sub in seen:\n                ans = L\n                found = True\n                break\n            seen.add(sub)\n        if found:\n            break\n    out_lines.append(str(ans))\n\nsys.stdout.write(\"\\n\".join(out_lines))",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys, ast\n\ndata = sys.stdin.read()\nif not data.strip():\n    sys.exit()\ns_list = None\ntxt = data.strip()\ntry:\n    parsed = ast.literal_eval(txt)\n    if isinstance(parsed, list):\n        s_list = [str(x) for x in parsed]\n    else:\n        s_list = [str(parsed)]\nexcept Exception:\n    lines = [line.strip() for line in txt.splitlines() if line.strip()]\n    if len(lines) == 1:\n        s_list = [lines[0]]\n    else:\n        s_list = lines\n\nout_lines = []\nfor s in s_list:\n    n = len(s)\n    ans = 0\n    for L in range(n-1, 0, -1):\n        seen = set()\n        found = False\n        for i in range(0, n - L + 1):\n            sub = s[i:i+L]\n            if sub in seen:\n                ans = L\n                found = True\n                break\n            seen.add(sub)\n        if found:\n            break\n    out_lines.append(str(ans))\n\nsys.stdout.write(\"\\n\".join(out_lines))",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 223,
+        "completion_token_count": 820,
+        "thoughts_token_count": 576
+    }
+}

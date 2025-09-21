@@ -1,0 +1,25 @@
+{
+    "start": 1758290681.5586083,
+    "end": 1758290708.472687,
+    "start-formatted": "2025-09-19 23:04 KST",
+    "end-formatted": "2025-09-19 23:05 KST",
+    "gpu": 2,
+    "pid": 47,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Neko does Maths\n\nNeko loves divisors. During the latest number theory lesson, he got an interesting exercise from his math teacher.Neko has two integers $$$a$$$ and $$$b$$$. His goal is to find a non-negative integer $$$k$$$ such that the least common multiple of $$$a+k$$$ and $$$b+k$$$ is the smallest possible. If there are multiple optimal integers $$$k$$$, he needs to choose the smallest one.Given his mathematical talent, Neko had no trouble getting Wrong Answer on this problem. Can you help him solve it?\n\n## Input\nThe only line contains two integers $$$a$$$ and $$$b$$$ ($$$1 \\le a, b \\le 10^9$$$).\n\n## Output\nPrint the smallest non-negative integer $$$k$$$ ($$$k \\ge 0$$$) such that the lowest common multiple of $$$a+k$$$ and $$$b+k$$$ is the smallest possible.If there are many possible integers $$$k$$$ giving the same value of the least common multiple, print the smallest one.\n\n## Example\n### Input\n['6 10', '21 31', '5 10']\n\n### Output\n['2', '9', '0']\n\n## Note\nIn the first test, one should choose $$$k = 2$$$, as the least common multiple of $$$6 + 2$$$ and $$$10 + 2$$$ is $$$24$$$, which is the smallest least common multiple possible.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a hard question."
+        }
+    ],
+    "thought": "**Evaluating gcd and lcm calculations**\n\nI need to ensure that gcd(a+k, diff) is at least d. While gcd might be larger than d, I'll consider other divisors as well. So I'll compute the final gcd using gcd(a+k, diff) and work out the lcm accordingly. I need to take care of edge cases like when a equals b, which means k equals zero. If k is large but not exceeding diff, it should fall between 0 and d-1. Handling input is also tricky, as it's meant for one line but might have multiple test cases.",
+    "response": "import sys\nimport math\n\ndata = list(map(int, sys.stdin.read().strip().split()))\nif len(data) < 2:\n    sys.exit(0)\na, b = data[0], data[1]\nif a == b:\n    print(0)\n    sys.exit(0)\n\nif a > b:\n    a, b = b, a  # ensure a <= b for simplicity\n\ndiff = b - a\ndivs = set()\nr = int(math.isqrt(diff))\nfor i in range(1, r+1):\n    if diff % i == 0:\n        divs.add(i)\n        divs.add(diff // i)\n\nbest_k = 0\nbest_lcm = None\nfor d in divs:\n    k = (-a) % d\n    A = a + k\n    B = b + k\n    g = math.gcd(A, B)\n    lcm = (A // g) * B\n    if best_lcm is None or lcm < best_lcm or (lcm == best_lcm and k < best_k):\n        best_lcm = lcm\n        best_k = k\n\nprint(best_k)",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\nimport math\n\ndata = list(map(int, sys.stdin.read().strip().split()))\nif len(data) < 2:\n    sys.exit(0)\na, b = data[0], data[1]\nif a == b:\n    print(0)\n    sys.exit(0)\n\nif a > b:\n    a, b = b, a  # ensure a <= b for simplicity\n\ndiff = b - a\ndivs = set()\nr = int(math.isqrt(diff))\nfor i in range(1, r+1):\n    if diff % i == 0:\n        divs.add(i)\n        divs.add(diff // i)\n\nbest_k = 0\nbest_lcm = None\nfor d in divs:\n    k = (-a) % d\n    A = a + k\n    B = b + k\n    g = math.gcd(A, B)\n    lcm = (A // g) * B\n    if best_lcm is None or lcm < best_lcm or (lcm == best_lcm and k < best_k):\n        best_lcm = lcm\n        best_k = k\n\nprint(best_k)",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 406,
+        "completion_token_count": 1276,
+        "thoughts_token_count": 1024
+    }
+}

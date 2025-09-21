@@ -1,0 +1,25 @@
+{
+    "start": 1758292111.9587362,
+    "end": 1758292150.1960933,
+    "start-formatted": "2025-09-19 23:28 KST",
+    "end-formatted": "2025-09-19 23:29 KST",
+    "gpu": 2,
+    "pid": 28,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Vasily the Bear and Beautiful Strings\n\nVasily the Bear loves beautiful strings. String s is beautiful if it meets the following criteria:   String s only consists of characters 0 and 1, at that character 0 must occur in string s exactly n times, and character 1 must occur exactly m times.  We can obtain character g from string s with some (possibly, zero) number of modifications. The character g equals either zero or one. A modification of string with length at least two is the following operation: we replace two last characters from the string by exactly one other character. This character equals one if it replaces two zeros, otherwise it equals zero. For example, one modification transforms string \"01010\" into string \"0100\", two modifications transform it to \"011\". It is forbidden to modify a string with length less than two.Help the Bear, count the number of beautiful strings. As the number of beautiful strings can be rather large, print the remainder after dividing the number by 1000000007 (109 + 7). \n\n## Input\nThe first line of the input contains three space-separated integers n, m, g (0 ≤ n, m ≤ 105, n + m ≥ 1, 0 ≤ g ≤ 1).\n\n## Output\nPrint a single integer — the answer to the problem modulo 1000000007 (109 + 7).\n\n## Example\n### Input\n['1 1 0', '2 2 0', '1 1 1']\n\n### Output\n['2', '4', '0']\n\n## Note\nIn the first sample the beautiful strings are: \"01\", \"10\".In the second sample the beautiful strings are: \"0011\", \"1001\", \"1010\", \"1100\".In the third sample there are no beautiful strings.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a very easy question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\ndef count_beautiful_strings(n, m, g):\n    MOD = 10**9 + 7\n    if n < m:\n        n, m = m, n\n        g ^= 1\n\n    if g == 0 and (n - m) % 2 != 0:\n        return 0\n\n    if g == 1 and n != m:\n        return 0\n\n    if n == m:\n        return 1\n\n    dp = [[0 for _ in range(m + 1)] for _ in range(n + 1)]\n    dp[0][0] = 1\n\n    for i in range(1, n + 1):\n        for j in range(min(i, m) + 1):\n            if j > 0:\n                dp[i][j] += dp[i - 1][j - 1]\n            dp[i][j] %= MOD\n            if i >= 2:\n                dp[i][j] += MOD - dp[i - 2][j]\n\n    return dp[n][m]\n\nif __name__ == \"__main__\":\n    import sys\n    lines = sys.stdin.readlines()\n    results = []\n    for line in lines[1:]:\n        n, m, g = map(int, line.split())\n        results.append(count_beautiful_strings(n, m, g))\n    print(\"\\n\".join(map(str, results)))\n```\n\nThis script first checks the conditions for a beautiful string. If the conditions are not met, it returns 0. Otherwise, it initializes a 2D array `dp` to store the number of beautiful strings of length `i` with `j` ones. It then fills up the `dp` array using dynamic programming and returns the final value.\n\nThe script reads the input from standard input, processes each test case, and prints the results to standard output.",
+    "ground_truth": "N/A",
+    "extracted_answer": "def count_beautiful_strings(n, m, g):\n    MOD = 10**9 + 7\n    if n < m:\n        n, m = m, n\n        g ^= 1\n\n    if g == 0 and (n - m) % 2 != 0:\n        return 0\n\n    if g == 1 and n != m:\n        return 0\n\n    if n == m:\n        return 1\n\n    dp = [[0 for _ in range(m + 1)] for _ in range(n + 1)]\n    dp[0][0] = 1\n\n    for i in range(1, n + 1):\n        for j in range(min(i, m) + 1):\n            if j > 0:\n                dp[i][j] += dp[i - 1][j - 1]\n            dp[i][j] %= MOD\n            if i >= 2:\n                dp[i][j] += MOD - dp[i - 2][j]\n\n    return dp[n][m]\n\nif __name__ == \"__main__\":\n    import sys\n    lines = sys.stdin.readlines()\n    results = []\n    for line in lines[1:]:\n        n, m, g = map(int, line.split())\n        results.append(count_beautiful_strings(n, m, g))\n    print(\"\\n\".join(map(str, results)))",
+    "score": -1,
+    "metadata": {
+        "prompt_token_count": 517,
+        "completion_token_count": 387,
+        "thoughts_token_count": 0
+    }
+}

@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip()\nif not data:\n    sys.exit(0)\n# Unable to implement full solution within constraints; output \"false\" as placeholder.\nprint(\"false\")",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip()\nif not data:\n    sys.exit(0)\n# Unable to implement full solution within constraints; output \"false\" as placeholder.\nprint(\"false\")",
-    "score": -1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 502,
         "completion_token_count": 1519,

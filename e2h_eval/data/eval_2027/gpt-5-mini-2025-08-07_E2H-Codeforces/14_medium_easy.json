@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit()\nm = int(data[0])\n\ndef zeros(n):\n    s = 0\n    while n > 0:\n        n //= 5\n        s += n\n    return s\n\nlow, high = 0, 5 * m + 5\nwhile low < high:\n    mid = (low + high) // 2\n    if zeros(mid) < m:\n        low = mid + 1\n    else:\n        high = mid\n\nif zeros(low) != m:\n    print(0)\nelse:\n    print(5)\n    print(\" \".join(str(low + i) for i in range(5)))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit()\nm = int(data[0])\n\ndef zeros(n):\n    s = 0\n    while n > 0:\n        n //= 5\n        s += n\n    return s\n\nlow, high = 0, 5 * m + 5\nwhile low < high:\n    mid = (low + high) // 2\n    if zeros(mid) < m:\n        low = mid + 1\n    else:\n        high = mid\n\nif zeros(low) != m:\n    print(0)\nelse:\n    print(5)\n    print(\" \".join(str(low + i) for i in range(5)))",
-    "score": 1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 348,
         "completion_token_count": 1119,

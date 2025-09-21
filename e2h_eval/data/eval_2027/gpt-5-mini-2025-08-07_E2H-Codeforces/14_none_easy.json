@@ -15,7 +15,7 @@
     "response": "```python\nimport sys\n\ndef trailing_zeros(n):\n    cnt = 0\n    d = 5\n    while d <= n:\n        cnt += n // d\n        d *= 5\n    return cnt\n\ndef find_first(m):\n    lo, hi = 0, 5 * (m + 1)\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if trailing_zeros(mid) < m:\n            lo = mid + 1\n        else:\n            hi = mid\n    return lo\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    m = int(data[0])\n    first = find_first(m)\n    if trailing_zeros(first) != m:\n        print(0)\n        return\n    res = [str(first + i) for i in range(5)]\n    print(5)\n    print(\" \".join(res))\n\nif __name__ == \"__main__\":\n    main()\n```",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndef trailing_zeros(n):\n    cnt = 0\n    d = 5\n    while d <= n:\n        cnt += n // d\n        d *= 5\n    return cnt\n\ndef find_first(m):\n    lo, hi = 0, 5 * (m + 1)\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if trailing_zeros(mid) < m:\n            lo = mid + 1\n        else:\n            hi = mid\n    return lo\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    m = int(data[0])\n    first = find_first(m)\n    if trailing_zeros(first) != m:\n        print(0)\n        return\n    res = [str(first + i) for i in range(5)]\n    print(5)\n    print(\" \".join(res))\n\nif __name__ == \"__main__\":\n    main()",
-    "score": 1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 348,
         "completion_token_count": 218,

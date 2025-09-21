@@ -1,0 +1,25 @@
+{
+    "start": 1758292189.2267034,
+    "end": 1758292207.697608,
+    "start-formatted": "2025-09-19 23:29 KST",
+    "end-formatted": "2025-09-19 23:30 KST",
+    "gpu": 2,
+    "pid": 35,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Find Maximum\n\nValera has array a, consisting of n integers a0, a1, ..., an - 1, and function f(x), taking an integer from 0 to 2n - 1 as its single argument. Value f(x) is calculated by formula , where value bit(i) equals one if the binary representation of number x contains a 1 on the i-th position, and zero otherwise.For example, if n = 4 and x = 11 (11 = 20 + 21 + 23), then f(x) = a0 + a1 + a3.Help Valera find the maximum of function f(x) among all x, for which an inequality holds: 0 ≤ x ≤ m.\n\n## Input\nThe first line contains integer n (1 ≤ n ≤ 105) — the number of array elements. The next line contains n space-separated integers a0, a1, ..., an - 1 (0 ≤ ai ≤ 104) — elements of array a.The third line contains a sequence of digits zero and one without spaces s0s1... sn - 1 — the binary representation of number m. Number m equals .\n\n## Output\nPrint a single integer — the maximum value of function f(x) for all .\n\n## Example\n### Input\n['2\\n3 8\\n10', '5\\n17 0 10 2 1\\n11010']\n\n### Output\n['3', '27']\n\n## Note\nIn the first test case m = 20 = 1, f(0) = 0, f(1) = a0 = 3.In the second sample m = 20 + 21 + 23 = 11, the maximum value of function equals f(5) = a0 + a2 = 17 + 10 = 27.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a moderately difficult question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nimport sys\n\ndef read_input():\n    n = int(input())\n    a = list(map(int, input().split()))\n    m_str = input()\n    return n, a, m_str\n\ndef calculate_max_value(n, a, m_str):\n    max_val = 0\n    m = 0\n    for i in range(n):\n        if m_str[i] == '1':\n            max_val += a[i]\n            m += 2**i\n    total_sum = sum(a)\n    if total_sum > m:\n        return total_sum\n    else:\n        return max_val\n\ndef main():\n    n, a, m_str = read_input()\n    max_val = calculate_max_value(n, a, m_str)\n    print(max_val)\n\nif __name__ == \"__main__\":\n    main()\n```\n\nThis script reads the input from standard input, calculates the maximum value of the function f(x) and prints it to standard output. The `read_input` function is used to read the input, the `calculate_max_value` function is used to calculate the maximum value, and the `main` function is the entry point of the script.\n\nThe time complexity of this script is O(n), where n is the number of elements in the array a. This is because we are iterating over the array a once to calculate the maximum value of the function f(x). The space complexity is also O(n), as we are storing the array a in memory.",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndef read_input():\n    n = int(input())\n    a = list(map(int, input().split()))\n    m_str = input()\n    return n, a, m_str\n\ndef calculate_max_value(n, a, m_str):\n    max_val = 0\n    m = 0\n    for i in range(n):\n        if m_str[i] == '1':\n            max_val += a[i]\n            m += 2**i\n    total_sum = sum(a)\n    if total_sum > m:\n        return total_sum\n    else:\n        return max_val\n\ndef main():\n    n, a, m_str = read_input()\n    max_val = calculate_max_value(n, a, m_str)\n    print(max_val)\n\nif __name__ == \"__main__\":\n    main()",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 553,
+        "completion_token_count": 302,
+        "thoughts_token_count": 0
+    }
+}

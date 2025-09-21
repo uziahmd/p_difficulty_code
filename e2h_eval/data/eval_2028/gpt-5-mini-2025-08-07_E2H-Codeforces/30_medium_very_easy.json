@@ -1,0 +1,25 @@
+{
+    "start": 1758290997.5435164,
+    "end": 1758291033.7709064,
+    "start-formatted": "2025-09-19 23:09 KST",
+    "end-formatted": "2025-09-19 23:10 KST",
+    "gpu": 2,
+    "pid": 30,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# TV Game\n\nThere is a new TV game on BerTV. In this game two players get a number A consisting of 2n digits. Before each turn players determine who will make the next move. Each player should make exactly n moves. On it's turn i-th player takes the leftmost digit of A and appends it to his or her number Si. After that this leftmost digit is erased from A. Initially the numbers of both players (S1 and S2) are «empty». Leading zeroes in numbers A, S1, S2 are allowed. In the end of the game the first player gets S1 dollars, and the second gets S2 dollars.One day Homer and Marge came to play the game. They managed to know the number A beforehand. They want to find such sequence of their moves that both of them makes exactly n moves and which maximizes their total prize. Help them.\n\n## Input\nThe first line contains integer n (1 ≤ n ≤ 18). The second line contains integer A consisting of exactly 2n digits. This number can have leading zeroes.\n\n## Output\nOutput the line of 2n characters «H» and «M» — the sequence of moves of Homer and Marge, which gives them maximum possible total prize. Each player must make exactly n moves. If there are several solutions, output any of them.\n\n## Example\n### Input\n['2\\n1234', '2\\n9911']\n\n### Output\n['HHMM', 'HMHM']\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a very easy question."
+        }
+    ],
+    "thought": "**Analyzing digit allocation**\n\nI'm considering that if each player gets n digits, the final number will have exactly n digits (leading zeros allowed) formed by concatenation. The first digit taken becomes the most significant. The order of taking digits matters, creating a subsequence that preserves the order of A. The weight of each digit depends on how many digits a player will get later based on their remaining moves. It's quite a complex dynamic! Notably, sum S1 + S2 is influenced by whether earlier digits go to a player with more slots remaining.",
+    "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nn = int(data[0])\nA = data[1].strip()\ndigits = [int(ch) for ch in A]\nL = 2 * n\npow10 = [10**i for i in range(n+1)]\n\ndp = [[None] * (n+1) for _ in range(L+1)]\nparent = [[None] * (n+1) for _ in range(L+1)]\ndp[0][0] = 0\n\nfor t in range(L):\n    for h in range(n+1):\n        if dp[t][h] is None:\n            continue\n        m = t - h\n        d = digits[t]\n        if h < n:\n            e = n - (h + 1)\n            val = dp[t][h] + d * pow10[e]\n            if dp[t+1][h+1] is None or val > dp[t+1][h+1]:\n                dp[t+1][h+1] = val\n                parent[t+1][h+1] = (h, 'H')\n        if m < n:\n            e = n - (m + 1)\n            val = dp[t][h] + d * pow10[e]\n            if dp[t+1][h] is None or val > dp[t+1][h]:\n                dp[t+1][h] = val\n                parent[t+1][h] = (h, 'M')\n\nres = []\nt = L\nh = n\nwhile t > 0:\n    prev = parent[t][h]\n    if prev is None:\n        break\n    ph, ch = prev\n    res.append(ch)\n    h = ph\n    t -= 1\n\nres.reverse()\nprint(''.join(res))",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nn = int(data[0])\nA = data[1].strip()\ndigits = [int(ch) for ch in A]\nL = 2 * n\npow10 = [10**i for i in range(n+1)]\n\ndp = [[None] * (n+1) for _ in range(L+1)]\nparent = [[None] * (n+1) for _ in range(L+1)]\ndp[0][0] = 0\n\nfor t in range(L):\n    for h in range(n+1):\n        if dp[t][h] is None:\n            continue\n        m = t - h\n        d = digits[t]\n        if h < n:\n            e = n - (h + 1)\n            val = dp[t][h] + d * pow10[e]\n            if dp[t+1][h+1] is None or val > dp[t+1][h+1]:\n                dp[t+1][h+1] = val\n                parent[t+1][h+1] = (h, 'H')\n        if m < n:\n            e = n - (m + 1)\n            val = dp[t][h] + d * pow10[e]\n            if dp[t+1][h] is None or val > dp[t+1][h]:\n                dp[t+1][h] = val\n                parent[t+1][h] = (h, 'M')\n\nres = []\nt = L\nh = n\nwhile t > 0:\n    prev = parent[t][h]\n    if prev is None:\n        break\n    ph, ch = prev\n    res.append(ch)\n    h = ph\n    t -= 1\n\nres.reverse()\nprint(''.join(res))",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 412,
+        "completion_token_count": 1934,
+        "thoughts_token_count": 1536
+    }
+}

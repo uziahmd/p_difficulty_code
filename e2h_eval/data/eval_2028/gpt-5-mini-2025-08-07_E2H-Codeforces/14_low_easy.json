@@ -15,7 +15,7 @@
     "response": "import sys\n\ndef count_zeros(n):\n    cnt = 0\n    d = 5\n    while d <= n:\n        cnt += n // d\n        d *= 5\n    return cnt\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\n\nouts = []\nfor token in data:\n    m = int(token)\n    lo, hi = 0, 5 * (m + 1)\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if count_zeros(mid) < m:\n            lo = mid + 1\n        else:\n            hi = mid\n    if count_zeros(lo) != m:\n        outs.append(\"0\")\n    else:\n        nums = [str(lo + i) for i in range(5)]\n        outs.append(\"5\")\n        outs.append(\" \".join(nums))\n\nsys.stdout.write(\"\\n\".join(outs))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndef count_zeros(n):\n    cnt = 0\n    d = 5\n    while d <= n:\n        cnt += n // d\n        d *= 5\n    return cnt\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\n\nouts = []\nfor token in data:\n    m = int(token)\n    lo, hi = 0, 5 * (m + 1)\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if count_zeros(mid) < m:\n            lo = mid + 1\n        else:\n            hi = mid\n    if count_zeros(lo) != m:\n        outs.append(\"0\")\n    else:\n        nums = [str(lo + i) for i in range(5)]\n        outs.append(\"5\")\n        outs.append(\" \".join(nums))\n\nsys.stdout.write(\"\\n\".join(outs))",
-    "score": 1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 348,
         "completion_token_count": 588,

@@ -1,0 +1,25 @@
+{
+    "start": 1758338118.0636806,
+    "end": 1758338142.6174905,
+    "start-formatted": "2025-09-20 12:15 KST",
+    "end-formatted": "2025-09-20 12:15 KST",
+    "gpu": 2,
+    "pid": 22,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Marks\n\nVasya, or Mr. Vasily Petrov is a dean of a department in a local university. After the winter exams he got his hands on a group's gradebook.Overall the group has n students. They received marks for m subjects. Each student got a mark from 1 to 9 (inclusive) for each subject.Let's consider a student the best at some subject, if there is no student who got a higher mark for this subject. Let's consider a student successful, if there exists a subject he is the best at.Your task is to find the number of successful students in the group.\n\n## Input\nThe first input line contains two integers n and m (1 ≤ n, m ≤ 100) — the number of students and the number of subjects, correspondingly. Next n lines each containing m characters describe the gradebook. Each character in the gradebook is a number from 1 to 9. Note that the marks in a rows are not sepatated by spaces.\n\n## Output\nPrint the single number — the number of successful students in the given group.\n\n## Example\n### Input\n['3 3\\n223\\n232\\n112', '3 5\\n91728\\n11828\\n11111']\n\n### Output\n['2', '3']\n\n## Note\nIn the first sample test the student number 1 is the best at subjects 1 and 3, student 2 is the best at subjects 1 and 2, but student 3 isn't the best at any subject.In the second sample test each student is the best at at least one subject.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is an easy question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\ndef count_successful_students():\n    import sys\n    input = sys.stdin.read\n    data = input().splitlines()\n    \n    n, m = map(int, data[0].split())\n    grades = [list(map(int, list(line))) for line in data[1:n+1]]\n    \n    # Find the maximum score for each subject\n    max_scores = [max(grades[i][j] for i in range(n)) for j in range(m)]\n    \n    successful = 0\n    for i in range(n):\n        for j in range(m):\n            if grades[i][j] == max_scores[j]:\n                successful += 1\n                break  # No need to check other subjects for this student\n    \n    print(successful)\n\ncount_successful_students()\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "def count_successful_students():\n    import sys\n    input = sys.stdin.read\n    data = input().splitlines()\n    \n    n, m = map(int, data[0].split())\n    grades = [list(map(int, list(line))) for line in data[1:n+1]]\n    \n    # Find the maximum score for each subject\n    max_scores = [max(grades[i][j] for i in range(n)) for j in range(m)]\n    \n    successful = 0\n    for i in range(n):\n        for j in range(m):\n            if grades[i][j] == max_scores[j]:\n                successful += 1\n                break  # No need to check other subjects for this student\n    \n    print(successful)\n\ncount_successful_students()",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 459,
+        "completion_token_count": 162,
+        "thoughts_token_count": 0
+    }
+}

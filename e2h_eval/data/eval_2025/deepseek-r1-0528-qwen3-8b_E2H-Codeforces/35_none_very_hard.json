@@ -1,0 +1,25 @@
+{
+    "start": 1758293097.731671,
+    "end": 1758293122.5933502,
+    "start-formatted": "2025-09-19 23:44 KST",
+    "end-formatted": "2025-09-19 23:45 KST",
+    "gpu": 2,
+    "pid": 35,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Find Maximum\n\nValera has array a, consisting of n integers a0, a1, ..., an - 1, and function f(x), taking an integer from 0 to 2n - 1 as its single argument. Value f(x) is calculated by formula , where value bit(i) equals one if the binary representation of number x contains a 1 on the i-th position, and zero otherwise.For example, if n = 4 and x = 11 (11 = 20 + 21 + 23), then f(x) = a0 + a1 + a3.Help Valera find the maximum of function f(x) among all x, for which an inequality holds: 0 ≤ x ≤ m.\n\n## Input\nThe first line contains integer n (1 ≤ n ≤ 105) — the number of array elements. The next line contains n space-separated integers a0, a1, ..., an - 1 (0 ≤ ai ≤ 104) — elements of array a.The third line contains a sequence of digits zero and one without spaces s0s1... sn - 1 — the binary representation of number m. Number m equals .\n\n## Output\nPrint a single integer — the maximum value of function f(x) for all .\n\n## Example\n### Input\n['2\\n3 8\\n10', '5\\n17 0 10 2 1\\n11010']\n\n### Output\n['3', '27']\n\n## Note\nIn the first test case m = 20 = 1, f(0) = 0, f(1) = a0 = 3.In the second sample m = 20 + 21 + 23 = 11, the maximum value of function equals f(5) = a0 + a2 = 17 + 10 = 27.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a very hard question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nimport sys\n\ndef main():\n    import sys\n    input = sys.stdin.read\n    data = input().split()\n    \n    n = int(data[0])\n    a = list(map(int, data[1:n+1]))\n    s = data[n+1]\n    \n    max_val = 0\n    current = 0\n    for i in range(n):\n        if s[i] == '1':\n            current += (1 << (n - 1 - i))\n    \n    # We can try to set bits in a way that maximizes f(x) while not exceeding m\n    # We will iterate through each bit position from left to right\n    # If setting the bit doesn't exceed m, we set it and add a[i]\n    # Otherwise, we leave it unset\n    \n    result = 0\n    for i in range(n):\n        bit = 1 << (n - 1 - i)\n        if (current & bit) != 0:\n            result += a[i]\n    \n    print(result)\n\nif __name__ == \"__main__\":\n    main()\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndef main():\n    import sys\n    input = sys.stdin.read\n    data = input().split()\n    \n    n = int(data[0])\n    a = list(map(int, data[1:n+1]))\n    s = data[n+1]\n    \n    max_val = 0\n    current = 0\n    for i in range(n):\n        if s[i] == '1':\n            current += (1 << (n - 1 - i))\n    \n    # We can try to set bits in a way that maximizes f(x) while not exceeding m\n    # We will iterate through each bit position from left to right\n    # If setting the bit doesn't exceed m, we set it and add a[i]\n    # Otherwise, we leave it unset\n    \n    result = 0\n    for i in range(n):\n        bit = 1 << (n - 1 - i)\n        if (current & bit) != 0:\n            result += a[i]\n    \n    print(result)\n\nif __name__ == \"__main__\":\n    main()",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 626,
+        "completion_token_count": 229,
+        "thoughts_token_count": 0
+    }
+}

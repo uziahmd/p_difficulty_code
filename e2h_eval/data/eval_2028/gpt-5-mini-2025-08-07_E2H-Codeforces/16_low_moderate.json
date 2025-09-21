@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nit = iter(data)\noutputs = []\nwhile True:\n    try:\n        x1 = int(next(it))\n    except StopIteration:\n        break\n    y1 = int(next(it))\n    x2 = int(next(it))\n    y2 = int(next(it))\n    n = int(next(it))\n    cnt = 0\n    for _ in range(n):\n        a = int(next(it)); b = int(next(it)); c = int(next(it))\n        s1 = a * x1 + b * y1 + c\n        s2 = a * x2 + b * y2 + c\n        if s1 < 0 and s2 > 0 or s1 > 0 and s2 < 0:\n            cnt += 1\n    outputs.append(str(cnt))\n\nsys.stdout.write(\"\\n\".join(outputs))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nit = iter(data)\noutputs = []\nwhile True:\n    try:\n        x1 = int(next(it))\n    except StopIteration:\n        break\n    y1 = int(next(it))\n    x2 = int(next(it))\n    y2 = int(next(it))\n    n = int(next(it))\n    cnt = 0\n    for _ in range(n):\n        a = int(next(it)); b = int(next(it)); c = int(next(it))\n        s1 = a * x1 + b * y1 + c\n        s2 = a * x2 + b * y2 + c\n        if s1 < 0 and s2 > 0 or s1 > 0 and s2 < 0:\n            cnt += 1\n    outputs.append(str(cnt))\n\nsys.stdout.write(\"\\n\".join(outputs))",
-    "score": -1,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 609,
         "completion_token_count": 457,

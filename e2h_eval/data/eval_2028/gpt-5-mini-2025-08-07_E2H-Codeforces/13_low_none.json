@@ -15,7 +15,7 @@
     "response": "import sys, re\nfrom itertools import permutations\n\nnotes_order = [\"C\",\"C#\",\"D\",\"D#\",\"E\",\"F\",\"F#\",\"G\",\"G#\",\"A\",\"B\",\"H\"]\nidx = {n:i for i,n in enumerate(notes_order)}\n\ndata = sys.stdin.read()\ntokens = re.findall(r'[A-H]#?', data)\nif not tokens:\n    sys.exit(0)\n\ndef classify(triple):\n    arr = [idx[t] for t in triple]\n    for a,b,c in permutations(arr,3):\n        d1 = (b - a) % 12\n        d2 = (c - b) % 12\n        if d1 == 4 and d2 == 3:\n            return \"major\"\n        if d1 == 3 and d2 == 4:\n            return \"minor\"\n    return \"strange\"\n\nresults = []\nfor i in range(0, len(tokens), 3):\n    triple = tokens[i:i+3]\n    if len(triple) < 3:\n        break\n    results.append(classify(triple))\n\nprint(\"\\n\".join(results))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys, re\nfrom itertools import permutations\n\nnotes_order = [\"C\",\"C#\",\"D\",\"D#\",\"E\",\"F\",\"F#\",\"G\",\"G#\",\"A\",\"B\",\"H\"]\nidx = {n:i for i,n in enumerate(notes_order)}\n\ndata = sys.stdin.read()\ntokens = re.findall(r'[A-H]#?', data)\nif not tokens:\n    sys.exit(0)\n\ndef classify(triple):\n    arr = [idx[t] for t in triple]\n    for a,b,c in permutations(arr,3):\n        d1 = (b - a) % 12\n        d2 = (c - b) % 12\n        if d1 == 4 and d2 == 3:\n            return \"major\"\n        if d1 == 3 and d2 == 4:\n            return \"minor\"\n    return \"strange\"\n\nresults = []\nfor i in range(0, len(tokens), 3):\n    triple = tokens[i:i+3]\n    if len(triple) < 3:\n        break\n    results.append(classify(triple))\n\nprint(\"\\n\".join(results))",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 666,
         "completion_token_count": 625,

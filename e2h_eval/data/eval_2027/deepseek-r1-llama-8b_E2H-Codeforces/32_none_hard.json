@@ -1,0 +1,25 @@
+{
+    "start": 1758292117.4199235,
+    "end": 1758292143.243807,
+    "start-formatted": "2025-09-19 23:28 KST",
+    "end-formatted": "2025-09-19 23:29 KST",
+    "gpu": 2,
+    "pid": 32,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Array Stabilization\n\nYou are given an array $$$a$$$ consisting of $$$n$$$ integer numbers.Let instability of the array be the following value: $$$\\max\\limits_{i = 1}^{n} a_i - \\min\\limits_{i = 1}^{n} a_i$$$.You have to remove exactly one element from this array to minimize instability of the resulting $$$(n-1)$$$-elements array. Your task is to calculate the minimum possible instability.\n\n## Input\nThe first line of the input contains one integer $$$n$$$ ($$$2 \\le n \\le 10^5$$$) — the number of elements in the array $$$a$$$.The second line of the input contains $$$n$$$ integers $$$a_1, a_2, \\dots, a_n$$$ ($$$1 \\le a_i \\le 10^5$$$) — elements of the array $$$a$$$.\n\n## Output\nPrint one integer — the minimum possible instability of the array if you have to remove exactly one element from the array $$$a$$$.\n\n## Example\n### Input\n['4\\n1 3 3 7', '2\\n1 100000']\n\n### Output\n['2', '0']\n\n## Note\nIn the first example you can remove $$$7$$$ then instability of the remaining array will be $$$3 - 1 = 2$$$.In the second example you can remove either $$$1$$$ or $$$100000$$$ then instability of the remaining array will be $$$100000 - 100000 = 0$$$ and $$$1 - 1 = 0$$$ correspondingly.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a hard question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nimport sys\n\ndef array_stabilization():\n    n = int(input())\n    a = list(map(int, input().split()))\n\n    a.sort()\n\n    max_diff = a[-1] - a[0]\n\n    left_max = [a[0]]\n    right_min = [a[-1]]\n\n    for i in range(1, n):\n        left_max.append(max(a[i], left_max[-1]))\n        right_min.append(min(a[n-i-1], right_min[-1]))\n\n    right_min.reverse()\n\n    min_diff = float('inf')\n\n    for i in range(n-1):\n        curr_diff = max(left_max[i], right_min[i+1]) - min(left_max[i], right_min[i+1])\n        min_diff = min(min_diff, curr_diff)\n\n    print(min_diff)\n\narray_stabilization()\n```\n\nThis script reads the number of elements and the array from the standard input, sorts the array, and then iterates over the array to calculate the minimum instability. It uses two lists, `left_max` and `right_min`, to keep track of the maximum element from the left and the minimum element from the right, respectively, for each subarray. The minimum difference is updated at each step to find the minimum possible instability.",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndef array_stabilization():\n    n = int(input())\n    a = list(map(int, input().split()))\n\n    a.sort()\n\n    max_diff = a[-1] - a[0]\n\n    left_max = [a[0]]\n    right_min = [a[-1]]\n\n    for i in range(1, n):\n        left_max.append(max(a[i], left_max[-1]))\n        right_min.append(min(a[n-i-1], right_min[-1]))\n\n    right_min.reverse()\n\n    min_diff = float('inf')\n\n    for i in range(n-1):\n        curr_diff = max(left_max[i], right_min[i+1]) - min(left_max[i], right_min[i+1])\n        min_diff = min(min_diff, curr_diff)\n\n    print(min_diff)\n\narray_stabilization()",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 460,
+        "completion_token_count": 262,
+        "thoughts_token_count": 0
+    }
+}

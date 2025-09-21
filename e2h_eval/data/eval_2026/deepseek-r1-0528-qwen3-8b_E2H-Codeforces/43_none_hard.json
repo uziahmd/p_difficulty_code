@@ -1,0 +1,25 @@
+{
+    "start": 1758293089.4888275,
+    "end": 1758293111.365839,
+    "start-formatted": "2025-09-19 23:44 KST",
+    "end-formatted": "2025-09-19 23:45 KST",
+    "gpu": 2,
+    "pid": 43,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Check the string\n\nA has a string consisting of some number of lowercase English letters 'a'. He gives it to his friend B who appends some number of letters 'b' to the end of this string. Since both A and B like the characters 'a' and 'b', they have made sure that at this point, at least one 'a' and one 'b' exist in the string.B now gives this string to C and he appends some number of letters 'c' to the end of the string. However, since C is a good friend of A and B, the number of letters 'c' he appends is equal to the number of 'a' or to the number of 'b' in the string. It is also possible that the number of letters 'c' equals both to the number of letters 'a' and to the number of letters 'b' at the same time.You have a string in your hands, and you want to check if it is possible to obtain the string in this way or not. If it is possible to obtain the string, print \"YES\", otherwise print \"NO\" (without the quotes).\n\n## Input\nThe first and only line consists of a string $$$S$$$ ($$$ 1 \\le |S| \\le 5\\,000 $$$). It is guaranteed that the string will only consist of the lowercase English letters 'a', 'b', 'c'.\n\n## Output\nPrint \"YES\" or \"NO\", according to the condition.\n\n## Example\n### Input\n['aaabccc', 'bbacc', 'aabc']\n\n### Output\n['YES', 'NO', 'YES']\n\n## Note\nConsider first example: the number of 'c' is equal to the number of 'a'. Consider second example: although the number of 'c' is equal to the number of the 'b', the order is not correct.Consider third example: the number of 'c' is equal to the number of 'b'.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a hard question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nimport sys\n\ndef is_valid_string(s):\n    count_a = s.count('a')\n    count_b = s.count('b')\n    count_c = s.count('c')\n    \n    # Check if there is at least one 'a' and one 'b'\n    if count_a == 0 or count_b == 0:\n        return False\n    \n    # Check if the number of 'c' equals either count_a or count_b\n    if count_c != count_a and count_c != count_b:\n        return False\n    \n    # Check if all 'c's are at the end\n    if s.count('c') != len(s) - s.rfind('c') - 1:\n        return False\n    \n    return True\n\ndef main():\n    s = sys.stdin.readline().strip()\n    if is_valid_string(s):\n        print(\"YES\")\n    else:\n        print(\"NO\")\n\nif __name__ == \"__main__\":\n    main()\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndef is_valid_string(s):\n    count_a = s.count('a')\n    count_b = s.count('b')\n    count_c = s.count('c')\n    \n    # Check if there is at least one 'a' and one 'b'\n    if count_a == 0 or count_b == 0:\n        return False\n    \n    # Check if the number of 'c' equals either count_a or count_b\n    if count_c != count_a and count_c != count_b:\n        return False\n    \n    # Check if all 'c's are at the end\n    if s.count('c') != len(s) - s.rfind('c') - 1:\n        return False\n    \n    return True\n\ndef main():\n    s = sys.stdin.readline().strip()\n    if is_valid_string(s):\n        print(\"YES\")\n    else:\n        print(\"NO\")\n\nif __name__ == \"__main__\":\n    main()",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 511,
+        "completion_token_count": 199,
+        "thoughts_token_count": 0
+    }
+}

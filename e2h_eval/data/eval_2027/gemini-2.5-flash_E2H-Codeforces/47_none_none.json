@@ -1,0 +1,25 @@
+{
+    "start": 1758293710.3235128,
+    "end": 1758293715.9748788,
+    "start-formatted": "2025-09-19 23:55 KST",
+    "end-formatted": "2025-09-19 23:55 KST",
+    "gpu": 2,
+    "pid": 47,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Neko does Maths\n\nNeko loves divisors. During the latest number theory lesson, he got an interesting exercise from his math teacher.Neko has two integers $$$a$$$ and $$$b$$$. His goal is to find a non-negative integer $$$k$$$ such that the least common multiple of $$$a+k$$$ and $$$b+k$$$ is the smallest possible. If there are multiple optimal integers $$$k$$$, he needs to choose the smallest one.Given his mathematical talent, Neko had no trouble getting Wrong Answer on this problem. Can you help him solve it?\n\n## Input\nThe only line contains two integers $$$a$$$ and $$$b$$$ ($$$1 \\le a, b \\le 10^9$$$).\n\n## Output\nPrint the smallest non-negative integer $$$k$$$ ($$$k \\ge 0$$$) such that the lowest common multiple of $$$a+k$$$ and $$$b+k$$$ is the smallest possible.If there are many possible integers $$$k$$$ giving the same value of the least common multiple, print the smallest one.\n\n## Example\n### Input\n['6 10', '21 31', '5 10']\n\n### Output\n['2', '9', '0']\n\n## Note\nIn the first test, one should choose $$$k = 2$$$, as the least common multiple of $$$6 + 2$$$ and $$$10 + 2$$$ is $$$24$$$, which is the smallest least common multiple possible.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nimport math\n\ndef solve():\n    a, b = map(int, input().split())\n\n    if a == b:\n        print(0)\n        return\n\n    diff = abs(a - b)\n    min_lcm = float('inf')\n    best_k = -1\n\n    divisors = []\n    for i in range(1, int(math.sqrt(diff)) + 1):\n        if diff % i == 0:\n            divisors.append(i)\n            if i * i != diff:\n                divisors.append(diff // i)\n\n    divisors.sort()\n\n    for d in divisors:\n        # We want a+k to be a multiple of d\n        # a+k = m*d\n        # k = m*d - a\n        # We need k >= 0, so m*d >= a\n        # Smallest m is ceil(a/d)\n        \n        m = math.ceil(a / d)\n        k = m * d - a\n        \n        # Check if b+k is also a multiple of d\n        # b+k = b + (m*d - a) = (b-a) + m*d\n        # Since diff = |a-b|, and d is a divisor of diff,\n        # (b-a) is a multiple of d.\n        # m*d is a multiple of d.\n        # So (b-a) + m*d is also a multiple of d.\n        # This means d is a common divisor of a+k and b+k.\n        \n        # Calculate LCM\n        num1 = a + k\n        num2 = b + k\n        current_lcm = (num1 * num2) // math.gcd(num1, num2)\n\n        if current_lcm < min_lcm:\n            min_lcm = current_lcm\n            best_k = k\n        elif current_lcm == min_lcm:\n            if best_k == -1 or k < best_k:\n                best_k = k\n\n    print(best_k)\n\nif __name__ == '__main__':\n    solve()\n\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "import math\n\ndef solve():\n    a, b = map(int, input().split())\n\n    if a == b:\n        print(0)\n        return\n\n    diff = abs(a - b)\n    min_lcm = float('inf')\n    best_k = -1\n\n    divisors = []\n    for i in range(1, int(math.sqrt(diff)) + 1):\n        if diff % i == 0:\n            divisors.append(i)\n            if i * i != diff:\n                divisors.append(diff // i)\n\n    divisors.sort()\n\n    for d in divisors:\n        # We want a+k to be a multiple of d\n        # a+k = m*d\n        # k = m*d - a\n        # We need k >= 0, so m*d >= a\n        # Smallest m is ceil(a/d)\n        \n        m = math.ceil(a / d)\n        k = m * d - a\n        \n        # Check if b+k is also a multiple of d\n        # b+k = b + (m*d - a) = (b-a) + m*d\n        # Since diff = |a-b|, and d is a divisor of diff,\n        # (b-a) is a multiple of d.\n        # m*d is a multiple of d.\n        # So (b-a) + m*d is also a multiple of d.\n        # This means d is a common divisor of a+k and b+k.\n        \n        # Calculate LCM\n        num1 = a + k\n        num2 = b + k\n        current_lcm = (num1 * num2) // math.gcd(num1, num2)\n\n        if current_lcm < min_lcm:\n            min_lcm = current_lcm\n            best_k = k\n        elif current_lcm == min_lcm:\n            if best_k == -1 or k < best_k:\n                best_k = k\n\n    print(best_k)\n\nif __name__ == '__main__':\n    solve()",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 412,
+        "completion_token_count": 498,
+        "thoughts_token_count": 0
+    }
+}

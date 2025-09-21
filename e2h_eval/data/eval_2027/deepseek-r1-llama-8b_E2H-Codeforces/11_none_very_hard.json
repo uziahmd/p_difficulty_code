@@ -16,7 +16,7 @@
     "response": "```python\ndef soft_drinking():\n    n, k, l, c, d, p, nl, np = map(int, input().split())\n\n    total_drink = k * l\n    total_limes = c * d\n    total_salt = p\n\n    max_toasts_drink = total_drink // (nl * n)\n    max_toasts_limes = total_limes // n\n    max_toasts_salt = total_salt // (np * n)\n\n    return min(max_toasts_drink, max_toasts_limes, max_toasts_salt)\n\n\nif __name__ == \"__main__\":\n    for _ in range(int(input())):\n        print(soft_drinking())\n```\n\nThis script will read the number of test cases from standard input, and then for each test case, it will calculate and print the maximum number of toasts each friend can make.",
     "ground_truth": "N/A",
     "extracted_answer": "def soft_drinking():\n    n, k, l, c, d, p, nl, np = map(int, input().split())\n\n    total_drink = k * l\n    total_limes = c * d\n    total_salt = p\n\n    max_toasts_drink = total_drink // (nl * n)\n    max_toasts_limes = total_limes // n\n    max_toasts_salt = total_salt // (np * n)\n\n    return min(max_toasts_drink, max_toasts_limes, max_toasts_salt)\n\n\nif __name__ == \"__main__\":\n    for _ in range(int(input())):\n        print(soft_drinking())",
-    "score": 1,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 514,
         "completion_token_count": 182,

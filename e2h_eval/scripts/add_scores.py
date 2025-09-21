@@ -135,13 +135,23 @@ def update_log_file(log_file_path, task_id, new_score):
         return False
 
 def create_task_to_problem_mapping():
-    """Create mapping from base task_id to problem number (1-20)."""
+    """Create mapping from base task_id to problem number (1-60)."""
     mapping = {
-        "E2H_CF1031A": 1, "E2H_CF151A": 2, "E2H_CF404A": 3, "E2H_CF339B": 4, 
-        "E2H_CF492B": 5, "E2H_CF88A": 6, "E2H_CF173A": 7, "E2H_CF633B": 8,
-        "E2H_CF1141D": 9, "E2H_CF1767D": 10, "E2H_CF822C": 11, "E2H_CF498A": 12,
-        "E2H_CF1846E2": 13, "E2H_CF1092C": 14, "E2H_CF270E": 15, "E2H_CF1146D": 16,
-        "E2H_CF808E": 17, "E2H_CF980E": 18, "E2H_CF409I": 19, "E2H_CF1709F": 20
+        "E2H_CF1031A": 1, "E2H_CF404A": 2, "E2H_CF492B": 3, "E2H_CF173A": 4,
+        "E2H_CF1141D": 5, "E2H_CF822C": 6, "E2H_CF1846E2": 7, "E2H_CF270E": 8,
+        "E2H_CF808E": 9, "E2H_CF409I": 10, "E2H_CF151A": 11, "E2H_CF339B": 12,
+        "E2H_CF88A": 13, "E2H_CF633B": 14, "E2H_CF1767D": 15, "E2H_CF498A": 16,
+        "E2H_CF1092C": 17, "E2H_CF1146D": 18, "E2H_CF980E": 19, "E2H_CF1709F": 20,
+        "E2H_CF1152A": 21, "E2H_CF152A": 22, "E2H_CF1191B": 23, "E2H_CF915B": 24,
+        "E2H_CF646B": 25, "E2H_CF1355C": 26, "E2H_CF934C": 27, "E2H_CF336D": 28,
+        "E2H_CF464C": 29, "E2H_CF31E": 30, "E2H_CF401A": 31, "E2H_CF1095B": 32,
+        "E2H_CF169B": 33, "E2H_CF808B": 34, "E2H_CF353C": 35, "E2H_CF1452D": 36,
+        "E2H_CF892D": 37, "E2H_CF1763E": 38, "E2H_CF1333E": 39, "E2H_CF1542E2": 40,
+        "E2H_CF1162A": 41, "E2H_CF1769B1": 42, "E2H_CF960A": 43, "E2H_CF1006B": 44,
+        "E2H_CF736A": 45, "E2H_CF447C": 46, "E2H_CF1152C": 47, "E2H_CF61C": 48,
+        "E2H_CF60C": 49, "E2H_CF1762E": 50, "E2H_CF141A": 51, "E2H_CF379A": 52,
+        "E2H_CF23A": 53, "E2H_CF820B": 54, "E2H_CF1009B": 55, "E2H_CF958E1": 56,
+        "E2H_CF222D": 57, "E2H_CF557D": 58, "E2H_CF1866H": 59, "E2H_CF1129C": 60
     }
     return mapping
 

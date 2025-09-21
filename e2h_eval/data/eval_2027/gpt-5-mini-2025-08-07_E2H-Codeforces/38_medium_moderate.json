@@ -1,0 +1,25 @@
+{
+    "start": 1758290809.3342133,
+    "end": 1758290868.8968794,
+    "start-formatted": "2025-09-19 23:06 KST",
+    "end-formatted": "2025-09-19 23:07 KST",
+    "gpu": 2,
+    "pid": 38,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Node Pairs\n\nLet's call an ordered pair of nodes $$$(u, v)$$$ in a directed graph unidirectional if $$$u \\neq v$$$, there exists a path from $$$u$$$ to $$$v$$$, and there are no paths from $$$v$$$ to $$$u$$$.A directed graph is called $$$p$$$-reachable if it contains exactly $$$p$$$ ordered pairs of nodes $$$(u, v)$$$ such that $$$u < v$$$ and $$$u$$$ and $$$v$$$ are reachable from each other. Find the minimum number of nodes required to create a $$$p$$$-reachable directed graph.Also, among all such $$$p$$$-reachable directed graphs with the minimum number of nodes, let $$$G$$$ denote a graph which maximizes the number of unidirectional pairs of nodes. Find this number.\n\n## Input\nThe first and only line contains a single integer $$$p$$$ ($$$0 \\le p \\le 2 \\cdot 10^5$$$) — the number of ordered pairs of nodes.\n\n## Output\nPrint a single line containing two integers — the minimum number of nodes required to create a $$$p$$$-reachable directed graph, and the maximum number of unidirectional pairs of nodes among all such $$$p$$$-reachable directed graphs with the minimum number of nodes.\n\n## Example\n### Input\n['3', '4', '0']\n\n### Output\n['3 0', '5 6', '0 0']\n\n## Note\nIn the first test case, the minimum number of nodes required to create a $$$3$$$-reachable directed graph is $$$3$$$. Among all $$$3$$$-reachable directed graphs with $$$3$$$ nodes, the following graph $$$G$$$ is one of the graphs with the maximum number of unidirectional pairs of nodes, which is $$$0$$$.   \n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a moderately difficult question."
+        }
+    ],
+    "thought": "**Interpreting node pairs**\n\nI need to think about the Codeforces problem \"Node Pairs,\" possibly 1705C. It involves a directed graph where p-reachable means there are exactly p ordered pairs (u, v) with u < v, where both nodes are reachable from each other.\n\nBut I'm realizing these ordered pairs are effectively counted as unordered pairs since u < v only restricts the count. So, p represents the number of unordered pairs of nodes in the same strongly connected component (SCC). For a graph with n nodes partitioned into SCC sizes s1..sk, I need to ensure the sum of combinations equals p.",
+    "response": "```python\nimport sys\nfrom math import isqrt\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nouts = []\nfor token in data:\n    p = int(token)\n    if p == 0:\n        outs.append(\"0 0\")\n        continue\n    n = 0\n    rem = p\n    while rem > 0:\n        s = (1 + isqrt(1 + 8 * rem)) // 2\n        t = s * (s - 1) // 2\n        rem -= t\n        n += s\n    unidir = n * (n - 1) // 2 - p\n    outs.append(f\"{n} {unidir}\")\nsys.stdout.write(\"\\n\".join(outs))\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\nfrom math import isqrt\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nouts = []\nfor token in data:\n    p = int(token)\n    if p == 0:\n        outs.append(\"0 0\")\n        continue\n    n = 0\n    rem = p\n    while rem > 0:\n        s = (1 + isqrt(1 + 8 * rem)) // 2\n        t = s * (s - 1) // 2\n        rem -= t\n        n += s\n    unidir = n * (n - 1) // 2 - p\n    outs.append(f\"{n} {unidir}\")\nsys.stdout.write(\"\\n\".join(outs))",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 496,
+        "completion_token_count": 2477,
+        "thoughts_token_count": 2304
+    }
+}

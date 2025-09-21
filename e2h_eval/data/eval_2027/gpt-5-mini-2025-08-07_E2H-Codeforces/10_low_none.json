@@ -15,7 +15,7 @@
     "response": "I’m sorry — I don’t have enough information to reconstruct the exact feeding rules and semantics from the problem statement snippet alone, and I don’t want to give you a wrong solution. Could you provide the full problem statement (especially the detailed description of how a golorp name encodes jaws/stomach and how variables flow and constraints are imposed), or point me to the source (problem ID or link)? With that I can produce a correct, ready-to-run Python solution.",
     "ground_truth": "N/A",
     "extracted_answer": "I’m sorry — I don’t have enough information to reconstruct the exact feeding rules and semantics from the problem statement snippet alone, and I don’t want to give you a wrong solution. Could you provide the full problem statement (especially the detailed description of how a golorp name encodes jaws/stomach and how variables flow and constraints are imposed), or point me to the source (problem ID or link)? With that I can produce a correct, ready-to-run Python solution.",
-    "score": 0,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 494,
         "completion_token_count": 293,

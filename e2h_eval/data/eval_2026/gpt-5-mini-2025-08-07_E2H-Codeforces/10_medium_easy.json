@@ -15,7 +15,7 @@
     "response": "Sorry — I’m not able to reconstruct the rules of this obscure/problem-specific encoding from the description and samples alone, so I can’t produce a correct solver right now. If you can provide the original problem link or a full formal statement (precise grammar and semantics for the name language and how variables move/evaluate), I’ll implement a correct Python solution immediately.",
     "ground_truth": "N/A",
     "extracted_answer": "Sorry — I’m not able to reconstruct the rules of this obscure/problem-specific encoding from the description and samples alone, so I can’t produce a correct solver right now. If you can provide the original problem link or a full formal statement (precise grammar and semantics for the name language and how variables move/evaluate), I’ll implement a correct Python solution immediately.",
-    "score": 1,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 502,
         "completion_token_count": 4431,

@@ -1,0 +1,25 @@
+{
+    "start": 1758292091.4996898,
+    "end": 1758292109.3227336,
+    "start-formatted": "2025-09-19 23:28 KST",
+    "end-formatted": "2025-09-19 23:28 KST",
+    "gpu": 2,
+    "pid": 38,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Node Pairs\n\nLet's call an ordered pair of nodes $$$(u, v)$$$ in a directed graph unidirectional if $$$u \\neq v$$$, there exists a path from $$$u$$$ to $$$v$$$, and there are no paths from $$$v$$$ to $$$u$$$.A directed graph is called $$$p$$$-reachable if it contains exactly $$$p$$$ ordered pairs of nodes $$$(u, v)$$$ such that $$$u < v$$$ and $$$u$$$ and $$$v$$$ are reachable from each other. Find the minimum number of nodes required to create a $$$p$$$-reachable directed graph.Also, among all such $$$p$$$-reachable directed graphs with the minimum number of nodes, let $$$G$$$ denote a graph which maximizes the number of unidirectional pairs of nodes. Find this number.\n\n## Input\nThe first and only line contains a single integer $$$p$$$ ($$$0 \\le p \\le 2 \\cdot 10^5$$$) — the number of ordered pairs of nodes.\n\n## Output\nPrint a single line containing two integers — the minimum number of nodes required to create a $$$p$$$-reachable directed graph, and the maximum number of unidirectional pairs of nodes among all such $$$p$$$-reachable directed graphs with the minimum number of nodes.\n\n## Example\n### Input\n['3', '4', '0']\n\n### Output\n['3 0', '5 6', '0 0']\n\n## Note\nIn the first test case, the minimum number of nodes required to create a $$$3$$$-reachable directed graph is $$$3$$$. Among all $$$3$$$-reachable directed graphs with $$$3$$$ nodes, the following graph $$$G$$$ is one of the graphs with the maximum number of unidirectional pairs of nodes, which is $$$0$$$.   \n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is an easy question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nimport math\n\ndef solve(p):\n    n = int(math.sqrt(2 * p))\n    if n * (n - 1) // 2 < p:\n        n += 1\n    nodes = n\n    unidirectional_pairs = (n - 1) * p - n * (n - 1) // 2\n    return nodes, unidirectional_pairs\n\np = int(input())\nresult = solve(p)\nprint(f\"{result[0]} {result[1]}\")\n```\n\nThis script reads an integer `p` from the standard input, calculates the minimum number of nodes and the maximum number of unidirectional pairs using the `solve` function, and prints the result to the standard output. The `solve` function uses a mathematical approach to calculate the minimum number of nodes and the maximum number of unidirectional pairs for a given `p`.",
+    "ground_truth": "N/A",
+    "extracted_answer": "import math\n\ndef solve(p):\n    n = int(math.sqrt(2 * p))\n    if n * (n - 1) // 2 < p:\n        n += 1\n    nodes = n\n    unidirectional_pairs = (n - 1) * p - n * (n - 1) // 2\n    return nodes, unidirectional_pairs\n\np = int(input())\nresult = solve(p)\nprint(f\"{result[0]} {result[1]}\")",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 505,
+        "completion_token_count": 185,
+        "thoughts_token_count": 0
+    }
+}

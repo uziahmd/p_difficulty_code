@@ -15,7 +15,7 @@
     "response": "import sys\nfrom itertools import permutations\n\nnotes_order = [\"C\",\"C#\",\"D\",\"D#\",\"E\",\"F\",\"F#\",\"G\",\"G#\",\"A\",\"B\",\"H\"]\nidx = {n:i for i,n in enumerate(notes_order)}\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\n\nresults = []\nfor i in range(0, len(data), 3):\n    trio = data[i:i+3]\n    if len(trio) < 3:\n        break\n    vals = [idx[n] for n in trio]\n    res = \"strange\"\n    for a,b,c in permutations(vals, 3):\n        d1 = (b - a) % 12\n        d2 = (c - b) % 12\n        if d1 == 4 and d2 == 3:\n            res = \"major\"\n            break\n        if d1 == 3 and d2 == 4:\n            res = \"minor\"\n            break\n    results.append(res)\n\nprint(\"\\n\".join(results))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\nfrom itertools import permutations\n\nnotes_order = [\"C\",\"C#\",\"D\",\"D#\",\"E\",\"F\",\"F#\",\"G\",\"G#\",\"A\",\"B\",\"H\"]\nidx = {n:i for i,n in enumerate(notes_order)}\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\n\nresults = []\nfor i in range(0, len(data), 3):\n    trio = data[i:i+3]\n    if len(trio) < 3:\n        break\n    vals = [idx[n] for n in trio]\n    res = \"strange\"\n    for a,b,c in permutations(vals, 3):\n        d1 = (b - a) % 12\n        d2 = (c - b) % 12\n        if d1 == 4 and d2 == 3:\n            res = \"major\"\n            break\n        if d1 == 3 and d2 == 4:\n            res = \"minor\"\n            break\n    results.append(res)\n\nprint(\"\\n\".join(results))",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 675,
         "completion_token_count": 872,

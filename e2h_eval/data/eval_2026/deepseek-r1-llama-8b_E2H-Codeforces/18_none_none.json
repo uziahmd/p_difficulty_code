@@ -16,7 +16,7 @@
     "response": "```python\nimport sys\n\ndef read_input():\n    return map(int, input().split())\n\ndef solve(m, a, b):\n    if a == b:\n        return (m + 1) * m // 2\n    elif a < b:\n        return (m + 1) * m // 2\n    else:\n        ans = 0\n        for i in range(1, m + 1):\n            ans += max(0, min(i + b - 1, m) - max(i - a, 0) + 1)\n        return ans\n\ndef main():\n    m, a, b = read_input()\n    print(solve(m, a, b))\n\nif __name__ == \"__main__\":\n    t = 1\n    while t > 0:\n        main()\n        t -= 1\n```\n\nYou can run this script using the following command:\n\n```bash\npython frog_jumping.py\n```\n\nReplace `frog_jumping.py` with the name of your Python script file. This script reads the input from standard input and prints the desired output to standard output. It uses the `read_input` function to read the input, the `solve` function to calculate the result, and the `main` function to handle the input and output. The `solve` function calculates the sum of all `f(i)` for `i` from `0` to `m`, where `f(i)` is the number of distinct integers the frog can reach if it never jumps on an integer outside the interval `[0, i]`.",
     "ground_truth": "N/A",
     "extracted_answer": "bash\npython frog_jumping.py",
-    "score": 0,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 573,
         "completion_token_count": 326,

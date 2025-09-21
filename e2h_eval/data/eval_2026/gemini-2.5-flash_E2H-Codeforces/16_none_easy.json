@@ -15,7 +15,7 @@
     "response": "```python\ndef solve():\n    x1, y1 = map(int, input().split())\n    x2, y2 = map(int, input().split())\n    n = int(input())\n\n    count = 0\n    for _ in range(n):\n        a, b, c = map(int, input().split())\n\n        val1 = a * x1 + b * y1 + c\n        val2 = a * x2 + b * y2 + c\n\n        if (val1 > 0 and val2 < 0) or (val1 < 0 and val2 > 0):\n            count += 1\n    print(count)\n\nsolve()\n```",
     "ground_truth": "N/A",
     "extracted_answer": "def solve():\n    x1, y1 = map(int, input().split())\n    x2, y2 = map(int, input().split())\n    n = int(input())\n\n    count = 0\n    for _ in range(n):\n        a, b, c = map(int, input().split())\n\n        val1 = a * x1 + b * y1 + c\n        val2 = a * x2 + b * y2 + c\n\n        if (val1 > 0 and val2 < 0) or (val1 < 0 and val2 > 0):\n            count += 1\n    print(count)\n\nsolve()",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 725,
         "completion_token_count": 156,

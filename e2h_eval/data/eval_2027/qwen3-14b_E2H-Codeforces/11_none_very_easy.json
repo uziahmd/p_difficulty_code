@@ -15,7 +15,7 @@
     "response": "```python\nimport sys\n\ndef main():\n    # Read input line\n    line = sys.stdin.read().strip()\n    # Split into integers\n    n, k, l, c, d, p, nl, np = map(int, line.split())\n    \n    # Total drink available\n    total_drink = k * l\n    # Total lime slices available\n    total_lime_slices = c * d\n    # Total salt available\n    total_salt = p\n    \n    # Maximum toasts possible based on each resource\n    toasts_by_drink = total_drink // nl\n    toasts_by_lime = total_lime_slices // n\n    toasts_by_salt = total_salt // np\n    \n    # The answer is the minimum of the three, divided by number of friends\n    print(min(toasts_by_drink, toasts_by_lime, toasts_by_salt) // n)\n\nif __name__ == \"__main__\":\n    main()\n```",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndef main():\n    # Read input line\n    line = sys.stdin.read().strip()\n    # Split into integers\n    n, k, l, c, d, p, nl, np = map(int, line.split())\n    \n    # Total drink available\n    total_drink = k * l\n    # Total lime slices available\n    total_lime_slices = c * d\n    # Total salt available\n    total_salt = p\n    \n    # Maximum toasts possible based on each resource\n    toasts_by_drink = total_drink // nl\n    toasts_by_lime = total_lime_slices // n\n    toasts_by_salt = total_salt // np\n    \n    # The answer is the minimum of the three, divided by number of friends\n    print(min(toasts_by_drink, toasts_by_lime, toasts_by_salt) // n)\n\nif __name__ == \"__main__\":\n    main()",
-    "score": -1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 542,
         "completion_token_count": 200,

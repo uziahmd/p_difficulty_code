@@ -15,7 +15,7 @@
     "response": "```python\ndef solve():\n    x1, y1 = map(int, input().split())\n    x2, y2 = map(int, input().split())\n    n = int(input())\n\n    roads = []\n    for _ in range(n):\n        roads.append(list(map(int, input().split())))\n\n    steps = 0\n    for a, b, c in roads:\n        val1 = a * x1 + b * y1 + c\n        val2 = a * x2 + b * y2 + c\n\n        # If val1 and val2 have different signs, it means the home and university\n        # are on opposite sides of the line.\n        # This implies crossing this road is necessary.\n        if (val1 > 0 and val2 < 0) or (val1 < 0 and val2 > 0):\n            steps += 1\n    \n    print(steps)\n\nsolve()\n```",
     "ground_truth": "N/A",
     "extracted_answer": "def solve():\n    x1, y1 = map(int, input().split())\n    x2, y2 = map(int, input().split())\n    n = int(input())\n\n    roads = []\n    for _ in range(n):\n        roads.append(list(map(int, input().split())))\n\n    steps = 0\n    for a, b, c in roads:\n        val1 = a * x1 + b * y1 + c\n        val2 = a * x2 + b * y2 + c\n\n        # If val1 and val2 have different signs, it means the home and university\n        # are on opposite sides of the line.\n        # This implies crossing this road is necessary.\n        if (val1 > 0 and val2 < 0) or (val1 < 0 and val2 > 0):\n            steps += 1\n    \n    print(steps)\n\nsolve()",
-    "score": -1,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 726,
         "completion_token_count": 215,

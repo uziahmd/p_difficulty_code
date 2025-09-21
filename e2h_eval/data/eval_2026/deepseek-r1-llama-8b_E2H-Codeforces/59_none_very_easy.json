@@ -1,0 +1,25 @@
+{
+    "start": 1758292180.7682457,
+    "end": 1758292201.4576106,
+    "start-formatted": "2025-09-19 23:29 KST",
+    "end-formatted": "2025-09-19 23:30 KST",
+    "gpu": 2,
+    "pid": 59,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Happy Sets\n\nDefine a set $$$A$$$ as a child of set $$$B$$$ if and only if for each element of value $$$x$$$ that is in $$$A$$$, there exists an element of value $$$x+1$$$ that is in $$$B$$$.Given integers $$$N$$$ and $$$K$$$. In order to make Chaneka happy, you must find the number of different arrays containing $$$N$$$ sets $$$[S_1, S_2, S_3, \\ldots, S_N]$$$ such that: - Each set can only contain zero or more different integers from $$$1$$$ to $$$K$$$. - There exists a way to rearrange the order of the array of sets into $$$[S'_1, S'_2, S'_3, \\ldots, S'_N]$$$ such that $$$S'_i$$$ is a child of $$$S'_{i+1}$$$ for each $$$1\\leq i\\leq N-1$$$.Print the answer modulo $$$998\\,244\\,353$$$.Two sets are considered different if and only if there is at least one value that only occurs in one of the two sets.Two arrays of sets are considered different if and only if there is at least one index $$$i$$$ such that the sets at index $$$i$$$ in the two arrays are different.\n\n## Input\nThe only line contains two integers $$$N$$$ and $$$K$$$ ($$$1 \\leq N,K \\leq 2\\cdot10^5$$$) — the number of sets in the array and the maximum limit for the values in the sets.\n\n## Output\nAn integer representing the number of different arrays of sets that satisfy the problem condition, modulo $$$998\\,244\\,353$$$.\n\n## Example\n### Input\n['2 2', '1 3', '3 1']\n\n### Output\n['11', '8', '4']\n\n## Note\nIn the first example, there are $$$11$$$ different arrays of sets possible, which are:   $$$[\\{\\}, \\{\\}]$$$  $$$[\\{\\}, \\{1\\}]$$$  $$$[\\{\\}, \\{1, 2\\}]$$$  $$$[\\{\\}, \\{2\\}]$$$  $$$[\\{1\\}, \\{\\}]$$$  $$$[\\{1\\}, \\{1, 2\\}]$$$  $$$[\\{1\\}, \\{2\\}]$$$  $$$[\\{1, 2\\}, \\{\\}]$$$  $$$[\\{1, 2\\}, \\{1\\}]$$$  $$$[\\{2\\}, \\{\\}]$$$  $$$[\\{2\\}, \\{1\\}]$$$ \n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a very easy question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nMOD = 998244353\n\ndef solve(N, K):\n    dp = [[0] * (K + 1) for _ in range(N + 1)]\n    dp[0][0] = 1\n\n    for i in range(1, N + 1):\n        for j in range(min(i, K) + 1):\n            for k in range(j + 1):\n                dp[i][j] += dp[i - 1][j - k]\n                dp[i][j] %= MOD\n\n    ans = 0\n    for i in range(K + 1):\n        ans += pow(2, i, MOD) * dp[N][i]\n        ans %= MOD\n\n    return ans\n\nN, K = map(int, input().split())\nprint(solve(N, K))\n```\n\nThis script first initializes a 2D array `dp` to store the number of ways to construct sets with a certain number of elements and a maximum value. It then iterates over each set and each possible number of elements in the set, calculating the number of ways to construct the set by summing over all possible numbers of elements in the previous set. Finally, it calculates the total number of ways to construct the array of sets by summing over all possible numbers of elements in the last set and returns this value modulo `MOD`.",
+    "ground_truth": "N/A",
+    "extracted_answer": "MOD = 998244353\n\ndef solve(N, K):\n    dp = [[0] * (K + 1) for _ in range(N + 1)]\n    dp[0][0] = 1\n\n    for i in range(1, N + 1):\n        for j in range(min(i, K) + 1):\n            for k in range(j + 1):\n                dp[i][j] += dp[i - 1][j - k]\n                dp[i][j] %= MOD\n\n    ans = 0\n    for i in range(K + 1):\n        ans += pow(2, i, MOD) * dp[N][i]\n        ans %= MOD\n\n    return ans\n\nN, K = map(int, input().split())\nprint(solve(N, K))",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 686,
+        "completion_token_count": 283,
+        "thoughts_token_count": 0
+    }
+}

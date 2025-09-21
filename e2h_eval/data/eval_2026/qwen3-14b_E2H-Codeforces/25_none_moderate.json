@@ -1,0 +1,25 @@
+{
+    "start": 1758338273.2278678,
+    "end": 1758338291.837924,
+    "start-formatted": "2025-09-20 12:17 KST",
+    "end-formatted": "2025-09-20 12:18 KST",
+    "gpu": 2,
+    "pid": 25,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Ошибка передачи сообщения\n\nВ Берляндском государственном университете локальная сеть между серверами не всегда работает без ошибок. При передаче двух одинаковых сообщений подряд возможна ошибка, в результате которой эти два сообщения сливаются в одно. При таком слиянии конец первого сообщения совмещается с началом второго. Конечно, совмещение может происходить только по одинаковым символам. Длина совмещения должна быть положительным числом, меньшим длины текста сообщения. Например, при передаче двух сообщений «abrakadabra» подряд возможно, что оно будет передано с ошибкой описанного вида, и тогда будет получено сообщение вида «abrakadabrabrakadabra» или «abrakadabrakadabra» (в первом случае совмещение произошло по одному символу, а во втором — по четырем).По полученному сообщению t определите, возможно ли, что это результат ошибки описанного вида работы локальной сети, и если возможно, определите возможное значение s. Не следует считать ошибкой ситуацию полного наложения друга на друга двух сообщений. К примеру, если получено сообщение «abcd», следует считать, что в нём ошибки нет. Аналогично, простое дописывание одного сообщения вслед за другим не является признаком ошибки. Например, если получено сообщение «abcabc», следует считать, что в нём ошибки нет.\n\n## Input\nВ единственной строке выходных данных следует непустая строка t, состоящая из строчных букв латинского алфавита. Длина строки t не превосходит 100 символов.\n\n## Output\nЕсли сообщение t не может содержать ошибки, выведите «NO» (без кавычек) в единственную строку выходных данных.В противном случае в первой строке выведите «YES» (без кавычек), а в следующей строке выведите строку s — возможное сообщение, которое могло привести к ошибке. Если возможных ответов несколько, разрешается вывести любой из них.\n\n## Example\n### Input\n['abrakadabrabrakadabra', 'acacacaca', 'abcabc', 'abababab', 'tatbt']\n\n### Output\n['YES\\nabrakadabra', 'YES\\nacaca', 'NO', 'YES\\nababab', 'NO']\n\n## Note\nВо втором примере подходящим ответом также является строка acacaca. \n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a moderately difficult question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\ndef main():\n    import sys\n    t = sys.stdin.readline().strip()\n\n    n = len(t)\n    # We need to find a string s such that t can be formed by overlapping two s's\n    # with a positive overlap less than len(s)\n    # So, the total length of t must be between len(s) and 2*len(s) - 1\n\n    # Try possible lengths for s\n    for len_s in range(1, n):\n        if 2 * len_s - 1 < n:\n            continue\n        if 2 * len_s > n:\n            continue\n        # Check if the first part and the second part can overlap\n        prefix = t[:len_s]\n        suffix = t[len_s - 1:]\n        if prefix.endswith(suffix):\n            # Check that the full string is formed by overlapping two copies of s\n            s = prefix\n            if len(s) * 2 - len(set(prefix + suffix)) == len(t):\n                print(\"YES\")\n                print(s)\n                return\n\n    print(\"NO\")\n\nif __name__ == \"__main__\":\n    main()\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "def main():\n    import sys\n    t = sys.stdin.readline().strip()\n\n    n = len(t)\n    # We need to find a string s such that t can be formed by overlapping two s's\n    # with a positive overlap less than len(s)\n    # So, the total length of t must be between len(s) and 2*len(s) - 1\n\n    # Try possible lengths for s\n    for len_s in range(1, n):\n        if 2 * len_s - 1 < n:\n            continue\n        if 2 * len_s > n:\n            continue\n        # Check if the first part and the second part can overlap\n        prefix = t[:len_s]\n        suffix = t[len_s - 1:]\n        if prefix.endswith(suffix):\n            # Check that the full string is formed by overlapping two copies of s\n            s = prefix\n            if len(s) * 2 - len(set(prefix + suffix)) == len(t):\n                print(\"YES\")\n                print(s)\n                return\n\n    print(\"NO\")\n\nif __name__ == \"__main__\":\n    main()",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 704,
+        "completion_token_count": 239,
+        "thoughts_token_count": 0
+    }
+}

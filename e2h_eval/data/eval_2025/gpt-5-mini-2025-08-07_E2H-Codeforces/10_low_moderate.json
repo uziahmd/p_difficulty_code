@@ -15,7 +15,7 @@
     "response": "import sys, ast\n\ndata = sys.stdin.read().strip()\nif not data:\n    sys.exit(0)\n\ntry:\n    parsed = ast.literal_eval(data)\nexcept Exception:\n    parsed = data\n\ndef make_false(x):\n    return \"false\"\n\nif isinstance(parsed, list):\n    out = [make_false(x) for x in parsed]\n    print(str(out))\nelse:\n    print(make_false(parsed))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys, ast\n\ndata = sys.stdin.read().strip()\nif not data:\n    sys.exit(0)\n\ntry:\n    parsed = ast.literal_eval(data)\nexcept Exception:\n    parsed = data\n\ndef make_false(x):\n    return \"false\"\n\nif isinstance(parsed, list):\n    out = [make_false(x) for x in parsed]\n    print(str(out))\nelse:\n    print(make_false(parsed))",
-    "score": 1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 503,
         "completion_token_count": 345,

@@ -16,7 +16,7 @@
     "response": "```python\nimport sys\n\ndef solve():\n    n, m = map(int, input().split())\n    tasks = list(map(int, input().split()))\n\n    max_task = max(tasks)\n    min_time = 0\n    current_pos = 1\n\n    for task in tasks:\n        if task > current_pos:\n            min_time += task - current_pos - 1\n            min_time += task - 1\n            current_pos = task\n        else:\n            min_time += 1\n\n    print(min_time)\n\nif __name__ == \"__main__\":\n    t = 1\n    for _ in range(t):\n        solve()\n```\n\nThis script uses a simple iterative approach to calculate the minimum time Xenia needs to complete all her tasks. It keeps track of the current position and the maximum task number encountered so far. If the task number is greater than the current position, it calculates the time needed to move to that position and then to complete all tasks up to that point. If the task number is not greater, it simply increments the current position by 1. The total time is printed at the end.",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndef solve():\n    n, m = map(int, input().split())\n    tasks = list(map(int, input().split()))\n\n    max_task = max(tasks)\n    min_time = 0\n    current_pos = 1\n\n    for task in tasks:\n        if task > current_pos:\n            min_time += task - current_pos - 1\n            min_time += task - 1\n            current_pos = task\n        else:\n            min_time += 1\n\n    print(min_time)\n\nif __name__ == \"__main__\":\n    t = 1\n    for _ in range(t):\n        solve()",
-    "score": -1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 502,
         "completion_token_count": 231,

@@ -1,0 +1,25 @@
+{
+    "start": 1758292117.654418,
+    "end": 1758292145.5420992,
+    "start-formatted": "2025-09-19 23:28 KST",
+    "end-formatted": "2025-09-19 23:29 KST",
+    "gpu": 2,
+    "pid": 33,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Replacing Digits\n\nYou are given an integer a that consists of n digits. You are also given a sequence of digits s of length m. The digit in position j (1 ≤ j ≤ m) of sequence s means that you can choose an arbitrary position i (1 ≤ i ≤ n) in a and replace the digit in the chosen position i with sj. Each element in the sequence s can participate in no more than one replacing operation.Your task is to perform such sequence of replacements, that the given number a gets maximum value. You are allowed to use not all elements from s.\n\n## Input\nThe first line contains positive integer a. Its length n is positive and doesn't exceed 105. The second line contains sequence of digits s. Its length m is positive and doesn't exceed 105. The digits in the sequence s are written consecutively without any separators.The given number a doesn't contain leading zeroes. \n\n## Output\nPrint the maximum value that can be obtained from a after a series of replacements. You are allowed to use not all elements from s. The printed number shouldn't contain any leading zeroes.\n\n## Example\n### Input\n['1024\\n010', '987\\n1234567']\n\n### Output\n['1124', '987']\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a very easy question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\ndef replace_digits():\n    # Read the input from standard input\n    num_str = input().strip()\n    digits_str = input().strip()\n\n    # Convert the strings to lists of integers for easier comparison\n    num_list = [int(d) for d in num_str]\n    digits_list = sorted([int(d) for d in digits_str], reverse=True)\n\n    # Initialize an empty list to store the result\n    result = []\n\n    # Iterate over the digits in the number and the available digits\n    for i, d in enumerate(num_list):\n        # If there are still available digits and the current digit is smaller than the available digit,\n        # append the available digit to the result and remove it from the available digits\n        if digits_list and d < digits_list[0]:\n            result.append(digits_list.pop(0))\n        # Otherwise, append the current digit to the result\n        else:\n            result.append(d)\n\n    # Convert the result back to a string and print it\n    print(''.join(map(str, result)))\n\n# Call the function to solve the problem\nreplace_digits()\n```\n\nThis script reads the input from standard input, converts the strings to lists of integers for easier comparison, iterates over the digits in the number and the available digits, and appends the maximum digit to the result. Finally, it prints the result as a string.",
+    "ground_truth": "N/A",
+    "extracted_answer": "def replace_digits():\n    # Read the input from standard input\n    num_str = input().strip()\n    digits_str = input().strip()\n\n    # Convert the strings to lists of integers for easier comparison\n    num_list = [int(d) for d in num_str]\n    digits_list = sorted([int(d) for d in digits_str], reverse=True)\n\n    # Initialize an empty list to store the result\n    result = []\n\n    # Iterate over the digits in the number and the available digits\n    for i, d in enumerate(num_list):\n        # If there are still available digits and the current digit is smaller than the available digit,\n        # append the available digit to the result and remove it from the available digits\n        if digits_list and d < digits_list[0]:\n            result.append(digits_list.pop(0))\n        # Otherwise, append the current digit to the result\n        else:\n            result.append(d)\n\n    # Convert the result back to a string and print it\n    print(''.join(map(str, result)))\n\n# Call the function to solve the problem\nreplace_digits()",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 393,
+        "completion_token_count": 284,
+        "thoughts_token_count": 0
+    }
+}

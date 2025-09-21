@@ -1,0 +1,25 @@
+{
+    "start": 1758290636.9115274,
+    "end": 1758290663.0542974,
+    "start-formatted": "2025-09-19 23:03 KST",
+    "end-formatted": "2025-09-19 23:04 KST",
+    "gpu": 2,
+    "pid": 22,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Marks\n\nVasya, or Mr. Vasily Petrov is a dean of a department in a local university. After the winter exams he got his hands on a group's gradebook.Overall the group has n students. They received marks for m subjects. Each student got a mark from 1 to 9 (inclusive) for each subject.Let's consider a student the best at some subject, if there is no student who got a higher mark for this subject. Let's consider a student successful, if there exists a subject he is the best at.Your task is to find the number of successful students in the group.\n\n## Input\nThe first input line contains two integers n and m (1 ≤ n, m ≤ 100) — the number of students and the number of subjects, correspondingly. Next n lines each containing m characters describe the gradebook. Each character in the gradebook is a number from 1 to 9. Note that the marks in a rows are not sepatated by spaces.\n\n## Output\nPrint the single number — the number of successful students in the given group.\n\n## Example\n### Input\n['3 3\\n223\\n232\\n112', '3 5\\n91728\\n11828\\n11111']\n\n### Output\n['2', '3']\n\n## Note\nIn the first sample test the student number 1 is the best at subjects 1 and 3, student 2 is the best at subjects 1 and 2, but student 3 isn't the best at any subject.In the second sample test each student is the best at at least one subject.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a very hard question."
+        }
+    ],
+    "thought": "**Parsing input and implementing algorithm**\n\nI'm thinking about parsing the input with split() to get the tokens. The first two will be n and m, and then the next n tokens will be strings of length m. Since the problem mentions no spaces, I need to ensure the implementation is robust. The algorithm requires finding the maximum digit across each column and marking students accordingly. Edge cases need consideration, but I'll keep things simple and focus on providing the necessary code without any extra text. Let's get started!",
+    "response": "import sys\n\nlines = [line.strip() for line in sys.stdin.read().splitlines() if line.strip() != \"\"]\nif not lines:\n    sys.exit(0)\nfirst = lines[0].split()\nn = int(first[0]); m = int(first[1])\nrows = []\nidx = 1\nwhile len(rows) < n and idx < len(lines):\n    row = lines[idx].replace(\" \", \"\")\n    if row != \"\":\n        rows.append(row)\n    idx += 1\n\ngood = [False] * n\nfor j in range(m):\n    mx = '0'\n    for i in range(n):\n        if rows[i][j] > mx:\n            mx = rows[i][j]\n    for i in range(n):\n        if rows[i][j] == mx:\n            good[i] = True\n\nprint(sum(good))",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\nlines = [line.strip() for line in sys.stdin.read().splitlines() if line.strip() != \"\"]\nif not lines:\n    sys.exit(0)\nfirst = lines[0].split()\nn = int(first[0]); m = int(first[1])\nrows = []\nidx = 1\nwhile len(rows) < n and idx < len(lines):\n    row = lines[idx].replace(\" \", \"\")\n    if row != \"\":\n        rows.append(row)\n    idx += 1\n\ngood = [False] * n\nfor j in range(m):\n    mx = '0'\n    for i in range(n):\n        if rows[i][j] > mx:\n            mx = rows[i][j]\n    for i in range(n):\n        if rows[i][j] == mx:\n            good[i] = True\n\nprint(sum(good))",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 428,
+        "completion_token_count": 1080,
+        "thoughts_token_count": 896
+    }
+}

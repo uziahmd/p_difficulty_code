@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = list(map(int, sys.stdin.read().split()))\nif not data:\n    sys.exit()\nn, m = data[0], data[1]\ntasks = data[2:2+m]\ncur = 1\nans = 0\nfor a in tasks:\n    if a >= cur:\n        ans += a - cur\n    else:\n        ans += n - (cur - a)\n    cur = a\nprint(ans)",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = list(map(int, sys.stdin.read().split()))\nif not data:\n    sys.exit()\nn, m = data[0], data[1]\ntasks = data[2:2+m]\ncur = 1\nans = 0\nfor a in tasks:\n    if a >= cur:\n        ans += a - cur\n    else:\n        ans += n - (cur - a)\n    cur = a\nprint(ans)",
-    "score": -1,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 465,
         "completion_token_count": 483,

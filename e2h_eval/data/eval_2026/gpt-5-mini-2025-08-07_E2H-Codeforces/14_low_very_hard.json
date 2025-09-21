@@ -15,7 +15,7 @@
     "response": "import sys\n\ndef z(n):\n    res = 0\n    p = 5\n    while p <= n:\n        res += n // p\n        p *= 5\n    return res\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit()\nm = int(data[0])\n\nlo = 0\nhi = max(5, 5 * (m + 1))\nwhile z(hi) < m:\n    hi *= 2\n\nans = -1\nwhile lo <= hi:\n    mid = (lo + hi) // 2\n    zm = z(mid)\n    if zm >= m:\n        ans = mid\n        hi = mid - 1\n    else:\n        lo = mid + 1\n\nif ans != -1 and z(ans) == m:\n    res = [str(ans + i) for i in range(5)]\n    print(5)\n    print(\" \".join(res))\nelse:\n    print(0)",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndef z(n):\n    res = 0\n    p = 5\n    while p <= n:\n        res += n // p\n        p *= 5\n    return res\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit()\nm = int(data[0])\n\nlo = 0\nhi = max(5, 5 * (m + 1))\nwhile z(hi) < m:\n    hi *= 2\n\nans = -1\nwhile lo <= hi:\n    mid = (lo + hi) // 2\n    zm = z(mid)\n    if zm >= m:\n        ans = mid\n        hi = mid - 1\n    else:\n        lo = mid + 1\n\nif ans != -1 and z(ans) == m:\n    res = [str(ans + i) for i in range(5)]\n    print(5)\n    print(\" \".join(res))\nelse:\n    print(0)",
-    "score": -1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 349,
         "completion_token_count": 532,

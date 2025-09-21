@@ -1,0 +1,25 @@
+{
+    "start": 1758293081.0366032,
+    "end": 1758293102.7032,
+    "start-formatted": "2025-09-19 23:44 KST",
+    "end-formatted": "2025-09-19 23:45 KST",
+    "gpu": 2,
+    "pid": 37,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Gluttony\n\nYou are given an array a with n distinct integers. Construct an array b by permuting a such that for every non-empty subset of indices S = {x1, x2, ..., xk} (1 ≤ xi ≤ n, 0 < k < n) the sums of elements on that positions in a and b are different, i. e. \n\n## Input\nThe first line contains one integer n (1 ≤ n ≤ 22) — the size of the array.The second line contains n space-separated distinct integers a1, a2, ..., an (0 ≤ ai ≤ 109) — the elements of the array.\n\n## Output\nIf there is no such array b, print -1.Otherwise in the only line print n space-separated integers b1, b2, ..., bn. Note that b must be a permutation of a.If there are multiple answers, print any of them.\n\n## Example\n### Input\n['2\\n1 2', '4\\n1000 100 10 1']\n\n### Output\n['2 1', '100 1 1000 10']\n\n## Note\nAn array x is a permutation of y, if we can shuffle elements of y such that it will coincide with x.Note that the empty subset and the subset containing all indices are not counted.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nimport sys\nimport itertools\n\ndef main():\n    import sys\n    input = sys.stdin.read\n    data = input().split()\n    \n    n = int(data[0])\n    a = list(map(int, data[1:]))\n    \n    # Try all permutations of a\n    for perm in itertools.permutations(a):\n        valid = True\n        # Check all non-empty subsets of indices (excluding full set)\n        for k in range(1, n):\n            for indices in itertools.combinations(range(n), k):\n                sum_a = sum(a[i] for i in indices)\n                sum_b = sum(perm[i] for i in indices)\n                if sum_a == sum_b:\n                    valid = False\n                    break\n            if not valid:\n                break\n        if valid:\n            print(' '.join(map(str, perm)))\n            return\n    \n    print(-1)\n\nif __name__ == \"__main__\":\n    main()\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\nimport itertools\n\ndef main():\n    import sys\n    input = sys.stdin.read\n    data = input().split()\n    \n    n = int(data[0])\n    a = list(map(int, data[1:]))\n    \n    # Try all permutations of a\n    for perm in itertools.permutations(a):\n        valid = True\n        # Check all non-empty subsets of indices (excluding full set)\n        for k in range(1, n):\n            for indices in itertools.combinations(range(n), k):\n                sum_a = sum(a[i] for i in indices)\n                sum_b = sum(perm[i] for i in indices)\n                if sum_a == sum_b:\n                    valid = False\n                    break\n            if not valid:\n                break\n        if valid:\n            print(' '.join(map(str, perm)))\n            return\n    \n    print(-1)\n\nif __name__ == \"__main__\":\n    main()",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 434,
+        "completion_token_count": 196,
+        "thoughts_token_count": 0
+    }
+}

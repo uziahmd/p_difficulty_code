@@ -15,7 +15,7 @@
     "response": "```python\nimport sys\nimport itertools\n\nnote_map = {\n    \"C\": 0, \"C#\": 1, \"D\": 2, \"D#\": 3, \"E\": 4, \"F\": 5,\n    \"F#\": 6, \"G\": 7, \"G#\": 8, \"A\": 9, \"B\": 10, \"H\": 11\n}\n\ndef solve():\n    notes_str = sys.stdin.readline().split()\n    \n    note_values = [note_map[n] for n in notes_str]\n\n    for perm in itertools.permutations(note_values):\n        X, Y, Z = perm\n        \n        dist_xy = (Y - X + 12) % 12\n        dist_yz = (Z - Y + 12) % 12\n        \n        if dist_xy == 4 and dist_yz == 3:\n            print(\"major\")\n            return\n        \n        if dist_xy == 3 and dist_yz == 4:\n            print(\"minor\")\n            return\n            \n    print(\"strange\")\n\nif __name__ == '__main__':\n    solve()\n\n```",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\nimport itertools\n\nnote_map = {\n    \"C\": 0, \"C#\": 1, \"D\": 2, \"D#\": 3, \"E\": 4, \"F\": 5,\n    \"F#\": 6, \"G\": 7, \"G#\": 8, \"A\": 9, \"B\": 10, \"H\": 11\n}\n\ndef solve():\n    notes_str = sys.stdin.readline().split()\n    \n    note_values = [note_map[n] for n in notes_str]\n\n    for perm in itertools.permutations(note_values):\n        X, Y, Z = perm\n        \n        dist_xy = (Y - X + 12) % 12\n        dist_yz = (Z - Y + 12) % 12\n        \n        if dist_xy == 4 and dist_yz == 3:\n            print(\"major\")\n            return\n        \n        if dist_xy == 3 and dist_yz == 4:\n            print(\"minor\")\n            return\n            \n    print(\"strange\")\n\nif __name__ == '__main__':\n    solve()",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 662,
         "completion_token_count": 279,

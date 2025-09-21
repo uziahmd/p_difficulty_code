@@ -16,7 +16,7 @@
     "response": "```python\nimport sys\n\ndef solve():\n    m, a, b = map(int, input().split())\n    ans = 0\n    max_a = m + 1\n    max_b = m + 1\n    if a < b:\n        max_a = (m - b) // (a - b) * a + b\n    elif b < a:\n        max_b = (m - a) // (b - a) * b + a\n    else:\n        max_a = max_b = m + 1\n    for i in range(0, max_a, a):\n        for j in range(i, max_b, b):\n            ans += min(m, j) + 1\n    print(ans)\n\nif __name__ == \"__main__\":\n    t = 1\n    while t > 0:\n        solve()\n        t -= 1\n```\n\nThis script will read the number of test cases from the input and then call the `solve` function for each test case. The `solve` function reads the input for each test case, calculates the answer, and prints it to the standard output.\n\nTo run this script, save it to a file, for example, `frog_jumping.py`, and then run it with Python, for example:\n\n```bash\npython frog_jumping.py\n```\n\nYou can also add the following lines at the beginning of the script to read the input from a file instead of the standard input:\n\n```python\ninput_file = 'input.txt'\noutput_file = 'output.txt'\n\nwith open(input_file, 'r') as f:\n    input_lines = f.readlines()\n\nwith open(output_file, 'w') as f:\n    for line in input_lines:\n        # Your code here\n        pass\n```",
     "ground_truth": "N/A",
     "extracted_answer": "input_file = 'input.txt'\noutput_file = 'output.txt'\n\nwith open(input_file, 'r') as f:\n    input_lines = f.readlines()\n\nwith open(output_file, 'w') as f:\n    for line in input_lines:\n        # Your code here\n        pass",
-    "score": 0,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 581,
         "completion_token_count": 368,

@@ -1,0 +1,25 @@
+{
+    "start": 1758292087.3661249,
+    "end": 1758292116.6398134,
+    "start-formatted": "2025-09-19 23:28 KST",
+    "end-formatted": "2025-09-19 23:28 KST",
+    "gpu": 2,
+    "pid": 38,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Node Pairs\n\nLet's call an ordered pair of nodes $$$(u, v)$$$ in a directed graph unidirectional if $$$u \\neq v$$$, there exists a path from $$$u$$$ to $$$v$$$, and there are no paths from $$$v$$$ to $$$u$$$.A directed graph is called $$$p$$$-reachable if it contains exactly $$$p$$$ ordered pairs of nodes $$$(u, v)$$$ such that $$$u < v$$$ and $$$u$$$ and $$$v$$$ are reachable from each other. Find the minimum number of nodes required to create a $$$p$$$-reachable directed graph.Also, among all such $$$p$$$-reachable directed graphs with the minimum number of nodes, let $$$G$$$ denote a graph which maximizes the number of unidirectional pairs of nodes. Find this number.\n\n## Input\nThe first and only line contains a single integer $$$p$$$ ($$$0 \\le p \\le 2 \\cdot 10^5$$$) — the number of ordered pairs of nodes.\n\n## Output\nPrint a single line containing two integers — the minimum number of nodes required to create a $$$p$$$-reachable directed graph, and the maximum number of unidirectional pairs of nodes among all such $$$p$$$-reachable directed graphs with the minimum number of nodes.\n\n## Example\n### Input\n['3', '4', '0']\n\n### Output\n['3 0', '5 6', '0 0']\n\n## Note\nIn the first test case, the minimum number of nodes required to create a $$$3$$$-reachable directed graph is $$$3$$$. Among all $$$3$$$-reachable directed graphs with $$$3$$$ nodes, the following graph $$$G$$$ is one of the graphs with the maximum number of unidirectional pairs of nodes, which is $$$0$$$.   \n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a moderately difficult question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nimport math\n\ndef solve():\n    p = int(input())\n    n = 0\n    ans = 0\n\n    while True:\n        n += 1\n        k = n * (n - 1) // 2\n        if k >= p:\n            break\n\n    print(n, (k - p) + (n - 1))\n\nif __name__ == \"__main__\":\n    t = 1\n    for _ in range(t):\n        solve()\n```\n\nThis script defines a function `solve` that takes no arguments. It reads the input from the standard input, calculates the minimum number of nodes required to create a `p`-reachable directed graph and the maximum number of unidirectional pairs of nodes among all such graphs with the minimum number of nodes, and prints the result to the standard output.\n\nThe script uses a simple loop to calculate the minimum number of nodes. It starts with `n = 0` and increments `n` until the number of pairs of nodes `k` is greater than or equal to `p`. The number of unidirectional pairs of nodes is then calculated as `(k - p) + (n - 1)`, which is the difference between the total number of pairs and `p`, plus the number of pairs formed by the `n-1` nodes that are not connected to each other.\n\nFinally, the script calls the `solve` function once to solve the problem for the given input.",
+    "ground_truth": "N/A",
+    "extracted_answer": "import math\n\ndef solve():\n    p = int(input())\n    n = 0\n    ans = 0\n\n    while True:\n        n += 1\n        k = n * (n - 1) // 2\n        if k >= p:\n            break\n\n    print(n, (k - p) + (n - 1))\n\nif __name__ == \"__main__\":\n    t = 1\n    for _ in range(t):\n        solve()",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 506,
+        "completion_token_count": 303,
+        "thoughts_token_count": 0
+    }
+}

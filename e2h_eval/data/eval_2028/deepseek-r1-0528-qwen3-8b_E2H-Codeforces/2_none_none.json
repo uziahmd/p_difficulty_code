@@ -15,7 +15,7 @@
     "response": "```python\nn = int(input())\ngrid = [input().strip() for _ in range(n)]\n\n# Check if all diagonal elements are the same\ndiag1 = set()\ndiag2 = set()\nfor i in range(n):\n    diag1.add(grid[i][i])\n    diag2.add(grid[i][n - 1 - i])\n\nif len(diag1) != 1 or len(diag2) != 1:\n    print(\"NO\")\nelse:\n    # Check if all non-diagonal elements are the same and different from diagonal\n    other_char = grid[0][1]\n    for i in range(n):\n        for j in range(n):\n            if i == j or i + j == n - 1:\n                continue\n            if grid[i][j] != other_char:\n                print(\"NO\")\n                exit()\n    print(\"YES\")\n```",
     "ground_truth": "N/A",
     "extracted_answer": "n = int(input())\ngrid = [input().strip() for _ in range(n)]\n\n# Check if all diagonal elements are the same\ndiag1 = set()\ndiag2 = set()\nfor i in range(n):\n    diag1.add(grid[i][i])\n    diag2.add(grid[i][n - 1 - i])\n\nif len(diag1) != 1 or len(diag2) != 1:\n    print(\"NO\")\nelse:\n    # Check if all non-diagonal elements are the same and different from diagonal\n    other_char = grid[0][1]\n    for i in range(n):\n        for j in range(n):\n            if i == j or i + j == n - 1:\n                continue\n            if grid[i][j] != other_char:\n                print(\"NO\")\n                exit()\n    print(\"YES\")",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 439,
         "completion_token_count": 181,

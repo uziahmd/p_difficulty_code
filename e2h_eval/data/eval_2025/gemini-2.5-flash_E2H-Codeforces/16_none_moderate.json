@@ -15,7 +15,7 @@
     "response": "```python\ndef solve():\n    x1, y1 = map(int, input().split())\n    x2, y2 = map(int, input().split())\n    n = int(input())\n\n    roads = []\n    for _ in range(n):\n        roads.append(list(map(int, input().split())))\n\n    crossings = 0\n    for a, b, c in roads:\n        # Evaluate the line equation for the home coordinates\n        val1 = a * x1 + b * y1 + c\n        # Evaluate the line equation for the university coordinates\n        val2 = a * x2 + b * y2 + c\n\n        # If val1 and val2 have different signs, it means the line separates the two points.\n        # This implies crossing this road is necessary to get from home to university.\n        if (val1 > 0 and val2 < 0) or (val1 < 0 and val2 > 0):\n            crossings += 1\n    \n    print(crossings)\n\nsolve()\n\n```",
     "ground_truth": "N/A",
     "extracted_answer": "def solve():\n    x1, y1 = map(int, input().split())\n    x2, y2 = map(int, input().split())\n    n = int(input())\n\n    roads = []\n    for _ in range(n):\n        roads.append(list(map(int, input().split())))\n\n    crossings = 0\n    for a, b, c in roads:\n        # Evaluate the line equation for the home coordinates\n        val1 = a * x1 + b * y1 + c\n        # Evaluate the line equation for the university coordinates\n        val2 = a * x2 + b * y2 + c\n\n        # If val1 and val2 have different signs, it means the line separates the two points.\n        # This implies crossing this road is necessary to get from home to university.\n        if (val1 > 0 and val2 < 0) or (val1 < 0 and val2 > 0):\n            crossings += 1\n    \n    print(crossings)\n\nsolve()",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 726,
         "completion_token_count": 238,

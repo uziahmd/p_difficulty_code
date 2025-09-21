@@ -15,7 +15,7 @@
     "response": "```python\nn = int(input())\ns = input()\n\ncount_0 = s.count('0')\ncount_1 = s.count('1')\n\nmin_winning_skill = 2**count_1\nmax_winning_skill = 2**n - 2**count_0 + 1\n\nwinning_skills = []\nfor i in range(min_winning_skill, max_winning_skill + 1):\n    winning_skills.append(i)\n\nprint(*winning_skills)\n\n```",
     "ground_truth": "N/A",
     "extracted_answer": "n = int(input())\ns = input()\n\ncount_0 = s.count('0')\ncount_1 = s.count('1')\n\nmin_winning_skill = 2**count_1\nmax_winning_skill = 2**n - 2**count_0 + 1\n\nwinning_skills = []\nfor i in range(min_winning_skill, max_winning_skill + 1):\n    winning_skills.append(i)\n\nprint(*winning_skills)",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 718,
         "completion_token_count": 116,

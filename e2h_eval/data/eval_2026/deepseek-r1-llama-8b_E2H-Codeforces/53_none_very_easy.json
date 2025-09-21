@@ -1,0 +1,25 @@
+{
+    "start": 1758292090.551774,
+    "end": 1758292128.4416316,
+    "start-formatted": "2025-09-19 23:28 KST",
+    "end-formatted": "2025-09-19 23:28 KST",
+    "gpu": 2,
+    "pid": 53,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# You're Given a String...\n\nYou're given a string of lower-case Latin letters. Your task is to find the length of its longest substring that can be met in the string at least twice. These occurrences can overlap (see sample test 2).\n\n## Input\nThe first input line contains the string. It's guaranteed, that the string is non-empty, consists of lower-case Latin letters, and its length doesn't exceed 100.\n\n## Output\nOutput one number — length of the longest substring that can be met in the string at least twice.\n\n## Example\n### Input\n['abcd', 'ababa', 'zzz']\n\n### Output\n['0', '3', '2']\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a very easy question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\ndef longest_substring(s):\n    \"\"\"\n    Find the length of the longest substring that can be met in the string at least twice.\n\n    Args:\n        s (str): The input string.\n\n    Returns:\n        int: The length of the longest substring that can be met in the string at least twice.\n    \"\"\"\n\n    # Initialize a dictionary to store the maximum length of substrings ending at each position\n    max_lengths = {}\n\n    # Initialize the maximum length found so far\n    max_length = 0\n\n    # Iterate over the string\n    for i in range(len(s)):\n        # For each position, check all possible substrings ending at this position\n        for j in range(i + 1, len(s) + 1):\n            # Extract the substring\n            substring = s[i:j]\n\n            # Check if the substring occurs at least twice in the string\n            if s.count(substring) >= 2:\n                # Update the maximum length found so far\n                max_length = max(max_length, j - i)\n\n                # Store the maximum length of substrings ending at the current position\n                max_lengths[i] = max(j - i, max_lengths.get(i, 0))\n\n    return max_length\n\n\nif __name__ == \"__main__\":\n    # Read the input string from standard input\n    s = input().strip()\n\n    # Print the length of the longest substring that can be met in the string at least twice\n    print(longest_substring(s))\n```\n\nThis script reads an input string from standard input, finds the length of the longest substring that can be met in the string at least twice, and prints the result to standard output. It uses a dictionary to store the maximum length of substrings ending at each position, which allows it to efficiently check all possible substrings. The script handles edge cases and is ready to run.",
+    "ground_truth": "N/A",
+    "extracted_answer": "def longest_substring(s):\n    \"\"\"\n    Find the length of the longest substring that can be met in the string at least twice.\n\n    Args:\n        s (str): The input string.\n\n    Returns:\n        int: The length of the longest substring that can be met in the string at least twice.\n    \"\"\"\n\n    # Initialize a dictionary to store the maximum length of substrings ending at each position\n    max_lengths = {}\n\n    # Initialize the maximum length found so far\n    max_length = 0\n\n    # Iterate over the string\n    for i in range(len(s)):\n        # For each position, check all possible substrings ending at this position\n        for j in range(i + 1, len(s) + 1):\n            # Extract the substring\n            substring = s[i:j]\n\n            # Check if the substring occurs at least twice in the string\n            if s.count(substring) >= 2:\n                # Update the maximum length found so far\n                max_length = max(max_length, j - i)\n\n                # Store the maximum length of substrings ending at the current position\n                max_lengths[i] = max(j - i, max_lengths.get(i, 0))\n\n    return max_length\n\n\nif __name__ == \"__main__\":\n    # Read the input string from standard input\n    s = input().strip()\n\n    # Print the length of the longest substring that can be met in the string at least twice\n    print(longest_substring(s))",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 266,
+        "completion_token_count": 385,
+        "thoughts_token_count": 0
+    }
+}

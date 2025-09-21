@@ -1,0 +1,25 @@
+{
+    "start": 1758293061.6849701,
+    "end": 1758293106.5698805,
+    "start-formatted": "2025-09-19 23:44 KST",
+    "end-formatted": "2025-09-19 23:45 KST",
+    "gpu": 2,
+    "pid": 47,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Neko does Maths\n\nNeko loves divisors. During the latest number theory lesson, he got an interesting exercise from his math teacher.Neko has two integers $$$a$$$ and $$$b$$$. His goal is to find a non-negative integer $$$k$$$ such that the least common multiple of $$$a+k$$$ and $$$b+k$$$ is the smallest possible. If there are multiple optimal integers $$$k$$$, he needs to choose the smallest one.Given his mathematical talent, Neko had no trouble getting Wrong Answer on this problem. Can you help him solve it?\n\n## Input\nThe only line contains two integers $$$a$$$ and $$$b$$$ ($$$1 \\le a, b \\le 10^9$$$).\n\n## Output\nPrint the smallest non-negative integer $$$k$$$ ($$$k \\ge 0$$$) such that the lowest common multiple of $$$a+k$$$ and $$$b+k$$$ is the smallest possible.If there are many possible integers $$$k$$$ giving the same value of the least common multiple, print the smallest one.\n\n## Example\n### Input\n['6 10', '21 31', '5 10']\n\n### Output\n['2', '9', '0']\n\n## Note\nIn the first test, one should choose $$$k = 2$$$, as the least common multiple of $$$6 + 2$$$ and $$$10 + 2$$$ is $$$24$$$, which is the smallest least common multiple possible.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a hard question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nimport sys\nimport math\n\ndef find_optimal_k(a, b):\n    if a == b:\n        return 0\n\n    # Find the greatest common divisor (gcd)\n    g = math.gcd(a, b)\n    # Find the least common multiple (lcm)\n    lcm = a * b // g\n\n    # We need to find k such that (a + k) and (b + k) have the smallest lcm\n    # Let x = a + k, y = b + k => y - x = b - a\n    # So we want to find x such that x and x + (b - a) have the smallest lcm\n    # This happens when x is the largest divisor of lcm that is <= a\n    # We iterate from the largest divisor of lcm down to 1 to find the best x\n\n    # Find all divisors of lcm\n    def get_divisors(n):\n        divisors = set()\n        for i in range(1, int(n**0.5) + 1):\n            if n % i == 0:\n                divisors.add(i)\n                divisors.add(n // i)\n        return sorted(divisors)\n\n    divisors = get_divisors(lcm)\n    min_lcm = float('inf')\n    best_k = 0\n\n    for x in divisors:\n        if x > a:\n            continue\n        y = x + (b - a)\n        current_lcm = (x * y) // math.gcd(x, y)\n        if current_lcm < min_lcm or (current_lcm == min_lcm and (x - a) < best_k):\n            min_lcm = current_lcm\n            best_k = x - a\n\n    return best_k\n\ndef main():\n    a, b = map(int, sys.stdin.readline().split())\n    print(find_optimal_k(a, b))\n\nif __name__ == \"__main__\":\n    main()\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\nimport math\n\ndef find_optimal_k(a, b):\n    if a == b:\n        return 0\n\n    # Find the greatest common divisor (gcd)\n    g = math.gcd(a, b)\n    # Find the least common multiple (lcm)\n    lcm = a * b // g\n\n    # We need to find k such that (a + k) and (b + k) have the smallest lcm\n    # Let x = a + k, y = b + k => y - x = b - a\n    # So we want to find x such that x and x + (b - a) have the smallest lcm\n    # This happens when x is the largest divisor of lcm that is <= a\n    # We iterate from the largest divisor of lcm down to 1 to find the best x\n\n    # Find all divisors of lcm\n    def get_divisors(n):\n        divisors = set()\n        for i in range(1, int(n**0.5) + 1):\n            if n % i == 0:\n                divisors.add(i)\n                divisors.add(n // i)\n        return sorted(divisors)\n\n    divisors = get_divisors(lcm)\n    min_lcm = float('inf')\n    best_k = 0\n\n    for x in divisors:\n        if x > a:\n            continue\n        y = x + (b - a)\n        current_lcm = (x * y) // math.gcd(x, y)\n        if current_lcm < min_lcm or (current_lcm == min_lcm and (x - a) < best_k):\n            min_lcm = current_lcm\n            best_k = x - a\n\n    return best_k\n\ndef main():\n    a, b = map(int, sys.stdin.readline().split())\n    print(find_optimal_k(a, b))\n\nif __name__ == \"__main__\":\n    main()",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 405,
+        "completion_token_count": 408,
+        "thoughts_token_count": 0
+    }
+}

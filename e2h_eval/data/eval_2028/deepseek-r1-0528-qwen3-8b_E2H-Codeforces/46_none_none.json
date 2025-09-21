@@ -1,0 +1,25 @@
+{
+    "start": 1758293031.1675906,
+    "end": 1758293049.5343223,
+    "start-formatted": "2025-09-19 23:43 KST",
+    "end-formatted": "2025-09-19 23:44 KST",
+    "gpu": 2,
+    "pid": 46,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# DZY Loves Sequences\n\nDZY has a sequence a, consisting of n integers.We'll call a sequence ai, ai + 1, ..., aj (1 ≤ i ≤ j ≤ n) a subsegment of the sequence a. The value (j - i + 1) denotes the length of the subsegment.Your task is to find the longest subsegment of a, such that it is possible to change at most one number (change one number to any integer you want) from the subsegment to make the subsegment strictly increasing.You only need to output the length of the subsegment you find.\n\n## Input\nThe first line contains integer n (1 ≤ n ≤ 105). The next line contains n integers a1, a2, ..., an (1 ≤ ai ≤ 109).\n\n## Output\nIn a single line print the answer to the problem — the maximum length of the required subsegment.\n\n## Example\n### Input\n['6\\n7 2 3 1 5 6']\n\n### Output\n['5']\n\n## Note\nYou can choose subsegment a2, a3, a4, a5, a6 and change its 3rd element (that is a4) to 4.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nimport sys\n\ndef main():\n    import sys\n    input = sys.stdin.read\n    data = input().split()\n    \n    n = int(data[0])\n    a = list(map(int, data[1:]))\n    \n    max_len = 1\n    left = 0\n    \n    for right in range(n):\n        if right == 0:\n            continue\n        \n        # Check if current element is less than or equal to previous\n        if a[right] <= a[right - 1]:\n            # Move left pointer to right + 1 to start new subsegment\n            left = right + 1\n        else:\n            # Update max length\n            max_len = max(max_len, right - left + 1)\n    \n    print(max_len)\n\nif __name__ == \"__main__\":\n    main()\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndef main():\n    import sys\n    input = sys.stdin.read\n    data = input().split()\n    \n    n = int(data[0])\n    a = list(map(int, data[1:]))\n    \n    max_len = 1\n    left = 0\n    \n    for right in range(n):\n        if right == 0:\n            continue\n        \n        # Check if current element is less than or equal to previous\n        if a[right] <= a[right - 1]:\n            # Move left pointer to right + 1 to start new subsegment\n            left = right + 1\n        else:\n            # Update max length\n            max_len = max(max_len, right - left + 1)\n    \n    print(max_len)\n\nif __name__ == \"__main__\":\n    main()",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 408,
+        "completion_token_count": 172,
+        "thoughts_token_count": 0
+    }
+}

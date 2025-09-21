@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nnums = list(map(int, data))\n\noutputs = []\nif len(nums) % 8 != 0:\n    # If not a multiple of 8, process only the first 8 integers (standard single-case input)\n    nums = nums[:8]\n\nfor i in range(0, len(nums), 8):\n    n, k, l, c, d, p, nl, np = nums[i:i+8]\n    total_drink = k * l\n    toasts_drink = total_drink // nl\n    toasts_limes = c * d\n    toasts_salt = p // np\n    max_toasts_each = min(toasts_drink, toasts_limes, toasts_salt) // n\n    outputs.append(str(max_toasts_each))\n\nsys.stdout.write(\"\\n\".join(outputs))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nnums = list(map(int, data))\n\noutputs = []\nif len(nums) % 8 != 0:\n    # If not a multiple of 8, process only the first 8 integers (standard single-case input)\n    nums = nums[:8]\n\nfor i in range(0, len(nums), 8):\n    n, k, l, c, d, p, nl, np = nums[i:i+8]\n    total_drink = k * l\n    toasts_drink = total_drink // nl\n    toasts_limes = c * d\n    toasts_salt = p // np\n    max_toasts_each = min(toasts_drink, toasts_limes, toasts_salt) // n\n    outputs.append(str(max_toasts_each))\n\nsys.stdout.write(\"\\n\".join(outputs))",
-    "score": -1,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 483,
         "completion_token_count": 713,

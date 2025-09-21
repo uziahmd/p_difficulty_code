@@ -1,110 +1,110 @@
 {
   "low_easy": {
-    "correct_pct": 45.25,
-    "incorrect_pct": 39.25,
-    "compilation_error_pct": 15.5,
-    "total_attempts": 400
+    "correct_pct": 45.666666666666664,
+    "incorrect_pct": 39.166666666666664,
+    "compilation_error_pct": 15.166666666666668,
+    "total_attempts": 1200
   },
   "low_hard": {
-    "correct_pct": 44.5,
-    "incorrect_pct": 41.0,
-    "compilation_error_pct": 14.499999999999998,
-    "total_attempts": 400
+    "correct_pct": 44.83333333333333,
+    "incorrect_pct": 39.5,
+    "compilation_error_pct": 15.666666666666668,
+    "total_attempts": 1200
   },
   "low_moderate": {
-    "correct_pct": 47.25,
-    "incorrect_pct": 34.5,
-    "compilation_error_pct": 18.25,
-    "total_attempts": 400
+    "correct_pct": 47.16666666666667,
+    "incorrect_pct": 38.666666666666664,
+    "compilation_error_pct": 14.166666666666666,
+    "total_attempts": 1200
   },
   "low_none": {
-    "correct_pct": 45.0,
-    "incorrect_pct": 38.5,
-    "compilation_error_pct": 16.5,
-    "total_attempts": 400
+    "correct_pct": 46.25,
+    "incorrect_pct": 39.33333333333333,
+    "compilation_error_pct": 14.416666666666666,
+    "total_attempts": 1200
   },
   "low_very_easy": {
-    "correct_pct": 45.0,
-    "incorrect_pct": 42.25,
-    "compilation_error_pct": 12.75,
-    "total_attempts": 400
+    "correct_pct": 46.833333333333336,
+    "incorrect_pct": 40.833333333333336,
+    "compilation_error_pct": 12.333333333333334,
+    "total_attempts": 1200
   },
   "low_very_hard": {
-    "correct_pct": 45.5,
-    "incorrect_pct": 40.0,
-    "compilation_error_pct": 14.499999999999998,
-    "total_attempts": 400
+    "correct_pct": 45.33333333333333,
+    "incorrect_pct": 39.416666666666664,
+    "compilation_error_pct": 15.25,
+    "total_attempts": 1200
   },
   "medium_easy": {
-    "correct_pct": 52.75,
-    "incorrect_pct": 36.0,
-    "compilation_error_pct": 11.25,
-    "total_attempts": 400
+    "correct_pct": 55.50000000000001,
+    "incorrect_pct": 35.583333333333336,
+    "compilation_error_pct": 8.916666666666668,
+    "total_attempts": 1200
   },
   "medium_hard": {
-    "correct_pct": 53.5,
-    "incorrect_pct": 37.25,
-    "compilation_error_pct": 9.25,
-    "total_attempts": 400
+    "correct_pct": 56.00000000000001,
+    "incorrect_pct": 35.16666666666667,
+    "compilation_error_pct": 8.833333333333334,
+    "total_attempts": 1200
   },
   "medium_moderate": {
-    "correct_pct": 52.5,
-    "incorrect_pct": 35.5,
-    "compilation_error_pct": 12.0,
-    "total_attempts": 400
+    "correct_pct": 55.166666666666664,
+    "incorrect_pct": 35.91666666666667,
+    "compilation_error_pct": 8.916666666666668,
+    "total_attempts": 1200
   },
   "medium_none": {
-    "correct_pct": 51.0,
-    "incorrect_pct": 41.25,
-    "compilation_error_pct": 7.75,
-    "total_attempts": 400
+    "correct_pct": 55.50000000000001,
+    "incorrect_pct": 37.583333333333336,
+    "compilation_error_pct": 6.916666666666667,
+    "total_attempts": 1200
   },
   "medium_very_easy": {
-    "correct_pct": 52.25,
-    "incorrect_pct": 36.5,
-    "compilation_error_pct": 11.25,
-    "total_attempts": 400
+    "correct_pct": 55.58333333333333,
+    "incorrect_pct": 35.91666666666667,
+    "compilation_error_pct": 8.5,
+    "total_attempts": 1200
   },
   "medium_very_hard": {
-    "correct_pct": 52.5,
-    "incorrect_pct": 39.75,
-    "compilation_error_pct": 7.75,
-    "total_attempts": 400
+    "correct_pct": 56.49999999999999,
+    "incorrect_pct": 35.083333333333336,
+    "compilation_error_pct": 8.416666666666666,
+    "total_attempts": 1200
   },
   "none_easy": {
-    "correct_pct": 33.5,
-    "incorrect_pct": 52.75,
-    "compilation_error_pct": 13.750000000000002,
-    "total_attempts": 400
+    "correct_pct": 33.166666666666664,
+    "incorrect_pct": 51.5,
+    "compilation_error_pct": 15.333333333333332,
+    "total_attempts": 1200
   },
   "none_hard": {
-    "correct_pct": 31.5,
-    "incorrect_pct": 49.25,
-    "compilation_error_pct": 19.25,
-    "total_attempts": 400
+    "correct_pct": 31.916666666666664,
+    "incorrect_pct": 50.66666666666667,
+    "compilation_error_pct": 17.416666666666668,
+    "total_attempts": 1200
   },
   "none_moderate": {
-    "correct_pct": 30.5,
+    "correct_pct": 31.0,
     "incorrect_pct": 52.75,
-    "compilation_error_pct": 16.75,
-    "total_attempts": 400
+    "compilation_error_pct": 16.25,
+    "total_attempts": 1200
   },
   "none_none": {
-    "correct_pct": 33.25,
-    "incorrect_pct": 49.5,
-    "compilation_error_pct": 17.25,
-    "total_attempts": 400
+    "correct_pct": 33.5,
+    "incorrect_pct": 51.5,
+    "compilation_error_pct": 15.0,
+    "total_attempts": 1200
   },
   "none_very_easy": {
-    "correct_pct": 31.75,
-    "incorrect_pct": 49.25,
-    "compilation_error_pct": 19.0,
-    "total_attempts": 400
+    "correct_pct": 31.666666666666664,
+    "incorrect_pct": 52.416666666666664,
+    "compilation_error_pct": 15.916666666666668,
+    "total_attempts": 1200
   },
   "none_very_hard": {
-    "correct_pct": 31.25,
-    "incorrect_pct": 51.74999999999999,
-    "compilation_error_pct": 17.0,
-    "total_attempts": 400
+    "correct_pct": 31.333333333333336,
+    "incorrect_pct": 50.916666666666664,
+    "compilation_error_pct": 17.75,
+    "total_attempts": 1200
   }
 }

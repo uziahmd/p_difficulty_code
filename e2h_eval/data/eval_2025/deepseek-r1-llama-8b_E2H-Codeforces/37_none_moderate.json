@@ -1,0 +1,25 @@
+{
+    "start": 1758292077.36285,
+    "end": 1758292107.2543354,
+    "start-formatted": "2025-09-19 23:27 KST",
+    "end-formatted": "2025-09-19 23:28 KST",
+    "gpu": 2,
+    "pid": 37,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Gluttony\n\nYou are given an array a with n distinct integers. Construct an array b by permuting a such that for every non-empty subset of indices S = {x1, x2, ..., xk} (1 ≤ xi ≤ n, 0 < k < n) the sums of elements on that positions in a and b are different, i. e. \n\n## Input\nThe first line contains one integer n (1 ≤ n ≤ 22) — the size of the array.The second line contains n space-separated distinct integers a1, a2, ..., an (0 ≤ ai ≤ 109) — the elements of the array.\n\n## Output\nIf there is no such array b, print -1.Otherwise in the only line print n space-separated integers b1, b2, ..., bn. Note that b must be a permutation of a.If there are multiple answers, print any of them.\n\n## Example\n### Input\n['2\\n1 2', '4\\n1000 100 10 1']\n\n### Output\n['2 1', '100 1 1000 10']\n\n## Note\nAn array x is a permutation of y, if we can shuffle elements of y such that it will coincide with x.Note that the empty subset and the subset containing all indices are not counted.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a moderately difficult question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nimport math\n\ndef solve():\n    n = int(input())\n    a = list(map(int, input().split()))\n\n    # Create a mask to track the parity of subset sums\n    mask = (1 << n) - 1\n\n    # Initialize an array to store the permutation\n    b = [0] * n\n\n    # Iterate over the powers of 2 from 1 to n\n    for i in range(1, n):\n        # Calculate the number of bits set in the current power of 2\n        k = bin(i).count('1')\n\n        # Find the first available index that satisfies the condition\n        j = next(j for j in range(n - 1, -1, -1) if not (i & (1 << j)))\n\n        # Update the permutation array and the mask\n        b[j] = a[i]\n        mask ^= (1 << j)\n\n    # Fill in the remaining indices\n    for i in range(n):\n        if b[i] == 0:\n            b[i] = a[mask ^ (1 << i)]\n\n    print(*b)\n\n\nif __name__ == \"__main__\":\n    t = 1\n    for _ in range(t):\n        solve()\n```\n\nThis script reads the input from standard input and prints the output to standard output. It uses a bit manipulation approach to efficiently construct the permutation array `b` that satisfies the given conditions. The time complexity of this solution is O(n), where n is the size of the input array.",
+    "ground_truth": "N/A",
+    "extracted_answer": "import math\n\ndef solve():\n    n = int(input())\n    a = list(map(int, input().split()))\n\n    # Create a mask to track the parity of subset sums\n    mask = (1 << n) - 1\n\n    # Initialize an array to store the permutation\n    b = [0] * n\n\n    # Iterate over the powers of 2 from 1 to n\n    for i in range(1, n):\n        # Calculate the number of bits set in the current power of 2\n        k = bin(i).count('1')\n\n        # Find the first available index that satisfies the condition\n        j = next(j for j in range(n - 1, -1, -1) if not (i & (1 << j)))\n\n        # Update the permutation array and the mask\n        b[j] = a[i]\n        mask ^= (1 << j)\n\n    # Fill in the remaining indices\n    for i in range(n):\n        if b[i] == 0:\n            b[i] = a[mask ^ (1 << i)]\n\n    print(*b)\n\n\nif __name__ == \"__main__\":\n    t = 1\n    for _ in range(t):\n        solve()",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 426,
+        "completion_token_count": 315,
+        "thoughts_token_count": 0
+    }
+}

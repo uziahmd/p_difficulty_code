@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nit = iter(data)\nx1 = int(next(it))\ny1 = int(next(it))\nx2 = int(next(it))\ny2 = int(next(it))\nn = int(next(it))\ncnt = 0\nfor _ in range(n):\n    a = int(next(it)); b = int(next(it)); c = int(next(it))\n    v1 = a * x1 + b * y1 + c\n    v2 = a * x2 + b * y2 + c\n    if v1 * v2 < 0:\n        cnt += 1\nprint(cnt)",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nit = iter(data)\nx1 = int(next(it))\ny1 = int(next(it))\nx2 = int(next(it))\ny2 = int(next(it))\nn = int(next(it))\ncnt = 0\nfor _ in range(n):\n    a = int(next(it)); b = int(next(it)); c = int(next(it))\n    v1 = a * x1 + b * y1 + c\n    v2 = a * x2 + b * y2 + c\n    if v1 * v2 < 0:\n        cnt += 1\nprint(cnt)",
-    "score": -1,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 608,
         "completion_token_count": 726,

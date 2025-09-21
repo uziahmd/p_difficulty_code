@@ -16,7 +16,7 @@
     "response": "```python\ndef get_winning_numbers(n, s):\n    count_ones = s.count('1')\n    min_winning_number = 1 << count_ones\n    max_winning_number = (1 << n) - (1 << (n - count_ones))\n    return [str(i) for i in range(min_winning_number, max_winning_number + 1)]\n\n\nn = int(input())\ns = input()\nprint(\" \".join(get_winning_numbers(n, s)))\n```\n\nThis script first counts the number of '1's in the string `s`, which represents the phases where the team with the higher skill level wins. Then it calculates the minimum and maximum winning numbers based on this count. The minimum winning number is the first team that can win, and the maximum winning number is the last team that can win. Finally, it prints out all the winning numbers as a space-separated list.",
     "ground_truth": "N/A",
     "extracted_answer": "def get_winning_numbers(n, s):\n    count_ones = s.count('1')\n    min_winning_number = 1 << count_ones\n    max_winning_number = (1 << n) - (1 << (n - count_ones))\n    return [str(i) for i in range(min_winning_number, max_winning_number + 1)]\n\n\nn = int(input())\ns = input()\nprint(\" \".join(get_winning_numbers(n, s)))",
-    "score": -1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 701,
         "completion_token_count": 189,

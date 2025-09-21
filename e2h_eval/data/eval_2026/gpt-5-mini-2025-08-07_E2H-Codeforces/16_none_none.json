@@ -16,7 +16,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nit = iter(data)\nout_lines = []\nwhile True:\n    try:\n        x1 = float(next(it))\n    except StopIteration:\n        break\n    y1 = float(next(it))\n    x2 = float(next(it))\n    y2 = float(next(it))\n    n = int(next(it))\n    cnt = 0\n    for _ in range(n):\n        a = float(next(it)); b = float(next(it)); c = float(next(it))\n        v1 = a*x1 + b*y1 + c\n        v2 = a*x2 + b*y2 + c\n        if v1 == 0 or v2 == 0:\n            # problem guarantees points not on any line, but handle numerically\n            # treat as not crossing if one is zero\n            pass\n        else:\n            if v1 * v2 < 0:\n                cnt += 1\n    out_lines.append(str(cnt))\nprint(\"\\n\".join(out_lines))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nit = iter(data)\nout_lines = []\nwhile True:\n    try:\n        x1 = float(next(it))\n    except StopIteration:\n        break\n    y1 = float(next(it))\n    x2 = float(next(it))\n    y2 = float(next(it))\n    n = int(next(it))\n    cnt = 0\n    for _ in range(n):\n        a = float(next(it)); b = float(next(it)); c = float(next(it))\n        v1 = a*x1 + b*y1 + c\n        v2 = a*x2 + b*y2 + c\n        if v1 == 0 or v2 == 0:\n            # problem guarantees points not on any line, but handle numerically\n            # treat as not crossing if one is zero\n            pass\n        else:\n            if v1 * v2 < 0:\n                cnt += 1\n    out_lines.append(str(cnt))\nprint(\"\\n\".join(out_lines))",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 600,
         "completion_token_count": 219,

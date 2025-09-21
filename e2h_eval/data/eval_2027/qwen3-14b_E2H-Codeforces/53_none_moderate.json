@@ -1,0 +1,25 @@
+{
+    "start": 1758338129.8071578,
+    "end": 1758338154.1865878,
+    "start-formatted": "2025-09-20 12:15 KST",
+    "end-formatted": "2025-09-20 12:15 KST",
+    "gpu": 2,
+    "pid": 53,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# You're Given a String...\n\nYou're given a string of lower-case Latin letters. Your task is to find the length of its longest substring that can be met in the string at least twice. These occurrences can overlap (see sample test 2).\n\n## Input\nThe first input line contains the string. It's guaranteed, that the string is non-empty, consists of lower-case Latin letters, and its length doesn't exceed 100.\n\n## Output\nOutput one number — length of the longest substring that can be met in the string at least twice.\n\n## Example\n### Input\n['abcd', 'ababa', 'zzz']\n\n### Output\n['0', '3', '2']\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a moderately difficult question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nfrom collections import defaultdict\n\ndef longest_repeated_substring(s):\n    n = len(s)\n    seen = defaultdict(set)\n\n    # Check all possible substrings\n    for i in range(n):\n        for j in range(i + 1, n + 1):\n            substr = s[i:j]\n            seen[substr].add(i)\n\n    max_len = 0\n    for substr, indices in seen.items():\n        if len(indices) >= 2:\n            max_len = max(max_len, len(substr))\n\n    return max_len\n\ndef main():\n    import sys\n    input_str = sys.stdin.read().strip()\n    print(longest_repeated_substring(input_str))\n\nif __name__ == \"__main__\":\n    main()\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "from collections import defaultdict\n\ndef longest_repeated_substring(s):\n    n = len(s)\n    seen = defaultdict(set)\n\n    # Check all possible substrings\n    for i in range(n):\n        for j in range(i + 1, n + 1):\n            substr = s[i:j]\n            seen[substr].add(i)\n\n    max_len = 0\n    for substr, indices in seen.items():\n        if len(indices) >= 2:\n            max_len = max(max_len, len(substr))\n\n    return max_len\n\ndef main():\n    import sys\n    input_str = sys.stdin.read().strip()\n    print(longest_repeated_substring(input_str))\n\nif __name__ == \"__main__\":\n    main()",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 245,
+        "completion_token_count": 155,
+        "thoughts_token_count": 0
+    }
+}

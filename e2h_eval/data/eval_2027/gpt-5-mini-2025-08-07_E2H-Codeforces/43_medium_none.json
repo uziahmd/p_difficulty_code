@@ -1,0 +1,25 @@
+{
+    "start": 1758290638.2328806,
+    "end": 1758290677.9930294,
+    "start-formatted": "2025-09-19 23:03 KST",
+    "end-formatted": "2025-09-19 23:04 KST",
+    "gpu": 2,
+    "pid": 43,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Check the string\n\nA has a string consisting of some number of lowercase English letters 'a'. He gives it to his friend B who appends some number of letters 'b' to the end of this string. Since both A and B like the characters 'a' and 'b', they have made sure that at this point, at least one 'a' and one 'b' exist in the string.B now gives this string to C and he appends some number of letters 'c' to the end of the string. However, since C is a good friend of A and B, the number of letters 'c' he appends is equal to the number of 'a' or to the number of 'b' in the string. It is also possible that the number of letters 'c' equals both to the number of letters 'a' and to the number of letters 'b' at the same time.You have a string in your hands, and you want to check if it is possible to obtain the string in this way or not. If it is possible to obtain the string, print \"YES\", otherwise print \"NO\" (without the quotes).\n\n## Input\nThe first and only line consists of a string $$$S$$$ ($$$ 1 \\le |S| \\le 5\\,000 $$$). It is guaranteed that the string will only consist of the lowercase English letters 'a', 'b', 'c'.\n\n## Output\nPrint \"YES\" or \"NO\", according to the condition.\n\n## Example\n### Input\n['aaabccc', 'bbacc', 'aabc']\n\n### Output\n['YES', 'NO', 'YES']\n\n## Note\nConsider first example: the number of 'c' is equal to the number of 'a'. Consider second example: although the number of 'c' is equal to the number of the 'b', the order is not correct.Consider third example: the number of 'c' is equal to the number of 'b'.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments."
+        }
+    ],
+    "thought": "**Clarifying string conditions**\n\nI'm working through a statement where there's at least one 'a' and one 'b' before a character 'c' is appended. It could be zero 'c's, right? But it's probably a positive integer, since examples might imply at least one 'c' is needed. I think about similar Codeforces problems like 707A and 1144A, but I recall 1238A. The typical solution involves checking the character pattern: starting with 'a's, followed by 'b's, then 'c's, ensuring each has at least one instance.",
+    "response": "```python\nimport sys, re\n\ndef valid(s):\n    a = s.count('a')\n    b = s.count('b')\n    c = s.count('c')\n    if a < 1 or b < 1 or c < 1:\n        return False\n    if s != 'a'*a + 'b'*b + 'c'*c:\n        return False\n    return c == a or c == b\n\ndata = sys.stdin.read()\nwords = re.findall(r\"[abc]+\", data)\nif not words:\n    sys.exit(0)\nout = []\nfor w in words:\n    out.append(\"YES\" if valid(w) else \"NO\")\nprint(\"\\n\".join(out))\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys, re\n\ndef valid(s):\n    a = s.count('a')\n    b = s.count('b')\n    c = s.count('c')\n    if a < 1 or b < 1 or c < 1:\n        return False\n    if s != 'a'*a + 'b'*b + 'c'*c:\n        return False\n    return c == a or c == b\n\ndata = sys.stdin.read()\nwords = re.findall(r\"[abc]+\", data)\nif not words:\n    sys.exit(0)\nout = []\nfor w in words:\n    out.append(\"YES\" if valid(w) else \"NO\")\nprint(\"\\n\".join(out))",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 495,
+        "completion_token_count": 1561,
+        "thoughts_token_count": 1408
+    }
+}

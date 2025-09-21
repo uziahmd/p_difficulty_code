@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nn = int(data[0])\ns = data[1].strip()\n\nneedG = [0] * (n)\nneedL = [0] * (n)\nneedG[0] = 1\nneedL[0] = 1\nfor h in range(1, n):\n    if s[h-1] == '1':\n        needG[h] = needG[h-1]\n        needL[h] = needL[h-1] * 2\n    else:\n        needL[h] = needL[h-1]\n        needG[h] = needG[h-1] * 2\n\nG_required = 0\nL_required = 0\nfor j in range(1, n+1):\n    if s[j-1] == '0':\n        G_required += needG[j-1]\n    else:\n        L_required += needL[j-1]\n\ntotal = 1 << n\nleft = L_required + 1\nright = total - G_required\nif left > right:\n    print()\nelse:\n    print(\" \".join(str(x) for x in range(left, right+1)))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nn = int(data[0])\ns = data[1].strip()\n\nneedG = [0] * (n)\nneedL = [0] * (n)\nneedG[0] = 1\nneedL[0] = 1\nfor h in range(1, n):\n    if s[h-1] == '1':\n        needG[h] = needG[h-1]\n        needL[h] = needL[h-1] * 2\n    else:\n        needL[h] = needL[h-1]\n        needG[h] = needG[h-1] * 2\n\nG_required = 0\nL_required = 0\nfor j in range(1, n+1):\n    if s[j-1] == '0':\n        G_required += needG[j-1]\n    else:\n        L_required += needL[j-1]\n\ntotal = 1 << n\nleft = L_required + 1\nright = total - G_required\nif left > right:\n    print()\nelse:\n    print(\" \".join(str(x) for x in range(left, right+1)))",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 703,
         "completion_token_count": 6348,

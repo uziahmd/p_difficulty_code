@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nm = int(data[0])\n\ndef count_trailing_zeros(n):\n    cnt = 0\n    p = 5\n    while p <= n:\n        cnt += n // p\n        p *= 5\n    return cnt\n\n# binary search for smallest n with count_trailing_zeros(n) == m\nlow, high = 0, 5 * (m + 1)  # upper bound\nres = -1\nwhile low <= high:\n    mid = (low + high) // 2\n    c = count_trailing_zeros(mid)\n    if c < m:\n        low = mid + 1\n    else:\n        if c == m:\n            res = mid\n        high = mid - 1\n\nif res == -1:\n    print(0)\nelse:\n    ans = [str(res + i) for i in range(5)]\n    print(5)\n    print(\" \".join(ans))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nm = int(data[0])\n\ndef count_trailing_zeros(n):\n    cnt = 0\n    p = 5\n    while p <= n:\n        cnt += n // p\n        p *= 5\n    return cnt\n\n# binary search for smallest n with count_trailing_zeros(n) == m\nlow, high = 0, 5 * (m + 1)  # upper bound\nres = -1\nwhile low <= high:\n    mid = (low + high) // 2\n    c = count_trailing_zeros(mid)\n    if c < m:\n        low = mid + 1\n    else:\n        if c == m:\n            res = mid\n        high = mid - 1\n\nif res == -1:\n    print(0)\nelse:\n    ans = [str(res + i) for i in range(5)]\n    print(5)\n    print(\" \".join(ans))",
-    "score": 1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 348,
         "completion_token_count": 226,

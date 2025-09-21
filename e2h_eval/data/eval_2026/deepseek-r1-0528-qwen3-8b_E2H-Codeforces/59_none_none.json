@@ -1,0 +1,25 @@
+{
+    "start": 1758293188.820377,
+    "end": 1758293204.765673,
+    "start-formatted": "2025-09-19 23:46 KST",
+    "end-formatted": "2025-09-19 23:46 KST",
+    "gpu": 2,
+    "pid": 59,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Happy Sets\n\nDefine a set $$$A$$$ as a child of set $$$B$$$ if and only if for each element of value $$$x$$$ that is in $$$A$$$, there exists an element of value $$$x+1$$$ that is in $$$B$$$.Given integers $$$N$$$ and $$$K$$$. In order to make Chaneka happy, you must find the number of different arrays containing $$$N$$$ sets $$$[S_1, S_2, S_3, \\ldots, S_N]$$$ such that: - Each set can only contain zero or more different integers from $$$1$$$ to $$$K$$$. - There exists a way to rearrange the order of the array of sets into $$$[S'_1, S'_2, S'_3, \\ldots, S'_N]$$$ such that $$$S'_i$$$ is a child of $$$S'_{i+1}$$$ for each $$$1\\leq i\\leq N-1$$$.Print the answer modulo $$$998\\,244\\,353$$$.Two sets are considered different if and only if there is at least one value that only occurs in one of the two sets.Two arrays of sets are considered different if and only if there is at least one index $$$i$$$ such that the sets at index $$$i$$$ in the two arrays are different.\n\n## Input\nThe only line contains two integers $$$N$$$ and $$$K$$$ ($$$1 \\leq N,K \\leq 2\\cdot10^5$$$) — the number of sets in the array and the maximum limit for the values in the sets.\n\n## Output\nAn integer representing the number of different arrays of sets that satisfy the problem condition, modulo $$$998\\,244\\,353$$$.\n\n## Example\n### Input\n['2 2', '1 3', '3 1']\n\n### Output\n['11', '8', '4']\n\n## Note\nIn the first example, there are $$$11$$$ different arrays of sets possible, which are:   $$$[\\{\\}, \\{\\}]$$$  $$$[\\{\\}, \\{1\\}]$$$  $$$[\\{\\}, \\{1, 2\\}]$$$  $$$[\\{\\}, \\{2\\}]$$$  $$$[\\{1\\}, \\{\\}]$$$  $$$[\\{1\\}, \\{1, 2\\}]$$$  $$$[\\{1\\}, \\{2\\}]$$$  $$$[\\{1, 2\\}, \\{\\}]$$$  $$$[\\{1, 2\\}, \\{1\\}]$$$  $$$[\\{2\\}, \\{\\}]$$$  $$$[\\{2\\}, \\{1\\}]$$$ \n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nimport sys\ninput = sys.stdin.read\n\nMOD = 998244353\n\ndef main():\n    data = input().strip()\n    N, K = map(int, data.split())\n\n    if N == 0 or K == 0:\n        print(0)\n        return\n\n    # dp[i][j] = number of ways to form i sets with maximum element j\n    # We will use a 1D DP array to save space\n    dp = [0] * (K + 2)  # dp[j] represents the number of ways for max element j\n    dp[0] = 1  # base case: one way to have an empty set\n\n    for _ in range(N):\n        new_dp = [0] * (K + 2)\n        for j in range(K + 1):\n            # For each possible max element j, we can add any subset of {1..j}\n            # and then append a set that is a child of it\n            # So we multiply by the number of subsets of {1..j}\n            subsets = 1 << j  # 2^j subsets of {1..j}\n            new_dp[j] = (new_dp[j] + dp[j] * subsets) % MOD\n            # Also, we can add a set with max element j+1\n            new_dp[j + 1] = (new_dp[j + 1] + dp[j]) % MOD\n        dp = new_dp\n\n    # The answer is the sum of all ways to form N sets with any max element\n    print(sum(dp[:K + 1]) % MOD)\n\nif __name__ == \"__main__\":\n    main()\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\ninput = sys.stdin.read\n\nMOD = 998244353\n\ndef main():\n    data = input().strip()\n    N, K = map(int, data.split())\n\n    if N == 0 or K == 0:\n        print(0)\n        return\n\n    # dp[i][j] = number of ways to form i sets with maximum element j\n    # We will use a 1D DP array to save space\n    dp = [0] * (K + 2)  # dp[j] represents the number of ways for max element j\n    dp[0] = 1  # base case: one way to have an empty set\n\n    for _ in range(N):\n        new_dp = [0] * (K + 2)\n        for j in range(K + 1):\n            # For each possible max element j, we can add any subset of {1..j}\n            # and then append a set that is a child of it\n            # So we multiply by the number of subsets of {1..j}\n            subsets = 1 << j  # 2^j subsets of {1..j}\n            new_dp[j] = (new_dp[j] + dp[j] * subsets) % MOD\n            # Also, we can add a set with max element j+1\n            new_dp[j + 1] = (new_dp[j + 1] + dp[j]) % MOD\n        dp = new_dp\n\n    # The answer is the sum of all ways to form N sets with any max element\n    print(sum(dp[:K + 1]) % MOD)\n\nif __name__ == \"__main__\":\n    main()",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 669,
+        "completion_token_count": 363,
+        "thoughts_token_count": 0
+    }
+}

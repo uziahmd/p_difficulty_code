@@ -1,0 +1,25 @@
+{
+    "start": 1758290739.4979932,
+    "end": 1758290790.5388064,
+    "start-formatted": "2025-09-19 23:05 KST",
+    "end-formatted": "2025-09-19 23:06 KST",
+    "gpu": 2,
+    "pid": 38,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Node Pairs\n\nLet's call an ordered pair of nodes $$$(u, v)$$$ in a directed graph unidirectional if $$$u \\neq v$$$, there exists a path from $$$u$$$ to $$$v$$$, and there are no paths from $$$v$$$ to $$$u$$$.A directed graph is called $$$p$$$-reachable if it contains exactly $$$p$$$ ordered pairs of nodes $$$(u, v)$$$ such that $$$u < v$$$ and $$$u$$$ and $$$v$$$ are reachable from each other. Find the minimum number of nodes required to create a $$$p$$$-reachable directed graph.Also, among all such $$$p$$$-reachable directed graphs with the minimum number of nodes, let $$$G$$$ denote a graph which maximizes the number of unidirectional pairs of nodes. Find this number.\n\n## Input\nThe first and only line contains a single integer $$$p$$$ ($$$0 \\le p \\le 2 \\cdot 10^5$$$) — the number of ordered pairs of nodes.\n\n## Output\nPrint a single line containing two integers — the minimum number of nodes required to create a $$$p$$$-reachable directed graph, and the maximum number of unidirectional pairs of nodes among all such $$$p$$$-reachable directed graphs with the minimum number of nodes.\n\n## Example\n### Input\n['3', '4', '0']\n\n### Output\n['3 0', '5 6', '0 0']\n\n## Note\nIn the first test case, the minimum number of nodes required to create a $$$3$$$-reachable directed graph is $$$3$$$. Among all $$$3$$$-reachable directed graphs with $$$3$$$ nodes, the following graph $$$G$$$ is one of the graphs with the maximum number of unidirectional pairs of nodes, which is $$$0$$$.   \n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a moderately difficult question."
+        }
+    ],
+    "thought": "**Exploring p-reachable pairs**\n\nI realize this is about the \"Node Pairs\" problem, possibly reference 1715A. I define p-reachable pairs as how many unordered pairs are reachable, meaning they exist in the same strongly connected component (SCC). The count p represents the sum over all SCCs, calculated as combinations chosen from the size of each component. I'm thinking about how nodes from different SCCs might not interact while still considering the minimal number of nodes needed for all pairs to exist distinctly.",
+    "response": "```python\nimport sys, math\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nout_lines = []\nfor token in data:\n    p = int(token)\n    if p == 0:\n        out_lines.append(\"0 0\")\n        continue\n    sizes = []\n    rem = p\n    while rem > 0:\n        k = (1 + math.isqrt(1 + 8 * rem)) // 2\n        if k < 2:\n            k = 2\n        while k * (k - 1) // 2 > rem:\n            k -= 1\n        sizes.append(k)\n        rem -= k * (k - 1) // 2\n    n = sum(sizes)\n    sumsq = sum(x * x for x in sizes)\n    unidir = (n * n - sumsq) // 2\n    out_lines.append(f\"{n} {unidir}\")\n\nsys.stdout.write(\"\\n\".join(out_lines))\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys, math\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nout_lines = []\nfor token in data:\n    p = int(token)\n    if p == 0:\n        out_lines.append(\"0 0\")\n        continue\n    sizes = []\n    rem = p\n    while rem > 0:\n        k = (1 + math.isqrt(1 + 8 * rem)) // 2\n        if k < 2:\n            k = 2\n        while k * (k - 1) // 2 > rem:\n            k -= 1\n        sizes.append(k)\n        rem -= k * (k - 1) // 2\n    n = sum(sizes)\n    sumsq = sum(x * x for x in sizes)\n    unidir = (n * n - sumsq) // 2\n    out_lines.append(f\"{n} {unidir}\")\n\nsys.stdout.write(\"\\n\".join(out_lines))",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 496,
+        "completion_token_count": 2331,
+        "thoughts_token_count": 2112
+    }
+}

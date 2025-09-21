@@ -1,0 +1,25 @@
+{
+    "start": 1758292102.7402463,
+    "end": 1758292131.1784353,
+    "start-formatted": "2025-09-19 23:28 KST",
+    "end-formatted": "2025-09-19 23:28 KST",
+    "gpu": 2,
+    "pid": 22,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Marks\n\nVasya, or Mr. Vasily Petrov is a dean of a department in a local university. After the winter exams he got his hands on a group's gradebook.Overall the group has n students. They received marks for m subjects. Each student got a mark from 1 to 9 (inclusive) for each subject.Let's consider a student the best at some subject, if there is no student who got a higher mark for this subject. Let's consider a student successful, if there exists a subject he is the best at.Your task is to find the number of successful students in the group.\n\n## Input\nThe first input line contains two integers n and m (1 ≤ n, m ≤ 100) — the number of students and the number of subjects, correspondingly. Next n lines each containing m characters describe the gradebook. Each character in the gradebook is a number from 1 to 9. Note that the marks in a rows are not sepatated by spaces.\n\n## Output\nPrint the single number — the number of successful students in the given group.\n\n## Example\n### Input\n['3 3\\n223\\n232\\n112', '3 5\\n91728\\n11828\\n11111']\n\n### Output\n['2', '3']\n\n## Note\nIn the first sample test the student number 1 is the best at subjects 1 and 3, student 2 is the best at subjects 1 and 2, but student 3 isn't the best at any subject.In the second sample test each student is the best at at least one subject.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a hard question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nfrom collections import defaultdict\n\ndef count_successful_students():\n    # Read the number of students and subjects\n    n, m = map(int, input().split())\n\n    # Initialize a dictionary to store the best marks for each subject\n    best_marks = defaultdict(list)\n\n    # Read the gradebook and update the best marks for each subject\n    for _ in range(n):\n        gradebook = input()\n        for j in range(m):\n            mark = int(gradebook[j])\n            if not best_marks[j] or mark > best_marks[j][0]:\n                best_marks[j] = [mark]\n\n    # Initialize a set to store the successful students\n    successful_students = set()\n\n    # Check if each student is successful\n    for i in range(n):\n        for j in range(m):\n            gradebook = input()\n            mark = int(gradebook[j])\n            if mark == best_marks[j][0]:\n                successful_students.add(i)\n                break\n\n    # Print the number of successful students\n    print(len(successful_students))\n\n# Call the function\ncount_successful_students()\n```\n\nThis script reads the input from standard input, processes it, and prints the result to standard output. It uses a dictionary to store the best marks for each subject and a set to store the successful students. The time complexity is O(n*m), where n is the number of students and m is the number of subjects.",
+    "ground_truth": "N/A",
+    "extracted_answer": "from collections import defaultdict\n\ndef count_successful_students():\n    # Read the number of students and subjects\n    n, m = map(int, input().split())\n\n    # Initialize a dictionary to store the best marks for each subject\n    best_marks = defaultdict(list)\n\n    # Read the gradebook and update the best marks for each subject\n    for _ in range(n):\n        gradebook = input()\n        for j in range(m):\n            mark = int(gradebook[j])\n            if not best_marks[j] or mark > best_marks[j][0]:\n                best_marks[j] = [mark]\n\n    # Initialize a set to store the successful students\n    successful_students = set()\n\n    # Check if each student is successful\n    for i in range(n):\n        for j in range(m):\n            gradebook = input()\n            mark = int(gradebook[j])\n            if mark == best_marks[j][0]:\n                successful_students.add(i)\n                break\n\n    # Print the number of successful students\n    print(len(successful_students))\n\n# Call the function\ncount_successful_students()",
+    "score": -1,
+    "metadata": {
+        "prompt_token_count": 460,
+        "completion_token_count": 291,
+        "thoughts_token_count": 0
+    }
+}

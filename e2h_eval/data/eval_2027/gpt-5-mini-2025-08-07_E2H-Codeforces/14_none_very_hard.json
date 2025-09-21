@@ -15,7 +15,7 @@
     "response": "import sys\n\nm = int(sys.stdin.read().strip())\n\ndef trailing_zeroes(n):\n    cnt = 0\n    d = 5\n    while d <= n:\n        cnt += n // d\n        d *= 5\n    return cnt\n\n# binary search for smallest n with trailing_zeroes(n) >= m\nlo, hi = 0, 5 * (m + 1)\nres = -1\nwhile lo <= hi:\n    mid = (lo + hi) // 2\n    if trailing_zeroes(mid) >= m:\n        res = mid\n        hi = mid - 1\n    else:\n        lo = mid + 1\n\nif res == -1 or trailing_zeroes(res) != m:\n    print(0)\nelse:\n    ans = [res + i for i in range(5)]\n    print(5)\n    print(' '.join(map(str, ans)))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\nm = int(sys.stdin.read().strip())\n\ndef trailing_zeroes(n):\n    cnt = 0\n    d = 5\n    while d <= n:\n        cnt += n // d\n        d *= 5\n    return cnt\n\n# binary search for smallest n with trailing_zeroes(n) >= m\nlo, hi = 0, 5 * (m + 1)\nres = -1\nwhile lo <= hi:\n    mid = (lo + hi) // 2\n    if trailing_zeroes(mid) >= m:\n        res = mid\n        hi = mid - 1\n    else:\n        lo = mid + 1\n\nif res == -1 or trailing_zeroes(res) != m:\n    print(0)\nelse:\n    ans = [res + i for i in range(5)]\n    print(5)\n    print(' '.join(map(str, ans)))",
-    "score": 1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 349,
         "completion_token_count": 196,

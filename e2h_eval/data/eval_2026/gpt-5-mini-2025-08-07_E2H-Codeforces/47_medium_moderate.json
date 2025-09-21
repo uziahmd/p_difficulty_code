@@ -1,0 +1,25 @@
+{
+    "start": 1758290635.4662905,
+    "end": 1758290679.3522022,
+    "start-formatted": "2025-09-19 23:03 KST",
+    "end-formatted": "2025-09-19 23:04 KST",
+    "gpu": 2,
+    "pid": 47,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Neko does Maths\n\nNeko loves divisors. During the latest number theory lesson, he got an interesting exercise from his math teacher.Neko has two integers $$$a$$$ and $$$b$$$. His goal is to find a non-negative integer $$$k$$$ such that the least common multiple of $$$a+k$$$ and $$$b+k$$$ is the smallest possible. If there are multiple optimal integers $$$k$$$, he needs to choose the smallest one.Given his mathematical talent, Neko had no trouble getting Wrong Answer on this problem. Can you help him solve it?\n\n## Input\nThe only line contains two integers $$$a$$$ and $$$b$$$ ($$$1 \\le a, b \\le 10^9$$$).\n\n## Output\nPrint the smallest non-negative integer $$$k$$$ ($$$k \\ge 0$$$) such that the lowest common multiple of $$$a+k$$$ and $$$b+k$$$ is the smallest possible.If there are many possible integers $$$k$$$ giving the same value of the least common multiple, print the smallest one.\n\n## Example\n### Input\n['6 10', '21 31', '5 10']\n\n### Output\n['2', '9', '0']\n\n## Note\nIn the first test, one should choose $$$k = 2$$$, as the least common multiple of $$$6 + 2$$$ and $$$10 + 2$$$ is $$$24$$$, which is the smallest least common multiple possible.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a moderately difficult question."
+        }
+    ],
+    "thought": "**Exploring gcd and divisors**\n\nI'm analyzing the relationship between \\( lcm(a+k, b+k) \\) and \\( gcd(a+k, b+k) \\). It seems that the gcd might not always equal the divisor \\( g \\). While \\( g \\) divides both \\( a+k \\) and \\( b+k \\) and the difference \\( b-a \\), the gcd could still be a multiple of \\( g \\) if there are other common factors. Both numbers are \\( 0 \\) mod \\( g \\), indicating \\( gcd \\) is at least \\( g \\). However, I'm realizing that we can't guarantee equality.",
+    "response": "```unknown\nimport sys\nimport math\n\ndata = list(map(int, sys.stdin.read().strip().split()))\nif not data:\n    sys.exit(0)\n\npairs = []\nif len(data) == 2:\n    pairs.append((data[0], data[1]))\nelse:\n    # If more than 2 numbers, treat them as consecutive pairs\n    it = iter(data)\n    for x, y in zip(it, it):\n        pairs.append((x, y))\n\nout = []\nfor a, b in pairs:\n    if a == b:\n        out.append(\"0\")\n        continue\n    if a > b:\n        a, b = b, a\n    d = b - a\n    best_k = 0\n    best_lcm = (a * b) // math.gcd(a, b)\n    limit = int(d**0.5) + 1\n    for i in range(1, limit):\n        if d % i == 0:\n            for g in (i, d // i):\n                k = (g - a % g) % g\n                ca = a + k\n                cb = b + k\n                gval = math.gcd(ca, cb)  # or math.gcd(ca, d)\n                lcm = (ca // gval) * cb\n                if lcm < best_lcm or (lcm == best_lcm and k < best_k):\n                    best_lcm = lcm\n                    best_k = k\n    out.append(str(best_k))\n\nsys.stdout.write(\"\\n\".join(out))\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "unknown\nimport sys\nimport math\n\ndata = list(map(int, sys.stdin.read().strip().split()))\nif not data:\n    sys.exit(0)\n\npairs = []\nif len(data) == 2:\n    pairs.append((data[0], data[1]))\nelse:\n    # If more than 2 numbers, treat them as consecutive pairs\n    it = iter(data)\n    for x, y in zip(it, it):\n        pairs.append((x, y))\n\nout = []\nfor a, b in pairs:\n    if a == b:\n        out.append(\"0\")\n        continue\n    if a > b:\n        a, b = b, a\n    d = b - a\n    best_k = 0\n    best_lcm = (a * b) // math.gcd(a, b)\n    limit = int(d**0.5) + 1\n    for i in range(1, limit):\n        if d % i == 0:\n            for g in (i, d // i):\n                k = (g - a % g) % g\n                ca = a + k\n                cb = b + k\n                gval = math.gcd(ca, cb)  # or math.gcd(ca, d)\n                lcm = (ca // gval) * cb\n                if lcm < best_lcm or (lcm == best_lcm and k < best_k):\n                    best_lcm = lcm\n                    best_k = k\n    out.append(str(best_k))\n\nsys.stdout.write(\"\\n\".join(out))",
+    "score": -1,
+    "metadata": {
+        "prompt_token_count": 407,
+        "completion_token_count": 2512,
+        "thoughts_token_count": 2176
+    }
+}

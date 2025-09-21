@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nm = int(data[0])\n\ndef trailing_zeroes(n):\n    cnt = 0\n    d = 5\n    while d <= n:\n        cnt += n // d\n        d *= 5\n    return cnt\n\n# Binary search for smallest n with trailing_zeroes(n) >= m\nlo, hi = 0, 5 * (m + 1)  # upper bound\nwhile lo < hi:\n    mid = (lo + hi) // 2\n    if trailing_zeroes(mid) >= m:\n        hi = mid\n    else:\n        lo = mid + 1\nfirst = lo\nif trailing_zeroes(first) != m:\n    print(0)\nelse:\n    res = [str(first + i) for i in range(5)]\n    print(5)\n    print(\" \".join(res))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nm = int(data[0])\n\ndef trailing_zeroes(n):\n    cnt = 0\n    d = 5\n    while d <= n:\n        cnt += n // d\n        d *= 5\n    return cnt\n\n# Binary search for smallest n with trailing_zeroes(n) >= m\nlo, hi = 0, 5 * (m + 1)  # upper bound\nwhile lo < hi:\n    mid = (lo + hi) // 2\n    if trailing_zeroes(mid) >= m:\n        hi = mid\n    else:\n        lo = mid + 1\nfirst = lo\nif trailing_zeroes(first) != m:\n    print(0)\nelse:\n    res = [str(first + i) for i in range(5)]\n    print(5)\n    print(\" \".join(res))",
-    "score": -1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 349,
         "completion_token_count": 204,

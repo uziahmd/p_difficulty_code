@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nm = int(data[0])\n\ndef count_zeroes(n):\n    s = 0\n    while n:\n        n //= 5\n        s += n\n    return s\n\nl, r = 0, 5 * (m + 1)\nwhile l < r:\n    mid = (l + r) // 2\n    if count_zeroes(mid) < m:\n        l = mid + 1\n    else:\n        r = mid\n\nif count_zeroes(l) != m:\n    print(0)\nelse:\n    res = [str(l + i) for i in range(5)]\n    print(5)\n    print(\" \".join(res))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nm = int(data[0])\n\ndef count_zeroes(n):\n    s = 0\n    while n:\n        n //= 5\n        s += n\n    return s\n\nl, r = 0, 5 * (m + 1)\nwhile l < r:\n    mid = (l + r) // 2\n    if count_zeroes(mid) < m:\n        l = mid + 1\n    else:\n        r = mid\n\nif count_zeroes(l) != m:\n    print(0)\nelse:\n    res = [str(l + i) for i in range(5)]\n    print(5)\n    print(\" \".join(res))",
-    "score": 1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 349,
         "completion_token_count": 939,

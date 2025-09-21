@@ -1,0 +1,25 @@
+{
+    "start": 1758292058.9740074,
+    "end": 1758292094.5288446,
+    "start-formatted": "2025-09-19 23:27 KST",
+    "end-formatted": "2025-09-19 23:28 KST",
+    "gpu": 2,
+    "pid": 52,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# New Year Candles\n\nVasily the Programmer loves romance, so this year he decided to illuminate his room with candles.Vasily has a candles.When Vasily lights up a new candle, it first burns for an hour and then it goes out. Vasily is smart, so he can make b went out candles into a new candle. As a result, this new candle can be used like any other new candle.Now Vasily wonders: for how many hours can his candles light up the room if he acts optimally well? Help him find this number.\n\n## Input\nThe single line contains two integers, a and b (1 ≤ a ≤ 1000; 2 ≤ b ≤ 1000).\n\n## Output\nPrint a single integer — the number of hours Vasily can light up the room for.\n\n## Example\n### Input\n['4 2', '6 3']\n\n### Output\n['7', '8']\n\n## Note\nConsider the first sample. For the first four hours Vasily lights up new candles, then he uses four burned out candles to make two new ones and lights them up. When these candles go out (stop burning), Vasily can make another candle. Overall, Vasily can light up the room for 7 hours.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a moderately difficult question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nimport sys\n\ndef new_year_candles(a, b):\n    \"\"\"\n    Calculate the total hours Vasily can light up the room for.\n\n    Args:\n        a (int): The number of candles that burn for an hour.\n        b (int): The number of candles that can be made from one burned out candle.\n\n    Returns:\n        int: The total hours Vasily can light up the room for.\n    \"\"\"\n    # Initialize the total hours and the number of burned out candles\n    total_hours = 0\n    burned_out_candles = a\n\n    # Continue until there are not enough burned out candles to make new ones\n    while burned_out_candles >= b:\n        # Calculate the number of new candles that can be made\n        new_candles = burned_out_candles // b\n\n        # Update the total hours and the number of burned out candles\n        total_hours += a * new_candles + a\n        burned_out_candles = new_candles + (burned_out_candles % b)\n\n    # Add the remaining hours\n    total_hours += a * burned_out_candles\n\n    return total_hours\n\n\n# Read the input from standard input\nlines = sys.stdin.readlines()\n\n# Process each line\nfor line in lines:\n    # Split the line into two integers\n    a, b = map(int, line.strip().split())\n\n    # Calculate and print the result\n    print(new_year_candles(a, b))\n```\n\nThis script uses a simple iterative approach to calculate the total hours Vasily can light up the room for. It first initializes the total hours and the number of burned out candles, then continues to make new candles until there are not enough burned out candles to make new ones. Finally, it adds the remaining hours to the total hours and prints the result.",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndef new_year_candles(a, b):\n    \"\"\"\n    Calculate the total hours Vasily can light up the room for.\n\n    Args:\n        a (int): The number of candles that burn for an hour.\n        b (int): The number of candles that can be made from one burned out candle.\n\n    Returns:\n        int: The total hours Vasily can light up the room for.\n    \"\"\"\n    # Initialize the total hours and the number of burned out candles\n    total_hours = 0\n    burned_out_candles = a\n\n    # Continue until there are not enough burned out candles to make new ones\n    while burned_out_candles >= b:\n        # Calculate the number of new candles that can be made\n        new_candles = burned_out_candles // b\n\n        # Update the total hours and the number of burned out candles\n        total_hours += a * new_candles + a\n        burned_out_candles = new_candles + (burned_out_candles % b)\n\n    # Add the remaining hours\n    total_hours += a * burned_out_candles\n\n    return total_hours\n\n\n# Read the input from standard input\nlines = sys.stdin.readlines()\n\n# Process each line\nfor line in lines:\n    # Split the line into two integers\n    a, b = map(int, line.strip().split())\n\n    # Calculate and print the result\n    print(new_year_candles(a, b))",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 387,
+        "completion_token_count": 372,
+        "thoughts_token_count": 0
+    }
+}

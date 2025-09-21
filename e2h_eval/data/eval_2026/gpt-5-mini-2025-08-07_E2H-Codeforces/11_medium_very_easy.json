@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\n\nvals = list(map(int, data))\nif len(vals) % 8 != 0:\n    # If input isn't a multiple of 8, try to read line-wise (each line a test)\n    lines = [line.strip() for line in sys.stdin.read().strip().splitlines() if line.strip()]\n    # fallback: treat first 8 numbers only\n    vals = vals[:8]\n\nout = []\nfor i in range(0, len(vals), 8):\n    n, k, l, c, d, p, nl, np = vals[i:i+8]\n    total_drink = k * l\n    total_slices = c * d\n    toasts_by_drink = total_drink // nl\n    toasts_by_slices = total_slices\n    toasts_by_salt = p // np\n    per_friend = min(toasts_by_drink, toasts_by_slices, toasts_by_salt) // n\n    out.append(str(per_friend))\n\nsys.stdout.write(\"\\n\".join(out))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\n\nvals = list(map(int, data))\nif len(vals) % 8 != 0:\n    # If input isn't a multiple of 8, try to read line-wise (each line a test)\n    lines = [line.strip() for line in sys.stdin.read().strip().splitlines() if line.strip()]\n    # fallback: treat first 8 numbers only\n    vals = vals[:8]\n\nout = []\nfor i in range(0, len(vals), 8):\n    n, k, l, c, d, p, nl, np = vals[i:i+8]\n    total_drink = k * l\n    total_slices = c * d\n    toasts_by_drink = total_drink // nl\n    toasts_by_slices = total_slices\n    toasts_by_salt = p // np\n    per_friend = min(toasts_by_drink, toasts_by_slices, toasts_by_salt) // n\n    out.append(str(per_friend))\n\nsys.stdout.write(\"\\n\".join(out))",
-    "score": -1,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 483,
         "completion_token_count": 629,

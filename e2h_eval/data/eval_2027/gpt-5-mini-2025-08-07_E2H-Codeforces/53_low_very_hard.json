@@ -1,0 +1,25 @@
+{
+    "start": 1758284921.879324,
+    "end": 1758284934.7008476,
+    "start-formatted": "2025-09-19 21:28 KST",
+    "end-formatted": "2025-09-19 21:28 KST",
+    "gpu": 2,
+    "pid": 53,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# You're Given a String...\n\nYou're given a string of lower-case Latin letters. Your task is to find the length of its longest substring that can be met in the string at least twice. These occurrences can overlap (see sample test 2).\n\n## Input\nThe first input line contains the string. It's guaranteed, that the string is non-empty, consists of lower-case Latin letters, and its length doesn't exceed 100.\n\n## Output\nOutput one number — length of the longest substring that can be met in the string at least twice.\n\n## Example\n### Input\n['abcd', 'ababa', 'zzz']\n\n### Output\n['0', '3', '2']\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a very hard question."
+        }
+    ],
+    "thought": "**Parsing input strings**\n\nI need to handle input that’s presented on a single line, possibly with spaces or brackets. I think the best approach is to read all whitespace-separated tokens and filter for lowercase letters, including punctuation. To be safer, I could use `sys.stdin.read()` and then utilize regex to extract sequences of lowercase letters with `findall [a-z]+`. This will help me gather the correct strings. The complexity is fine since n is less than or equal to 100. I'll return outputs one per line without additional comments.",
+    "response": "import sys\nimport re\n\ndata = sys.stdin.read()\nstrings = re.findall(r'[a-z]+', data)\n\nout_lines = []\nfor s in strings:\n    n = len(s)\n    ans = 0\n    for L in range(n-1, 0, -1):\n        seen = {}\n        found = False\n        for i in range(n - L + 1):\n            sub = s[i:i+L]\n            seen[sub] = seen.get(sub, 0) + 1\n            if seen[sub] >= 2:\n                ans = L\n                found = True\n                break\n        if found:\n            break\n    out_lines.append(str(ans))\n\nif out_lines:\n    sys.stdout.write(\"\\n\".join(out_lines))",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\nimport re\n\ndata = sys.stdin.read()\nstrings = re.findall(r'[a-z]+', data)\n\nout_lines = []\nfor s in strings:\n    n = len(s)\n    ans = 0\n    for L in range(n-1, 0, -1):\n        seen = {}\n        found = False\n        for i in range(n - L + 1):\n            sub = s[i:i+L]\n            seen[sub] = seen.get(sub, 0) + 1\n            if seen[sub] >= 2:\n                ans = L\n                found = True\n                break\n        if found:\n            break\n    out_lines.append(str(ans))\n\nif out_lines:\n    sys.stdout.write(\"\\n\".join(out_lines))",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 232,
+        "completion_token_count": 419,
+        "thoughts_token_count": 256
+    }
+}

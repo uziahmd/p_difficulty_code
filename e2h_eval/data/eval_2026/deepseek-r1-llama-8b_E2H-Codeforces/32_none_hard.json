@@ -1,0 +1,25 @@
+{
+    "start": 1758292094.8110573,
+    "end": 1758292132.077661,
+    "start-formatted": "2025-09-19 23:28 KST",
+    "end-formatted": "2025-09-19 23:28 KST",
+    "gpu": 2,
+    "pid": 32,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Array Stabilization\n\nYou are given an array $$$a$$$ consisting of $$$n$$$ integer numbers.Let instability of the array be the following value: $$$\\max\\limits_{i = 1}^{n} a_i - \\min\\limits_{i = 1}^{n} a_i$$$.You have to remove exactly one element from this array to minimize instability of the resulting $$$(n-1)$$$-elements array. Your task is to calculate the minimum possible instability.\n\n## Input\nThe first line of the input contains one integer $$$n$$$ ($$$2 \\le n \\le 10^5$$$) — the number of elements in the array $$$a$$$.The second line of the input contains $$$n$$$ integers $$$a_1, a_2, \\dots, a_n$$$ ($$$1 \\le a_i \\le 10^5$$$) — elements of the array $$$a$$$.\n\n## Output\nPrint one integer — the minimum possible instability of the array if you have to remove exactly one element from the array $$$a$$$.\n\n## Example\n### Input\n['4\\n1 3 3 7', '2\\n1 100000']\n\n### Output\n['2', '0']\n\n## Note\nIn the first example you can remove $$$7$$$ then instability of the remaining array will be $$$3 - 1 = 2$$$.In the second example you can remove either $$$1$$$ or $$$100000$$$ then instability of the remaining array will be $$$100000 - 100000 = 0$$$ and $$$1 - 1 = 0$$$ correspondingly.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a hard question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nimport sys\n\ndef array_stabilization(n, a):\n    a.sort()\n    min_diff = a[1] - a[0]\n    max_diff = a[n-1] - a[n-2]\n\n    for i in range(1, n-1):\n        diff = a[i+1] - a[i-1]\n        if diff < min_diff:\n            min_diff = diff\n\n    return max(min_diff, max_diff)\n\ndef main():\n    input_lines = sys.stdin.read().split('\\n')\n    n = int(input_lines[0].split()[0])\n    a = list(map(int, input_lines[0].split()[1:]))\n\n    output = []\n    for i in range(1, len(input_lines)):\n        n = int(input_lines[i].split()[0])\n        a = list(map(int, input_lines[i].split()[1:]))\n        output.append(str(array_stabilization(n, a)))\n\n    print('\\n'.join(output))\n\nif __name__ == \"__main__\":\n    main()\n```\n\nThis script first reads the input from standard input and splits it into lines. It then processes each line separately, calculates the minimum possible instability of the array, and appends the result to the `output` list. Finally, it prints the results as a newline-separated string.\n\nThe `array_stabilization` function takes an array `a` and its length `n` as input, sorts the array, and then calculates the minimum possible instability by comparing the differences between adjacent elements. It returns the maximum of these differences, which represents the minimum possible instability of the array after removing one element.\n\nThe time complexity of this solution is O(n log n) due to the sorting operation, where n is the number of elements in the array. The space complexity is O(n) for storing the sorted array.",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndef array_stabilization(n, a):\n    a.sort()\n    min_diff = a[1] - a[0]\n    max_diff = a[n-1] - a[n-2]\n\n    for i in range(1, n-1):\n        diff = a[i+1] - a[i-1]\n        if diff < min_diff:\n            min_diff = diff\n\n    return max(min_diff, max_diff)\n\ndef main():\n    input_lines = sys.stdin.read().split('\\n')\n    n = int(input_lines[0].split()[0])\n    a = list(map(int, input_lines[0].split()[1:]))\n\n    output = []\n    for i in range(1, len(input_lines)):\n        n = int(input_lines[i].split()[0])\n        a = list(map(int, input_lines[i].split()[1:]))\n        output.append(str(array_stabilization(n, a)))\n\n    print('\\n'.join(output))\n\nif __name__ == \"__main__\":\n    main()",
+    "score": -1,
+    "metadata": {
+        "prompt_token_count": 460,
+        "completion_token_count": 379,
+        "thoughts_token_count": 0
+    }
+}

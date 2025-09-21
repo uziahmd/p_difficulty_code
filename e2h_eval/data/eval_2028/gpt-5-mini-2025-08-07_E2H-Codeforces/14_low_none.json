@@ -15,7 +15,7 @@
     "response": "import sys\n\ndef zeros(n):\n    cnt = 0\n    p = 5\n    while p <= n:\n        cnt += n // p\n        p *= 5\n    return cnt\n\ndef find_first(m):\n    lo = 0\n    hi = 5 * (m + 1) + 10\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if zeros(mid) < m:\n            lo = mid + 1\n        else:\n            hi = mid\n    return lo\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    m = int(data[0])\n    first = find_first(m)\n    if zeros(first) != m:\n        print(0)\n    else:\n        res = [str(first + i) for i in range(5)]\n        print(5)\n        print(\" \".join(res))\n\nif __name__ == \"__main__\":\n    main()",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndef zeros(n):\n    cnt = 0\n    p = 5\n    while p <= n:\n        cnt += n // p\n        p *= 5\n    return cnt\n\ndef find_first(m):\n    lo = 0\n    hi = 5 * (m + 1) + 10\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if zeros(mid) < m:\n            lo = mid + 1\n        else:\n            hi = mid\n    return lo\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    m = int(data[0])\n    first = find_first(m)\n    if zeros(first) != m:\n        print(0)\n    else:\n        res = [str(first + i) for i in range(5)]\n        print(5)\n        print(\" \".join(res))\n\nif __name__ == \"__main__\":\n    main()",
-    "score": 1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 340,
         "completion_token_count": 469,

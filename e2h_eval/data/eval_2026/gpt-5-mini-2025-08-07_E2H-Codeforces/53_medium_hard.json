@@ -1,0 +1,25 @@
+{
+    "start": 1758290650.7404966,
+    "end": 1758290672.5312567,
+    "start-formatted": "2025-09-19 23:04 KST",
+    "end-formatted": "2025-09-19 23:04 KST",
+    "gpu": 2,
+    "pid": 53,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# You're Given a String...\n\nYou're given a string of lower-case Latin letters. Your task is to find the length of its longest substring that can be met in the string at least twice. These occurrences can overlap (see sample test 2).\n\n## Input\nThe first input line contains the string. It's guaranteed, that the string is non-empty, consists of lower-case Latin letters, and its length doesn't exceed 100.\n\n## Output\nOutput one number — length of the longest substring that can be met in the string at least twice.\n\n## Example\n### Input\n['abcd', 'ababa', 'zzz']\n\n### Output\n['0', '3', '2']\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a hard question."
+        }
+    ],
+    "thought": "**Evaluating substring detection**\n\nI'm thinking about how to efficiently handle substring detection. I could use a frequency dictionary or a sliding window approach. For each length L, I would look at substrings and store them in a set, returning L if a substring is seen again. Overlaps are allowed, but I should consider edge cases, like how a single occurrence would return 0. I'll make sure to handle input strings properly and format output correctly without blanks. Each result needs to be printed on its own line.",
+    "response": "import sys, re\n\ndef longest_dup_len(s):\n    n = len(s)\n    for L in range(n-1, 0, -1):\n        seen = set()\n        for i in range(n - L + 1):\n            sub = s[i:i+L]\n            if sub in seen:\n                return L\n            seen.add(sub)\n    return 0\n\ndata = sys.stdin.read().strip()\nif not data:\n    sys.exit(0)\n\nlines = [line.strip() for line in data.splitlines() if line.strip()]\n\ninputs = []\nif len(lines) == 1 and re.search(r\"^\\s*\\[.*\\]\\s*$\", lines[0]):\n    matches = re.findall(r\"'([a-z]+)'|\\\"([a-z]+)\\\"\", lines[0])\n    for a,b in matches:\n        inputs.append(a or b)\nelse:\n    inputs = lines\n\nresults = [str(longest_dup_len(s)) for s in inputs]\nprint(\"\\n\".join(results))",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys, re\n\ndef longest_dup_len(s):\n    n = len(s)\n    for L in range(n-1, 0, -1):\n        seen = set()\n        for i in range(n - L + 1):\n            sub = s[i:i+L]\n            if sub in seen:\n                return L\n            seen.add(sub)\n    return 0\n\ndata = sys.stdin.read().strip()\nif not data:\n    sys.exit(0)\n\nlines = [line.strip() for line in data.splitlines() if line.strip()]\n\ninputs = []\nif len(lines) == 1 and re.search(r\"^\\s*\\[.*\\]\\s*$\", lines[0]):\n    matches = re.findall(r\"'([a-z]+)'|\\\"([a-z]+)\\\"\", lines[0])\n    for a,b in matches:\n        inputs.append(a or b)\nelse:\n    inputs = lines\n\nresults = [str(longest_dup_len(s)) for s in inputs]\nprint(\"\\n\".join(results))",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 231,
+        "completion_token_count": 984,
+        "thoughts_token_count": 768
+    }
+}

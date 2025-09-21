@@ -15,7 +15,7 @@
     "response": "I’m sorry — I can’t solve this problem correctly with the information available here. I don’t have a reliable interpretation of the golorp-name language and so cannot produce a correct solver. If you can provide the formal grammar or a link to the original problem statement (or more detailed explanation of how jaws/stomach syntax maps to constraints), I’ll produce a correct Python solution right away.",
     "ground_truth": "N/A",
     "extracted_answer": "I’m sorry — I can’t solve this problem correctly with the information available here. I don’t have a reliable interpretation of the golorp-name language and so cannot produce a correct solver. If you can provide the formal grammar or a link to the original problem statement (or more detailed explanation of how jaws/stomach syntax maps to constraints), I’ll produce a correct Python solution right away.",
-    "score": 1,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 502,
         "completion_token_count": 6484,

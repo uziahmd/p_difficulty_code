@@ -15,7 +15,7 @@
     "response": "```python\nimport sys\nimport heapq\n\ndata = list(map(int, sys.stdin.read().strip().split()))\nif len(data) < 3:\n    sys.exit(0)\nm, a, b = data[0], data[1], data[2]\n\nINF = 10**30\ndist = [INF] * a\ndist[0] = 0\npq = [(0, 0)]\nwhile pq:\n    d, u = heapq.heappop(pq)\n    if d != dist[u]:\n        continue\n    v = (u + b) % a\n    nd = d + b\n    if nd < dist[v]:\n        dist[v] = nd\n        heapq.heappush(pq, (nd, v))\n\nres = 0\nfor d in dist:\n    if d > m:\n        continue\n    t = m - d\n    q = t // a\n    # sum_{x=0..t} (1 + floor(x/a)) = (t+1) + sum_{x=0..t} floor(x/a)\n    # sum floor = a * q*(q-1)/2 + q*(t - q*a + 1)\n    sum_floor = a * q * (q - 1) // 2 + q * (t - q * a + 1)\n    contrib = (t + 1) + sum_floor\n    res += contrib\n\nprint(res)\n```",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\nimport heapq\n\ndata = list(map(int, sys.stdin.read().strip().split()))\nif len(data) < 3:\n    sys.exit(0)\nm, a, b = data[0], data[1], data[2]\n\nINF = 10**30\ndist = [INF] * a\ndist[0] = 0\npq = [(0, 0)]\nwhile pq:\n    d, u = heapq.heappop(pq)\n    if d != dist[u]:\n        continue\n    v = (u + b) % a\n    nd = d + b\n    if nd < dist[v]:\n        dist[v] = nd\n        heapq.heappush(pq, (nd, v))\n\nres = 0\nfor d in dist:\n    if d > m:\n        continue\n    t = m - d\n    q = t // a\n    # sum_{x=0..t} (1 + floor(x/a)) = (t+1) + sum_{x=0..t} floor(x/a)\n    # sum floor = a * q*(q-1)/2 + q*(t - q*a + 1)\n    sum_floor = a * q * (q - 1) // 2 + q * (t - q * a + 1)\n    contrib = (t + 1) + sum_floor\n    res += contrib\n\nprint(res)",
-    "score": 1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 559,
         "completion_token_count": 1591,

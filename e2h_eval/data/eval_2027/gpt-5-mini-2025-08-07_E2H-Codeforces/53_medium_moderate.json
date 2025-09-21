@@ -1,0 +1,25 @@
+{
+    "start": 1758290666.0408769,
+    "end": 1758290694.6344197,
+    "start-formatted": "2025-09-19 23:04 KST",
+    "end-formatted": "2025-09-19 23:04 KST",
+    "gpu": 2,
+    "pid": 53,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# You're Given a String...\n\nYou're given a string of lower-case Latin letters. Your task is to find the length of its longest substring that can be met in the string at least twice. These occurrences can overlap (see sample test 2).\n\n## Input\nThe first input line contains the string. It's guaranteed, that the string is non-empty, consists of lower-case Latin letters, and its length doesn't exceed 100.\n\n## Output\nOutput one number — length of the longest substring that can be met in the string at least twice.\n\n## Example\n### Input\n['abcd', 'ababa', 'zzz']\n\n### Output\n['0', '3', '2']\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a moderately difficult question."
+        }
+    ],
+    "thought": "**Finding repeated substrings**\n\nI'm looking to find the length of the longest substring that appears at least twice, allowing overlaps, in a string with lowercase letters and no spaces. Given that the maximum length is 100, I can use an O(n^2 log n) or O(n^3) approach. The idea is to enumerate all substrings and count occurrences using a sliding search method. I can maintain a dictionary to track counts as I scan through the string. This should work to handle overlapping cases effectively!",
+    "response": "import sys, ast\n\ndata = sys.stdin.read().strip()\nif not data:\n    sys.exit(0)\n\ntests = []\ndata_stripped = data.strip()\n# Try to parse as Python list like \"['a','b']\"\nif data_stripped.startswith('[') and data_stripped.endswith(']'):\n    try:\n        parsed = ast.literal_eval(data_stripped)\n        if isinstance(parsed, (list, tuple)):\n            tests = [str(x) for x in parsed]\n        else:\n            tests = [str(data_stripped)]\n    except Exception:\n        # fallback to line-splitting\n        tests = [line.strip() for line in data.splitlines() if line.strip() != '']\nelse:\n    lines = data.splitlines()\n    if len(lines) == 1:\n        tests = [lines[0].strip()]\n    else:\n        tests = [line.strip() for line in lines if line.strip() != '']\n\nout_lines = []\nfor s in tests:\n    n = len(s)\n    ans = 0\n    for L in range(n-1, 0, -1):\n        seen = {}\n        found = False\n        for i in range(0, n - L + 1):\n            sub = s[i:i+L]\n            cnt = seen.get(sub, 0) + 1\n            if cnt >= 2:\n                ans = L\n                found = True\n                break\n            seen[sub] = cnt\n        if found:\n            break\n    out_lines.append(str(ans))\n\nsys.stdout.write(\"\\n\".join(out_lines))",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys, ast\n\ndata = sys.stdin.read().strip()\nif not data:\n    sys.exit(0)\n\ntests = []\ndata_stripped = data.strip()\n# Try to parse as Python list like \"['a','b']\"\nif data_stripped.startswith('[') and data_stripped.endswith(']'):\n    try:\n        parsed = ast.literal_eval(data_stripped)\n        if isinstance(parsed, (list, tuple)):\n            tests = [str(x) for x in parsed]\n        else:\n            tests = [str(data_stripped)]\n    except Exception:\n        # fallback to line-splitting\n        tests = [line.strip() for line in data.splitlines() if line.strip() != '']\nelse:\n    lines = data.splitlines()\n    if len(lines) == 1:\n        tests = [lines[0].strip()]\n    else:\n        tests = [line.strip() for line in lines if line.strip() != '']\n\nout_lines = []\nfor s in tests:\n    n = len(s)\n    ans = 0\n    for L in range(n-1, 0, -1):\n        seen = {}\n        found = False\n        for i in range(0, n - L + 1):\n            sub = s[i:i+L]\n            cnt = seen.get(sub, 0) + 1\n            if cnt >= 2:\n                ans = L\n                found = True\n                break\n            seen[sub] = cnt\n        if found:\n            break\n    out_lines.append(str(ans))\n\nsys.stdout.write(\"\\n\".join(out_lines))",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 232,
+        "completion_token_count": 1294,
+        "thoughts_token_count": 960
+    }
+}

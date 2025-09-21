@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = list(map(int, sys.stdin.read().strip().split()))\nif not data:\n    sys.exit(0)\nidx = 0\nout_lines = []\nwhile idx + 4 <= len(data):\n    x1 = data[idx]; y1 = data[idx+1]; x2 = data[idx+2]; y2 = data[idx+3]\n    idx += 4\n    if idx >= len(data):\n        break\n    n = data[idx]; idx += 1\n    cnt = 0\n    for _ in range(n):\n        a = data[idx]; b = data[idx+1]; c = data[idx+2]; idx += 3\n        s1 = a*x1 + b*y1 + c\n        s2 = a*x2 + b*y2 + c\n        if s1 < 0 and s2 > 0 or s1 > 0 and s2 < 0:\n            cnt += 1\n    out_lines.append(str(cnt))\n\nsys.stdout.write(\"\\n\".join(out_lines))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = list(map(int, sys.stdin.read().strip().split()))\nif not data:\n    sys.exit(0)\nidx = 0\nout_lines = []\nwhile idx + 4 <= len(data):\n    x1 = data[idx]; y1 = data[idx+1]; x2 = data[idx+2]; y2 = data[idx+3]\n    idx += 4\n    if idx >= len(data):\n        break\n    n = data[idx]; idx += 1\n    cnt = 0\n    for _ in range(n):\n        a = data[idx]; b = data[idx+1]; c = data[idx+2]; idx += 3\n        s1 = a*x1 + b*y1 + c\n        s2 = a*x2 + b*y2 + c\n        if s1 < 0 and s2 > 0 or s1 > 0 and s2 < 0:\n            cnt += 1\n    out_lines.append(str(cnt))\n\nsys.stdout.write(\"\\n\".join(out_lines))",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 609,
         "completion_token_count": 544,

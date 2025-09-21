@@ -15,7 +15,7 @@
     "response": "```python\nimport sys\nfrom itertools import permutations\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\n\nnotes = [\"C\",\"C#\",\"D\",\"D#\",\"E\",\"F\",\"F#\",\"G\",\"G#\",\"A\",\"B\",\"H\"]\nidx = {n:i for i,n in enumerate(notes)}\n\na, b, c = data[0], data[1], data[2]\n\ndef dist(x, y):\n    return (idx[y] - idx[x]) % 12\n\nres = \"strange\"\nfor x,y,z in permutations([a,b,c]):\n    d1 = dist(x,y)\n    d2 = dist(y,z)\n    if d1 == 4 and d2 == 3:\n        res = \"major\"\n        break\n    if d1 == 3 and d2 == 4:\n        res = \"minor\"\n        break\n\nprint(res)\n```",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\nfrom itertools import permutations\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\n\nnotes = [\"C\",\"C#\",\"D\",\"D#\",\"E\",\"F\",\"F#\",\"G\",\"G#\",\"A\",\"B\",\"H\"]\nidx = {n:i for i,n in enumerate(notes)}\n\na, b, c = data[0], data[1], data[2]\n\ndef dist(x, y):\n    return (idx[y] - idx[x]) % 12\n\nres = \"strange\"\nfor x,y,z in permutations([a,b,c]):\n    d1 = dist(x,y)\n    d2 = dist(y,z)\n    if d1 == 4 and d2 == 3:\n        res = \"major\"\n        break\n    if d1 == 3 and d2 == 4:\n        res = \"minor\"\n        break\n\nprint(res)",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 675,
         "completion_token_count": 393,

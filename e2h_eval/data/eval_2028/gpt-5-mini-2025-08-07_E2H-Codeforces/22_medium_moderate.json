@@ -1,0 +1,25 @@
+{
+    "start": 1758290637.41959,
+    "end": 1758290648.4048917,
+    "start-formatted": "2025-09-19 23:03 KST",
+    "end-formatted": "2025-09-19 23:04 KST",
+    "gpu": 2,
+    "pid": 22,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Marks\n\nVasya, or Mr. Vasily Petrov is a dean of a department in a local university. After the winter exams he got his hands on a group's gradebook.Overall the group has n students. They received marks for m subjects. Each student got a mark from 1 to 9 (inclusive) for each subject.Let's consider a student the best at some subject, if there is no student who got a higher mark for this subject. Let's consider a student successful, if there exists a subject he is the best at.Your task is to find the number of successful students in the group.\n\n## Input\nThe first input line contains two integers n and m (1 ≤ n, m ≤ 100) — the number of students and the number of subjects, correspondingly. Next n lines each containing m characters describe the gradebook. Each character in the gradebook is a number from 1 to 9. Note that the marks in a rows are not sepatated by spaces.\n\n## Output\nPrint the single number — the number of successful students in the given group.\n\n## Example\n### Input\n['3 3\\n223\\n232\\n112', '3 5\\n91728\\n11828\\n11111']\n\n### Output\n['2', '3']\n\n## Note\nIn the first sample test the student number 1 is the best at subjects 1 and 3, student 2 is the best at subjects 1 and 2, but student 3 isn't the best at any subject.In the second sample test each student is the best at at least one subject.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a moderately difficult question."
+        }
+    ],
+    "thought": "**Producing Python script for problem**\n\nI need to create a Python script for the \"Successful Students\" problem, possibly related to CF problem 152A. It seems straightforward, and my input may have multiple test cases. The example shows two input lists, but the actual judge likely expects just a single instance. I’ll read stdin, parsing the first two integers n and m, then the next n lines. Edge cases like trailing spaces and empty lines will be addressed. I’ll implement reading whitespace-separated tokens to ensure robustness.",
+    "response": "```python\nimport sys\n\ndata = sys.stdin.read().split()\nif not data:\n    sys.exit(0)\nn = int(data[0]); m = int(data[1])\nrows = data[2:2+n]\nmax_in_col = [max(rows[i][j] for i in range(n)) for j in range(m)]\ncount = 0\nfor i in range(n):\n    for j in range(m):\n        if rows[i][j] == max_in_col[j]:\n            count += 1\n            break\nprint(count)\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndata = sys.stdin.read().split()\nif not data:\n    sys.exit(0)\nn = int(data[0]); m = int(data[1])\nrows = data[2:2+n]\nmax_in_col = [max(rows[i][j] for i in range(n)) for j in range(m)]\ncount = 0\nfor i in range(n):\n    for j in range(m):\n        if rows[i][j] == max_in_col[j]:\n            count += 1\n            break\nprint(count)",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 428,
+        "completion_token_count": 440,
+        "thoughts_token_count": 320
+    }
+}

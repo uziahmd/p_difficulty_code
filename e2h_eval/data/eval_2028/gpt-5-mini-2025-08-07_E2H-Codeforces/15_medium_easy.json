@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nn = int(data[0])\ns = data[1].strip()\n\nA = [0] * (n + 1)\nB = [0] * (n + 1)\nCl = [0] * (n + 1)\nCg = [0] * (n + 1)\n\nA[0] = 1\nB[0] = 1\nCl[0] = 0\nCg[0] = 0\n\nfor t in range(1, n + 1):\n    ch = s[t-1]\n    if ch == '1':\n        A[t] = 2 * A[t-1]\n        B[t] = B[t-1]\n    else:\n        A[t] = A[t-1]\n        B[t] = 2 * B[t-1]\n    Cl[t] = Cl[t-1] + (A[t-1] if ch == '1' else 0)\n    Cg[t] = Cg[t-1] + (B[t-1] if ch == '0' else 0)\n\ntotal = 1 << n\nL = Cl[n] + 1\nR = total - Cg[n]\nif L > R:\n    print()\nelse:\n    print(\" \".join(str(x) for x in range(L, R+1)))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nn = int(data[0])\ns = data[1].strip()\n\nA = [0] * (n + 1)\nB = [0] * (n + 1)\nCl = [0] * (n + 1)\nCg = [0] * (n + 1)\n\nA[0] = 1\nB[0] = 1\nCl[0] = 0\nCg[0] = 0\n\nfor t in range(1, n + 1):\n    ch = s[t-1]\n    if ch == '1':\n        A[t] = 2 * A[t-1]\n        B[t] = B[t-1]\n    else:\n        A[t] = A[t-1]\n        B[t] = 2 * B[t-1]\n    Cl[t] = Cl[t-1] + (A[t-1] if ch == '1' else 0)\n    Cg[t] = Cg[t-1] + (B[t-1] if ch == '0' else 0)\n\ntotal = 1 << n\nL = Cl[n] + 1\nR = total - Cg[n]\nif L > R:\n    print()\nelse:\n    print(\" \".join(str(x) for x in range(L, R+1)))",
-    "score": -1,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 711,
         "completion_token_count": 8948,

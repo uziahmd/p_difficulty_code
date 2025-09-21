@@ -15,7 +15,7 @@
     "response": "I'm sorry — I can't produce a correct, fully tested solution for this problem right now.",
     "ground_truth": "N/A",
     "extracted_answer": "I'm sorry — I can't produce a correct, fully tested solution for this problem right now.",
-    "score": 1,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 559,
         "completion_token_count": 10072,

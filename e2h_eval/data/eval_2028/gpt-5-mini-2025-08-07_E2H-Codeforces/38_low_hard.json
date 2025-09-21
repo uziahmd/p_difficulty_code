@@ -1,0 +1,25 @@
+{
+    "start": 1758284997.858047,
+    "end": 1758285018.272776,
+    "start-formatted": "2025-09-19 21:29 KST",
+    "end-formatted": "2025-09-19 21:30 KST",
+    "gpu": 2,
+    "pid": 38,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Node Pairs\n\nLet's call an ordered pair of nodes $$$(u, v)$$$ in a directed graph unidirectional if $$$u \\neq v$$$, there exists a path from $$$u$$$ to $$$v$$$, and there are no paths from $$$v$$$ to $$$u$$$.A directed graph is called $$$p$$$-reachable if it contains exactly $$$p$$$ ordered pairs of nodes $$$(u, v)$$$ such that $$$u < v$$$ and $$$u$$$ and $$$v$$$ are reachable from each other. Find the minimum number of nodes required to create a $$$p$$$-reachable directed graph.Also, among all such $$$p$$$-reachable directed graphs with the minimum number of nodes, let $$$G$$$ denote a graph which maximizes the number of unidirectional pairs of nodes. Find this number.\n\n## Input\nThe first and only line contains a single integer $$$p$$$ ($$$0 \\le p \\le 2 \\cdot 10^5$$$) — the number of ordered pairs of nodes.\n\n## Output\nPrint a single line containing two integers — the minimum number of nodes required to create a $$$p$$$-reachable directed graph, and the maximum number of unidirectional pairs of nodes among all such $$$p$$$-reachable directed graphs with the minimum number of nodes.\n\n## Example\n### Input\n['3', '4', '0']\n\n### Output\n['3 0', '5 6', '0 0']\n\n## Note\nIn the first test case, the minimum number of nodes required to create a $$$3$$$-reachable directed graph is $$$3$$$. Among all $$$3$$$-reachable directed graphs with $$$3$$$ nodes, the following graph $$$G$$$ is one of the graphs with the maximum number of unidirectional pairs of nodes, which is $$$0$$$.   \n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a hard question."
+        }
+    ],
+    "thought": "**Clarifying Integer Processing**\n\nI'm tackling the original problem which had a single p, but examples show multiple lines, each with its own p. So, I need to process all lines. For each integer output pair, if p equals 0, I should output \"0 0\". When p is small, I have to be careful. I can compute k using the formula with square roots and ensure precision. I might use integer binary search for safety, collecting size sums to compute unidirectional values. Alright, time to code!",
+    "response": "import sys, math\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nouts = []\nfor tok in data:\n    p = int(tok)\n    if p == 0:\n        outs.append(\"0 0\")\n        continue\n    sizes = []\n    rem = p\n    while rem > 0:\n        # find maximum k with k*(k-1)/2 <= rem\n        # solve k^2 - k - 2rem <= 0 -> k = floor((1+sqrt(1+8rem))/2)\n        k = int((1 + math.isqrt(1 + 8 * rem)) // 2)\n        if k < 2:\n            k = 2\n        # ensure condition\n        while k * (k - 1) // 2 > rem:\n            k -= 1\n        sizes.append(k)\n        rem -= k * (k - 1) // 2\n    n = sum(sizes)\n    sumsq = sum(x * x for x in sizes)\n    unidir = (n * n - sumsq) // 2\n    outs.append(f\"{n} {unidir}\")\n\nprint(\"\\n\".join(outs))",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys, math\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nouts = []\nfor tok in data:\n    p = int(tok)\n    if p == 0:\n        outs.append(\"0 0\")\n        continue\n    sizes = []\n    rem = p\n    while rem > 0:\n        # find maximum k with k*(k-1)/2 <= rem\n        # solve k^2 - k - 2rem <= 0 -> k = floor((1+sqrt(1+8rem))/2)\n        k = int((1 + math.isqrt(1 + 8 * rem)) // 2)\n        if k < 2:\n            k = 2\n        # ensure condition\n        while k * (k - 1) // 2 > rem:\n            k -= 1\n        sizes.append(k)\n        rem -= k * (k - 1) // 2\n    n = sum(sizes)\n    sumsq = sum(x * x for x in sizes)\n    unidir = (n * n - sumsq) // 2\n    outs.append(f\"{n} {unidir}\")\n\nprint(\"\\n\".join(outs))",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 495,
+        "completion_token_count": 1223,
+        "thoughts_token_count": 960
+    }
+}

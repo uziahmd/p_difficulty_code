@@ -1,0 +1,25 @@
+{
+    "start": 1758293054.0428116,
+    "end": 1758293060.776781,
+    "start-formatted": "2025-09-19 23:44 KST",
+    "end-formatted": "2025-09-19 23:44 KST",
+    "gpu": 2,
+    "pid": 52,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# New Year Candles\n\nVasily the Programmer loves romance, so this year he decided to illuminate his room with candles.Vasily has a candles.When Vasily lights up a new candle, it first burns for an hour and then it goes out. Vasily is smart, so he can make b went out candles into a new candle. As a result, this new candle can be used like any other new candle.Now Vasily wonders: for how many hours can his candles light up the room if he acts optimally well? Help him find this number.\n\n## Input\nThe single line contains two integers, a and b (1 ≤ a ≤ 1000; 2 ≤ b ≤ 1000).\n\n## Output\nPrint a single integer — the number of hours Vasily can light up the room for.\n\n## Example\n### Input\n['4 2', '6 3']\n\n### Output\n['7', '8']\n\n## Note\nConsider the first sample. For the first four hours Vasily lights up new candles, then he uses four burned out candles to make two new ones and lights them up. When these candles go out (stop burning), Vasily can make another candle. Overall, Vasily can light up the room for 7 hours.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a moderately difficult question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\na, b = map(int, input().split())\ntotal = a\nwaste = a\nwhile waste >= b:\n    new_candles = waste // b\n    total += new_candles\n    waste = (waste % b) + new_candles\nprint(total)\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "a, b = map(int, input().split())\ntotal = a\nwaste = a\nwhile waste >= b:\n    new_candles = waste // b\n    total += new_candles\n    waste = (waste % b) + new_candles\nprint(total)",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 376,
+        "completion_token_count": 63,
+        "thoughts_token_count": 0
+    }
+}

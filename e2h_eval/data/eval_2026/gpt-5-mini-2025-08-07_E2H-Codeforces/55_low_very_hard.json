@@ -1,0 +1,25 @@
+{
+    "start": 1758284954.482712,
+    "end": 1758284970.6898904,
+    "start-formatted": "2025-09-19 21:29 KST",
+    "end-formatted": "2025-09-19 21:29 KST",
+    "gpu": 2,
+    "pid": 55,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Minimum Ternary String\n\nYou are given a ternary string (it is a string which consists only of characters '0', '1' and '2').You can swap any two adjacent (consecutive) characters '0' and '1' (i.e. replace \"01\" with \"10\" or vice versa) or any two adjacent (consecutive) characters '1' and '2' (i.e. replace \"12\" with \"21\" or vice versa).For example, for string \"010210\" we can perform the following moves:   \"010210\" $$$\\rightarrow$$$ \"100210\";  \"010210\" $$$\\rightarrow$$$ \"001210\";  \"010210\" $$$\\rightarrow$$$ \"010120\";  \"010210\" $$$\\rightarrow$$$ \"010201\". Note than you cannot swap \"02\" $$$\\rightarrow$$$ \"20\" and vice versa. You cannot perform any other operations with the given string excluding described above.You task is to obtain the minimum possible (lexicographically) string by using these swaps arbitrary number of times (possibly, zero).String $$$a$$$ is lexicographically less than string $$$b$$$ (if strings $$$a$$$ and $$$b$$$ have the same length) if there exists some position $$$i$$$ ($$$1 \\le i \\le |a|$$$, where $$$|s|$$$ is the length of the string $$$s$$$) such that for every $$$j < i$$$ holds $$$a_j = b_j$$$, and $$$a_i < b_i$$$.\n\n## Input\nThe first line of the input contains the string $$$s$$$ consisting only of characters '0', '1' and '2', its length is between $$$1$$$ and $$$10^5$$$ (inclusive).\n\n## Output\nPrint a single string — the minimum possible (lexicographically) string you can obtain by using the swaps described above arbitrary number of times (possibly, zero).\n\n## Example\n### Input\n['100210', '11222121', '20']\n\n### Output\n['001120', '11112222', '20']\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a very hard question."
+        }
+    ],
+    "thought": "**Analyzing minimum ternary strings**\n\nI’m working through the \"Minimum Ternary String\" problem. The solution involves moving all zeros to the front while allowing ones and twos to reorder in a certain way. I need to keep the relative order of zeros and twos intact, using ones to mediate their positions. I’ll count the zeros, ones, and twos, placing zeros first and then determining how to arrange the ones and twos minimally. The goal is to achieve the lexicographically smallest string while respecting these constraints.",
+    "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nouts = []\nfor s in data:\n    ones = s.count('1')\n    t = [c for c in s if c != '1']\n    first_two = 0\n    while first_two < len(t) and t[first_two] == '0':\n        first_two += 1\n    res = ''.join(t[:first_two]) + ('1' * ones) + ''.join(t[first_two:])\n    outs.append(res)\nsys.stdout.write(\"\\n\".join(outs))",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nouts = []\nfor s in data:\n    ones = s.count('1')\n    t = [c for c in s if c != '1']\n    first_two = 0\n    while first_two < len(t) and t[first_two] == '0':\n        first_two += 1\n    res = ''.join(t[:first_two]) + ('1' * ones) + ''.join(t[first_two:])\n    outs.append(res)\nsys.stdout.write(\"\\n\".join(outs))",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 546,
+        "completion_token_count": 642,
+        "thoughts_token_count": 512
+    }
+}

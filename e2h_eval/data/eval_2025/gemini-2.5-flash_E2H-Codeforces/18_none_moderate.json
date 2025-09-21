@@ -15,7 +15,7 @@
     "response": "```python\nimport sys\nimport collections\n\ninput = sys.stdin.readline\nm, a, b = map(int, input().split())\ng = collections.deque()\ndist = [-1] * (a + b)\ndist[0] = 0\ng.append(0)\nwhile g:\n  v = g.popleft()\n  if dist[(v + a) % (a + b)] == -1:\n    dist[(v + a) % (a + b)] = dist[v] + a\n    g.appendleft((v + a) % (a + b))\n  if dist[(v - b) % (a + b)] == -1:\n    dist[(v - b) % (a + b)] = dist[v] - b\n    g.append((v - b) % (a + b))\nans = 0\nfor i in range(a + b):\n  if dist[i] <= m:\n    ans += m - dist[i] + 1\n    if dist[i] < a:\n      ans -= a - dist[i]\nfor i in range(min(m, a - 1) + 1):\n  ans += i + 1\nprint(ans)\n```",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\nimport collections\n\ninput = sys.stdin.readline\nm, a, b = map(int, input().split())\ng = collections.deque()\ndist = [-1] * (a + b)\ndist[0] = 0\ng.append(0)\nwhile g:\n  v = g.popleft()\n  if dist[(v + a) % (a + b)] == -1:\n    dist[(v + a) % (a + b)] = dist[v] + a\n    g.appendleft((v + a) % (a + b))\n  if dist[(v - b) % (a + b)] == -1:\n    dist[(v - b) % (a + b)] = dist[v] - b\n    g.append((v - b) % (a + b))\nans = 0\nfor i in range(a + b):\n  if dist[i] <= m:\n    ans += m - dist[i] + 1\n    if dist[i] < a:\n      ans -= a - dist[i]\nfor i in range(min(m, a - 1) + 1):\n  ans += i + 1\nprint(ans)",
-    "score": -1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 595,
         "completion_token_count": 283,

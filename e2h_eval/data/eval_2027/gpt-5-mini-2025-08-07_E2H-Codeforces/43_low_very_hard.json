@@ -1,0 +1,25 @@
+{
+    "start": 1758284916.717996,
+    "end": 1758284925.777126,
+    "start-formatted": "2025-09-19 21:28 KST",
+    "end-formatted": "2025-09-19 21:28 KST",
+    "gpu": 2,
+    "pid": 43,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Check the string\n\nA has a string consisting of some number of lowercase English letters 'a'. He gives it to his friend B who appends some number of letters 'b' to the end of this string. Since both A and B like the characters 'a' and 'b', they have made sure that at this point, at least one 'a' and one 'b' exist in the string.B now gives this string to C and he appends some number of letters 'c' to the end of the string. However, since C is a good friend of A and B, the number of letters 'c' he appends is equal to the number of 'a' or to the number of 'b' in the string. It is also possible that the number of letters 'c' equals both to the number of letters 'a' and to the number of letters 'b' at the same time.You have a string in your hands, and you want to check if it is possible to obtain the string in this way or not. If it is possible to obtain the string, print \"YES\", otherwise print \"NO\" (without the quotes).\n\n## Input\nThe first and only line consists of a string $$$S$$$ ($$$ 1 \\le |S| \\le 5\\,000 $$$). It is guaranteed that the string will only consist of the lowercase English letters 'a', 'b', 'c'.\n\n## Output\nPrint \"YES\" or \"NO\", according to the condition.\n\n## Example\n### Input\n['aaabccc', 'bbacc', 'aabc']\n\n### Output\n['YES', 'NO', 'YES']\n\n## Note\nConsider first example: the number of 'c' is equal to the number of 'a'. Consider second example: although the number of 'c' is equal to the number of the 'b', the order is not correct.Consider third example: the number of 'c' is equal to the number of 'b'.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a very hard question."
+        }
+    ],
+    "thought": "**Implementing input handling**\n\nI’m thinking about Codeforces' typical setup where I usually read a single string, but this time they’re asking for reading input and printing desired outputs. I need to support multiple lines, so I should read all lines and process each non-empty token. My plan is to read all whitespace-separated tokens and print \"YES\" or \"NO\" for each on a separate line. If there's just a single token, it should be on a single line. I’ll write the code to reflect this logic!",
+    "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\n\ndef check(s):\n    n = len(s)\n    # must be only a,b,c\n    if any(ch not in 'abc' for ch in s):\n        return False\n    # find a segment\n    i = 0\n    while i < n and s[i] == 'a':\n        i += 1\n    a_cnt = i\n    j = i\n    while j < n and s[j] == 'b':\n        j += 1\n    b_cnt = j - i\n    k = j\n    while k < n and s[k] == 'c':\n        k += 1\n    c_cnt = k - j\n    if k != n:\n        return False\n    if a_cnt <= 0 or b_cnt <= 0 or c_cnt <= 0:\n        return False\n    if c_cnt == a_cnt or c_cnt == b_cnt:\n        return True\n    return False\n\nout = []\nfor s in data:\n    out.append(\"YES\" if check(s) else \"NO\")\n\nsys.stdout.write(\"\\n\".join(out))",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\n\ndef check(s):\n    n = len(s)\n    # must be only a,b,c\n    if any(ch not in 'abc' for ch in s):\n        return False\n    # find a segment\n    i = 0\n    while i < n and s[i] == 'a':\n        i += 1\n    a_cnt = i\n    j = i\n    while j < n and s[j] == 'b':\n        j += 1\n    b_cnt = j - i\n    k = j\n    while k < n and s[k] == 'c':\n        k += 1\n    c_cnt = k - j\n    if k != n:\n        return False\n    if a_cnt <= 0 or b_cnt <= 0 or c_cnt <= 0:\n        return False\n    if c_cnt == a_cnt or c_cnt == b_cnt:\n        return True\n    return False\n\nout = []\nfor s in data:\n    out.append(\"YES\" if check(s) else \"NO\")\n\nsys.stdout.write(\"\\n\".join(out))",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 504,
+        "completion_token_count": 510,
+        "thoughts_token_count": 256
+    }
+}

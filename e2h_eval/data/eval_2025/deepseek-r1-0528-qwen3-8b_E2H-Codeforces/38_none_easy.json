@@ -1,0 +1,25 @@
+{
+    "start": 1758293074.035124,
+    "end": 1758293113.0679564,
+    "start-formatted": "2025-09-19 23:44 KST",
+    "end-formatted": "2025-09-19 23:45 KST",
+    "gpu": 2,
+    "pid": 38,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Node Pairs\n\nLet's call an ordered pair of nodes $$$(u, v)$$$ in a directed graph unidirectional if $$$u \\neq v$$$, there exists a path from $$$u$$$ to $$$v$$$, and there are no paths from $$$v$$$ to $$$u$$$.A directed graph is called $$$p$$$-reachable if it contains exactly $$$p$$$ ordered pairs of nodes $$$(u, v)$$$ such that $$$u < v$$$ and $$$u$$$ and $$$v$$$ are reachable from each other. Find the minimum number of nodes required to create a $$$p$$$-reachable directed graph.Also, among all such $$$p$$$-reachable directed graphs with the minimum number of nodes, let $$$G$$$ denote a graph which maximizes the number of unidirectional pairs of nodes. Find this number.\n\n## Input\nThe first and only line contains a single integer $$$p$$$ ($$$0 \\le p \\le 2 \\cdot 10^5$$$) — the number of ordered pairs of nodes.\n\n## Output\nPrint a single line containing two integers — the minimum number of nodes required to create a $$$p$$$-reachable directed graph, and the maximum number of unidirectional pairs of nodes among all such $$$p$$$-reachable directed graphs with the minimum number of nodes.\n\n## Example\n### Input\n['3', '4', '0']\n\n### Output\n['3 0', '5 6', '0 0']\n\n## Note\nIn the first test case, the minimum number of nodes required to create a $$$3$$$-reachable directed graph is $$$3$$$. Among all $$$3$$$-reachable directed graphs with $$$3$$$ nodes, the following graph $$$G$$$ is one of the graphs with the maximum number of unidirectional pairs of nodes, which is $$$0$$$.   \n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is an easy question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nimport sys\n\ndef main():\n    import sys\n    input = sys.stdin.read\n    p = int(input().strip())\n\n    if p == 0:\n        print(\"0 0\")\n        return\n\n    # Find the minimum number of nodes n such that n*(n-1)/2 >= p\n    n = 1\n    while n * (n - 1) // 2 < p:\n        n += 1\n\n    # Now, find the maximum number of unidirectional pairs\n    # Total ordered pairs: n*(n-1)\n    # Pairs where u and v are mutually reachable: p\n    # So unidirectional pairs = total - mutual - self loops (which are zero here)\n    # We assume the best configuration for max unidirectional pairs\n    # which is when we have as many unidirectional as possible\n    # So total unidirectional = n*(n-1) - p - (n-1)  # subtract mutual and self loops\n    # Wait, better way:\n    # Total ordered pairs: n*(n-1)\n    # Mutual pairs: p\n    # Unidirectional pairs: total - mutual\n    # But in directed graphs, mutual pairs are counted twice in ordered pairs\n    # So total unordered pairs: n*(n-1)//2\n    # So mutual pairs are p, so unidirectional pairs = total_ordered_pairs - 2*p\n    total_ordered_pairs = n * (n - 1)\n    unidirectional_pairs = total_ordered_pairs - 2 * p\n\n    print(n, unidirectional_pairs)\n\nif __name__ == \"__main__\":\n    main()\n```",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndef main():\n    import sys\n    input = sys.stdin.read\n    p = int(input().strip())\n\n    if p == 0:\n        print(\"0 0\")\n        return\n\n    # Find the minimum number of nodes n such that n*(n-1)/2 >= p\n    n = 1\n    while n * (n - 1) // 2 < p:\n        n += 1\n\n    # Now, find the maximum number of unidirectional pairs\n    # Total ordered pairs: n*(n-1)\n    # Pairs where u and v are mutually reachable: p\n    # So unidirectional pairs = total - mutual - self loops (which are zero here)\n    # We assume the best configuration for max unidirectional pairs\n    # which is when we have as many unidirectional as possible\n    # So total unidirectional = n*(n-1) - p - (n-1)  # subtract mutual and self loops\n    # Wait, better way:\n    # Total ordered pairs: n*(n-1)\n    # Mutual pairs: p\n    # Unidirectional pairs: total - mutual\n    # But in directed graphs, mutual pairs are counted twice in ordered pairs\n    # So total unordered pairs: n*(n-1)//2\n    # So mutual pairs are p, so unidirectional pairs = total_ordered_pairs - 2*p\n    total_ordered_pairs = n * (n - 1)\n    unidirectional_pairs = total_ordered_pairs - 2 * p\n\n    print(n, unidirectional_pairs)\n\nif __name__ == \"__main__\":\n    main()",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 483,
+        "completion_token_count": 353,
+        "thoughts_token_count": 0
+    }
+}

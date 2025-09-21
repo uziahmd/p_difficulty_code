@@ -1,0 +1,25 @@
+{
+    "start": 1758292036.9445632,
+    "end": 1758292067.1345227,
+    "start-formatted": "2025-09-19 23:27 KST",
+    "end-formatted": "2025-09-19 23:27 KST",
+    "gpu": 2,
+    "pid": 46,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# DZY Loves Sequences\n\nDZY has a sequence a, consisting of n integers.We'll call a sequence ai, ai + 1, ..., aj (1 ≤ i ≤ j ≤ n) a subsegment of the sequence a. The value (j - i + 1) denotes the length of the subsegment.Your task is to find the longest subsegment of a, such that it is possible to change at most one number (change one number to any integer you want) from the subsegment to make the subsegment strictly increasing.You only need to output the length of the subsegment you find.\n\n## Input\nThe first line contains integer n (1 ≤ n ≤ 105). The next line contains n integers a1, a2, ..., an (1 ≤ ai ≤ 109).\n\n## Output\nIn a single line print the answer to the problem — the maximum length of the required subsegment.\n\n## Example\n### Input\n['6\\n7 2 3 1 5 6']\n\n### Output\n['5']\n\n## Note\nYou can choose subsegment a2, a3, a4, a5, a6 and change its 3rd element (that is a4) to 4.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is an easy question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nimport sys\n\ndef solve():\n    n = int(input())\n    a = list(map(int, input().split()))\n\n    max_len = 1\n    for i in range(1, n):\n        if a[i] > a[i - 1]:\n            max_len += 1\n        else:\n            max_len = 1\n\n    max_len2 = 1\n    for i in range(n - 1):\n        if a[i + 1] > a[i]:\n            max_len2 += 1\n        else:\n            max_len2 = 1\n\n        if a[i] == a[i + 1]:\n            if i + 2 < n and a[i + 2] > a[i + 1]:\n                max_len2 = 2\n            elif i + 3 < n and a[i + 3] > a[i + 1] and a[i + 2] <= a[i + 1]:\n                max_len2 = 3\n\n        max_len = max(max_len, max_len2)\n\n    return str(max_len)\n\n\nif __name__ == \"__main__\":\n    print(solve())\n```\n\nThis script reads the input from standard input and prints the output to standard output. It uses two variables, `max_len` and `max_len2`, to track the maximum length of the subsegments that can be made increasing by changing at most one number. The `solve` function implements the logic described in the problem statement and returns the maximum length as a string. The main part of the script calls the `solve` function and prints the result.",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndef solve():\n    n = int(input())\n    a = list(map(int, input().split()))\n\n    max_len = 1\n    for i in range(1, n):\n        if a[i] > a[i - 1]:\n            max_len += 1\n        else:\n            max_len = 1\n\n    max_len2 = 1\n    for i in range(n - 1):\n        if a[i + 1] > a[i]:\n            max_len2 += 1\n        else:\n            max_len2 = 1\n\n        if a[i] == a[i + 1]:\n            if i + 2 < n and a[i + 2] > a[i + 1]:\n                max_len2 = 2\n            elif i + 3 < n and a[i + 3] > a[i + 1] and a[i + 2] <= a[i + 1]:\n                max_len2 = 3\n\n        max_len = max(max_len, max_len2)\n\n    return str(max_len)\n\n\nif __name__ == \"__main__\":\n    print(solve())",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 405,
+        "completion_token_count": 332,
+        "thoughts_token_count": 0
+    }
+}

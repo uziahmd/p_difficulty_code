@@ -9,9 +9,38 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+from matplotlib.ticker import PercentFormatter
 from pathlib import Path
 from collections import defaultdict, Counter
 import itertools
+
+# ---------------------------- Visual Style Helper (visuals only) ----------------------------
+def _setup_plot_style():
+    """Global, visual-only styling. Does not alter any logic or computations."""
+    sns.set_theme(
+        context="talk",      # slightly larger readable defaults
+        style="whitegrid",   # subtle grid
+        font_scale=0.9,      # compact labels
+    )
+    import matplotlib as mpl
+    mpl.rcParams.update({
+        "figure.facecolor": "white",
+        "axes.facecolor":   "#fbfbfc",
+        "axes.edgecolor":   "#d9d9e3",
+        "axes.titleweight": "bold",
+        "axes.titlesize":   16,
+        "axes.labelsize":   12,
+        "axes.grid":        True,
+        "grid.color":       "#eaeaf2",
+        "grid.linewidth":   0.8,
+        "xtick.labelsize":  10,
+        "ytick.labelsize":  10,
+        "legend.frameon":   False,
+        "savefig.dpi":      300,
+        "savefig.bbox":     "tight",
+    })
+
+# --------------------------------------------------------------------------------------------
 
 def load_jsonl(path):
     """Load JSONL file."""
@@ -122,7 +151,7 @@ def is_compilation_error(error_msg):
 def calculate_metrics(results):
     """Calculate success rate and pass@k metrics for results."""
     if not results:
-        return {"success_rate": 0.0, "pass_at_1": 0.0, "pass_at_4": 0.0, "total_attempts": 0}
+        return {"success_rate": 0.0, "pass_at_1": 0.0, "pass_at_4": 0.0, "total_attempts": 0, "total_problems": 0}
     
     scores = [r['score'] for r in results]
     total = len(scores)
@@ -266,8 +295,11 @@ def create_failure_mode_analysis(data):
     
     return failure_analysis
 
+# ------------------------------------- Visuals --------------------------------------
+
 def plot_variant_heatmap(data, metric='pass_at_4', output_dir='.'):
     """Create heatmap showing variant performance across models."""
+    _setup_plot_style()  # visual-only
     models = list(data.keys())
     
     # Get all unique variants and organize by difficulty/complexity
@@ -280,8 +312,8 @@ def plot_variant_heatmap(data, metric='pass_at_4', output_dir='.'):
     complexities = ['very_easy', 'easy', 'moderate', 'hard', 'very_hard', 'none']
     
     # Create matrix for each model
-    fig, axes = plt.subplots(2, 3, figsize=(20, 12))
-    fig.suptitle(f'Variant Performance Heatmap ({metric})', fontsize=16)
+    fig, axes = plt.subplots(2, 3, figsize=(20, 12), constrained_layout=True)
+    fig.suptitle(f'Variant Performance Heatmap ({metric})', fontsize=20, fontweight='bold')
     
     for idx, model in enumerate(models[:6]):  # Show first 6 models
         row = idx // 3
@@ -298,13 +330,34 @@ def plot_variant_heatmap(data, metric='pass_at_4', output_dir='.'):
                     metrics = calculate_metrics(data[model][variant])
                     matrix[i, j] = metrics[metric]
         
-        # Plot heatmap
-        sns.heatmap(matrix, annot=True, fmt='.3f', 
-                   xticklabels=complexities, yticklabels=difficulties,
-                   ax=ax, cmap='RdYlGn', vmin=0, vmax=1)
-        ax.set_title(model)
-        ax.set_xlabel('Complexity')
-        ax.set_ylabel('Difficulty')
+        # Plot heatmap (visual changes only)
+        hm = sns.heatmap(
+            matrix,
+            annot=True,
+            annot_kws={"fontsize": 11, "fontweight": "bold"},
+            fmt='.3f',
+            xticklabels=complexities,
+            yticklabels=difficulties,
+            ax=ax,
+            cmap='YlGnBu',      # colorblind-friendly sequential
+            vmin=0, vmax=1,
+            cbar=True,
+            square=True,
+            linewidths=0.6,
+            linecolor="#ffffff"
+        )
+        # Colorbar label
+        cbar = hm.collections[0].colorbar
+        cbar.set_label(metric.replace('_', ' '), rotation=90, labelpad=12)
+        
+        ax.set_title(model, fontsize=14, pad=8)
+        ax.set_xlabel('MANIPULATION →', fontsize=12)
+        ax.set_ylabel('EFFORT →', fontsize=12)
+        ax.set_xticklabels(ax.get_xticklabels(), rotation=35, ha='right')
+        for spine in ax.spines.values():
+            spine.set_visible(True)
+            spine.set_linewidth(0.8)
+            spine.set_color("#e4e6ef")
     
     # Hide unused subplots
     for idx in range(len(models), 6):
@@ -312,39 +365,70 @@ def plot_variant_heatmap(data, metric='pass_at_4', output_dir='.'):
         col = idx % 3
         axes[row, col].set_visible(False)
     
-    plt.tight_layout()
-    plt.savefig(f"{output_dir}/variant_heatmap_{metric}.png", dpi=300, bbox_inches='tight')
-    print(f"✓ Saved variant heatmap: {output_dir}/variant_heatmap_{metric}.png")
+    # Save high-quality outputs
+    output_dir = Path(output_dir)
+    output_dir.mkdir(exist_ok=True, parents=True)
+    png_path = output_dir / f"variant_heatmap_{metric}.png"
+    svg_path = output_dir / f"variant_heatmap_{metric}.svg"
+    plt.savefig(png_path, dpi=300, bbox_inches='tight')
+    plt.savefig(svg_path, dpi=300, bbox_inches='tight')
+    print(f"✓ Saved variant heatmap: {png_path}")
+    print(f"✓ Saved vector heatmap: {svg_path}")
 
 def plot_failure_modes(failure_analysis, output_dir='.'):
     """Plot failure mode distribution across variants."""
+    _setup_plot_style()  # visual-only
     variants = list(failure_analysis.keys())
     correct_pcts = [failure_analysis[v]['correct_pct'] for v in variants]
     incorrect_pcts = [failure_analysis[v]['incorrect_pct'] for v in variants]
     compile_pcts = [failure_analysis[v]['compilation_error_pct'] for v in variants]
     
     # Create stacked bar chart
-    fig, ax = plt.subplots(figsize=(15, 8))
+    fig, ax = plt.subplots(figsize=(16, 8), constrained_layout=True)
     
     x = np.arange(len(variants))
     width = 0.8
     
-    p1 = ax.bar(x, correct_pcts, width, label='Correct (score=1)', color='green', alpha=0.7)
-    p2 = ax.bar(x, incorrect_pcts, width, bottom=correct_pcts, label='Incorrect (score=0)', color='orange', alpha=0.7)
+    # Colorblind-friendly, high contrast colors
+    col_correct = "#4E937A"   # greenish
+    col_incorrect = "#F0A202" # orange
+    col_compile = "#D1495B"   # deep red
+    
+    p1 = ax.bar(x, correct_pcts, width, label='Correct (score=1)', color=col_correct, alpha=0.85, edgecolor="white")
+    p2 = ax.bar(x, incorrect_pcts, width, bottom=correct_pcts, label='Incorrect (score=0)', color=col_incorrect, alpha=0.9, edgecolor="white")
     p3 = ax.bar(x, compile_pcts, width, bottom=np.array(correct_pcts) + np.array(incorrect_pcts), 
-                label='Compilation Error (score=-1)', color='red', alpha=0.7)
+                label='Compilation Error (score=-1)', color=col_compile, alpha=0.9, edgecolor="white")
     
-    ax.set_xlabel('Variant (difficulty_complexity)')
-    ax.set_ylabel('Percentage')
-    ax.set_title('Failure Mode Distribution by Variant (Across All Models)')
+    ax.set_xlabel('Variant (EFFORT_MANIPULATION)', fontsize=12)
+    ax.set_ylabel('Percentage', fontsize=12)
+    ax.set_title('Failure Mode Distribution by Variant (Across All Models)', fontsize=18, pad=10)
     ax.set_xticks(x)
-    ax.set_xticklabels(variants, rotation=45, ha='right')
-    ax.legend()
-    ax.grid(True, alpha=0.3)
+    ax.set_xticklabels(variants, rotation=35, ha='right')
+    ax.yaxis.set_major_formatter(PercentFormatter(xmax=100))
+    ax.legend(ncol=3, bbox_to_anchor=(0.5, 1.05), loc='lower center', frameon=False)
+    ax.grid(True, alpha=0.35, axis='y')
+    for spine in ax.spines.values():
+        spine.set_visible(True)
+        spine.set_linewidth(0.8)
+        spine.set_color("#e4e6ef")
     
-    plt.tight_layout()
-    plt.savefig(f"{output_dir}/failure_modes_by_variant.png", dpi=300, bbox_inches='tight')
-    print(f"✓ Saved failure modes plot: {output_dir}/failure_modes_by_variant.png")
+    # Optional: light value labels on top segments (visual only)
+    # Show labels for the top of each stack (sum to ~100%)
+    totals = np.array(correct_pcts) + np.array(incorrect_pcts) + np.array(compile_pcts)
+    for xi, total in zip(x, totals):
+        ax.text(xi, total + 1.0, f"{total:.0f}%", ha='center', va='bottom', fontsize=10, fontweight='bold')
+    
+    # Save high-quality outputs
+    output_dir = Path(output_dir)
+    output_dir.mkdir(exist_ok=True, parents=True)
+    png_path = output_dir / "failure_modes_by_variant.png"
+    svg_path = output_dir / "failure_modes_by_variant.svg"
+    plt.savefig(png_path, dpi=300, bbox_inches='tight')
+    plt.savefig(svg_path, dpi=300, bbox_inches='tight')
+    print(f"✓ Saved failure modes plot: {png_path}")
+    print(f"✓ Saved vector failure modes plot: {svg_path}")
+
+# ------------------------------------- Pipeline --------------------------------------
 
 def main():
     parser = argparse.ArgumentParser(description="Analyze variant performance in E2H evaluation")
@@ -361,6 +445,8 @@ def main():
         return 1
     
     output_dir.mkdir(exist_ok=True)
+    
+    _setup_plot_style()  # set once at program start (visuals only)
     
     print("🔄 Loading evaluation results...")
     data = load_evaluation_results(results_dir)
@@ -390,14 +476,14 @@ def main():
         json.dump(best_variants, f, indent=2)
     
     # Print best variants summary
-    print("\\n🏆 Best Variants per Model (by pass@4):")
+    print("\n🏆 Best Variants per Model (by pass@4):")
     print("=" * 60)
     for model, info in best_variants.items():
         if info['variant']:
             print(f"{model:30} | {info['variant']:15} | pass@4: {info['pass_at_4']:.3f} | success: {info['success_rate']:.3f}")
     
     # Failure mode analysis
-    print("\\n🔍 Analyzing failure modes...")
+    print("\n🔍 Analyzing failure modes...")
     failure_analysis = create_failure_mode_analysis(data)
     
     # Save failure analysis
@@ -405,7 +491,7 @@ def main():
         json.dump(failure_analysis, f, indent=2)
     
     # Print failure mode summary
-    print("\\n💥 Failure Mode Analysis (Across All Models):")
+    print("\n💥 Failure Mode Analysis (Across All Models):")
     print("=" * 80)
     print(f"{'Variant':15} | {'Correct %':>10} | {'Incorrect %':>10} | {'Compile %':>10} | {'Total':>8}")
     print("-" * 80)
@@ -415,12 +501,12 @@ def main():
               f"{analysis['compilation_error_pct']:>9.1f}% | {analysis['total_attempts']:>8}")
     
     # Create visualizations
-    print("\\n🎨 Creating visualizations...")
+    print("\n🎨 Creating visualizations...")
     plot_variant_heatmap(data, 'pass_at_4', output_dir)
     plot_variant_heatmap(data, 'success_rate', output_dir)
     plot_failure_modes(failure_analysis, output_dir)
     
-    print(f"\\n✅ Variant analysis completed!")
+    print(f"\n✅ Variant analysis completed!")
     print(f"📁 Results saved in: {output_dir}")
     
     return 0

@@ -1,0 +1,25 @@
+{
+    "start": 1758292186.708457,
+    "end": 1758292207.0878177,
+    "start-formatted": "2025-09-19 23:29 KST",
+    "end-formatted": "2025-09-19 23:30 KST",
+    "gpu": 2,
+    "pid": 28,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Vasily the Bear and Beautiful Strings\n\nVasily the Bear loves beautiful strings. String s is beautiful if it meets the following criteria:   String s only consists of characters 0 and 1, at that character 0 must occur in string s exactly n times, and character 1 must occur exactly m times.  We can obtain character g from string s with some (possibly, zero) number of modifications. The character g equals either zero or one. A modification of string with length at least two is the following operation: we replace two last characters from the string by exactly one other character. This character equals one if it replaces two zeros, otherwise it equals zero. For example, one modification transforms string \"01010\" into string \"0100\", two modifications transform it to \"011\". It is forbidden to modify a string with length less than two.Help the Bear, count the number of beautiful strings. As the number of beautiful strings can be rather large, print the remainder after dividing the number by 1000000007 (109 + 7). \n\n## Input\nThe first line of the input contains three space-separated integers n, m, g (0 ≤ n, m ≤ 105, n + m ≥ 1, 0 ≤ g ≤ 1).\n\n## Output\nPrint a single integer — the answer to the problem modulo 1000000007 (109 + 7).\n\n## Example\n### Input\n['1 1 0', '2 2 0', '1 1 1']\n\n### Output\n['2', '4', '0']\n\n## Note\nIn the first sample the beautiful strings are: \"01\", \"10\".In the second sample the beautiful strings are: \"0011\", \"1001\", \"1010\", \"1100\".In the third sample there are no beautiful strings.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nMOD = 10**9 + 7\n\ndef count_strings(n, m, g):\n    if n < m:\n        n, m = m, n\n        g = 1 - g\n    if g == 0 and n != m:\n        return 0\n    if g == 1 and n > m:\n        return 0\n    if n == m and g == 0:\n        return 1\n    if n == m and g == 1:\n        return 2\n\n    dp = [[0] * (m + 1) for _ in range(n + 1)]\n    for i in range(m + 1):\n        dp[0][i] = 1\n    for i in range(1, n + 1):\n        for j in range(1, min(i + 1, m + 1)):\n            dp[i][j] = (dp[i - 1][j - 1] + dp[i - 1][j]) % MOD\n    return dp[n][m]\n\nn, m, g = map(int, input().split())\nprint(count_strings(n, m, g))\n```\n\nThis script first checks the conditions for the problem and then uses dynamic programming to calculate the number of beautiful strings. The `count_strings` function takes three parameters: `n`, `m`, and `g`, which represent the number of zeros, ones, and the target character, respectively. The function returns the number of beautiful strings modulo `10^9 + 7`.",
+    "ground_truth": "N/A",
+    "extracted_answer": "MOD = 10**9 + 7\n\ndef count_strings(n, m, g):\n    if n < m:\n        n, m = m, n\n        g = 1 - g\n    if g == 0 and n != m:\n        return 0\n    if g == 1 and n > m:\n        return 0\n    if n == m and g == 0:\n        return 1\n    if n == m and g == 1:\n        return 2\n\n    dp = [[0] * (m + 1) for _ in range(n + 1)]\n    for i in range(m + 1):\n        dp[0][i] = 1\n    for i in range(1, n + 1):\n        for j in range(1, min(i + 1, m + 1)):\n            dp[i][j] = (dp[i - 1][j - 1] + dp[i - 1][j]) % MOD\n    return dp[n][m]\n\nn, m, g = map(int, input().split())\nprint(count_strings(n, m, g))",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 508,
+        "completion_token_count": 322,
+        "thoughts_token_count": 0
+    }
+}

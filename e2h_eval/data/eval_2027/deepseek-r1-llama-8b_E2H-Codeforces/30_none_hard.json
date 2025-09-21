@@ -1,0 +1,25 @@
+{
+    "start": 1758292186.814558,
+    "end": 1758292222.1549428,
+    "start-formatted": "2025-09-19 23:29 KST",
+    "end-formatted": "2025-09-19 23:30 KST",
+    "gpu": 2,
+    "pid": 30,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# TV Game\n\nThere is a new TV game on BerTV. In this game two players get a number A consisting of 2n digits. Before each turn players determine who will make the next move. Each player should make exactly n moves. On it's turn i-th player takes the leftmost digit of A and appends it to his or her number Si. After that this leftmost digit is erased from A. Initially the numbers of both players (S1 and S2) are «empty». Leading zeroes in numbers A, S1, S2 are allowed. In the end of the game the first player gets S1 dollars, and the second gets S2 dollars.One day Homer and Marge came to play the game. They managed to know the number A beforehand. They want to find such sequence of their moves that both of them makes exactly n moves and which maximizes their total prize. Help them.\n\n## Input\nThe first line contains integer n (1 ≤ n ≤ 18). The second line contains integer A consisting of exactly 2n digits. This number can have leading zeroes.\n\n## Output\nOutput the line of 2n characters «H» and «M» — the sequence of moves of Homer and Marge, which gives them maximum possible total prize. Each player must make exactly n moves. If there are several solutions, output any of them.\n\n## Example\n### Input\n['2\\n1234', '2\\n9911']\n\n### Output\n['HHMM', 'HMHM']\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a hard question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\ndef max_prize(n, A):\n    # Convert string A to a list of integers for easier manipulation\n    A = [int(x) for x in A]\n\n    # Initialize a 2D table to store the maximum prize for each subproblem\n    dp = [[0] * (n + 1) for _ in range(2)]\n\n    # Initialize a 2D table to store the optimal moves for each subproblem\n    moves = [[[] for _ in range(n + 1)] for _ in range(2)]\n\n    # Fill the tables using dynamic programming\n    for i in range(2 * n):\n        for j in range(n, -1, -1):\n            if j == 0:\n                # Base case: one player has made no moves\n                dp[0][j] = 0\n                moves[0][j] = []\n                dp[1][j] = 0\n                moves[1][j] = []\n            elif i < n:\n                # The current player has not made any moves yet\n                dp[0][j] = dp[1][j]\n                moves[0][j] = moves[1][j]\n                dp[1][j] = dp[0][j]\n                moves[1][j] = moves[0][j]\n            else:\n                # Calculate the maximum prize for the current subproblem\n                prize1 = dp[0][j + 1] + A[i]\n                prize2 = dp[1][j + 1] + A[i]\n                if prize1 > prize2:\n                    dp[0][j] = prize1\n                    moves[0][j] = moves[0][j + 1] + ['H']\n                else:\n                    dp[0][j] = prize2\n                    moves[0][j] = moves[1][j + 1] + ['M']\n\n                # Update the maximum prize for the other player\n                prize1 = dp[1][j + 1] + A[i]\n                prize2 = dp[0][j + 1] + A[i]\n                if prize1 > prize2:\n                    dp[1][j] = prize1\n                    moves[1][j] = moves[1][j + 1] + ['H']\n                else:\n                    dp[1][j] = prize2\n                    moves[1][j] = moves[0][j + 1] + ['M']\n\n    # Return the optimal moves for the first player\n    return moves[0][n]\n\n\n# Read input from standard input\nn = int(input())\nA = input()\n\n# Print the optimal moves for the first player\nmoves = max_prize(n, A)\nprint(''.join(moves))\n```\n\nThis Python script uses dynamic programming to solve the problem. It initializes two 2D tables, `dp` and `moves`, to store the maximum prize and the optimal moves for each subproblem, respectively. The script then fills these tables using a bottom-up approach, starting from the base case where one player has made no moves. Finally, it returns the optimal moves for the first player.\n\nTo run this script, save it to a file, e.g., `tv_game.py`, and execute it using Python:\n\n```bash\npython tv_game.py\n```\n\nEnter the input values when prompted, and the script will print the desired output.",
+    "ground_truth": "N/A",
+    "extracted_answer": "bash\npython tv_game.py",
+    "score": -1,
+    "metadata": {
+        "prompt_token_count": 440,
+        "completion_token_count": 717,
+        "thoughts_token_count": 0
+    }
+}

@@ -90,104 +90,149 @@ def analyze_failure_modes_aggregated(data):
     
     return analysis
 
+def _setup_plot_style():
+    # Global seaborn/matplotlib styling (visual only)
+    sns.set_theme(
+        context="talk",      # larger readable defaults
+        style="whitegrid",   # subtle grid
+        font_scale=0.9,      # keep labels compact
+    )
+    import matplotlib as mpl
+    mpl.rcParams.update({
+        "figure.facecolor": "white",
+        "axes.facecolor":   "#fbfbfc",
+        "axes.edgecolor":   "#d9d9e3",
+        "axes.titleweight": "bold",
+        "axes.titlelocation": "center",
+        "axes.titlesize":   13,
+        "axes.labelsize":   11,
+        "axes.grid":        True,
+        "grid.color":       "#eaeaf2",
+        "grid.linewidth":   0.8,
+        "xtick.labelsize":  10,
+        "ytick.labelsize":  10,
+        "legend.frameon":   False,
+        "savefig.dpi":      300,
+        "savefig.bbox":     "tight",
+    })
+
+
 def create_improved_failure_heatmap(analysis, output_dir='.'):
     """Create improved heatmap showing most common failure mode for each model-variant combination."""
-    
-    # Parse variants into difficulty and complexity for better organization
+    _setup_plot_style()  # visual-only styling
+
+    # Organized axes
     difficulties = ['low', 'medium', 'none']
     complexities = ['very_easy', 'easy', 'moderate', 'hard', 'very_hard', 'none']
-    
     models = list(analysis.keys())
-    
-    # Create one subplot per model
-    fig, axes = plt.subplots(2, 3, figsize=(24, 12))
-    fig.suptitle('Most Common Outcome by Model and Variant\\n(Across All 20 Problems × 4 Years = 80 Attempts)', fontsize=20, fontweight='bold')
-    
-    # Color mapping for failure modes only
-    mode_colors = {
-        'incorrect': 0,         # Orange for incorrect output failures
-        'compilation_error': 1, # Red for compilation error failures
-        'no_failures': 2        # Light gray for variants with no failures (rare)
-    }
-    
-    # Create custom colormap - focus on failure types
-    colors = ['orange', 'red', 'lightgray']
+
+    # Figure layout
+    fig, axes = plt.subplots(
+        2, 3, figsize=(24, 12), constrained_layout=True
+    )
+    fig.suptitle(
+        'Most Common Outcome by Model and Variant\n'
+        '(Across All 20 Problems × 4 Years = 80 Attempts)',
+        fontsize=20, fontweight='bold'
+    )
+
+    # Color mapping (visual only; categories unchanged)
+    mode_to_code = {'incorrect': 0, 'compilation_error': 1, 'no_failures': 2}
+    # Colorblind-friendly, high-contrast set
+    colors = ['#F0A202',  # Incorrect (rich orange)
+              '#D1495B',  # Compilation Error (deep red)
+              '#BFC0C0']  # No Failures (neutral gray)
     cmap = plt.matplotlib.colors.ListedColormap(colors)
-    
-    for idx, model in enumerate(models[:6]):  # Show up to 6 models
-        row = idx // 3
-        col = idx % 3
-        ax = axes[row, col]
-        
-        # Create matrix for this model
-        matrix = np.full((len(difficulties), len(complexities)), -1, dtype=float)
+
+    for idx, model in enumerate(models[:6]):  # up to 6 models
+        r, c = divmod(idx, 3)
+        ax = axes[r, c]
+
+        # Data matrix & annotation grid
+        matrix = np.full((len(difficulties), len(complexities)), -1.0, dtype=float)
         annotations = np.full((len(difficulties), len(complexities)), '', dtype=object)
-        
+
         for i, difficulty in enumerate(difficulties):
             for j, complexity in enumerate(complexities):
                 variant = f"{difficulty}_{complexity}"
-                
                 if variant in analysis[model]:
                     data = analysis[model][variant]
-                    failure_mode = data['most_common_failure_mode']
-                    matrix[i, j] = mode_colors[failure_mode]
-                    
-                    # Create annotation with failure percentages (among all attempts)
-                    if failure_mode == 'no_failures':
-                        annotations[i, j] = f"NF\\n{data['correct_pct']:.0f}%"
-                    elif failure_mode == 'incorrect':
-                        annotations[i, j] = f"I\\n{data['incorrect_pct']:.0f}%"
-                    elif failure_mode == 'compilation_error':
-                        annotations[i, j] = f"C\\n{data['compilation_error_pct']:.0f}%"
-        
-        # Create heatmap for this model
-        mask = matrix == -1  # Mask missing data
-        
-        sns.heatmap(matrix, 
-                   mask=mask,
-                   annot=annotations,
-                   fmt='',
-                   xticklabels=complexities,
-                   yticklabels=difficulties,
-                   cmap=cmap,
-                   vmin=0, vmax=2,
-                   cbar=False,
-                   ax=ax,
-                   square=True,
-                   linewidths=0.5)
-        
-        ax.set_title(f'{model}\\n({len([v for v in analysis[model].values()])} variants)', 
-                    fontsize=12, fontweight='bold')
-        ax.set_xlabel('Complexity →', fontsize=10)
-        ax.set_ylabel('Difficulty →', fontsize=10)
-        
-        # Rotate labels
-        ax.set_xticklabels(ax.get_xticklabels(), rotation=45, ha='right')
-        ax.set_yticklabels(ax.get_yticklabels(), rotation=0)
-    
-    # Hide unused subplots
+                    mode = data['most_common_failure_mode']
+                    matrix[i, j] = mode_to_code[mode]
+
+                    # Annotation text (unchanged semantics)
+                    if mode == 'no_failures':
+                        annotations[i, j] = f"NF\n{data['correct_pct']:.0f}%"
+                    elif mode == 'incorrect':
+                        annotations[i, j] = f"I\n{data['incorrect_pct']:.0f}%"
+                    elif mode == 'compilation_error':
+                        annotations[i, j] = f"C\n{data['compilation_error_pct']:.0f}%"
+
+        # Mask missing cells
+        mask = matrix == -1
+
+        # Heatmap
+        sns.heatmap(
+            matrix,
+            mask=mask,
+            annot=annotations,
+            annot_kws={"fontsize": 12, "fontweight": "bold", "ha": "center", "va": "center"},
+            fmt='',
+            xticklabels=complexities,
+            yticklabels=difficulties,
+            cmap=cmap,
+            vmin=0, vmax=2,
+            cbar=False,
+            ax=ax,
+            square=True,
+            linewidths=0.6,
+            linecolor="#ffffff"
+        )
+
+        # Titles/labels
+        ax.set_title(f'{model}\n({len(analysis[model])} variants)')
+        ax.set_xlabel('Manipulation →')
+        ax.set_ylabel('Effort →')
+
+        # Rotate xticklabels for clarity
+        ax.set_xticklabels(ax.get_xticklabels(), rotation=35, ha='right')
+
+        # Lighten spines for a cleaner look
+        for spine in ax.spines.values():
+            spine.set_visible(True)
+            spine.set_linewidth(0.8)
+            spine.set_color("#e4e6ef")
+
+    # Hide unused axes (if < 6 models)
     for idx in range(len(models), 6):
-        row = idx // 3
-        col = idx % 3
-        axes[row, col].set_visible(False)
-    
-    # Add a custom legend focused on failure modes
+        r, c = divmod(idx, 3)
+        axes[r, c].set_visible(False)
+
+    # Legend (compact, centered)
+    from matplotlib.patches import Patch
     legend_elements = [
-        plt.Rectangle((0,0),1,1, facecolor='orange', label='I Incorrect Output (Dominant Failure)'), 
-        plt.Rectangle((0,0),1,1, facecolor='red', label='C Compilation Error (Dominant Failure)'),
-        plt.Rectangle((0,0),1,1, facecolor='lightgray', label='NF No Failures (All Correct)')
+        Patch(facecolor=colors[0], label='I  Incorrect (dominant failure)'),
+        Patch(facecolor=colors[1], label='C  Compilation Error (dominant failure)'),
+        Patch(facecolor=colors[2], label='NF No Failures (all correct)'),
     ]
-    
-    fig.legend(handles=legend_elements, 
-              loc='center', 
-              bbox_to_anchor=(0.85, 0.15),
-              fontsize=12)
-    
-    plt.tight_layout()
-    plt.subplots_adjust(right=0.8)
-    
-    plt.savefig(f"{output_dir}/improved_failure_mode_heatmap.png", dpi=300, bbox_inches='tight')
-    print(f"✓ Saved improved failure mode heatmap: {output_dir}/improved_failure_mode_heatmap.png")
+    fig.legend(
+        handles=legend_elements,
+        loc='lower center',
+        ncol=3,
+        bbox_to_anchor=(0.5, -0.02),
+        fontsize=12
+    )
+
+    # Save high-quality outputs
+    output_dir = Path(output_dir)
+    output_dir.mkdir(exist_ok=True, parents=True)
+    png_path = output_dir / "improved_failure_mode_heatmap.png"
+    svg_path = output_dir / "improved_failure_mode_heatmap.svg"
+    plt.savefig(png_path, dpi=300, bbox_inches='tight')
+    plt.savefig(svg_path, dpi=300, bbox_inches='tight')
+    print(f"✓ Saved improved failure mode heatmap: {png_path}")
+    print(f"✓ Saved vector version: {svg_path}")
+
 
 def create_summary_statistics(analysis):
     """Create summary statistics table."""
@@ -261,10 +306,14 @@ def main():
     
     args = parser.parse_args()
     
+    _setup_plot_style()
+
+
     results_dir = Path(args.results_dir)
     output_dir = Path(args.output_dir)
     
     if not results_dir.exists():
+        
         print(f"Results directory does not exist: {results_dir}")
         return 1
     

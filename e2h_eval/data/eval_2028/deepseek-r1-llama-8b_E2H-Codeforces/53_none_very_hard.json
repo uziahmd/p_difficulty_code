@@ -1,0 +1,25 @@
+{
+    "start": 1758292107.9685855,
+    "end": 1758292144.1044762,
+    "start-formatted": "2025-09-19 23:28 KST",
+    "end-formatted": "2025-09-19 23:29 KST",
+    "gpu": 2,
+    "pid": 53,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# You're Given a String...\n\nYou're given a string of lower-case Latin letters. Your task is to find the length of its longest substring that can be met in the string at least twice. These occurrences can overlap (see sample test 2).\n\n## Input\nThe first input line contains the string. It's guaranteed, that the string is non-empty, consists of lower-case Latin letters, and its length doesn't exceed 100.\n\n## Output\nOutput one number — length of the longest substring that can be met in the string at least twice.\n\n## Example\n### Input\n['abcd', 'ababa', 'zzz']\n\n### Output\n['0', '3', '2']\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a very hard question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nfrom collections import defaultdict\n\ndef longest_substring(s):\n    \"\"\"\n    This function finds the length of the longest substring that can be met in the string at least twice.\n    \n    Parameters:\n    s (str): The input string\n    \n    Returns:\n    int: The length of the longest substring that can be met in the string at least twice\n    \"\"\"\n    \n    # Initialize a dictionary to store the end positions of substrings\n    end_positions = defaultdict(int)\n    \n    # Initialize variables to keep track of the maximum length and current window\n    max_length = 0\n    left = 0\n    \n    # Iterate over the string\n    for right, char in enumerate(s):\n        # If the character is already in the dictionary, update the end position\n        if char in end_positions:\n            left = max(left, end_positions[char] + 1)\n        \n        # Update the end position of the current character\n        end_positions[char] = right\n        \n        # Update the maximum length\n        max_length = max(max_length, right - left + 1)\n    \n    # Return the maximum length\n    return max_length - 1\n\n# Read the input string from standard input\ns = input().strip()\n\n# Print the result\nprint(longest_substring(s))\n```\n\nThis script uses a sliding window approach with a hash map to efficiently find the longest substring that can be met in the string at least twice. It iterates over the string, maintaining a window of characters that have been seen so far. Whenever it encounters a repeated character, it updates the start of the window to be after the previous occurrence of the character. This ensures that the window always contains a unique substring that can be extended. The maximum length of the substring within the window is updated accordingly.",
+    "ground_truth": "N/A",
+    "extracted_answer": "from collections import defaultdict\n\ndef longest_substring(s):\n    \"\"\"\n    This function finds the length of the longest substring that can be met in the string at least twice.\n    \n    Parameters:\n    s (str): The input string\n    \n    Returns:\n    int: The length of the longest substring that can be met in the string at least twice\n    \"\"\"\n    \n    # Initialize a dictionary to store the end positions of substrings\n    end_positions = defaultdict(int)\n    \n    # Initialize variables to keep track of the maximum length and current window\n    max_length = 0\n    left = 0\n    \n    # Iterate over the string\n    for right, char in enumerate(s):\n        # If the character is already in the dictionary, update the end position\n        if char in end_positions:\n            left = max(left, end_positions[char] + 1)\n        \n        # Update the end position of the current character\n        end_positions[char] = right\n        \n        # Update the maximum length\n        max_length = max(max_length, right - left + 1)\n    \n    # Return the maximum length\n    return max_length - 1\n\n# Read the input string from standard input\ns = input().strip()\n\n# Print the result\nprint(longest_substring(s))",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 266,
+        "completion_token_count": 366,
+        "thoughts_token_count": 0
+    }
+}

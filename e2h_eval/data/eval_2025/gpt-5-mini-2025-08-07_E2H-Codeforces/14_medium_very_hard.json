@@ -15,7 +15,7 @@
     "response": "import sys\n\ndef zeros(n):\n    s = 0\n    while n:\n        n //= 5\n        s += n\n    return s\n\ndef find_first(m):\n    lo, hi = 0, 5 * m + 5\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if zeros(mid) >= m:\n            hi = mid\n        else:\n            lo = mid + 1\n    return lo\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nm = int(data[0])\nx = find_first(m)\nif zeros(x) != m:\n    print(0)\nelse:\n    res = [str(x + i) for i in range(5)]\n    print(5)\n    print(\" \".join(res))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndef zeros(n):\n    s = 0\n    while n:\n        n //= 5\n        s += n\n    return s\n\ndef find_first(m):\n    lo, hi = 0, 5 * m + 5\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if zeros(mid) >= m:\n            hi = mid\n        else:\n            lo = mid + 1\n    return lo\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nm = int(data[0])\nx = find_first(m)\nif zeros(x) != m:\n    print(0)\nelse:\n    res = [str(x + i) for i in range(5)]\n    print(5)\n    print(\" \".join(res))",
-    "score": 1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 349,
         "completion_token_count": 1397,

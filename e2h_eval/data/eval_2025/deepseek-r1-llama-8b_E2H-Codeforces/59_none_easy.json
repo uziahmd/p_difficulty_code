@@ -1,0 +1,25 @@
+{
+    "start": 1758292184.4045904,
+    "end": 1758292205.2153597,
+    "start-formatted": "2025-09-19 23:29 KST",
+    "end-formatted": "2025-09-19 23:30 KST",
+    "gpu": 2,
+    "pid": 59,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Happy Sets\n\nDefine a set $$$A$$$ as a child of set $$$B$$$ if and only if for each element of value $$$x$$$ that is in $$$A$$$, there exists an element of value $$$x+1$$$ that is in $$$B$$$.Given integers $$$N$$$ and $$$K$$$. In order to make Chaneka happy, you must find the number of different arrays containing $$$N$$$ sets $$$[S_1, S_2, S_3, \\ldots, S_N]$$$ such that: - Each set can only contain zero or more different integers from $$$1$$$ to $$$K$$$. - There exists a way to rearrange the order of the array of sets into $$$[S'_1, S'_2, S'_3, \\ldots, S'_N]$$$ such that $$$S'_i$$$ is a child of $$$S'_{i+1}$$$ for each $$$1\\leq i\\leq N-1$$$.Print the answer modulo $$$998\\,244\\,353$$$.Two sets are considered different if and only if there is at least one value that only occurs in one of the two sets.Two arrays of sets are considered different if and only if there is at least one index $$$i$$$ such that the sets at index $$$i$$$ in the two arrays are different.\n\n## Input\nThe only line contains two integers $$$N$$$ and $$$K$$$ ($$$1 \\leq N,K \\leq 2\\cdot10^5$$$) — the number of sets in the array and the maximum limit for the values in the sets.\n\n## Output\nAn integer representing the number of different arrays of sets that satisfy the problem condition, modulo $$$998\\,244\\,353$$$.\n\n## Example\n### Input\n['2 2', '1 3', '3 1']\n\n### Output\n['11', '8', '4']\n\n## Note\nIn the first example, there are $$$11$$$ different arrays of sets possible, which are:   $$$[\\{\\}, \\{\\}]$$$  $$$[\\{\\}, \\{1\\}]$$$  $$$[\\{\\}, \\{1, 2\\}]$$$  $$$[\\{\\}, \\{2\\}]$$$  $$$[\\{1\\}, \\{\\}]$$$  $$$[\\{1\\}, \\{1, 2\\}]$$$  $$$[\\{1\\}, \\{2\\}]$$$  $$$[\\{1, 2\\}, \\{\\}]$$$  $$$[\\{1, 2\\}, \\{1\\}]$$$  $$$[\\{2\\}, \\{\\}]$$$  $$$[\\{2\\}, \\{1\\}]$$$ \n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is an easy question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\ndef solve():\n    MOD = 998244353\n\n    n, k = map(int, input().split())\n\n    # Initialize a list to store the number of ways for each i sets\n    dp = [0] * (n + 1)\n\n    # Base case: There is one way to arrange zero sets\n    dp[0] = 1\n\n    # Calculate the number of ways for each i sets\n    for i in range(1, n + 1):\n        # For each set, we can either include or exclude elements from 1 to k\n        for j in range(min(i, k) + 1):\n            # If we include elements from 1 to j, we need to calculate the number of ways for the remaining i - 1 sets\n            # and multiply it by the number of ways to choose j elements from 1 to j\n            dp[i] = (dp[i] + dp[i - 1] * pow(j + 1, j, MOD)) % MOD\n\n    # The final answer is the sum of the number of ways for all possible numbers of sets\n    print(sum(dp) % MOD)\n\n\nif __name__ == \"__main__\":\n    solve()\n```\n\nThis script reads two integers `n` and `k` from standard input, calculates the number of different arrays of sets that satisfy the problem condition, and prints the result to standard output. It uses dynamic programming to efficiently calculate the number of ways for each possible number of sets.",
+    "ground_truth": "N/A",
+    "extracted_answer": "def solve():\n    MOD = 998244353\n\n    n, k = map(int, input().split())\n\n    # Initialize a list to store the number of ways for each i sets\n    dp = [0] * (n + 1)\n\n    # Base case: There is one way to arrange zero sets\n    dp[0] = 1\n\n    # Calculate the number of ways for each i sets\n    for i in range(1, n + 1):\n        # For each set, we can either include or exclude elements from 1 to k\n        for j in range(min(i, k) + 1):\n            # If we include elements from 1 to j, we need to calculate the number of ways for the remaining i - 1 sets\n            # and multiply it by the number of ways to choose j elements from 1 to j\n            dp[i] = (dp[i] + dp[i - 1] * pow(j + 1, j, MOD)) % MOD\n\n    # The final answer is the sum of the number of ways for all possible numbers of sets\n    print(sum(dp) % MOD)\n\n\nif __name__ == \"__main__\":\n    solve()",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 685,
+        "completion_token_count": 313,
+        "thoughts_token_count": 0
+    }
+}

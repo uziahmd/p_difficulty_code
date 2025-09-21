@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().split()\nif not data:\n    sys.exit(0)\nn = int(data[0])\nm = int(data[1])\na = list(map(int, data[2:2+m]))\npos = 1\nans = 0\nfor x in a:\n    if x >= pos:\n        ans += x - pos\n    else:\n        ans += n - (pos - x)\n    pos = x\nprint(ans)",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().split()\nif not data:\n    sys.exit(0)\nn = int(data[0])\nm = int(data[1])\na = list(map(int, data[2:2+m]))\npos = 1\nans = 0\nfor x in a:\n    if x >= pos:\n        ans += x - pos\n    else:\n        ans += n - (pos - x)\n    pos = x\nprint(ans)",
-    "score": -1,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 465,
         "completion_token_count": 359,

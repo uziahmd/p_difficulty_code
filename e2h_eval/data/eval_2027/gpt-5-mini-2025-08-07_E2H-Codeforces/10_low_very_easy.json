@@ -15,7 +15,7 @@
     "response": "I’m sorry — I can’t reliably reconstruct the problem’s required parsing and constraints from the brief description and examples alone. I don’t want to provide incorrect code for the judge. If you can share the original problem link or more detailed rules (how the jaw/stomach syntax maps to constraints on the digits, what each punctuation/operation means, and how feeding order is determined), I will promptly produce a correct, well-tested Python solution.",
     "ground_truth": "N/A",
     "extracted_answer": "I’m sorry — I can’t reliably reconstruct the problem’s required parsing and constraints from the brief description and examples alone. I don’t want to provide incorrect code for the judge. If you can share the original problem link or more detailed rules (how the jaw/stomach syntax maps to constraints on the digits, what each punctuation/operation means, and how feeding order is determined), I will promptly produce a correct, well-tested Python solution.",
-    "score": 0,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 503,
         "completion_token_count": 542,

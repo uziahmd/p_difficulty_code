@@ -15,7 +15,7 @@
     "response": "import sys\n\ndef zeros(n):\n    cnt = 0\n    d = 5\n    while d <= n:\n        cnt += n // d\n        d *= 5\n    return cnt\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nout_blocks = []\nfor tok in data:\n    m = int(tok)\n    lo, hi = 0, 5 * m + 5\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if zeros(mid) >= m:\n            hi = mid\n        else:\n            lo = mid + 1\n    if zeros(lo) != m:\n        out_blocks.append(\"0\")\n    else:\n        nums = \" \".join(str(lo + i) for i in range(5))\n        out_blocks.append(\"5\\n\" + nums)\nprint(\"\\n\".join(out_blocks))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndef zeros(n):\n    cnt = 0\n    d = 5\n    while d <= n:\n        cnt += n // d\n        d *= 5\n    return cnt\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nout_blocks = []\nfor tok in data:\n    m = int(tok)\n    lo, hi = 0, 5 * m + 5\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if zeros(mid) >= m:\n            hi = mid\n        else:\n            lo = mid + 1\n    if zeros(lo) != m:\n        out_blocks.append(\"0\")\n    else:\n        nums = \" \".join(str(lo + i) for i in range(5))\n        out_blocks.append(\"5\\n\" + nums)\nprint(\"\\n\".join(out_blocks))",
-    "score": 1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 340,
         "completion_token_count": 1604,

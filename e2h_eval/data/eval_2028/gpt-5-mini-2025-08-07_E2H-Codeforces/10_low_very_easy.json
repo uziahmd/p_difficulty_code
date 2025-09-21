@@ -15,7 +15,7 @@
     "response": "I'm sorry — I can't solve this problem correctly right now.",
     "ground_truth": "N/A",
     "extracted_answer": "I'm sorry — I can't solve this problem correctly right now.",
-    "score": 0,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 503,
         "completion_token_count": 850,

@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = list(map(int, sys.stdin.read().strip().split()))\nif not data:\n    sys.exit(0)\nout_lines = []\ni = 0\nwhile i < len(data):\n    x1 = data[i]; y1 = data[i+1]; i += 2\n    x2 = data[i]; y2 = data[i+1]; i += 2\n    n = data[i]; i += 1\n    cnt = 0\n    for _ in range(n):\n        a = data[i]; b = data[i+1]; c = data[i+2]; i += 3\n        v1 = a*x1 + b*y1 + c\n        v2 = a*x2 + b*y2 + c\n        if v1 < 0 and v2 > 0 or v1 > 0 and v2 < 0:\n            cnt += 1\n    out_lines.append(str(cnt))\nsys.stdout.write(\"\\n\".join(out_lines))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = list(map(int, sys.stdin.read().strip().split()))\nif not data:\n    sys.exit(0)\nout_lines = []\ni = 0\nwhile i < len(data):\n    x1 = data[i]; y1 = data[i+1]; i += 2\n    x2 = data[i]; y2 = data[i+1]; i += 2\n    n = data[i]; i += 1\n    cnt = 0\n    for _ in range(n):\n        a = data[i]; b = data[i+1]; c = data[i+2]; i += 3\n        v1 = a*x1 + b*y1 + c\n        v2 = a*x2 + b*y2 + c\n        if v1 < 0 and v2 > 0 or v1 > 0 and v2 < 0:\n            cnt += 1\n    out_lines.append(str(cnt))\nsys.stdout.write(\"\\n\".join(out_lines))",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 609,
         "completion_token_count": 1238,

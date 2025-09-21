@@ -1,0 +1,25 @@
+{
+    "start": 1758290641.4028575,
+    "end": 1758290657.4479728,
+    "start-formatted": "2025-09-19 23:04 KST",
+    "end-formatted": "2025-09-19 23:04 KST",
+    "gpu": 2,
+    "pid": 53,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# You're Given a String...\n\nYou're given a string of lower-case Latin letters. Your task is to find the length of its longest substring that can be met in the string at least twice. These occurrences can overlap (see sample test 2).\n\n## Input\nThe first input line contains the string. It's guaranteed, that the string is non-empty, consists of lower-case Latin letters, and its length doesn't exceed 100.\n\n## Output\nOutput one number — length of the longest substring that can be met in the string at least twice.\n\n## Example\n### Input\n['abcd', 'ababa', 'zzz']\n\n### Output\n['0', '3', '2']\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is an easy question."
+        }
+    ],
+    "thought": "**Clarifying Python script requirements**\n\nI need to create a Python script that reads from standard input, which might include multiple lines. The example shows input as a list of strings, but the original problem probably expects one string per test case. I’ll need to manage multiple lines efficiently, treating each non-empty line as a separate input. For each line, I’ll compute the length of the longest substring that appears at least twice. Given the string length limit, an O(n^2) approach for substring checking seems acceptable.",
+    "response": "import sys\n\ndata = [line.strip() for line in sys.stdin.read().splitlines() if line.strip()]\n\ndef longest_repeat(s):\n    n = len(s)\n    for L in range(n-1, 0, -1):\n        seen = set()\n        for i in range(n - L + 1):\n            sub = s[i:i+L]\n            if sub in seen:\n                return L\n            seen.add(sub)\n    return 0\n\nif not data:\n    sys.exit(0)\n\nresults = [str(longest_repeat(s)) for s in data]\nprint(\"\\n\".join(results))",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndata = [line.strip() for line in sys.stdin.read().splitlines() if line.strip()]\n\ndef longest_repeat(s):\n    n = len(s)\n    for L in range(n-1, 0, -1):\n        seen = set()\n        for i in range(n - L + 1):\n            sub = s[i:i+L]\n            if sub in seen:\n                return L\n            seen.add(sub)\n    return 0\n\nif not data:\n    sys.exit(0)\n\nresults = [str(longest_repeat(s)) for s in data]\nprint(\"\\n\".join(results))",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 231,
+        "completion_token_count": 645,
+        "thoughts_token_count": 512
+    }
+}

@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nn = int(data[0])\ns = data[1].strip()\n\nlow = [0] * (n + 1)\nhigh = [0] * (n + 1)\nlow[0] = 1\nhigh[0] = 1\nfor k in range(1, n + 1):\n    if s[k-1] == '1':\n        low[k] = low[k-1] * 2\n        high[k] = high[k-1]\n    else:\n        low[k] = low[k-1]\n        high[k] = high[k-1] * 2\n\nsumL = 0\nsumG = 0\nfor i in range(1, n+1):\n    if s[i-1] == '1':\n        sumL += low[i-1]\n    else:\n        sumG += high[i-1]\n\nN = 1 << n\nlo = 1 + sumL\nhi = N - sumG\nif lo > hi:\n    print()\nelse:\n    print(\" \".join(str(x) for x in range(lo, hi+1)))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nn = int(data[0])\ns = data[1].strip()\n\nlow = [0] * (n + 1)\nhigh = [0] * (n + 1)\nlow[0] = 1\nhigh[0] = 1\nfor k in range(1, n + 1):\n    if s[k-1] == '1':\n        low[k] = low[k-1] * 2\n        high[k] = high[k-1]\n    else:\n        low[k] = low[k-1]\n        high[k] = high[k-1] * 2\n\nsumL = 0\nsumG = 0\nfor i in range(1, n+1):\n    if s[i-1] == '1':\n        sumL += low[i-1]\n    else:\n        sumG += high[i-1]\n\nN = 1 << n\nlo = 1 + sumL\nhi = N - sumG\nif lo > hi:\n    print()\nelse:\n    print(\" \".join(str(x) for x in range(lo, hi+1)))",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 712,
         "completion_token_count": 4295,

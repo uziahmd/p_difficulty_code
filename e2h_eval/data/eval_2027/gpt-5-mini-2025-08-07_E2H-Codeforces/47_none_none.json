@@ -1,0 +1,25 @@
+{
+    "start": 1758294587.267177,
+    "end": 1758294595.3219495,
+    "start-formatted": "2025-09-20 00:09 KST",
+    "end-formatted": "2025-09-20 00:09 KST",
+    "gpu": 2,
+    "pid": 47,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Neko does Maths\n\nNeko loves divisors. During the latest number theory lesson, he got an interesting exercise from his math teacher.Neko has two integers $$$a$$$ and $$$b$$$. His goal is to find a non-negative integer $$$k$$$ such that the least common multiple of $$$a+k$$$ and $$$b+k$$$ is the smallest possible. If there are multiple optimal integers $$$k$$$, he needs to choose the smallest one.Given his mathematical talent, Neko had no trouble getting Wrong Answer on this problem. Can you help him solve it?\n\n## Input\nThe only line contains two integers $$$a$$$ and $$$b$$$ ($$$1 \\le a, b \\le 10^9$$$).\n\n## Output\nPrint the smallest non-negative integer $$$k$$$ ($$$k \\ge 0$$$) such that the lowest common multiple of $$$a+k$$$ and $$$b+k$$$ is the smallest possible.If there are many possible integers $$$k$$$ giving the same value of the least common multiple, print the smallest one.\n\n## Example\n### Input\n['6 10', '21 31', '5 10']\n\n### Output\n['2', '9', '0']\n\n## Note\nIn the first test, one should choose $$$k = 2$$$, as the least common multiple of $$$6 + 2$$$ and $$$10 + 2$$$ is $$$24$$$, which is the smallest least common multiple possible.\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments."
+        }
+    ],
+    "thought": "Could not extract thought.",
+    "response": "import sys\nimport math\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\na = int(data[0]); b = int(data[1])\nif a == b:\n    print(0)\n    sys.exit(0)\nif a > b:\n    a, b = b, a\nd = b - a\nbest_lcm = (a * b) // math.gcd(a, b)\nbest_k = 0\n\ndef consider(k):\n    global best_lcm, best_k, a, b\n    A = a + k\n    B = b + k\n    g = math.gcd(A, B)\n    l = (A // g) * B\n    if l < best_lcm or (l == best_lcm and k < best_k):\n        best_lcm = l\n        best_k = k\n\ni = 1\nwhile i * i <= d:\n    if d % i == 0:\n        for g in (i, d // i):\n            rem = a % g\n            k = 0 if rem == 0 else (g - rem)\n            consider(k)\n    i += 1\n\nprint(best_k)",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\nimport math\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\na = int(data[0]); b = int(data[1])\nif a == b:\n    print(0)\n    sys.exit(0)\nif a > b:\n    a, b = b, a\nd = b - a\nbest_lcm = (a * b) // math.gcd(a, b)\nbest_k = 0\n\ndef consider(k):\n    global best_lcm, best_k, a, b\n    A = a + k\n    B = b + k\n    g = math.gcd(A, B)\n    l = (A // g) * B\n    if l < best_lcm or (l == best_lcm and k < best_k):\n        best_lcm = l\n        best_k = k\n\ni = 1\nwhile i * i <= d:\n    if d % i == 0:\n        for g in (i, d // i):\n            rem = a % g\n            k = 0 if rem == 0 else (g - rem)\n            consider(k)\n    i += 1\n\nprint(best_k)",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 398,
+        "completion_token_count": 259,
+        "thoughts_token_count": 0
+    }
+}

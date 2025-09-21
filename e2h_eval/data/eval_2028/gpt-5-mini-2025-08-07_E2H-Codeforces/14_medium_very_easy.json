@@ -15,7 +15,7 @@
     "response": "import sys\n\ndef zeta(n):\n    cnt = 0\n    d = 5\n    while d <= n:\n        cnt += n // d\n        d *= 5\n    return cnt\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nm = int(data[0])\n\nlow, high = 0, 5 * m + 5\nwhile low < high:\n    mid = (low + high) // 2\n    if zeta(mid) >= m:\n        high = mid\n    else:\n        low = mid + 1\n\nif zeta(low) != m:\n    print(0)\nelse:\n    res = [str(low + i) for i in range(5)]\n    print(5)\n    print(\" \".join(res))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndef zeta(n):\n    cnt = 0\n    d = 5\n    while d <= n:\n        cnt += n // d\n        d *= 5\n    return cnt\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nm = int(data[0])\n\nlow, high = 0, 5 * m + 5\nwhile low < high:\n    mid = (low + high) // 2\n    if zeta(mid) >= m:\n        high = mid\n    else:\n        low = mid + 1\n\nif zeta(low) != m:\n    print(0)\nelse:\n    res = [str(low + i) for i in range(5)]\n    print(5)\n    print(\" \".join(res))",
-    "score": 1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 349,
         "completion_token_count": 944,

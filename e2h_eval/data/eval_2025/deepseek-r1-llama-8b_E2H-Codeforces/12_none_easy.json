@@ -16,7 +16,7 @@
     "response": "```python\ndef solve():\n    n, m = map(int, input().split())\n    a = list(map(int, input().split()))\n\n    max_val = max(a)\n    if max_val == 1:\n        return 0\n\n    max_freq = a.count(max_val)\n    moves = sum((max_val - 1) % n for _ in range(max_freq))\n    moves += n - (max_val - 1) % n\n    return moves\n\n\nif __name__ == \"__main__\":\n    t = 1\n    while t > 0:\n        print(solve())\n        t -= 1\n```\n\nThis script reads the input from standard input and prints the desired output to standard output. The `solve` function calculates the minimum time Xenia needs to complete all her tasks. It first finds the maximum house number and counts its frequency. Then it calculates the total moves required to reach all houses with the maximum house number. Finally, it adds the remaining moves to reach the maximum house number from the last visited house.\n\nThe script uses a simple and efficient approach to solve the problem. The time complexity is O(m), where m is the number of tasks. The space complexity is O(1), as it only uses a constant amount of space to store the input values.",
     "ground_truth": "N/A",
     "extracted_answer": "def solve():\n    n, m = map(int, input().split())\n    a = list(map(int, input().split()))\n\n    max_val = max(a)\n    if max_val == 1:\n        return 0\n\n    max_freq = a.count(max_val)\n    moves = sum((max_val - 1) % n for _ in range(max_freq))\n    moves += n - (max_val - 1) % n\n    return moves\n\n\nif __name__ == \"__main__\":\n    t = 1\n    while t > 0:\n        print(solve())\n        t -= 1",
-    "score": -1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 501,
         "completion_token_count": 266,

@@ -1,0 +1,25 @@
+{
+    "start": 1758292150.1964693,
+    "end": 1758292173.8977032,
+    "start-formatted": "2025-09-19 23:29 KST",
+    "end-formatted": "2025-09-19 23:29 KST",
+    "gpu": 2,
+    "pid": 29,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Substitutes in Number\n\nAndrew and Eugene are playing a game. Initially, Andrew has string s, consisting of digits. Eugene sends Andrew multiple queries of type \"di → ti\", that means \"replace all digits di in string s with substrings equal to ti\". For example, if s = 123123, then query \"2 → 00\" transforms s to 10031003, and query \"3 → \" (\"replace 3 by an empty string\") transforms it to s = 1212. After all the queries Eugene asks Andrew to find the remainder after division of number with decimal representation equal to s by 1000000007 (109 + 7). When you represent s as a decimal number, please ignore the leading zeroes; also if s is an empty string, then it's assumed that the number equals to zero.Andrew got tired of processing Eugene's requests manually and he asked you to write a program for that. Help him!\n\n## Input\nThe first line contains string s (1 ≤ |s| ≤ 105), consisting of digits — the string before processing all the requests.The second line contains a single integer n (0 ≤ n ≤ 105) — the number of queries.The next n lines contain the descriptions of the queries. The i-th query is described by string \"di->ti\", where di is exactly one digit (from 0 to 9), ti is a string consisting of digits (ti can be an empty string). The sum of lengths of ti for all queries doesn't exceed 105. The queries are written in the order in which they need to be performed.\n\n## Output\nPrint a single integer — remainder of division of the resulting number by 1000000007 (109 + 7).\n\n## Example\n### Input\n['123123\\n1\\n2->00', '123123\\n1\\n3->', '222\\n2\\n2->0\\n0->7', '1000000008\\n0']\n\n### Output\n['10031003', '1212', '777', '1']\n\n## Note\nNote that the leading zeroes are not removed from string s after the replacement (you can see it in the third sample).\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a very easy question."
+        }
+    ],
+    "thought": "",
+    "response": "```python\nMOD = 10**9 + 7\n\ndef solve():\n    s = input()\n    n = int(input())\n    mapping = {}\n\n    for _ in range(n):\n        query = input()\n        di, ti = query.split('->')\n        di = int(di)\n        ti = ti or '0'\n\n        if di not in mapping:\n            mapping[di] = ti\n\n        for i, c in enumerate(ti):\n            s = s.replace(str(di), str(c) + s[i:])\n\n    value = 0\n    for digit in s:\n        value = (value * 10 + int(digit)) % MOD\n\n    print(value)\n\nif __name__ == \"__main__\":\n    solve()\n```\n\nThis script first reads the initial string `s` and the number of queries `n`. Then it iterates over each query, replacing the specified digit with the corresponding string. Finally, it calculates the remainder of the resulting number divided by `MOD` and prints the result.\n\nNote that this script assumes that the input is well-formed and does not contain any errors. If you want to add error handling, you can use the `try-except` block to catch any exceptions that may occur during input or calculation.",
+    "ground_truth": "N/A",
+    "extracted_answer": "MOD = 10**9 + 7\n\ndef solve():\n    s = input()\n    n = int(input())\n    mapping = {}\n\n    for _ in range(n):\n        query = input()\n        di, ti = query.split('->')\n        di = int(di)\n        ti = ti or '0'\n\n        if di not in mapping:\n            mapping[di] = ti\n\n        for i, c in enumerate(ti):\n            s = s.replace(str(di), str(c) + s[i:])\n\n    value = 0\n    for digit in s:\n        value = (value * 10 + int(digit)) % MOD\n\n    print(value)\n\nif __name__ == \"__main__\":\n    solve()",
+    "score": -1,
+    "metadata": {
+        "prompt_token_count": 591,
+        "completion_token_count": 256,
+        "thoughts_token_count": 0
+    }
+}

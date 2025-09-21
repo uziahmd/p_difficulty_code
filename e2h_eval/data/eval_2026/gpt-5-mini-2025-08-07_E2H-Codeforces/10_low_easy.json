@@ -15,7 +15,7 @@
     "response": "I’m sorry — I can’t produce a correct solution right now.",
     "ground_truth": "N/A",
     "extracted_answer": "I’m sorry — I can’t produce a correct solution right now.",
-    "score": 0,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 502,
         "completion_token_count": 276,

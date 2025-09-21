@@ -1,0 +1,25 @@
+{
+    "start": 1758294604.8064876,
+    "end": 1758294610.2305532,
+    "start-formatted": "2025-09-20 00:10 KST",
+    "end-formatted": "2025-09-20 00:10 KST",
+    "gpu": 2,
+    "pid": 55,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# Minimum Ternary String\n\nYou are given a ternary string (it is a string which consists only of characters '0', '1' and '2').You can swap any two adjacent (consecutive) characters '0' and '1' (i.e. replace \"01\" with \"10\" or vice versa) or any two adjacent (consecutive) characters '1' and '2' (i.e. replace \"12\" with \"21\" or vice versa).For example, for string \"010210\" we can perform the following moves:   \"010210\" $$$\\rightarrow$$$ \"100210\";  \"010210\" $$$\\rightarrow$$$ \"001210\";  \"010210\" $$$\\rightarrow$$$ \"010120\";  \"010210\" $$$\\rightarrow$$$ \"010201\". Note than you cannot swap \"02\" $$$\\rightarrow$$$ \"20\" and vice versa. You cannot perform any other operations with the given string excluding described above.You task is to obtain the minimum possible (lexicographically) string by using these swaps arbitrary number of times (possibly, zero).String $$$a$$$ is lexicographically less than string $$$b$$$ (if strings $$$a$$$ and $$$b$$$ have the same length) if there exists some position $$$i$$$ ($$$1 \\le i \\le |a|$$$, where $$$|s|$$$ is the length of the string $$$s$$$) such that for every $$$j < i$$$ holds $$$a_j = b_j$$$, and $$$a_i < b_i$$$.\n\n## Input\nThe first line of the input contains the string $$$s$$$ consisting only of characters '0', '1' and '2', its length is between $$$1$$$ and $$$10^5$$$ (inclusive).\n\n## Output\nPrint a single string — the minimum possible (lexicographically) string you can obtain by using the swaps described above arbitrary number of times (possibly, zero).\n\n## Example\n### Input\n['100210', '11222121', '20']\n\n### Output\n['001120', '11112222', '20']\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments."
+        }
+    ],
+    "thought": "Could not extract thought.",
+    "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nout = []\nfor s in data:\n    cnt0 = s.count('0')\n    cnt1 = s.count('1')\n    cnt2 = s.count('2')\n    if cnt1 == 0:\n        out.append(s)\n        continue\n    first_non1 = 0\n    n = len(s)\n    while first_non1 < n and s[first_non1] == '1':\n        first_non1 += 1\n    if first_non1 == n:\n        out.append(s)\n        continue\n    # position of first non-'1'\n    # we will place zeros before that position, ones before remaining, then rest (starting from first_non1) excluding zeros moved\n    # count zeros in suffix starting from first_non1\n    zeros_in_suffix = s[first_non1:].count('0')\n    zeros_before = cnt0 - zeros_in_suffix\n    # build result: prefix zeros_before zeros, then all ones, then remaining zeros_in_suffix zeros, then remaining twos from suffix\n    res = []\n    res.append('0' * zeros_before)\n    res.append('1' * cnt1)\n    res.append('0' * zeros_in_suffix)\n    # append all '2's from original (their relative order doesn't change). Count total twos.\n    res.append('2' * cnt2)\n    out.append(''.join(res))\nprint('\\n'.join(out))",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nout = []\nfor s in data:\n    cnt0 = s.count('0')\n    cnt1 = s.count('1')\n    cnt2 = s.count('2')\n    if cnt1 == 0:\n        out.append(s)\n        continue\n    first_non1 = 0\n    n = len(s)\n    while first_non1 < n and s[first_non1] == '1':\n        first_non1 += 1\n    if first_non1 == n:\n        out.append(s)\n        continue\n    # position of first non-'1'\n    # we will place zeros before that position, ones before remaining, then rest (starting from first_non1) excluding zeros moved\n    # count zeros in suffix starting from first_non1\n    zeros_in_suffix = s[first_non1:].count('0')\n    zeros_before = cnt0 - zeros_in_suffix\n    # build result: prefix zeros_before zeros, then all ones, then remaining zeros_in_suffix zeros, then remaining twos from suffix\n    res = []\n    res.append('0' * zeros_before)\n    res.append('1' * cnt1)\n    res.append('0' * zeros_in_suffix)\n    # append all '2's from original (their relative order doesn't change). Count total twos.\n    res.append('2' * cnt2)\n    out.append(''.join(res))\nprint('\\n'.join(out))",
+    "score": 0,
+    "metadata": {
+        "prompt_token_count": 537,
+        "completion_token_count": 307,
+        "thoughts_token_count": 0
+    }
+}

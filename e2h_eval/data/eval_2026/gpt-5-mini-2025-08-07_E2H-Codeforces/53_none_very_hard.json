@@ -1,0 +1,25 @@
+{
+    "start": 1758294592.2898438,
+    "end": 1758294596.547306,
+    "start-formatted": "2025-09-20 00:09 KST",
+    "end-formatted": "2025-09-20 00:09 KST",
+    "gpu": 2,
+    "pid": 53,
+    "use_openrouter": 0,
+    "prompt": [
+        {
+            "role": "user",
+            "content": "The following is a competitive programming problem.\n\n# You're Given a String...\n\nYou're given a string of lower-case Latin letters. Your task is to find the length of its longest substring that can be met in the string at least twice. These occurrences can overlap (see sample test 2).\n\n## Input\nThe first input line contains the string. It's guaranteed, that the string is non-empty, consists of lower-case Latin letters, and its length doesn't exceed 100.\n\n## Output\nOutput one number — length of the longest substring that can be met in the string at least twice.\n\n## Example\n### Input\n['abcd', 'ababa', 'zzz']\n\n### Output\n['0', '3', '2']\n\nYour task is to solve the problem above by writing a Python script that reads input from standard input (stdin) and prints the desired outputs to standard output (stdout). Please ensure your solution is efficient and handles all edge cases. Make sure to include any necessary imports and helper functions. Your code should be ready to run and should not include any additional explanations or comments.\n\nNote that this is a very hard question."
+        }
+    ],
+    "thought": "Could not extract thought.",
+    "response": "import sys\n\ndata = sys.stdin.read().strip().splitlines()\nif not data:\n    sys.exit(0)\n\ndef longest_repeated_substring(s):\n    n = len(s)\n    for L in range(n-1, 0, -1):\n        seen = set()\n        for i in range(n - L + 1):\n            sub = s[i:i+L]\n            if sub in seen:\n                return L\n            seen.add(sub)\n    return 0\n\nouts = []\nfor line in data:\n    line = line.strip()\n    if line == '':\n        continue\n    outs.append(str(longest_repeated_substring(line)))\n\nsys.stdout.write(\"\\n\".join(outs))",
+    "ground_truth": "N/A",
+    "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().splitlines()\nif not data:\n    sys.exit(0)\n\ndef longest_repeated_substring(s):\n    n = len(s)\n    for L in range(n-1, 0, -1):\n        seen = set()\n        for i in range(n - L + 1):\n            sub = s[i:i+L]\n            if sub in seen:\n                return L\n            seen.add(sub)\n    return 0\n\nouts = []\nfor line in data:\n    line = line.strip()\n    if line == '':\n        continue\n    outs.append(str(longest_repeated_substring(line)))\n\nsys.stdout.write(\"\\n\".join(outs))",
+    "score": 1,
+    "metadata": {
+        "prompt_token_count": 232,
+        "completion_token_count": 149,
+        "thoughts_token_count": 0
+    }
+}
