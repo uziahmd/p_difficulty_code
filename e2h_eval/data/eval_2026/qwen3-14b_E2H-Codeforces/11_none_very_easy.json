@@ -15,7 +15,7 @@
     "response": "```python\nimport sys\n\ndef main():\n    # Read the input line\n    input_line = sys.stdin.read().strip()\n    # Split the input into integers\n    n, k, l, c, d, p, nl, np = map(int, input_line.split())\n    \n    # Calculate total drink available\n    total_drink = k * l\n    # Each toast requires nl per person, for n people\n    toasts_by_drink = total_drink // (nl * n)\n    \n    # Calculate total lime slices available\n    total_lime_slices = c * d\n    toasts_by_lime = total_lime_slices // n\n    \n    # Calculate total salt available\n    toasts_by_salt = p // (np * n)\n    \n    # The answer is the minimum of the three constraints\n    print(min(toasts_by_drink, toasts_by_lime, toasts_by_salt))\n\nif __name__ == \"__main__\":\n    main()\n```",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndef main():\n    # Read the input line\n    input_line = sys.stdin.read().strip()\n    # Split the input into integers\n    n, k, l, c, d, p, nl, np = map(int, input_line.split())\n    \n    # Calculate total drink available\n    total_drink = k * l\n    # Each toast requires nl per person, for n people\n    toasts_by_drink = total_drink // (nl * n)\n    \n    # Calculate total lime slices available\n    total_lime_slices = c * d\n    toasts_by_lime = total_lime_slices // n\n    \n    # Calculate total salt available\n    toasts_by_salt = p // (np * n)\n    \n    # The answer is the minimum of the three constraints\n    print(min(toasts_by_drink, toasts_by_lime, toasts_by_salt))\n\nif __name__ == \"__main__\":\n    main()",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 542,
         "completion_token_count": 203,

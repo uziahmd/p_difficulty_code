@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = list(map(int, sys.stdin.read().strip().split()))\nif not data:\n    sys.exit()\nresults = []\nif len(data) % 8 != 0:\n    # assume single line with 8 numbers, if not, exit\n    pass\nfor i in range(0, len(data), 8):\n    n, k, l, c, d, p, nl, np = data[i:i+8]\n    total_drink = k * l\n    toasts_by_drink = total_drink // nl\n    toasts_by_limes = c * d\n    toasts_by_salt = p // np\n    total_toasts = min(toasts_by_drink, toasts_by_limes, toasts_by_salt)\n    results.append(str(total_toasts // n))\nsys.stdout.write(\"\\n\".join(results))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = list(map(int, sys.stdin.read().strip().split()))\nif not data:\n    sys.exit()\nresults = []\nif len(data) % 8 != 0:\n    # assume single line with 8 numbers, if not, exit\n    pass\nfor i in range(0, len(data), 8):\n    n, k, l, c, d, p, nl, np = data[i:i+8]\n    total_drink = k * l\n    toasts_by_drink = total_drink // nl\n    toasts_by_limes = c * d\n    toasts_by_salt = p // np\n    total_toasts = min(toasts_by_drink, toasts_by_limes, toasts_by_salt)\n    results.append(str(total_toasts // n))\nsys.stdout.write(\"\\n\".join(results))",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 482,
         "completion_token_count": 378,

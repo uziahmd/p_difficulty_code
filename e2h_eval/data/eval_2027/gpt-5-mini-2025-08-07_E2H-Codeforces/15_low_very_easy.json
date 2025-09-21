@@ -15,7 +15,7 @@
     "response": "import sys\n\ns = sys.stdin.read().strip().split()\nif not s:\n    sys.exit(0)\nn = int(s[0])\nst = s[1].strip()\n\n# Known result: winners are integers in range [ones+1, 2^n - zeros]\nones = st.count('1')\nzeros = st.count('0')\nN = 1 << n\nL = ones + 1\nR = N - zeros\nif L > R:\n    print()\nelse:\n    print(' '.join(str(x) for x in range(L, R+1)))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ns = sys.stdin.read().strip().split()\nif not s:\n    sys.exit(0)\nn = int(s[0])\nst = s[1].strip()\n\n# Known result: winners are integers in range [ones+1, 2^n - zeros]\nones = st.count('1')\nzeros = st.count('0')\nN = 1 << n\nL = ones + 1\nR = N - zeros\nif L > R:\n    print()\nelse:\n    print(' '.join(str(x) for x in range(L, R+1)))",
-    "score": 1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 712,
         "completion_token_count": 3839,

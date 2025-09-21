@@ -15,7 +15,7 @@
     "response": "```python\nimport sys\n\ndef solve():\n    n, l = map(int, sys.stdin.readline().split())\n    a = list(map(int, sys.stdin.readline().split()))\n\n    a.sort()\n\n    d_start = float(a[0])\n\n    d_end = float(l - a[n-1])\n\n    d_middle = 0.0\n    for i in range(n - 1):\n        gap = a[i+1] - a[i]\n        d_middle = max(d_middle, float(gap) / 2.0)\n\n    result_d = max(d_start, d_end, d_middle)\n\n    print(\"{:.10f}\".format(result_d))\n\nsolve()\n\n```",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndef solve():\n    n, l = map(int, sys.stdin.readline().split())\n    a = list(map(int, sys.stdin.readline().split()))\n\n    a.sort()\n\n    d_start = float(a[0])\n\n    d_end = float(l - a[n-1])\n\n    d_middle = 0.0\n    for i in range(n - 1):\n        gap = a[i+1] - a[i]\n        d_middle = max(d_middle, float(gap) / 2.0)\n\n    result_d = max(d_start, d_end, d_middle)\n\n    print(\"{:.10f}\".format(result_d))\n\nsolve()",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 509,
         "completion_token_count": 178,

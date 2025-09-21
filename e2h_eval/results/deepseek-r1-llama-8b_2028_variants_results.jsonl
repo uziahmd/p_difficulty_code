@@ -1,0 +1,360 @@
+{"task_id": "E2H_CF1031A_low_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF1031A_low_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF1031A_low_moderate", "status": "passed", "error": null}
+{"task_id": "E2H_CF1031A_low_none", "status": "passed", "error": null}
+{"task_id": "E2H_CF1031A_low_very_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF1031A_low_very_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF1031A_medium_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF1031A_medium_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF1031A_medium_moderate", "status": "passed", "error": null}
+{"task_id": "E2H_CF1031A_medium_none", "status": "passed", "error": null}
+{"task_id": "E2H_CF1031A_medium_very_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF1031A_medium_very_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF1031A_none_easy", "status": "failed", "error": "Wrong output for test case 1: expected '8', got '17'"}
+{"task_id": "E2H_CF1031A_none_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpo13zm2d_.py\", line 15, in <module>\n    for _ in range(int(input())):\nValueError: invalid literal for int() with base 10: '3 3 1\\r'\n"}
+{"task_id": "E2H_CF1031A_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '8', got '21'"}
+{"task_id": "E2H_CF1031A_none_none", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpt9zjfw71.py\", line 14, in <module>\n    for _ in range(int(input())):\nValueError: invalid literal for int() with base 10: '3 3 1\\r'\n"}
+{"task_id": "E2H_CF1031A_none_very_easy", "status": "failed", "error": "  File \"/tmp/tmp7fdmns3k.py\", line 47\n    global total_cells\n    ^^^^^^^^^^^^^^^^^^\nSyntaxError: name 'total_cells' is used prior to global declaration\n"}
+{"task_id": "E2H_CF1031A_none_very_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmp1kyul_u6.py\", line 15, in <module>\n    for _ in range(int(input())):\nValueError: invalid literal for int() with base 10: '3 3 1\\r'\n"}
+{"task_id": "E2H_CF404A_low_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF404A_low_hard", "status": "failed", "error": "Wrong output for test case 2: expected 'YES', got 'NO'"}
+{"task_id": "E2H_CF404A_low_moderate", "status": "passed", "error": null}
+{"task_id": "E2H_CF404A_low_none", "status": "passed", "error": null}
+{"task_id": "E2H_CF404A_low_very_easy", "status": "failed", "error": "Wrong output for test case 2: expected 'YES', got 'NO'"}
+{"task_id": "E2H_CF404A_low_very_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF404A_medium_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF404A_medium_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF404A_medium_moderate", "status": "passed", "error": null}
+{"task_id": "E2H_CF404A_medium_none", "status": "passed", "error": null}
+{"task_id": "E2H_CF404A_medium_very_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF404A_medium_very_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF404A_none_easy", "status": "failed", "error": "Wrong output for test case 2: expected 'YES', got 'NO'"}
+{"task_id": "E2H_CF404A_none_hard", "status": "failed", "error": "Wrong output for test case 2: expected 'YES', got 'NO'"}
+{"task_id": "E2H_CF404A_none_moderate", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmp2835syho.py\", line 32, in <module>\n    main()\n  File \"/tmp/tmp2835syho.py\", line 27, in main\n    result = check_x(n, grid)\n  File \"/tmp/tmp2835syho.py\", line 4, in check_x\n    raise ValueError(\"Invalid grid size\")\nValueError: Invalid grid size\n"}
+{"task_id": "E2H_CF404A_none_none", "status": "failed", "error": "Wrong output for test case 2: expected 'YES', got 'NO'"}
+{"task_id": "E2H_CF404A_none_very_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpeuk4rsfd.py\", line 27, in <module>\n    print(check_x(n, []))\n  File \"/tmp/tmpeuk4rsfd.py\", line 4, in check_x\n    row = input()\nEOFError: EOF when reading a line\n"}
+{"task_id": "E2H_CF404A_none_very_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpbefgskzp.py\", line 34, in <module>\n    main()\n  File \"/tmp/tmpbefgskzp.py\", line 30, in main\n    print(check_x(n, grid))\n  File \"/tmp/tmpbefgskzp.py\", line 15, in check_x\n    other_squares = [cell for i in range(n) for j in range(n) if i != j and i != n-j-1]\n  File \"/tmp/tmpbefgskzp.py\", line 15, in <listcomp>\n    other_squares = [cell for i in range(n) for j in range(n) if i != j and i != n-j-1]\nNameError: name 'cell' is not defined\n"}
+{"task_id": "E2H_CF492B_low_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF492B_low_hard", "status": "failed", "error": "Wrong output for test case 2: expected '2.0000000000', got '1.5000000000'"}
+{"task_id": "E2H_CF492B_low_moderate", "status": "failed", "error": "Wrong output for test case 3: expected '22258199.5000000000', got '22258199.4999999851'"}
+{"task_id": "E2H_CF492B_low_none", "status": "failed", "error": "Wrong output for test case 2: expected '2.0000000000', got '1.5000000000'"}
+{"task_id": "E2H_CF492B_low_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '2.5000000000', got '14.0000000000'"}
+{"task_id": "E2H_CF492B_low_very_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF492B_medium_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF492B_medium_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF492B_medium_moderate", "status": "passed", "error": null}
+{"task_id": "E2H_CF492B_medium_none", "status": "passed", "error": null}
+{"task_id": "E2H_CF492B_medium_very_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF492B_medium_very_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF492B_none_easy", "status": "failed", "error": "Wrong output for test case 1: expected '2.5000000000', got '14.999999999126885'"}
+{"task_id": "E2H_CF492B_none_hard", "status": "failed", "error": "Wrong output for test case 1: expected '2.5000000000', got '1.0350983390'"}
+{"task_id": "E2H_CF492B_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '2.5000000000', got '14.999999999126885'"}
+{"task_id": "E2H_CF492B_none_none", "status": "failed", "error": "Wrong output for test case 1: expected '2.5000000000', got '2.0000000000'"}
+{"task_id": "E2H_CF492B_none_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '2.5000000000', got '14.999999999126885'"}
+{"task_id": "E2H_CF492B_none_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '2.5000000000', got '6.000000000349246'"}
+{"task_id": "E2H_CF173A_low_easy", "status": "failed", "error": "Wrong output for test case 1: expected '3 2', got '2 3'"}
+{"task_id": "E2H_CF173A_low_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmp7y75xuaw.py\", line 57, in <module>\n    main()\n  File \"/tmp/tmp7y75xuaw.py\", line 39, in main\n    a_char = A[i]\nIndexError: string index out of range\n"}
+{"task_id": "E2H_CF173A_low_moderate", "status": "passed", "error": null}
+{"task_id": "E2H_CF173A_low_none", "status": "passed", "error": null}
+{"task_id": "E2H_CF173A_low_very_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF173A_low_very_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF173A_medium_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF173A_medium_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF173A_medium_moderate", "status": "failed", "error": "Wrong output for test case 3: expected '7 8', got '5 10'"}
+{"task_id": "E2H_CF173A_medium_none", "status": "failed", "error": "Wrong output for test case 1: expected '3 2', got '7 6'"}
+{"task_id": "E2H_CF173A_medium_very_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF173A_medium_very_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF173A_none_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmp_yetxn13.py\", line 49, in <module>\n    solve()\n  File \"/tmp/tmp_yetxn13.py\", line 29, in solve\n    (input()[nikephoros_index] == 'P' and input()[polycarpus_index] == 'R') or\nEOFError: EOF when reading a line\n"}
+{"task_id": "E2H_CF173A_none_hard", "status": "failed", "error": "Wrong output for test case 1: expected '3 2', got '2 3'"}
+{"task_id": "E2H_CF173A_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '3 2', got '2 1'"}
+{"task_id": "E2H_CF173A_none_none", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpzsjsq005.py\", line 45, in <module>\n    solve()\n  File \"/tmp/tmpzsjsq005.py\", line 34, in solve\n    if input()[nikephoros_index] == 'R' and input()[polycarpus_index] == 'S':\nEOFError: EOF when reading a line\n"}
+{"task_id": "E2H_CF173A_none_very_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpssmmjixo.py\", line 41, in <module>\n    rock_paper_scissors()\n  File \"/tmp/tmpssmmjixo.py\", line 31, in rock_paper_scissors\n    if sequence_a[i] != sequence_b[i]:\nIndexError: string index out of range\n"}
+{"task_id": "E2H_CF173A_none_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '3 2', got '2 1'"}
+{"task_id": "E2H_CF1141D_low_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got ''"}
+{"task_id": "E2H_CF1141D_low_hard", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '5\n4\n2 2\n3 1\n4 9\n7 8'"}
+{"task_id": "E2H_CF1141D_low_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '17\n2 2\n3 1\n4 9\n9 10\n7 8\n1 1\n2 2\n3 3\n4 4\n5 5\n6 6\n7 7\n8 8\n9 9\n10 10'"}
+{"task_id": "E2H_CF1141D_low_none", "status": "failed", "error": "  File \"/tmp/tmp6678z6r4.py\", line 64\n    question_left = l_counts.get('?', 0) - (used_left[25] if 'a'... No, wait: after processing non-? colors, the ? counts remain as they were except when they were part of same-color pairs. Wait, no: same-color pairs only involve specific colors, not ?. So after step 1, l_counts['?'] remains as it was initially, minus any same-color pairs where both were '?'. Wait, no: same-color pairs for '?' would have been handled in step 2, but in our initial code, we didn't process '?' yet.\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ^\nSyntaxError: unterminated string literal (detected at line 64)\n"}
+{"task_id": "E2H_CF1141D_low_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '7'"}
+{"task_id": "E2H_CF1141D_low_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '5'"}
+{"task_id": "E2H_CF1141D_medium_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '5\n2 2\n3 1\n4 9\n9 10\n7 8'"}
+{"task_id": "E2H_CF1141D_medium_hard", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '5\n2 2\n3 1\n4 9\n9 10\n7 8'"}
+{"task_id": "E2H_CF1141D_medium_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '10\n2 2\n3 1\n4 9\n9 10\n7 8\n1 3\n5 4\n6 5\n8 6\n10 7'"}
+{"task_id": "E2H_CF1141D_medium_none", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '10\n3 1\n4 9\n9 10\n2 2\n7 8\n1 3\n8 4\n6 5\n5 6\n10 7'"}
+{"task_id": "E2H_CF1141D_medium_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '5\n2 2\n3 1\n4 9\n9 10\n7 8'"}
+{"task_id": "E2H_CF1141D_medium_very_hard", "status": "failed", "error": "  File \"/tmp/tmpb1ux3he2.py\", line 85\n    del right_available[c_left][c_left] -= take\n                                        ^^\nSyntaxError: invalid syntax\n"}
+{"task_id": "E2H_CF1141D_none_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '13\n1 11\n1 11\n1 11\n2 12\n1 11\n11 1\n11 1\n11 1\n11 1\n1 11\n2 11\n1 11\n1 11'"}
+{"task_id": "E2H_CF1141D_none_hard", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '13\n1 11\n1 11\n1 11\n2 12\n1 11\n11 1\n11 1\n11 1\n11 1\n1 11\n2 11\n1 11\n1 11'"}
+{"task_id": "E2H_CF1141D_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '13\n1 11\n1 11\n1 11\n2 12\n1 11\n11 1\n11 1\n11 1\n11 1\n1 11\n2 11\n1 11\n1 11'"}
+{"task_id": "E2H_CF1141D_none_none", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpb8ky2db3.py\", line 37, in <module>\n    solve()\n  File \"/tmp/tmpb8ky2db3.py\", line 13, in solve\n    if l[i] not in left or right[l[i]] < right[r[i]]:\nKeyError: 't'\n"}
+{"task_id": "E2H_CF1141D_none_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '10\n1 1\n2 2\n3 3\n4 4\n5 5\n6 6\n7 7\n8 8\n9 9\n10 10'"}
+{"task_id": "E2H_CF1141D_none_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n7 8\r\n4 9\r\n2 2\r\n9 10\r\n3 1', got '13\n1 11\n1 11\n1 11\n2 12\n1 11\n11 1\n11 1\n11 1\n11 1\n1 11\n2 11\n1 11\n1 11'"}
+{"task_id": "E2H_CF822C_low_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpl2kw_upp.py\", line 96, in <module>\n    main()\n  File \"/tmp/tmpl2kw_upp.py\", line 55, in main\n    min_c = min(c_i + candidates[left][2], min_c)\nUnboundLocalError: local variable 'min_c' referenced before assignment\n"}
+{"task_id": "E2H_CF822C_low_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF822C_low_moderate", "status": "passed", "error": null}
+{"task_id": "E2H_CF822C_low_none", "status": "failed", "error": "Wrong output for test case 1: expected '5', got '1'"}
+{"task_id": "E2H_CF822C_low_very_easy", "status": "failed", "error": "  File \"/tmp/tmpvhdgnk2z.py\", line 67\n    total_cost = c_i + (j's cost)\n                         ^\nSyntaxError: unterminated string literal (detected at line 67)\n"}
+{"task_id": "E2H_CF822C_low_very_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF822C_medium_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpdnv_2hb0.py\", line 129, in <module>\n    main()\n  File \"/tmp/tmpdnv_2hb0.py\", line 115, in main\n    if sorted_l_list[j][2] == min_cost_l and sorted_l_list[j][4] != vouchers.index(voucher):\nIndexError: tuple index out of range\n"}
+{"task_id": "E2H_CF822C_medium_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF822C_medium_moderate", "status": "passed", "error": null}
+{"task_id": "E2H_CF822C_medium_none", "status": "passed", "error": null}
+{"task_id": "E2H_CF822C_medium_very_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF822C_medium_very_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF822C_none_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5', got '-1'"}
+{"task_id": "E2H_CF822C_none_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF822C_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '5', got '-1'"}
+{"task_id": "E2H_CF822C_none_none", "status": "failed", "error": "Wrong output for test case 1: expected '5', got '8'"}
+{"task_id": "E2H_CF822C_none_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5', got '-1'"}
+{"task_id": "E2H_CF822C_none_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '5', got '-1'"}
+{"task_id": "E2H_CF1846E2_low_easy", "status": "failed", "error": "Wrong output for test case 1: expected 'NO\r\nNO\r\nNO\r\nNO\r\nYES\r\nYES\r\nYES\r\nYES\r\nNO', got 'NO\nNO\nNO\nNO\nNO\nNO\nNO\nNO\nNO'"}
+{"task_id": "E2H_CF1846E2_low_hard", "status": "failed", "error": "Timeout on test case 1"}
+{"task_id": "E2H_CF1846E2_low_moderate", "status": "failed", "error": "  File \"/tmp/tmp8opkzy1g.py\", line 1\n    This code reads each test case, checks if it's a valid snowflake using the `is_snowflake` function, and prints \"YES\" or \"NO\" accordingly.\n                                                ^\nSyntaxError: unterminated string literal (detected at line 1)\n"}
+{"task_id": "E2H_CF1846E2_low_none", "status": "failed", "error": "Wrong output for test case 1: expected 'NO\r\nNO\r\nNO\r\nNO\r\nYES\r\nYES\r\nYES\r\nYES\r\nNO', got 'NO\nNO\nYES\nNO\nYES\nYES\nYES\nNO\nNO'"}
+{"task_id": "E2H_CF1846E2_low_very_easy", "status": "failed", "error": "Timeout on test case 1"}
+{"task_id": "E2H_CF1846E2_low_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected 'NO\r\nNO\r\nNO\r\nNO\r\nYES\r\nYES\r\nYES\r\nYES\r\nNO', got 'NO\nNO\nNO\nNO\nNO\nNO\nNO\nNO\nNO'"}
+{"task_id": "E2H_CF1846E2_medium_easy", "status": "failed", "error": "Wrong output for test case 1: expected 'NO\r\nNO\r\nNO\r\nNO\r\nYES\r\nYES\r\nYES\r\nYES\r\nNO', got 'NO\nNO\nNO\nNO\nYES\nYES\nYES\nYES\nNO'"}
+{"task_id": "E2H_CF1846E2_medium_hard", "status": "failed", "error": "Wrong output for test case 1: expected 'NO\r\nNO\r\nNO\r\nNO\r\nYES\r\nYES\r\nYES\r\nYES\r\nNO', got 'NO\nNO\nNO\nNO\nYES\nYES\nYES\nYES\nNO'"}
+{"task_id": "E2H_CF1846E2_medium_moderate", "status": "failed", "error": "Timeout on test case 1"}
+{"task_id": "E2H_CF1846E2_medium_none", "status": "failed", "error": "Wrong output for test case 1: expected 'NO\r\nNO\r\nNO\r\nNO\r\nYES\r\nYES\r\nYES\r\nYES\r\nNO', got 'NO\nNO\nNO\nYES\nYES\nYES\nYES\nYES\nYES'"}
+{"task_id": "E2H_CF1846E2_medium_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected 'NO\r\nNO\r\nNO\r\nNO\r\nYES\r\nYES\r\nYES\r\nYES\r\nNO', got 'NO\nNO\nNO\nNO\nYES\nYES\nYES\nYES\nNO'"}
+{"task_id": "E2H_CF1846E2_medium_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected 'NO\r\nNO\r\nNO\r\nNO\r\nYES\r\nYES\r\nYES\r\nYES\r\nNO', got 'NO\nNO\nYES\nYES\nYES\nYES\nYES\nYES\nYES'"}
+{"task_id": "E2H_CF1846E2_none_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpf3s3kcg2.py\", line 33, in <module>\n    main()\n  File \"/tmp/tmpf3s3kcg2.py\", line 25, in main\n    if check(n, k):\n  File \"/tmp/tmpf3s3kcg2.py\", line 13, in check\n    a[i] = a[i - 1] * k + k - 1\nIndexError: list assignment index out of range\n"}
+{"task_id": "E2H_CF1846E2_none_hard", "status": "failed", "error": "Timeout on test case 1"}
+{"task_id": "E2H_CF1846E2_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected 'NO\r\nNO\r\nNO\r\nNO\r\nYES\r\nYES\r\nYES\r\nYES\r\nNO', got 'YES\nNO\nNO\nNO\nNO\nNO\nNO\nNO\nNO'"}
+{"task_id": "E2H_CF1846E2_none_none", "status": "failed", "error": "Timeout on test case 1"}
+{"task_id": "E2H_CF1846E2_none_very_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmprwftzgoe.py\", line 33, in <module>\n    main()\n  File \"/tmp/tmprwftzgoe.py\", line 25, in main\n    if check(n, k):\n  File \"/tmp/tmprwftzgoe.py\", line 13, in check\n    a[i] = a[i - 1] * k + k - 1\nIndexError: list assignment index out of range\n"}
+{"task_id": "E2H_CF1846E2_none_very_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpzggtidyc.py\", line 56, in <module>\n    main()\n  File \"/tmp/tmpzggtidyc.py\", line 19, in main\n    if F[f] > n:\nIndexError: list index out of range\n"}
+{"task_id": "E2H_CF270E_low_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmp_x0x4ps9.py\", line 111, in <module>\n    main()\n  File \"/tmp/tmp_x0x4ps9.py\", line 28, in main\n    for v, c in edges[u]:\nTypeError: cannot unpack non-iterable int object\n"}
+{"task_id": "E2H_CF270E_low_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpv_5kezuh.py\", line 45, in <module>\n    main()\n  File \"/tmp/tmpv_5kezuh.py\", line 29, in main\n    for (v, c) in edges[u]:\nTypeError: cannot unpack non-iterable int object\n"}
+{"task_id": "E2H_CF270E_low_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '1\r\n0\r\n1', got '1\n1\n1'"}
+{"task_id": "E2H_CF270E_low_none", "status": "failed", "error": "Wrong output for test case 1: expected '1\r\n0\r\n1', got '1\n0\n1'"}
+{"task_id": "E2H_CF270E_low_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '1\r\n0\r\n1', got '0\n1\n0'"}
+{"task_id": "E2H_CF270E_low_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '1\r\n0\r\n1', got '1\n0\n1'"}
+{"task_id": "E2H_CF270E_medium_easy", "status": "failed", "error": "Wrong output for test case 1: expected '1\r\n0\r\n1', got '0\n0\n0'"}
+{"task_id": "E2H_CF270E_medium_hard", "status": "failed", "error": "Wrong output for test case 1: expected '1\r\n0\r\n1', got '1\n0\n1'"}
+{"task_id": "E2H_CF270E_medium_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '1\r\n0\r\n1', got '1\n0\n1'"}
+{"task_id": "E2H_CF270E_medium_none", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpzy5d5r5r.py\", line 50, in <module>\n    main()\n  File \"/tmp/tmpzy5d5r5r.py\", line 31, in main\n    for (v, c) in adj[u]:\nNameError: name 'adj' is not defined\n"}
+{"task_id": "E2H_CF270E_medium_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '1\r\n0\r\n1', got '1\n1\n1'"}
+{"task_id": "E2H_CF270E_medium_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '1\r\n0\r\n1', got '1\n1\n1'"}
+{"task_id": "E2H_CF270E_none_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpgw7kmuwe.py\", line 33, in <module>\n    solve()\n  File \"/tmp/tmpgw7kmuwe.py\", line 29, in solve\n    dfs(0, -1, graph, edges)\n  File \"/tmp/tmpgw7kmuwe.py\", line 10, in dfs\n    dfs(v, u, graph, edges)\n  File \"/tmp/tmpgw7kmuwe.py\", line 10, in dfs\n    dfs(v, u, graph, edges)\n  File \"/tmp/tmpgw7kmuwe.py\", line 15, in dfs\n    direction[edges[(u-1)*n + v]] = 0\nIndexError: list index out of range\n"}
+{"task_id": "E2H_CF270E_none_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpu6fn_dcu.py\", line 82, in <module>\n    print_directions(g, edges)\n  File \"/tmp/tmpu6fn_dcu.py\", line 62, in print_directions\n    if g[u][v][1] > 0:\nIndexError: list index out of range\n"}
+{"task_id": "E2H_CF270E_none_moderate", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpv21ps4ti.py\", line 57, in <module>\n    solve()\n  File \"/tmp/tmpv21ps4ti.py\", line 54, in solve\n    u, v, c = flow[i]\nValueError: not enough values to unpack (expected 3, got 2)\n"}
+{"task_id": "E2H_CF270E_none_none", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmprdzfcpt9.py\", line 29, in <module>\n    dfs(1, -1, graph, edges)\n  File \"/tmp/tmprdzfcpt9.py\", line 10, in dfs\n    dfs(v, u, graph, edges)\n  File \"/tmp/tmprdzfcpt9.py\", line 10, in dfs\n    dfs(v, u, graph, edges)\n  File \"/tmp/tmprdzfcpt9.py\", line 15, in dfs\n    direction[edges[(u-1)*n + v]] = 0\nIndexError: list index out of range\n"}
+{"task_id": "E2H_CF270E_none_very_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmp2rlrx5nb.py\", line 35, in <module>\n    flow[par[i][0][0]][i] -= par[i][1]\nTypeError: 'int' object is not subscriptable\n"}
+{"task_id": "E2H_CF270E_none_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '1\r\n0\r\n1', got '[Errno 2] No such file or directory: 'input.txt''"}
+{"task_id": "E2H_CF808E_low_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF808E_low_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF808E_low_moderate", "status": "failed", "error": "Wrong output for test case 2: expected '3', got '2'"}
+{"task_id": "E2H_CF808E_low_none", "status": "failed", "error": "Wrong output for test case 2: expected '3', got '2'"}
+{"task_id": "E2H_CF808E_low_very_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF808E_low_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '0', got '2'"}
+{"task_id": "E2H_CF808E_medium_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpjilhc0si.py\", line 89, in <module>\n    main()\n  File \"/tmp/tmpjilhc0si.py\", line 67, in main\n    current_sum = prefix2[best_b] + prefix1[a]\nIndexError: list index out of range\n"}
+{"task_id": "E2H_CF808E_medium_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpa62uk5x8.py\", line 92, in <module>\n    if (total_p > total_m):\nNameError: name 'total_m' is not defined. Did you mean: 'total_p'?\n"}
+{"task_id": "E2H_CF808E_medium_moderate", "status": "passed", "error": null}
+{"task_id": "E2H_CF808E_medium_none", "status": "passed", "error": null}
+{"task_id": "E2H_CF808E_medium_very_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF808E_medium_very_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF808E_none_easy", "status": "failed", "error": "Wrong output for test case 1: expected '0', got '1'"}
+{"task_id": "E2H_CF808E_none_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF808E_none_moderate", "status": "passed", "error": null}
+{"task_id": "E2H_CF808E_none_none", "status": "failed", "error": "Wrong output for test case 3: expected '10', got '17'"}
+{"task_id": "E2H_CF808E_none_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '0', got '1'"}
+{"task_id": "E2H_CF808E_none_very_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF409I_low_easy", "status": "failed", "error": "  File \"/tmp/tmp_nudvrsy.py\", line 4580\n    stack.append(new_val\n                ^\nSyntaxError: '(' was never closed\n"}
+{"task_id": "E2H_CF409I_low_hard", "status": "failed", "error": "Wrong output for test case 1: expected '0010', got '0010\nfalse\n0250341\n0101'"}
+{"task_id": "E2H_CF409I_low_moderate", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpv56n2k2f.py\", line 333, in <module>\n    main()\n  File \"/tmp/tmpv56n2k2f.py\", line 85, in main\n    if grid[height][x + direction] == '\\n':\nIndexError: list index out of range\n"}
+{"task_id": "E2H_CF409I_low_none", "status": "failed", "error": "Timeout on test case 1"}
+{"task_id": "E2H_CF409I_low_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '0010', got 'false'"}
+{"task_id": "E2H_CF409I_low_very_hard", "status": "failed", "error": "  File \"/tmp/tmpulhgxdug.py\", line 28\n    if i, j in visited:\n        ^\nSyntaxError: invalid syntax\n"}
+{"task_id": "E2H_CF409I_medium_easy", "status": "failed", "error": "Wrong output for test case 1: expected '0010', got 'false'"}
+{"task_id": "E2H_CF409I_medium_hard", "status": "failed", "error": "Wrong output for test case 1: expected '0010', got 'false'"}
+{"task_id": "E2H_CF409I_medium_moderate", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmp74w8l8rj.py\", line 173, in <module>\n    main()\n  File \"/tmp/tmp74w8l8rj.py\", line 91, in main\n    if not valid:\nUnboundLocalError: local variable 'valid' referenced before assignment\n"}
+{"task_id": "E2H_CF409I_medium_none", "status": "failed", "error": "  File \"/tmp/tmp65egzszs.py\", line 102\n    elif cmd == '!'':\n                   ^\nSyntaxError: unterminated string literal (detected at line 102)\n"}
+{"task_id": "E2H_CF409I_medium_very_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmp41xpsuj6.py\", line 59, in <module>\n    main()\n  File \"/tmp/tmp41xpsuj6.py\", line 51, in main\n    if backtrack(0, []):\nTypeError: unhashable type: 'list'\n"}
+{"task_id": "E2H_CF409I_medium_very_hard", "status": "failed", "error": "Timeout on test case 1"}
+{"task_id": "E2H_CF409I_none_easy", "status": "failed", "error": "Wrong output for test case 1: expected '0010', got 'false'"}
+{"task_id": "E2H_CF409I_none_hard", "status": "failed", "error": "Wrong output for test case 1: expected '0010', got ''"}
+{"task_id": "E2H_CF409I_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '0010', got 'false'"}
+{"task_id": "E2H_CF409I_none_none", "status": "failed", "error": "Wrong output for test case 1: expected '0010', got 'false'"}
+{"task_id": "E2H_CF409I_none_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '0010', got 'false'"}
+{"task_id": "E2H_CF409I_none_very_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpe8n9t12v.py\", line 78, in <module>\n    print(get_min_seq(s))\n  File \"/tmp/tmpe8n9t12v.py\", line 37, in get_min_seq\n    dp[i][j] = dp[i - 1][j] + '0'\nTypeError: unsupported operand type(s) for +: 'NoneType' and 'str'\n"}
+{"task_id": "E2H_CF151A_low_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF151A_low_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF151A_low_moderate", "status": "passed", "error": null}
+{"task_id": "E2H_CF151A_low_none", "status": "passed", "error": null}
+{"task_id": "E2H_CF151A_low_very_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF151A_low_very_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF151A_medium_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF151A_medium_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF151A_medium_moderate", "status": "passed", "error": null}
+{"task_id": "E2H_CF151A_medium_none", "status": "passed", "error": null}
+{"task_id": "E2H_CF151A_medium_very_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF151A_medium_very_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF151A_none_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpvdrjm0to.py\", line 28, in <module>\n    print(soft_drinking())\n  File \"/tmp/tmpvdrjm0to.py\", line 3, in soft_drinking\n    n, k, l, c, d, p, nl, np = map(int, input().split())\nEOFError: EOF when reading a line\n"}
+{"task_id": "E2H_CF151A_none_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpmc9qcn69.py\", line 31, in <module>\n    output = soft_drinking()\n  File \"/tmp/tmpmc9qcn69.py\", line 3, in soft_drinking\n    n, k, l, c, d, p, nl, np = map(int, input().split())\nEOFError: EOF when reading a line\n"}
+{"task_id": "E2H_CF151A_none_moderate", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpixdq1kv6.py\", line 28, in <module>\n    print(soft_drinking())\n  File \"/tmp/tmpixdq1kv6.py\", line 3, in soft_drinking\n    n, k, l, c, d, p, nl, np = map(int, input().split())\nEOFError: EOF when reading a line\n"}
+{"task_id": "E2H_CF151A_none_none", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpfo99riqk.py\", line 28, in <module>\n    print(soft_drinking())\n  File \"/tmp/tmpfo99riqk.py\", line 3, in soft_drinking\n    n, k, l, c, d, p, nl, np = map(int, input().split())\nEOFError: EOF when reading a line\n"}
+{"task_id": "E2H_CF151A_none_very_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpv_x18big.py\", line 28, in <module>\n    print(soft_drinking())\n  File \"/tmp/tmpv_x18big.py\", line 3, in soft_drinking\n    n, k, l, c, d, p, nl, np = map(int, input().split())\nEOFError: EOF when reading a line\n"}
+{"task_id": "E2H_CF151A_none_very_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpigs8gtx_.py\", line 28, in <module>\n    print(soft_drinking())\n  File \"/tmp/tmpigs8gtx_.py\", line 3, in soft_drinking\n    n, k, l, c, d, p, nl, np = map(int, input().split())\nEOFError: EOF when reading a line\n"}
+{"task_id": "E2H_CF339B_low_easy", "status": "failed", "error": "Wrong output for test case 2: expected '2', got '6'"}
+{"task_id": "E2H_CF339B_low_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF339B_low_moderate", "status": "passed", "error": null}
+{"task_id": "E2H_CF339B_low_none", "status": "passed", "error": null}
+{"task_id": "E2H_CF339B_low_very_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF339B_low_very_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF339B_medium_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF339B_medium_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF339B_medium_moderate", "status": "passed", "error": null}
+{"task_id": "E2H_CF339B_medium_none", "status": "passed", "error": null}
+{"task_id": "E2H_CF339B_medium_very_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF339B_medium_very_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF339B_none_easy", "status": "failed", "error": "Wrong output for test case 1: expected '6', got '5'"}
+{"task_id": "E2H_CF339B_none_hard", "status": "failed", "error": "Wrong output for test case 1: expected '6', got '12'"}
+{"task_id": "E2H_CF339B_none_moderate", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpanb_7sh1.py\", line 23, in <module>\n    t = int(input())\nValueError: invalid literal for int() with base 10: '4 3\\r'\n"}
+{"task_id": "E2H_CF339B_none_none", "status": "failed", "error": "Wrong output for test case 1: expected '6', got '7'"}
+{"task_id": "E2H_CF339B_none_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '6', got '7'"}
+{"task_id": "E2H_CF339B_none_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '6', got '7'"}
+{"task_id": "E2H_CF88A_low_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF88A_low_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF88A_low_moderate", "status": "passed", "error": null}
+{"task_id": "E2H_CF88A_low_none", "status": "failed", "error": "Wrong output for test case 2: expected 'minor', got 'strange'"}
+{"task_id": "E2H_CF88A_low_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected 'major', got 'minor'"}
+{"task_id": "E2H_CF88A_low_very_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmp15hdjuw8.py\", line 43, in <module>\n    if is_major(notes):\n  File \"/tmp/tmp15hdjuw8.py\", line 13, in is_major\n    d1 = get_distance(a, b)\n  File \"/tmp/tmp15hdjuw8.py\", line 8, in get_distance\n    return (b - a) % 12\nTypeError: unsupported operand type(s) for -: 'str' and 'str'\n"}
+{"task_id": "E2H_CF88A_medium_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF88A_medium_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF88A_medium_moderate", "status": "passed", "error": null}
+{"task_id": "E2H_CF88A_medium_none", "status": "passed", "error": null}
+{"task_id": "E2H_CF88A_medium_very_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF88A_medium_very_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF88A_none_easy", "status": "failed", "error": "Wrong output for test case 2: expected 'minor', got 'strange'"}
+{"task_id": "E2H_CF88A_none_hard", "status": "failed", "error": "Wrong output for test case 1: expected 'major', got 'minor\nminor\nminor\nminor\nminor\nminor\nminor\nminor\nminor\nminor\nminor\nminor'"}
+{"task_id": "E2H_CF88A_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected 'major', got 'minor\nminor\nminor\nminor\nminor\nminor\nminor\nminor\nminor\nminor\nminor\nminor'"}
+{"task_id": "E2H_CF88A_none_none", "status": "failed", "error": "Wrong output for test case 2: expected 'minor', got 'strange'"}
+{"task_id": "E2H_CF88A_none_very_easy", "status": "failed", "error": "Wrong output for test case 2: expected 'minor', got 'strange'"}
+{"task_id": "E2H_CF88A_none_very_hard", "status": "failed", "error": "  File \"/tmp/tmpchq8ebuw.py\", line 2\n    python chord.py < input.txt\n           ^^^^^\nSyntaxError: invalid syntax\n"}
+{"task_id": "E2H_CF633B_low_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '5\n5 6 7 8 9'"}
+{"task_id": "E2H_CF633B_low_hard", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '1\n5'"}
+{"task_id": "E2H_CF633B_low_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '1\n5'"}
+{"task_id": "E2H_CF633B_low_none", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '1\n5'"}
+{"task_id": "E2H_CF633B_low_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '0'"}
+{"task_id": "E2H_CF633B_low_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '5\n5 6 7 8 9'"}
+{"task_id": "E2H_CF633B_medium_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '5\n5 6 7 8 9'"}
+{"task_id": "E2H_CF633B_medium_hard", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '5\n5 6 7 8 9'"}
+{"task_id": "E2H_CF633B_medium_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '5\n5 6 7 8 9'"}
+{"task_id": "E2H_CF633B_medium_none", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '1 5'"}
+{"task_id": "E2H_CF633B_medium_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '5\n5 6 7 8 9'"}
+{"task_id": "E2H_CF633B_medium_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '5\n5 6 7 8 9'"}
+{"task_id": "E2H_CF633B_none_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '5\n5 6 7 8 9'"}
+{"task_id": "E2H_CF633B_none_hard", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '0'"}
+{"task_id": "E2H_CF633B_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '5\n5 6 7 8 9'"}
+{"task_id": "E2H_CF633B_none_none", "status": "failed", "error": "Timeout on test case 1"}
+{"task_id": "E2H_CF633B_none_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '4\n1 2 3 4'"}
+{"task_id": "E2H_CF633B_none_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '5\r\n5 6 7 8 9', got '0'"}
+{"task_id": "E2H_CF1767D_low_easy", "status": "failed", "error": "Wrong output for test case 1: expected '4 5 6 7', got '1 2 3 4 5 6 7 8'"}
+{"task_id": "E2H_CF1767D_low_hard", "status": "failed", "error": "  File \"/tmp/tmp44lw6ech.py\", line 13\n    for i in range(0, size // (1 << (level+1)))):\n                                               ^\nSyntaxError: unmatched ')'\n"}
+{"task_id": "E2H_CF1767D_low_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '4 5 6 7', got ''"}
+{"task_id": "E2H_CF1767D_low_none", "status": "failed", "error": "Wrong output for test case 1: expected '4 5 6 7', got '0 1 2 3 4 5 6 7'"}
+{"task_id": "E2H_CF1767D_low_very_easy", "status": "failed", "error": "  File \"/tmp/tmpot0z8owx.py\", line 2\n    The code reads the input values and initializes the possible winners list for each phase. It then iterates through each phase, updating the possible winners based on whether higher or lower-skilled teams win. The final possible winners after the last phase are printed, representing all teams that can potentially win the tournament under some permutation of skills. This approach efficiently tracks the possible winners at each stage, ensuring that the solution is both correct and optimal for the given constraints.\n        ^^^^\nSyntaxError: invalid syntax\n"}
+{"task_id": "E2H_CF1767D_low_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '4 5 6 7', got ''"}
+{"task_id": "E2H_CF1767D_medium_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpq0fqwmsq.py\", line 119, in <module>\n    main()\n  File \"/tmp/tmpq0fqwmsq.py\", line 73, in main\n    if s[i] == '0':\nIndexError: string index out of range\n"}
+{"task_id": "E2H_CF1767D_medium_hard", "status": "failed", "error": "Wrong output for test case 1: expected '4 5 6 7', got '6'"}
+{"task_id": "E2H_CF1767D_medium_moderate", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmp8kbc7tp4.py\", line 88, in <module>\n    main()\n  File \"/tmp/tmp8kbc7tp4.py\", line 20, in main\n    path[x].append((current, i))\nIndexError: list index out of range\n"}
+{"task_id": "E2H_CF1767D_medium_none", "status": "failed", "error": "Wrong output for test case 1: expected '4 5 6 7', got '6'"}
+{"task_id": "E2H_CF1767D_medium_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '4 5 6 7', got ''"}
+{"task_id": "E2H_CF1767D_medium_very_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpskzkrv11.py\", line 85, in <module>\n    main()\n  File \"/tmp/tmpskzkrv11.py\", line 81, in main\n    print(' '.join(map(str, group)), end=' ')\nTypeError: 'int' object is not iterable\n"}
+{"task_id": "E2H_CF1767D_none_easy", "status": "failed", "error": "Wrong output for test case 1: expected '4 5 6 7', got '4 5 6'"}
+{"task_id": "E2H_CF1767D_none_hard", "status": "failed", "error": "Wrong output for test case 1: expected '4 5 6 7', got ''"}
+{"task_id": "E2H_CF1767D_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '4 5 6 7', got '3 4 5 6'"}
+{"task_id": "E2H_CF1767D_none_none", "status": "failed", "error": "Wrong output for test case 1: expected '4 5 6 7', got '2 3 4 5'"}
+{"task_id": "E2H_CF1767D_none_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '4 5 6 7', got '4 5 6'"}
+{"task_id": "E2H_CF1767D_none_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '4 5 6 7', got ''"}
+{"task_id": "E2H_CF498A_low_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF498A_low_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF498A_low_moderate", "status": "passed", "error": null}
+{"task_id": "E2H_CF498A_low_none", "status": "passed", "error": null}
+{"task_id": "E2H_CF498A_low_very_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF498A_low_very_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF498A_medium_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF498A_medium_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF498A_medium_moderate", "status": "passed", "error": null}
+{"task_id": "E2H_CF498A_medium_none", "status": "passed", "error": null}
+{"task_id": "E2H_CF498A_medium_very_easy", "status": "passed", "error": null}
+{"task_id": "E2H_CF498A_medium_very_hard", "status": "passed", "error": null}
+{"task_id": "E2H_CF498A_none_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmp5c5u_t4u.py\", line 74, in <module>\n    main()\n  File \"/tmp/tmp5c5u_t4u.py\", line 70, in main\n    distance = count_blocks(x1, y1, x2, y2, roads)\n  File \"/tmp/tmp5c5u_t4u.py\", line 55, in count_blocks\n    intersection_x = (b * x1 - b * y1 - c) / (a * b - a * y1)\nZeroDivisionError: division by zero\n"}
+{"task_id": "E2H_CF498A_none_hard", "status": "failed", "error": "Wrong output for test case 1: expected '2', got '0'"}
+{"task_id": "E2H_CF498A_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '2', got '0'"}
+{"task_id": "E2H_CF498A_none_none", "status": "failed", "error": "Wrong output for test case 1: expected '2', got '-1'"}
+{"task_id": "E2H_CF498A_none_very_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmp3mq1co4z.py\", line 74, in <module>\n    main()\n  File \"/tmp/tmp3mq1co4z.py\", line 70, in main\n    distance = count_blocks(x1, y1, x2, y2, roads)\n  File \"/tmp/tmp3mq1co4z.py\", line 55, in count_blocks\n    intersection_x = (b * x1 - b * y1 - c) / (a * b - a * y1)\nZeroDivisionError: division by zero\n"}
+{"task_id": "E2H_CF498A_none_very_hard", "status": "failed", "error": "Wrong output for test case 3: expected '0', got '10'"}
+{"task_id": "E2H_CF1092C_low_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmps03sfs2i.py\", line 68, in <module>\n    s = input().strip()\nEOFError: EOF when reading a line\n"}
+{"task_id": "E2H_CF1092C_low_hard", "status": "failed", "error": "Wrong output for test case 1: expected 'SPPSPSPS', got 'PSSSSPSS'"}
+{"task_id": "E2H_CF1092C_low_moderate", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpn9uxl9sw.py\", line 39, in <module>\n    s = correct_prefix + correct_suffix[1:]\nNameError: name 'correct_suffix' is not defined. Did you mean: 'correct_prefix'?\n"}
+{"task_id": "E2H_CF1092C_low_none", "status": "failed", "error": "Wrong output for test case 1: expected 'SPPSPSPS', got 'SSPSSSSS'"}
+{"task_id": "E2H_CF1092C_low_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected 'SPPSPSPS', got ''"}
+{"task_id": "E2H_CF1092C_low_very_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmp6qakpj2q.py\", line 11, in <module>\n    suffixes[l].add(prefixes[l])\nTypeError: unhashable type: 'set'\n"}
+{"task_id": "E2H_CF1092C_medium_easy", "status": "failed", "error": "Wrong output for test case 1: expected 'SPPSPSPS', got 'PP'"}
+{"task_id": "E2H_CF1092C_medium_hard", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpywjl6yrs.py\", line 81, in <module>\n    prev_p, prev_q = assignments[l+1]\nKeyError: 3\n"}
+{"task_id": "E2H_CF1092C_medium_moderate", "status": "failed", "error": "Wrong output for test case 1: expected 'SPPSPSPS', got 'SSPPSPSSSS'"}
+{"task_id": "E2H_CF1092C_medium_none", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmp1ic44gpb.py\", line 47, in <module>\n    main()\n  File \"/tmp/tmp1ic44gpb.py\", line 32, in main\n    result, p_final, s_final = backtrack(1, None, None)\n  File \"/tmp/tmp1ic44gpb.py\", line 21, in backtrack\n    if p.startswith(current_p) and s.startswith(current_s):\nTypeError: startswith first arg must be str or a tuple of str, not NoneType\n"}
+{"task_id": "E2H_CF1092C_medium_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected 'SPPSPSPS', got 'PPSPPPPS'"}
+{"task_id": "E2H_CF1092C_medium_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected 'SPPSPSPS', got 'SPPPPSPP'"}
+{"task_id": "E2H_CF1092C_none_easy", "status": "failed", "error": "Wrong output for test case 1: expected 'SPPSPSPS', got 'SSSPP'"}
+{"task_id": "E2H_CF1092C_none_hard", "status": "failed", "error": "Wrong output for test case 1: expected 'SPPSPSPS', got 'PPPPPPPP'"}
+{"task_id": "E2H_CF1092C_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected 'SPPSPSPS', got 'SSSPP'"}
+{"task_id": "E2H_CF1092C_none_none", "status": "failed", "error": "Wrong output for test case 1: expected 'SPPSPSPS', got 'PPPPPPPP'"}
+{"task_id": "E2H_CF1092C_none_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected 'SPPSPSPS', got 'SSSPP'"}
+{"task_id": "E2H_CF1092C_none_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected 'SPPSPSPS', got 'PPPPPPPP'"}
+{"task_id": "E2H_CF1146D_low_easy", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '3'"}
+{"task_id": "E2H_CF1146D_low_hard", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '34'"}
+{"task_id": "E2H_CF1146D_low_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '16'"}
+{"task_id": "E2H_CF1146D_low_none", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '8'"}
+{"task_id": "E2H_CF1146D_low_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '16'"}
+{"task_id": "E2H_CF1146D_low_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '2'"}
+{"task_id": "E2H_CF1146D_medium_easy", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '3'"}
+{"task_id": "E2H_CF1146D_medium_hard", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '5'"}
+{"task_id": "E2H_CF1146D_medium_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '19', got ''"}
+{"task_id": "E2H_CF1146D_medium_none", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpsqnfjam3.py\", line 171, in <module>\n    main()\n  File \"/tmp/tmpsqnfjam3.py\", line 142, in main\n    m, a, b = map(int, sys.stdin.readline().split())\nValueError: not enough values to unpack (expected 3, got 0)\n"}
+{"task_id": "E2H_CF1146D_medium_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '36'"}
+{"task_id": "E2H_CF1146D_medium_very_hard", "status": "failed", "error": "Timeout on test case 1"}
+{"task_id": "E2H_CF1146D_none_easy", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '15'"}
+{"task_id": "E2H_CF1146D_none_hard", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '13'"}
+{"task_id": "E2H_CF1146D_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '13'"}
+{"task_id": "E2H_CF1146D_none_none", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '11'"}
+{"task_id": "E2H_CF1146D_none_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '19', got ''"}
+{"task_id": "E2H_CF1146D_none_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '19', got '13'"}
+{"task_id": "E2H_CF980E_low_easy", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got '1 2 3 4 6'"}
+{"task_id": "E2H_CF980E_low_hard", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got '0 0 0 5'"}
+{"task_id": "E2H_CF980E_low_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got '1'"}
+{"task_id": "E2H_CF980E_low_none", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got '1 2 3 4 5 6'"}
+{"task_id": "E2H_CF980E_low_very_easy", "status": "failed", "error": "Timeout on test case 1"}
+{"task_id": "E2H_CF980E_low_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got '3 4 5'"}
+{"task_id": "E2H_CF980E_medium_easy", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got '1 2 3'"}
+{"task_id": "E2H_CF980E_medium_hard", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got '4 5 6'"}
+{"task_id": "E2H_CF980E_medium_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got '1 2 3 4 5 6'"}
+{"task_id": "E2H_CF980E_medium_none", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got '1 2 3'"}
+{"task_id": "E2H_CF980E_medium_very_easy", "status": "failed", "error": "Wrong output for test case 2: expected '1 3 4 5', got '1 3 4 6'"}
+{"task_id": "E2H_CF980E_medium_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got 'Impossible'"}
+{"task_id": "E2H_CF980E_none_easy", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got '6 6 6'"}
+{"task_id": "E2H_CF980E_none_hard", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got ''"}
+{"task_id": "E2H_CF980E_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got '2 3 4 5 6'"}
+{"task_id": "E2H_CF980E_none_none", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got ''"}
+{"task_id": "E2H_CF980E_none_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got '6 6 6'"}
+{"task_id": "E2H_CF980E_none_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '1 3 4', got '1'"}
+{"task_id": "E2H_CF1709F_low_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpf5us40ha.py\", line 159, in <module>\n    main()\n  File \"/tmp/tmpf5us40ha.py\", line 22, in main\n    trie[l].append(s)\nIndexError: list index out of range\n"}
+{"task_id": "E2H_CF1709F_low_hard", "status": "failed", "error": "Wrong output for test case 1: expected '3', got ''"}
+{"task_id": "E2H_CF1709F_low_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '3', got '0'"}
+{"task_id": "E2H_CF1709F_low_none", "status": "failed", "error": "  File \"/tmp/tmportv_hj1.py\", line 2\n    The code implements a dynamic programming approach to count the number of valid assignments of \\( c_s \\) values. It processes each length from 1 to \\( n \\) and updates the DP state for each possible minimum value of \\( c_s \\). The result is obtained by checking the state corresponding to the maximum length with the exact count \\( f \\). The solution efficiently handles the constraints and computes the result modulo \\( 998244353 \\).\n                                                                                                    ^\nSyntaxError: unexpected character after line continuation character\n"}
+{"task_id": "E2H_CF1709F_low_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '3', got '2'"}
+{"task_id": "E2H_CF1709F_low_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '3', got ''"}
+{"task_id": "E2H_CF1709F_medium_easy", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmpwf4judj6.py\", line 67, in <module>\n    main()\n  File \"/tmp/tmpwf4judj6.py\", line 60, in main\n    dp[i][x] = sum(dp[child][min(x - m, k)] for child in node.values() if node != child)\n  File \"/tmp/tmpwf4judj6.py\", line 60, in <genexpr>\n    dp[i][x] = sum(dp[child][min(x - m, k)] for child in node.values() if node != child)\nTypeError: list indices must be integers or slices, not dict\n"}
+{"task_id": "E2H_CF1709F_medium_hard", "status": "failed", "error": "Wrong output for test case 2: expected '36871576', got '560'"}
+{"task_id": "E2H_CF1709F_medium_moderate", "status": "failed", "error": "Traceback (most recent call last):\n  File \"/tmp/tmp84nmd27v.py\", line 103, in <module>\n    main()\n  File \"/tmp/tmp84nmd27v.py\", line 99, in main\n    res = (res + root_dp[a]) % MOD\nIndexError: list index out of range\n"}
+{"task_id": "E2H_CF1709F_medium_none", "status": "failed", "error": "Wrong output for test case 1: expected '3', got '0'"}
+{"task_id": "E2H_CF1709F_medium_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '3', got '1'"}
+{"task_id": "E2H_CF1709F_medium_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '3', got '0'"}
+{"task_id": "E2H_CF1709F_none_easy", "status": "failed", "error": "Wrong output for test case 1: expected '3', got ''"}
+{"task_id": "E2H_CF1709F_none_hard", "status": "failed", "error": "Timeout on test case 1"}
+{"task_id": "E2H_CF1709F_none_moderate", "status": "failed", "error": "Wrong output for test case 1: expected '3', got '5'"}
+{"task_id": "E2H_CF1709F_none_none", "status": "failed", "error": "Wrong output for test case 2: expected '36871576', got '105'"}
+{"task_id": "E2H_CF1709F_none_very_easy", "status": "failed", "error": "Wrong output for test case 1: expected '3', got '1'"}
+{"task_id": "E2H_CF1709F_none_very_hard", "status": "failed", "error": "Wrong output for test case 1: expected '3', got '41762403'"}

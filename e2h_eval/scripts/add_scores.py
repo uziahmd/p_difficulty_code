@@ -38,7 +38,8 @@ def is_compilation_error(error_msg):
         "invalid syntax",
         "unexpected indent",
         "unindent does not match",
-        "inconsistent use of tabs and spaces"
+        "inconsistent use of tabs and spaces",
+        "Traceback"
     ]
     
     return any(indicator in error_msg for indicator in compilation_indicators)
@@ -47,12 +48,18 @@ def load_results_mapping(results_dir):
     """Load all result files and create a mapping from task_id to evaluation results."""
     results_mapping = {}
     
+    # Look for both regular and variant result files
     result_files = list(Path(results_dir).glob("*_results.jsonl"))
+    variant_result_files = list(Path(results_dir).glob("*_variants_results.jsonl"))
+    all_result_files = result_files + variant_result_files
     
-    for result_file in result_files:
+    for result_file in all_result_files:
         # Extract model and year from filename
         filename = result_file.stem  # removes .jsonl
-        model_year = filename.replace("_results", "")
+        if "_variants_results" in filename:
+            model_year = filename.replace("_variants_results", "")
+        else:
+            model_year = filename.replace("_results", "")
         
         # Load results
         results = load_jsonl(str(result_file))
@@ -103,7 +110,7 @@ def update_log_file(log_file_path, task_id, new_score):
         return False
 
 def create_task_to_problem_mapping():
-    """Create mapping from task_id to problem number (1-20)."""
+    """Create mapping from base task_id to problem number (1-20)."""
     mapping = {
         "E2H_CF1031A": 1, "E2H_CF151A": 2, "E2H_CF404A": 3, "E2H_CF339B": 4, 
         "E2H_CF492B": 5, "E2H_CF88A": 6, "E2H_CF173A": 7, "E2H_CF633B": 8,
@@ -112,6 +119,26 @@ def create_task_to_problem_mapping():
         "E2H_CF808E": 17, "E2H_CF980E": 18, "E2H_CF409I": 19, "E2H_CF1709F": 20
     }
     return mapping
+
+def parse_variant_task_id(task_id):
+    """Parse variant task_id like 'E2H_CF1031A_low_easy' into components."""
+    if '_' not in task_id:
+        return None, None, None
+    
+    parts = task_id.split('_')
+    if len(parts) < 3:  # Need at least E2H_CF1031A
+        return task_id, None, None
+    
+    # For variant task_ids: E2H_CF{contest_id}{problem_index}_{difficulty}_{complexity}
+    # Base is E2H_CF{contest_id}{problem_index}
+    if len(parts) >= 4:
+        base_task_id = '_'.join(parts[:2])  # E2H_CF1031A  
+        difficulty = parts[2]  # low, medium, none
+        complexity = '_'.join(parts[3:]) if len(parts) > 3 else None  # easy, very_easy, etc.
+        return base_task_id, difficulty, complexity
+    
+    # If no variant info, return just the base
+    return '_'.join(parts[:2]), None, None
 
 def process_model_logs(data_dir, model_year, task_scores):
     """Process all log files for a specific model/year combination."""
@@ -124,8 +151,8 @@ def process_model_logs(data_dir, model_year, task_scores):
         print(f"Warning: Could not parse year from {model_year}")
         return 0
     
-    # Find the logs directory for this model/year
-    logs_dir = Path(data_dir) / f"logs_{year}" / f"{model}_E2H-Codeforces"
+    # Find the logs directory for this model/year - updated to use eval_ prefix
+    logs_dir = Path(data_dir) / f"eval_{year}" / f"{model}_E2H-Codeforces"
     
     if not logs_dir.exists():
         print(f"Warning: Logs directory does not exist: {logs_dir}")
@@ -138,24 +165,28 @@ def process_model_logs(data_dir, model_year, task_scores):
     
     # Process each task
     for task_id, score in task_scores.items():
-        # Get problem number from task_id using mapping
-        if task_id not in task_mapping:
-            print(f"Warning: Unknown task_id: {task_id}")
+        # Parse variant task_id
+        base_task_id, difficulty, complexity = parse_variant_task_id(task_id)
+        
+        # Get problem number from base task_id
+        if base_task_id not in task_mapping:
+            print(f"Warning: Unknown base task_id: {base_task_id} from {task_id}")
             continue
             
-        problem_num = task_mapping[task_id]
+        problem_num = task_mapping[base_task_id]
         
-        # Find all log files for this problem (different difficulty variants)
-        log_files = list(logs_dir.glob(f"{problem_num}_*.json"))
-        
-        if not log_files:
-            print(f"Warning: No log files found for problem {problem_num} in {logs_dir}")
-            continue
-        
-        # Update all variants of this problem
-        for log_file in log_files:
-            if update_log_file(log_file, task_id, score):
-                updated_count += 1
+        # Find the specific log file for this variant
+        if difficulty and complexity:
+            log_file_name = f"{problem_num}_{difficulty}_{complexity}.json"
+            log_file = logs_dir / log_file_name
+            
+            if log_file.exists():
+                if update_log_file(log_file, task_id, score):
+                    updated_count += 1
+            else:
+                print(f"Warning: Variant log file not found: {log_file}")
+        else:
+            print(f"Warning: Could not parse variant from task_id: {task_id}")
             
     return updated_count
 

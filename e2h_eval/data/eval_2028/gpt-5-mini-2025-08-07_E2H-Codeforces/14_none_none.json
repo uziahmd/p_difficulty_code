@@ -15,7 +15,7 @@
     "response": "import sys\n\ndef trailing_zeroes(n):\n    cnt = 0\n    d = 5\n    while d <= n:\n        cnt += n // d\n        d *= 5\n    return cnt\n\ndef find_first(m):\n    low, high = 0, 5 * (m + 1)\n    while low < high:\n        mid = (low + high) // 2\n        if trailing_zeroes(mid) < m:\n            low = mid + 1\n        else:\n            high = mid\n    return low\n\ndata = sys.stdin.read().strip().split()\nouts = []\nfor token in data:\n    m = int(token)\n    first = find_first(m)\n    if trailing_zeroes(first) != m:\n        outs.append(\"0\")\n    else:\n        res = [str(first + i) for i in range(5)]\n        outs.append(\"5\")\n        outs.append(\" \".join(res))\nsys.stdout.write(\"\\n\".join(outs))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndef trailing_zeroes(n):\n    cnt = 0\n    d = 5\n    while d <= n:\n        cnt += n // d\n        d *= 5\n    return cnt\n\ndef find_first(m):\n    low, high = 0, 5 * (m + 1)\n    while low < high:\n        mid = (low + high) // 2\n        if trailing_zeroes(mid) < m:\n            low = mid + 1\n        else:\n            high = mid\n    return low\n\ndata = sys.stdin.read().strip().split()\nouts = []\nfor token in data:\n    m = int(token)\n    first = find_first(m)\n    if trailing_zeroes(first) != m:\n        outs.append(\"0\")\n    else:\n        res = [str(first + i) for i in range(5)]\n        outs.append(\"5\")\n        outs.append(\" \".join(res))\nsys.stdout.write(\"\\n\".join(outs))",
-    "score": 1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 340,
         "completion_token_count": 210,

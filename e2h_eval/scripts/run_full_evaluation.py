@@ -1,6 +1,17 @@
-#!/usr/bin/env python3
-"""
-Run complete evaluation across all models, years, and problems.
+#!/usr/bin/env pdef find_model_dirs():
+    \"\"\"Find all model/year combinations.\"\"\"
+    model_dirs = []
+    for year_dir in sorted(DATA_DIR.glob(\"eval_*\")):
+        for model_dir in sorted(year_dir.glob(\"*_E2H-Codeforces\")):
+            year = year_dir.name.replace(\"eval_\", \"\")
+            model = model_dir.name.replace(\"_E2H-Codeforces\", \"\")
+            model_dirs.append({
+                \"year\": year,
+                \"model\": model,
+                \"logs_dir\": model_dir,
+                \"sample_id\": f\"{model}_{year}\"
+            })
+    return model_dirs complete evaluation across all models, years, and problems.
 """
 import os
 import subprocess
@@ -38,7 +49,7 @@ def extract_samples(model_info):
     
     print(f"Extracting samples: {model_info['sample_id']}")
     cmd = [
-        "python3", str(SCRIPTS_DIR / "extract_samples_from_logs.py"),
+        "python3", str(SCRIPTS_DIR / "extract_samples_from_logs_variants.py"),
         "--logs-dir", str(model_info["logs_dir"]),
         "--e2h-json", str(DATA_DIR / "E2H-Codeforces.json"),
         "--out", str(sample_file)
@@ -48,6 +59,7 @@ def extract_samples(model_info):
         print(f" Failed to extract {model_info['sample_id']}: {result.stderr}")
         return None
     print(f"✓ Extracted: {sample_file}")
+    return sample_file
     return sample_file
 
 def run_evaluation(sample_file, model_id):

@@ -15,7 +15,7 @@
     "response": "```python\ndef solve():\n    n, l = map(int, input().split())\n    a = list(map(int, input().split()))\n    a.sort()\n\n    max_gap = 0\n    for i in range(1, n):\n        max_gap = max(max_gap, a[i] - a[i-1])\n\n    d = max_gap / 2.0\n\n    d = max(d, float(a[0]))\n    d = max(d, float(l - a[n-1]))\n\n    print(f\"{d:.10f}\")\n\nsolve()\n```",
     "ground_truth": "N/A",
     "extracted_answer": "def solve():\n    n, l = map(int, input().split())\n    a = list(map(int, input().split()))\n    a.sort()\n\n    max_gap = 0\n    for i in range(1, n):\n        max_gap = max(max_gap, a[i] - a[i-1])\n\n    d = max_gap / 2.0\n\n    d = max(d, float(a[0]))\n    d = max(d, float(l - a[n-1]))\n\n    print(f\"{d:.10f}\")\n\nsolve()",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 510,
         "completion_token_count": 143,

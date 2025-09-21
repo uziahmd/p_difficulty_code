@@ -15,7 +15,7 @@
     "response": "```python\nimport sys\n\ndef main():\n    input = sys.stdin.read\n    data = input().split()\n    \n    n = int(data[0])\n    m = int(data[1])\n    tasks = list(map(int, data[2:2 + m]))\n    \n    current = 1\n    total_time = 0\n    \n    for task in tasks:\n        if task == current:\n            continue\n        elif task > current:\n            total_time += task - current\n            current = task\n        else:\n            total_time += (n - current + task)\n            current = task\n    \n    print(total_time)\n\nif __name__ == \"__main__\":\n    main()\n```",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndef main():\n    input = sys.stdin.read\n    data = input().split()\n    \n    n = int(data[0])\n    m = int(data[1])\n    tasks = list(map(int, data[2:2 + m]))\n    \n    current = 1\n    total_time = 0\n    \n    for task in tasks:\n        if task == current:\n            continue\n        elif task > current:\n            total_time += task - current\n            current = task\n        else:\n            total_time += (n - current + task)\n            current = task\n    \n    print(total_time)\n\nif __name__ == \"__main__\":\n    main()",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 512,
         "completion_token_count": 140,

@@ -15,7 +15,7 @@
     "response": "```python\ndef solve():\n    x1, y1 = map(int, input().split())\n    x2, y2 = map(int, input().split())\n    n = int(input())\n\n    roads = []\n    for _ in range(n):\n        a, b, c = map(int, input().split())\n        roads.append((a, b, c))\n\n    crossings = 0\n    for a, b, c in roads:\n        val1 = a * x1 + b * y1 + c\n        val2 = a * x2 + b * y2 + c\n\n        if (val1 > 0 and val2 < 0) or (val1 < 0 and val2 > 0):\n            crossings += 1\n    \n    print(crossings)\n\nsolve()\n```",
     "ground_truth": "N/A",
     "extracted_answer": "def solve():\n    x1, y1 = map(int, input().split())\n    x2, y2 = map(int, input().split())\n    n = int(input())\n\n    roads = []\n    for _ in range(n):\n        a, b, c = map(int, input().split())\n        roads.append((a, b, c))\n\n    crossings = 0\n    for a, b, c in roads:\n        val1 = a * x1 + b * y1 + c\n        val2 = a * x2 + b * y2 + c\n\n        if (val1 > 0 and val2 < 0) or (val1 < 0 and val2 > 0):\n            crossings += 1\n    \n    print(crossings)\n\nsolve()",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 726,
         "completion_token_count": 189,

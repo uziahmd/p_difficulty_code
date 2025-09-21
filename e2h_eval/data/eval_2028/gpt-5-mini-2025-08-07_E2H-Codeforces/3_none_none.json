@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nit = iter(data)\nn = int(next(it))\nl = int(next(it))\narr = [int(next(it)) for _ in range(n)]\narr.sort()\nmax_gap = 0\nfor i in range(1, n):\n    gap = arr[i] - arr[i-1]\n    if gap > max_gap:\n        max_gap = gap\nend_gap = max(arr[0] - 0, l - arr[-1])\nd = max(end_gap, max_gap / 2.0)\nprint(\"{:.10f}\".format(d))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nit = iter(data)\nn = int(next(it))\nl = int(next(it))\narr = [int(next(it)) for _ in range(n)]\narr.sort()\nmax_gap = 0\nfor i in range(1, n):\n    gap = arr[i] - arr[i-1]\n    if gap > max_gap:\n        max_gap = gap\nend_gap = max(arr[0] - 0, l - arr[-1])\nd = max(end_gap, max_gap / 2.0)\nprint(\"{:.10f}\".format(d))",
-    "score": 1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 442,
         "completion_token_count": 143,

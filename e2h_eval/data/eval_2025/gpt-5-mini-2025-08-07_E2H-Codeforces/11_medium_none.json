@@ -15,7 +15,7 @@
     "response": "```python\nimport sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit()\nnums = list(map(int, data))\nres = []\nfor i in range(0, len(nums) // 8):\n    n, k, l, c, d, p, nl, np = nums[8*i:8*i+8]\n    total_drink = k * l\n    total_slices = c * d\n    total_toasts = min(total_drink // nl, total_slices, p // np)\n    res.append(str(total_toasts // n))\nsys.stdout.write(\"\\n\".join(res))\n```",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit()\nnums = list(map(int, data))\nres = []\nfor i in range(0, len(nums) // 8):\n    n, k, l, c, d, p, nl, np = nums[8*i:8*i+8]\n    total_drink = k * l\n    total_slices = c * d\n    total_toasts = min(total_drink // nl, total_slices, p // np)\n    res.append(str(total_toasts // n))\nsys.stdout.write(\"\\n\".join(res))",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 474,
         "completion_token_count": 780,

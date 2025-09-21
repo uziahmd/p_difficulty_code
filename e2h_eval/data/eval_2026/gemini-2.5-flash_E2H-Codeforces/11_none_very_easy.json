@@ -15,7 +15,7 @@
     "response": "```python\ndef solve():\n    n, k, l, c, d, p, nl, np = map(int, input().split())\n\n    # Calculate total milliliters of drink available\n    total_drink_ml = k * l\n\n    # Calculate total slices of lime available\n    total_lime_slices = c * d\n\n    # Calculate maximum toasts based on drink\n    max_toasts_drink = total_drink_ml // (n * nl)\n\n    # Calculate maximum toasts based on lime\n    max_toasts_lime = total_lime_slices // n\n\n    # Calculate maximum toasts based on salt\n    max_toasts_salt = p // (n * np)\n\n    # The number of toasts each friend can make is the minimum of these three\n    result = min(max_toasts_drink, max_toasts_lime, max_toasts_salt)\n\n    print(result)\n\nif __name__ == '__main__':\n    solve()\n```",
     "ground_truth": "N/A",
     "extracted_answer": "def solve():\n    n, k, l, c, d, p, nl, np = map(int, input().split())\n\n    # Calculate total milliliters of drink available\n    total_drink_ml = k * l\n\n    # Calculate total slices of lime available\n    total_lime_slices = c * d\n\n    # Calculate maximum toasts based on drink\n    max_toasts_drink = total_drink_ml // (n * nl)\n\n    # Calculate maximum toasts based on lime\n    max_toasts_lime = total_lime_slices // n\n\n    # Calculate maximum toasts based on salt\n    max_toasts_salt = p // (n * np)\n\n    # The number of toasts each friend can make is the minimum of these three\n    result = min(max_toasts_drink, max_toasts_lime, max_toasts_salt)\n\n    print(result)\n\nif __name__ == '__main__':\n    solve()",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 548,
         "completion_token_count": 216,

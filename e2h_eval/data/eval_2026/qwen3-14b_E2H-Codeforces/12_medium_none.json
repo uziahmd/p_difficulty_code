@@ -15,7 +15,7 @@
     "response": "\n\n```python\nn, m = map(int, input().split())\na = list(map(int, input().split()))\ncurrent = 1\ntotal = 0\nfor ai in a:\n    diff = (ai - current) % n\n    total += diff\n    current = ai\nprint(total)\n```",
     "ground_truth": "N/A",
     "extracted_answer": "n, m = map(int, input().split())\na = list(map(int, input().split()))\ncurrent = 1\ntotal = 0\nfor ai in a:\n    diff = (ai - current) % n\n    total += diff\n    current = ai\nprint(total)",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 500,
         "completion_token_count": 68,

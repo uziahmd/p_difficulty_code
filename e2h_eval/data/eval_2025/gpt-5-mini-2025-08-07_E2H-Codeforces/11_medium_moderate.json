@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = list(map(int, sys.stdin.read().strip().split()))\nif not data:\n    sys.exit()\nout = []\nif len(data) % 8 != 0:\n    # assume first line single test with 8 numbers; if not, try to use first 8\n    data = data[:8]\nfor i in range(0, len(data), 8):\n    n, k, l, c, d, p, nl, np = data[i:i+8]\n    drinks = (k * l) // nl\n    limes = (c * d)\n    salts = p // np\n    toasts = min(drinks, limes, salts) // n\n    out.append(str(toasts))\nsys.stdout.write(\"\\n\".join(out))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = list(map(int, sys.stdin.read().strip().split()))\nif not data:\n    sys.exit()\nout = []\nif len(data) % 8 != 0:\n    # assume first line single test with 8 numbers; if not, try to use first 8\n    data = data[:8]\nfor i in range(0, len(data), 8):\n    n, k, l, c, d, p, nl, np = data[i:i+8]\n    drinks = (k * l) // nl\n    limes = (c * d)\n    salts = p // np\n    toasts = min(drinks, limes, salts) // n\n    out.append(str(toasts))\nsys.stdout.write(\"\\n\".join(out))",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 483,
         "completion_token_count": 489,

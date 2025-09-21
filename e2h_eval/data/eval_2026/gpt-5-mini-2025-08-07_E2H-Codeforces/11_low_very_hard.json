@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\n\nvals = list(map(int, data))\nif len(vals) % 8 != 0:\n    # If input doesn't fit expected format, try to handle first 8 only\n    vals = vals[:8]\n\nout_lines = []\nfor i in range(0, len(vals), 8):\n    n, k, l, c, d, p, nl, np = vals[i:i+8]\n    total_drink = k * l\n    toasts_drink = total_drink // nl\n    toasts_lime = (c * d)\n    toasts_salt = p // np\n    total_toasts = min(toasts_drink, toasts_lime, toasts_salt)\n    out_lines.append(str(total_toasts // n))\n\nsys.stdout.write(\"\\n\".join(out_lines))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\n\nvals = list(map(int, data))\nif len(vals) % 8 != 0:\n    # If input doesn't fit expected format, try to handle first 8 only\n    vals = vals[:8]\n\nout_lines = []\nfor i in range(0, len(vals), 8):\n    n, k, l, c, d, p, nl, np = vals[i:i+8]\n    total_drink = k * l\n    toasts_drink = total_drink // nl\n    toasts_lime = (c * d)\n    toasts_salt = p // np\n    total_toasts = min(toasts_drink, toasts_lime, toasts_salt)\n    out_lines.append(str(total_toasts // n))\n\nsys.stdout.write(\"\\n\".join(out_lines))",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 483,
         "completion_token_count": 388,

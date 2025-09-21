@@ -15,7 +15,7 @@
     "response": "```python\ndef solve():\n    n, m = map(int, input().split())\n    a = list(map(int, input().split()))\n\n    current_house = 1\n    total_time = 0\n\n    for task_house in a:\n        if task_house >= current_house:\n            total_time += (task_house - current_house)\n        else:\n            total_time += (n - current_house + task_house)\n        current_house = task_house\n    \n    print(total_time)\n\nsolve()\n```",
     "ground_truth": "N/A",
     "extracted_answer": "def solve():\n    n, m = map(int, input().split())\n    a = list(map(int, input().split()))\n\n    current_house = 1\n    total_time = 0\n\n    for task_house in a:\n        if task_house >= current_house:\n            total_time += (task_house - current_house)\n        else:\n            total_time += (n - current_house + task_house)\n        current_house = task_house\n    \n    print(total_time)\n\nsolve()",
-    "score": -1,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 548,
         "completion_token_count": 130,

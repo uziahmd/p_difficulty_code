@@ -15,7 +15,7 @@
     "response": "\n\n```python\nn = int(input())\ngrid = [input().strip() for _ in range(n)]\n\n# Collect diagonal characters\ndiagonal_chars = set()\nother_chars = set()\n\nfor i in range(n):\n    for j in range(n):\n        if i == j or i + j == n - 1:\n            diagonal_chars.add(grid[i][j])\n        else:\n            other_chars.add(grid[i][j])\n\n# Check diagonals have the same character\nif len(diagonal_chars) != 1:\n    print(\"NO\")\nelse:\n    d_char = next(iter(diagonal_chars))\n    if len(other_chars) != 1 or next(iter(other_chars)) == d_char:\n        print(\"NO\")\n    else:\n        print(\"YES\")\n```",
     "ground_truth": "N/A",
     "extracted_answer": "n = int(input())\ngrid = [input().strip() for _ in range(n)]\n\n# Collect diagonal characters\ndiagonal_chars = set()\nother_chars = set()\n\nfor i in range(n):\n    for j in range(n):\n        if i == j or i + j == n - 1:\n            diagonal_chars.add(grid[i][j])\n        else:\n            other_chars.add(grid[i][j])\n\n# Check diagonals have the same character\nif len(diagonal_chars) != 1:\n    print(\"NO\")\nelse:\n    d_char = next(iter(diagonal_chars))\n    if len(other_chars) != 1 or next(iter(other_chars)) == d_char:\n        print(\"NO\")\n    else:\n        print(\"YES\")",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 444,
         "completion_token_count": 158,

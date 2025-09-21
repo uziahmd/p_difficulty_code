@@ -15,7 +15,7 @@
     "response": "\n\n```python\nn = int(input())\ngrid = [input().strip() for _ in range(n)]\n\ndiag_char = None\nnon_diag_char = None\n\n# Check diagonals and collect non-diagonal characters\ndiag_chars = set()\nnon_diag_chars = set()\n\nfor i in range(n):\n    for j in range(n):\n        if i == j or i + j == n - 1:\n            diag_chars.add(grid[i][j])\n        else:\n            non_diag_chars.add(grid[i][j])\n\n# Check if diagonals have only one unique character\nif len(diag_chars) != 1:\n    print(\"NO\")\nelse:\n    d_char = diag_chars.pop()\n    if len(non_diag_chars) != 1:\n        print(\"NO\")\n    else:\n        o_char = non_diag_chars.pop()\n        if d_char != o_char:\n            print(\"YES\")\n        else:\n            print(\"NO\")\n```",
     "ground_truth": "N/A",
     "extracted_answer": "n = int(input())\ngrid = [input().strip() for _ in range(n)]\n\ndiag_char = None\nnon_diag_char = None\n\n# Check diagonals and collect non-diagonal characters\ndiag_chars = set()\nnon_diag_chars = set()\n\nfor i in range(n):\n    for j in range(n):\n        if i == j or i + j == n - 1:\n            diag_chars.add(grid[i][j])\n        else:\n            non_diag_chars.add(grid[i][j])\n\n# Check if diagonals have only one unique character\nif len(diag_chars) != 1:\n    print(\"NO\")\nelse:\n    d_char = diag_chars.pop()\n    if len(non_diag_chars) != 1:\n        print(\"NO\")\n    else:\n        o_char = non_diag_chars.pop()\n        if d_char != o_char:\n            print(\"YES\")\n        else:\n            print(\"NO\")",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 435,
         "completion_token_count": 193,

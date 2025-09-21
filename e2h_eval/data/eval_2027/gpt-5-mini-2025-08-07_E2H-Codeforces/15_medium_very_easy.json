@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nn = int(data[0])\ns = data[1].strip()\nones = s.count('1')\nzeros = n - ones\nlow = 1 << ones\nhigh = (1 << n) - (1 << zeros) + 1\nprint(\" \".join(str(x) for x in range(low, high + 1)))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nn = int(data[0])\ns = data[1].strip()\nones = s.count('1')\nzeros = n - ones\nlow = 1 << ones\nhigh = (1 << n) - (1 << zeros) + 1\nprint(\" \".join(str(x) for x in range(low, high + 1)))",
-    "score": 1,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 712,
         "completion_token_count": 7907,

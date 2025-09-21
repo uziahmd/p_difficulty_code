@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nvals = list(map(int, data))\nout_lines = []\nif len(vals) % 8 != 0:\n    # assume single test with exactly 8 numbers; if not, trim or pad error\n    pass\nfor i in range(0, len(vals), 8):\n    n, k, l, c, d, p, nl, np = vals[i:i+8]\n    total_drink = k * l\n    toasts_by_drink = total_drink // nl\n    toasts_by_limes = c * d\n    toasts_by_salt = p // np\n    total_toasts_per_friend = min(toasts_by_drink, toasts_by_limes, toasts_by_salt) // n\n    out_lines.append(str(total_toasts_per_friend))\n\nsys.stdout.write(\"\\n\".join(out_lines))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nvals = list(map(int, data))\nout_lines = []\nif len(vals) % 8 != 0:\n    # assume single test with exactly 8 numbers; if not, trim or pad error\n    pass\nfor i in range(0, len(vals), 8):\n    n, k, l, c, d, p, nl, np = vals[i:i+8]\n    total_drink = k * l\n    toasts_by_drink = total_drink // nl\n    toasts_by_limes = c * d\n    toasts_by_salt = p // np\n    total_toasts_per_friend = min(toasts_by_drink, toasts_by_limes, toasts_by_salt) // n\n    out_lines.append(str(total_toasts_per_friend))\n\nsys.stdout.write(\"\\n\".join(out_lines))",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 483,
         "completion_token_count": 396,

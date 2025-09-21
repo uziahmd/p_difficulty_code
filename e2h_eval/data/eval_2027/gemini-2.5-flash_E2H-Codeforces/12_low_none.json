@@ -15,7 +15,7 @@
     "response": "```python\nimport sys\n\ndef solve():\n    n, m = map(int, sys.stdin.readline().split())\n    a = list(map(int, sys.stdin.readline().split()))\n\n    current_house = 1\n    total_time = 0\n\n    for target_house in a:\n        if target_house >= current_house:\n            # Move clockwise directly\n            total_time += (target_house - current_house)\n        else:\n            # Move clockwise past house n and then to target_house\n            total_time += (n - current_house + target_house)\n        \n        current_house = target_house\n    \n    sys.stdout.write(str(total_time) + '\\n')\n\nif __name__ == '__main__':\n    solve()\n\n```",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndef solve():\n    n, m = map(int, sys.stdin.readline().split())\n    a = list(map(int, sys.stdin.readline().split()))\n\n    current_house = 1\n    total_time = 0\n\n    for target_house in a:\n        if target_house >= current_house:\n            # Move clockwise directly\n            total_time += (target_house - current_house)\n        else:\n            # Move clockwise past house n and then to target_house\n            total_time += (n - current_house + target_house)\n        \n        current_house = target_house\n    \n    sys.stdout.write(str(total_time) + '\\n')\n\nif __name__ == '__main__':\n    solve()",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 538,
         "completion_token_count": 183,

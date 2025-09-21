@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\n# Input may contain multiple test cases concatenated as in the prompt example,\n# but original problem has single test. We handle both: if length==8 treat single, else treat each 8-tuple as a case.\nvals = list(map(int, data))\nout = []\nif len(vals) % 8 != 0:\n    # If not multiple of 8, try to process only the first 8\n    vals = vals[:8]\ncases = len(vals) // 8\nfor i in range(cases):\n    n, k, l, c, d, p, nl, np = vals[i*8:(i+1)*8]\n    total_drink = k * l\n    drink_toasts = total_drink // nl\n    lime_toasts = c * d\n    salt_toasts = p // np\n    per_friend = min(drink_toasts, lime_toasts, salt_toasts) // n\n    out.append(str(per_friend))\nsys.stdout.write(\"\\n\".join(out))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\n# Input may contain multiple test cases concatenated as in the prompt example,\n# but original problem has single test. We handle both: if length==8 treat single, else treat each 8-tuple as a case.\nvals = list(map(int, data))\nout = []\nif len(vals) % 8 != 0:\n    # If not multiple of 8, try to process only the first 8\n    vals = vals[:8]\ncases = len(vals) // 8\nfor i in range(cases):\n    n, k, l, c, d, p, nl, np = vals[i*8:(i+1)*8]\n    total_drink = k * l\n    drink_toasts = total_drink // nl\n    lime_toasts = c * d\n    salt_toasts = p // np\n    per_friend = min(drink_toasts, lime_toasts, salt_toasts) // n\n    out.append(str(per_friend))\nsys.stdout.write(\"\\n\".join(out))",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 482,
         "completion_token_count": 240,

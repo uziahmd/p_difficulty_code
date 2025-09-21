@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\n\nout_lines = []\ni = 0\nwhile i < len(data):\n    n = int(data[i]); i += 1\n    s = data[i].strip(); i += 1\n\n    def compute_min(s_bits, n):\n        cur = 1\n        for idx in range(n):\n            if s_bits[idx] == '1':\n                cur *= 2\n            else:\n                cur = cur\n        return cur\n\n    L = compute_min(s, n)\n    # flip bits\n    s_flipped = ''.join('1' if ch == '0' else '0' for ch in s)\n    L_flipped = compute_min(s_flipped, n)\n    N = 1 << n\n    R = N + 1 - L_flipped\n\n    res = ' '.join(str(x) for x in range(L, R + 1))\n    out_lines.append(res)\n\nsys.stdout.write(\"\\n\".join(out_lines))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\n\nout_lines = []\ni = 0\nwhile i < len(data):\n    n = int(data[i]); i += 1\n    s = data[i].strip(); i += 1\n\n    def compute_min(s_bits, n):\n        cur = 1\n        for idx in range(n):\n            if s_bits[idx] == '1':\n                cur *= 2\n            else:\n                cur = cur\n        return cur\n\n    L = compute_min(s, n)\n    # flip bits\n    s_flipped = ''.join('1' if ch == '0' else '0' for ch in s)\n    L_flipped = compute_min(s_flipped, n)\n    N = 1 << n\n    R = N + 1 - L_flipped\n\n    res = ' '.join(str(x) for x in range(L, R + 1))\n    out_lines.append(res)\n\nsys.stdout.write(\"\\n\".join(out_lines))",
-    "score": 1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 711,
         "completion_token_count": 8611,

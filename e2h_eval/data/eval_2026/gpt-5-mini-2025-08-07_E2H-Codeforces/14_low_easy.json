@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nm = int(data[0])\n\ndef zeros(n):\n    cnt = 0\n    p = 5\n    while p <= n:\n        cnt += n // p\n        p *= 5\n    return cnt\n\nlow = 0\nhigh = 5 * (m + 1) + 5\nwhile low < high:\n    mid = (low + high) // 2\n    if zeros(mid) >= m:\n        high = mid\n    else:\n        low = mid + 1\n\nif zeros(low) != m:\n    print(0)\nelse:\n    res = [str(low + i) for i in range(5)]\n    print(5)\n    print(\" \".join(res))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nm = int(data[0])\n\ndef zeros(n):\n    cnt = 0\n    p = 5\n    while p <= n:\n        cnt += n // p\n        p *= 5\n    return cnt\n\nlow = 0\nhigh = 5 * (m + 1) + 5\nwhile low < high:\n    mid = (low + high) // 2\n    if zeros(mid) >= m:\n        high = mid\n    else:\n        low = mid + 1\n\nif zeros(low) != m:\n    print(0)\nelse:\n    res = [str(low + i) for i in range(5)]\n    print(5)\n    print(\" \".join(res))",
-    "score": 1,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 348,
         "completion_token_count": 434,

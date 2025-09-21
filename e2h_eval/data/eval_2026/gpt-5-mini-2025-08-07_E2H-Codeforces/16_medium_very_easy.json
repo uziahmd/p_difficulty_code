@@ -15,7 +15,7 @@
     "response": "import sys\n\ndef main():\n    data = list(map(int, sys.stdin.read().strip().split()))\n    if not data:\n        return\n    it = iter(data)\n    x1 = next(it); y1 = next(it)\n    x2 = next(it); y2 = next(it)\n    n = next(it)\n    cnt = 0\n    for _ in range(n):\n        a = next(it); b = next(it); c = next(it)\n        v1 = a*x1 + b*y1 + c\n        v2 = a*x2 + b*y2 + c\n        if v1 * v2 < 0:\n            cnt += 1\n    print(cnt)\n\nif __name__ == \"__main__\":\n    main()",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndef main():\n    data = list(map(int, sys.stdin.read().strip().split()))\n    if not data:\n        return\n    it = iter(data)\n    x1 = next(it); y1 = next(it)\n    x2 = next(it); y2 = next(it)\n    n = next(it)\n    cnt = 0\n    for _ in range(n):\n        a = next(it); b = next(it); c = next(it)\n        v1 = a*x1 + b*y1 + c\n        v2 = a*x2 + b*y2 + c\n        if v1 * v2 < 0:\n            cnt += 1\n    print(cnt)\n\nif __name__ == \"__main__\":\n    main()",
-    "score": 0,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 609,
         "completion_token_count": 1250,

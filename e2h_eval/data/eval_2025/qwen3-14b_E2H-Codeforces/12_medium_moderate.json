@@ -15,7 +15,7 @@
     "response": "\n\n```python\nn, m = map(int, input().split())\na_list = list(map(int, input().split()))\ncurrent = 1\ntotal_time = 0\nfor a in a_list:\n    delta = (a - current) % n\n    total_time += delta\n    current = a\nprint(total_time)\n```",
     "ground_truth": "N/A",
     "extracted_answer": "n, m = map(int, input().split())\na_list = list(map(int, input().split()))\ncurrent = 1\ntotal_time = 0\nfor a in a_list:\n    delta = (a - current) % n\n    total_time += delta\n    current = a\nprint(total_time)",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 509,
         "completion_token_count": 73,

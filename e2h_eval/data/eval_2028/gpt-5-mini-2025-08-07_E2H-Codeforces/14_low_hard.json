@@ -15,7 +15,7 @@
     "response": "import sys\n\ndef zeros(n):\n    cnt = 0\n    d = 5\n    while d <= n:\n        cnt += n // d\n        d *= 5\n    return cnt\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    m = int(data[0])\n    lo = 0\n    hi = 5 * (m + 1)\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if zeros(mid) >= m:\n            hi = mid\n        else:\n            lo = mid + 1\n    if zeros(lo) != m:\n        print(0)\n    else:\n        nums = [str(lo + i) for i in range(5)]\n        print(5)\n        print(\" \".join(nums))\n\nif __name__ == \"__main__\":\n    main()",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndef zeros(n):\n    cnt = 0\n    d = 5\n    while d <= n:\n        cnt += n // d\n        d *= 5\n    return cnt\n\ndef main():\n    data = sys.stdin.read().strip().split()\n    if not data:\n        return\n    m = int(data[0])\n    lo = 0\n    hi = 5 * (m + 1)\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if zeros(mid) >= m:\n            hi = mid\n        else:\n            lo = mid + 1\n    if zeros(lo) != m:\n        print(0)\n    else:\n        nums = [str(lo + i) for i in range(5)]\n        print(5)\n        print(\" \".join(nums))\n\nif __name__ == \"__main__\":\n    main()",
-    "score": 1,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 348,
         "completion_token_count": 577,

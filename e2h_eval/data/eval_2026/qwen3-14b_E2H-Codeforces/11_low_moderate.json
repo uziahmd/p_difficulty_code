@@ -15,7 +15,7 @@
     "response": "\n\n```python\n# Read input from stdin\nimport sys\n\ndef main():\n    # Read the input line and split into integers\n    input_line = sys.stdin.read().strip()\n    n, k, l, c, d, p, nl, np = map(int, input_line.split())\n    \n    # Calculate total resources available\n    total_drink = k * l\n    total_lime_slices = c * d\n    total_salt = p\n    \n    # Calculate maximum toasts possible for each resource\n    max_by_drink = total_drink // (n * nl)\n    max_by_lime = total_lime_slices // n\n    max_by_salt = total_salt // (n * np)\n    \n    # The answer is the minimum of the three\n    print(min(max_by_drink, max_by_lime, max_by_salt))\n\nif __name__ == \"__main__\":\n    main()\n```",
     "ground_truth": "N/A",
     "extracted_answer": "# Read input from stdin\nimport sys\n\ndef main():\n    # Read the input line and split into integers\n    input_line = sys.stdin.read().strip()\n    n, k, l, c, d, p, nl, np = map(int, input_line.split())\n    \n    # Calculate total resources available\n    total_drink = k * l\n    total_lime_slices = c * d\n    total_salt = p\n    \n    # Calculate maximum toasts possible for each resource\n    max_by_drink = total_drink // (n * nl)\n    max_by_lime = total_lime_slices // n\n    max_by_salt = total_salt // (n * np)\n    \n    # The answer is the minimum of the three\n    print(min(max_by_drink, max_by_lime, max_by_salt))\n\nif __name__ == \"__main__\":\n    main()",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 538,
         "completion_token_count": 189,

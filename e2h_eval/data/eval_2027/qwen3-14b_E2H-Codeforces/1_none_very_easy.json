@@ -15,7 +15,7 @@
     "response": "```python\ndef count_gilded_cells(w, h, k):\n    total = 0\n    for i in range(1, k + 1):\n        width = w - 4 * (i - 1)\n        height = h - 4 * (i - 1)\n        perimeter = 2 * (width + height - 2)\n        total += perimeter\n    return total\n\n# Read input from stdin\nimport sys\n\ninput_line = sys.stdin.read().strip()\ncases = input_line.split('\\n')\n\nfor case in cases:\n    if case:\n        w, h, k = map(int, case.split())\n        print(count_gilded_cells(w, h, k))\n```",
     "ground_truth": "N/A",
     "extracted_answer": "def count_gilded_cells(w, h, k):\n    total = 0\n    for i in range(1, k + 1):\n        width = w - 4 * (i - 1)\n        height = h - 4 * (i - 1)\n        perimeter = 2 * (width + height - 2)\n        total += perimeter\n    return total\n\n# Read input from stdin\nimport sys\n\ninput_line = sys.stdin.read().strip()\ncases = input_line.split('\\n')\n\nfor case in cases:\n    if case:\n        w, h, k = map(int, case.split())\n        print(count_gilded_cells(w, h, k))",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 423,
         "completion_token_count": 146,

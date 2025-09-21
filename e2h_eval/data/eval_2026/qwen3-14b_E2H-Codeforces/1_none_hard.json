@@ -15,7 +15,7 @@
     "response": "```python\ndef count_gilded_cells(w, h, k):\n    total = 0\n    for i in range(1, k + 1):\n        width = w - 4 * (i - 1)\n        height = h - 4 * (i - 1)\n        if width <= 0 or height <= 0:\n            break\n        perimeter = 2 * (width + height - 2)\n        total += perimeter\n    return total\n\nimport sys\n\ndef main():\n    input_line = sys.stdin.read().strip()\n    cases = input_line.split('\\n')\n    for case in cases:\n        if case:\n            w, h, k = map(int, case.split())\n            print(count_gilded_cells(w, h, k))\n\nif __name__ == \"__main__\":\n    main()\n```",
     "ground_truth": "N/A",
     "extracted_answer": "def count_gilded_cells(w, h, k):\n    total = 0\n    for i in range(1, k + 1):\n        width = w - 4 * (i - 1)\n        height = h - 4 * (i - 1)\n        if width <= 0 or height <= 0:\n            break\n        perimeter = 2 * (width + height - 2)\n        total += perimeter\n    return total\n\nimport sys\n\ndef main():\n    input_line = sys.stdin.read().strip()\n    cases = input_line.split('\\n')\n    for case in cases:\n        if case:\n            w, h, k = map(int, case.split())\n            print(count_gilded_cells(w, h, k))\n\nif __name__ == \"__main__\":\n    main()",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 422,
         "completion_token_count": 172,

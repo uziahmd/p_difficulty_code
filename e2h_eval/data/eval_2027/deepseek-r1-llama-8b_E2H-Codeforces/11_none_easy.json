@@ -16,7 +16,7 @@
     "response": "```python\ndef soft_drinking():\n    n, k, l, c, d, p, nl, np = map(int, input().split())\n\n    total_drink = k * l\n    total_limes = c * d\n    total_salt = p\n\n    max_toasts_per_person = min(total_drink // (nl * n), total_limes // n, total_salt // (np * n))\n\n    return str(max_toasts_per_person)\n\n\nif __name__ == \"__main__\":\n    for _ in range(1):\n        print(soft_drinking())\n```\n\nThis Python script reads the input from standard input, calculates the maximum number of toasts each friend can make based on the available drink, limes, and salt, and then prints the result to standard output. It uses the built-in `min` function to find the smallest number of toasts possible based on the three constraints. The result is then converted to a string before being printed.",
     "ground_truth": "N/A",
     "extracted_answer": "def soft_drinking():\n    n, k, l, c, d, p, nl, np = map(int, input().split())\n\n    total_drink = k * l\n    total_limes = c * d\n    total_salt = p\n\n    max_toasts_per_person = min(total_drink // (nl * n), total_limes // n, total_salt // (np * n))\n\n    return str(max_toasts_per_person)\n\n\nif __name__ == \"__main__\":\n    for _ in range(1):\n        print(soft_drinking())",
-    "score": 1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 513,
         "completion_token_count": 200,

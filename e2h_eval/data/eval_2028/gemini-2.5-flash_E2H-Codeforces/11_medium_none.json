@@ -15,7 +15,7 @@
     "response": "```python\nimport sys\n\ndef solve():\n    line = sys.stdin.readline().split()\n    n, k, l, c, d, p, nl, np = map(int, line)\n\n    toasts_from_drink = (k * l) // nl\n    toasts_from_limes = (c * d)\n    toasts_from_salt = p // np\n\n    total_individual_toasts_possible = min(toasts_from_drink, toasts_from_limes, toasts_from_salt)\n\n    toasts_per_friend = total_individual_toasts_possible // n\n\n    print(toasts_per_friend)\n\nsolve()\n```",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndef solve():\n    line = sys.stdin.readline().split()\n    n, k, l, c, d, p, nl, np = map(int, line)\n\n    toasts_from_drink = (k * l) // nl\n    toasts_from_limes = (c * d)\n    toasts_from_salt = p // np\n\n    total_individual_toasts_possible = min(toasts_from_drink, toasts_from_limes, toasts_from_salt)\n\n    toasts_per_friend = total_individual_toasts_possible // n\n\n    print(toasts_per_friend)\n\nsolve()",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 538,
         "completion_token_count": 156,

@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\n\nout_lines = []\ni = 0\nwhile i < len(data):\n    n = int(data[i]); i += 1\n    l = int(data[i]); i += 1\n    a = list(map(int, data[i:i+n])); i += n\n    a.sort()\n    max_gap = 0.0\n    for j in range(1, n):\n        gap = a[j] - a[j-1]\n        if gap > max_gap:\n            max_gap = gap\n    left = a[0] - 0\n    right = l - a[-1]\n    d = max(max_gap / 2.0, left, right)\n    out_lines.append(\"{:.10f}\".format(d))\n\nsys.stdout.write(\"\\n\".join(out_lines))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\n\nout_lines = []\ni = 0\nwhile i < len(data):\n    n = int(data[i]); i += 1\n    l = int(data[i]); i += 1\n    a = list(map(int, data[i:i+n])); i += n\n    a.sort()\n    max_gap = 0.0\n    for j in range(1, n):\n        gap = a[j] - a[j-1]\n        if gap > max_gap:\n            max_gap = gap\n    left = a[0] - 0\n    right = l - a[-1]\n    d = max(max_gap / 2.0, left, right)\n    out_lines.append(\"{:.10f}\".format(d))\n\nsys.stdout.write(\"\\n\".join(out_lines))",
-    "score": 1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 442,
         "completion_token_count": 383,

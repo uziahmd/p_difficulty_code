@@ -15,7 +15,7 @@
     "response": "```python\ndef solve():\n    w, h, k = map(int, input().split())\n\n    total_gilded_cells = 0\n\n    for i in range(k):\n        current_w = w - 4 * i\n        current_h = h - 4 * i\n\n        if current_w <= 0 or current_h <= 0:\n            break\n\n        # Calculate cells for the current ring\n        # Perimeter of the current rectangle (current_w * current_h)\n        # 2 * (current_w + current_h - 2)\n        # This formula counts each corner cell once.\n        gilded_cells_in_current_ring = 2 * (current_w + current_h - 2)\n        total_gilded_cells += gilded_cells_in_current_ring\n\n    print(total_gilded_cells)\n\nif __name__ == '__main__':\n    solve()\n```",
     "ground_truth": "N/A",
     "extracted_answer": "def solve():\n    w, h, k = map(int, input().split())\n\n    total_gilded_cells = 0\n\n    for i in range(k):\n        current_w = w - 4 * i\n        current_h = h - 4 * i\n\n        if current_w <= 0 or current_h <= 0:\n            break\n\n        # Calculate cells for the current ring\n        # Perimeter of the current rectangle (current_w * current_h)\n        # 2 * (current_w + current_h - 2)\n        # This formula counts each corner cell once.\n        gilded_cells_in_current_ring = 2 * (current_w + current_h - 2)\n        total_gilded_cells += gilded_cells_in_current_ring\n\n    print(total_gilded_cells)\n\nif __name__ == '__main__':\n    solve()",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 423,
         "completion_token_count": 213,

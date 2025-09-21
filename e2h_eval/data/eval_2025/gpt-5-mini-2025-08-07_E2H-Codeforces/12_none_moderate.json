@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nit = iter(data)\nn = int(next(it))\nm = int(next(it))\npos = 1\ntime = 0\nfor _ in range(m):\n    a = int(next(it))\n    if a >= pos:\n        time += a - pos\n    else:\n        time += n - (pos - a)\n    pos = a\nprint(time)",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nit = iter(data)\nn = int(next(it))\nm = int(next(it))\npos = 1\ntime = 0\nfor _ in range(m):\n    a = int(next(it))\n    if a >= pos:\n        time += a - pos\n    else:\n        time += n - (pos - a)\n    pos = a\nprint(time)",
-    "score": 1,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 474,
         "completion_token_count": 103,

@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit()\nm = int(data[0])\n\ndef zeros(n):\n    cnt = 0\n    d = 5\n    while d <= n:\n        cnt += n // d\n        d *= 5\n    return cnt\n\nif m == 0:\n    print(4)\n    print(\"1 2 3 4\")\n    sys.exit()\n\nlow = 0\nhigh = 5 * (m + 1)\nwhile low < high:\n    mid = (low + high) // 2\n    if zeros(mid) < m:\n        low = mid + 1\n    else:\n        high = mid\nif zeros(low) != m:\n    print(0)\nelse:\n    print(5)\n    print(\" \".join(str(low + i) for i in range(5)))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit()\nm = int(data[0])\n\ndef zeros(n):\n    cnt = 0\n    d = 5\n    while d <= n:\n        cnt += n // d\n        d *= 5\n    return cnt\n\nif m == 0:\n    print(4)\n    print(\"1 2 3 4\")\n    sys.exit()\n\nlow = 0\nhigh = 5 * (m + 1)\nwhile low < high:\n    mid = (low + high) // 2\n    if zeros(mid) < m:\n        low = mid + 1\n    else:\n        high = mid\nif zeros(low) != m:\n    print(0)\nelse:\n    print(5)\n    print(\" \".join(str(low + i) for i in range(5)))",
-    "score": 0,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 348,
         "completion_token_count": 1216,

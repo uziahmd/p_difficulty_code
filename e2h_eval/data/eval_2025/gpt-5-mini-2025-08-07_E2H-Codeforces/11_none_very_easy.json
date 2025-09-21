@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\n# Determine if input is single test or multiple tests: Codeforces problem provides single line.\n# But sample shows multiple lines; handle both: if number of tokens is multiple of 8, process each group.\nvals = list(map(int, data))\nif len(vals) % 8 != 0:\n    # If not multiple of 8, assume first 8 are the case\n    vals = vals[:8]\ncases = [vals[i:i+8] for i in range(0, len(vals), 8)]\nres = []\nfor n,k,l,c,d,p,nl,np in cases:\n    total_drink = k * l\n    toasts_drink = total_drink // nl\n    toasts_lime = c * d\n    toasts_salt = p // np\n    max_toasts_each = min(toasts_drink, toasts_lime, toasts_salt) // n\n    res.append(str(max_toasts_each))\nsys.stdout.write(\"\\n\".join(res))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\n# Determine if input is single test or multiple tests: Codeforces problem provides single line.\n# But sample shows multiple lines; handle both: if number of tokens is multiple of 8, process each group.\nvals = list(map(int, data))\nif len(vals) % 8 != 0:\n    # If not multiple of 8, assume first 8 are the case\n    vals = vals[:8]\ncases = [vals[i:i+8] for i in range(0, len(vals), 8)]\nres = []\nfor n,k,l,c,d,p,nl,np in cases:\n    total_drink = k * l\n    toasts_drink = total_drink // nl\n    toasts_lime = c * d\n    toasts_salt = p // np\n    max_toasts_each = min(toasts_drink, toasts_lime, toasts_salt) // n\n    res.append(str(max_toasts_each))\nsys.stdout.write(\"\\n\".join(res))",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 483,
         "completion_token_count": 236,

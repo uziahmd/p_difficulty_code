@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nnums = list(map(int, data))\nif len(nums) % 8 != 0:\n    # If input is a single line with 8 numbers but extra newlines, still handled.\n    pass\n\nout_lines = []\nfor i in range(0, len(nums), 8):\n    n, k, l, c, d, p, nl, np = nums[i:i+8]\n    total_drink = k * l\n    drink_toasts = total_drink // nl\n    lime_slices = c * d\n    salt_toasts = p // np\n    total_possible = min(drink_toasts, lime_slices, salt_toasts)\n    per_person = total_possible // n\n    out_lines.append(str(per_person))\n\nsys.stdout.write(\"\\n\".join(out_lines))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nnums = list(map(int, data))\nif len(nums) % 8 != 0:\n    # If input is a single line with 8 numbers but extra newlines, still handled.\n    pass\n\nout_lines = []\nfor i in range(0, len(nums), 8):\n    n, k, l, c, d, p, nl, np = nums[i:i+8]\n    total_drink = k * l\n    drink_toasts = total_drink // nl\n    lime_slices = c * d\n    salt_toasts = p // np\n    total_possible = min(drink_toasts, lime_slices, salt_toasts)\n    per_person = total_possible // n\n    out_lines.append(str(per_person))\n\nsys.stdout.write(\"\\n\".join(out_lines))",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 483,
         "completion_token_count": 386,

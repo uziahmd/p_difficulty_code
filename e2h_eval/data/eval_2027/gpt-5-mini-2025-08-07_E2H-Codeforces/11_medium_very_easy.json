@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = list(map(int, sys.stdin.read().split()))\nif not data:\n    sys.exit(0)\n\nout_lines = []\nif (len(data) - 1) % 8 == 0 and data[0] == (len(data) - 1) // 8:\n    idx = 1\n    cases = data[0]\nelif len(data) % 8 == 0:\n    idx = 0\n    cases = len(data) // 8\nelse:\n    # fallback: use first 8 numbers as one case\n    idx = 0\n    cases = 1\n\nfor _ in range(cases):\n    n, k, l, c, d, p, nl, np = data[idx:idx+8]\n    idx += 8\n    drink_toasts = (k * l) // nl\n    lime_toasts = (c * d)\n    salt_toasts = p // np\n    total_toasts_per_friend = min(drink_toasts, lime_toasts, salt_toasts) // n\n    out_lines.append(str(total_toasts_per_friend))\n\nsys.stdout.write(\"\\n\".join(out_lines))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = list(map(int, sys.stdin.read().split()))\nif not data:\n    sys.exit(0)\n\nout_lines = []\nif (len(data) - 1) % 8 == 0 and data[0] == (len(data) - 1) // 8:\n    idx = 1\n    cases = data[0]\nelif len(data) % 8 == 0:\n    idx = 0\n    cases = len(data) // 8\nelse:\n    # fallback: use first 8 numbers as one case\n    idx = 0\n    cases = 1\n\nfor _ in range(cases):\n    n, k, l, c, d, p, nl, np = data[idx:idx+8]\n    idx += 8\n    drink_toasts = (k * l) // nl\n    lime_toasts = (c * d)\n    salt_toasts = p // np\n    total_toasts_per_friend = min(drink_toasts, lime_toasts, salt_toasts) // n\n    out_lines.append(str(total_toasts_per_friend))\n\nsys.stdout.write(\"\\n\".join(out_lines))",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 483,
         "completion_token_count": 953,

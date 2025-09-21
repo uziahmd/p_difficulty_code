@@ -15,7 +15,7 @@
     "response": "I'm sorry — I wasn't able to produce a correct and reliable solution within the time available.",
     "ground_truth": "N/A",
     "extracted_answer": "I'm sorry — I wasn't able to produce a correct and reliable solution within the time available.",
-    "score": 1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 712,
         "completion_token_count": 5272,

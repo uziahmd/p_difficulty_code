@@ -15,7 +15,7 @@
     "response": "import sys\nimport re\n\ndata = sys.stdin.read()\nnums = list(map(int, re.findall(r'-?\\d+', data)))\nout_lines = []\nfor i in range(0, len(nums)//8 * 8, 8):\n    n, k, l, c, d, p, nl, np = nums[i:i+8]\n    total_drink = k * l\n    toasts_by_drink = total_drink // nl\n    toasts_by_lime = c * d\n    toasts_by_salt = p // np\n    total_per_friend = min(toasts_by_drink, toasts_by_lime, toasts_by_salt) // n\n    out_lines.append(str(total_per_friend))\n\nif out_lines:\n    sys.stdout.write(\"\\n\".join(out_lines))\nelse:\n    # If no valid groups, do nothing (or print 0)\n    pass",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\nimport re\n\ndata = sys.stdin.read()\nnums = list(map(int, re.findall(r'-?\\d+', data)))\nout_lines = []\nfor i in range(0, len(nums)//8 * 8, 8):\n    n, k, l, c, d, p, nl, np = nums[i:i+8]\n    total_drink = k * l\n    toasts_by_drink = total_drink // nl\n    toasts_by_lime = c * d\n    toasts_by_salt = p // np\n    total_per_friend = min(toasts_by_drink, toasts_by_lime, toasts_by_salt) // n\n    out_lines.append(str(total_per_friend))\n\nif out_lines:\n    sys.stdout.write(\"\\n\".join(out_lines))\nelse:\n    # If no valid groups, do nothing (or print 0)\n    pass",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 482,
         "completion_token_count": 768,

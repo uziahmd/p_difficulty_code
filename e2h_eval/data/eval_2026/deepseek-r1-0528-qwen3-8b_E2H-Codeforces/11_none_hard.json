@@ -15,7 +15,7 @@
     "response": "```python\n# Read input from stdin\nn, k, l, c, d, p, nl, np = map(int, input().split())\n\n# Calculate total drink, lime slices, and salt\ntotal_drink = k * l\ntotal_lime_slices = c * d\ntotal_salt = p\n\n# Calculate how many toasts can be made based on each resource\ntoasts_by_drink = total_drink // nl\ntoasts_by_lime = total_lime_slices // n\ntoasts_by_salt = total_salt // np\n\n# The answer is the minimum of the three values\nprint(min(toasts_by_drink, toasts_by_lime, toasts_by_salt))\n```",
     "ground_truth": "N/A",
     "extracted_answer": "# Read input from stdin\nn, k, l, c, d, p, nl, np = map(int, input().split())\n\n# Calculate total drink, lime slices, and salt\ntotal_drink = k * l\ntotal_lime_slices = c * d\ntotal_salt = p\n\n# Calculate how many toasts can be made based on each resource\ntoasts_by_drink = total_drink // nl\ntoasts_by_lime = total_lime_slices // n\ntoasts_by_salt = total_salt // np\n\n# The answer is the minimum of the three values\nprint(min(toasts_by_drink, toasts_by_lime, toasts_by_salt))",
-    "score": 1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 541,
         "completion_token_count": 146,

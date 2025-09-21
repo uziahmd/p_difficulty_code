@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nidx = 0\nout_lines = []\nwhile idx + 6 <= len(data):\n    x1 = int(data[idx]); y1 = int(data[idx+1]); idx += 2\n    x2 = int(data[idx]); y2 = int(data[idx+1]); idx += 2\n    n = int(data[idx]); idx += 1\n    if idx + 3*n > len(data):\n        break\n    cnt = 0\n    for _ in range(n):\n        a = int(data[idx]); b = int(data[idx+1]); c = int(data[idx+2]); idx += 3\n        v1 = a*x1 + b*y1 + c\n        v2 = a*x2 + b*y2 + c\n        if v1 < 0 and v2 > 0 or v1 > 0 and v2 < 0:\n            cnt += 1\n    out_lines.append(str(cnt))\n\nsys.stdout.write(\"\\n\".join(out_lines))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nidx = 0\nout_lines = []\nwhile idx + 6 <= len(data):\n    x1 = int(data[idx]); y1 = int(data[idx+1]); idx += 2\n    x2 = int(data[idx]); y2 = int(data[idx+1]); idx += 2\n    n = int(data[idx]); idx += 1\n    if idx + 3*n > len(data):\n        break\n    cnt = 0\n    for _ in range(n):\n        a = int(data[idx]); b = int(data[idx+1]); c = int(data[idx+2]); idx += 3\n        v1 = a*x1 + b*y1 + c\n        v2 = a*x2 + b*y2 + c\n        if v1 < 0 and v2 > 0 or v1 > 0 and v2 < 0:\n            cnt += 1\n    out_lines.append(str(cnt))\n\nsys.stdout.write(\"\\n\".join(out_lines))",
-    "score": 0,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 609,
         "completion_token_count": 1195,

@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = [line.strip() for line in sys.stdin.read().strip().splitlines() if line.strip()]\nif not data:\n    sys.exit()\nout = []\nfor line in data:\n    parts = list(map(int, line.split()))\n    if len(parts) < 8:\n        continue\n    n, k, l, c, d, p, nl, np = parts[:8]\n    total_drink = k * l\n    drink_toasts = total_drink // nl\n    lime_toasts = c * d\n    salt_toasts = p // np\n    per_friend = min(drink_toasts, lime_toasts, salt_toasts) // n\n    out.append(str(per_friend))\nsys.stdout.write(\"\\n\".join(out))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = [line.strip() for line in sys.stdin.read().strip().splitlines() if line.strip()]\nif not data:\n    sys.exit()\nout = []\nfor line in data:\n    parts = list(map(int, line.split()))\n    if len(parts) < 8:\n        continue\n    n, k, l, c, d, p, nl, np = parts[:8]\n    total_drink = k * l\n    drink_toasts = total_drink // nl\n    lime_toasts = c * d\n    salt_toasts = p // np\n    per_friend = min(drink_toasts, lime_toasts, salt_toasts) // n\n    out.append(str(per_friend))\nsys.stdout.write(\"\\n\".join(out))",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 474,
         "completion_token_count": 293,

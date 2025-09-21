@@ -16,7 +16,7 @@
     "response": "```python\nimport sys\n\ndef soft_drinking():\n    n, k, l, c, d, p, nl, np = map(int, input().split())\n\n    # Calculate the total amount of each resource\n    drink_total = k * l\n    lime_total = c * d\n    salt_total = p\n\n    # Calculate the maximum number of toasts for each resource\n    max_toasts_drink = drink_total // (n * nl)\n    max_toasts_lime = lime_total // n\n    max_toasts_salt = salt_total // (n * np)\n\n    # Return the minimum of the three maximums\n    return min(max_toasts_drink, max_toasts_lime, max_toasts_salt)\n\nif __name__ == \"__main__\":\n    t = 1\n    for _ in range(t):\n        print(soft_drinking())\n```\n\nThis script reads the input from standard input, splits it into integers, and then calculates the maximum number of toasts for each resource. It returns the minimum of the three maximums, which is the final answer.\n\nTo run this script, save it to a file (e.g., `soft_drinking.py`), and then run it using Python:\n\n```bash\npython soft_drinking.py\n```\n\nMake sure to provide the input to the script through standard input. If you want to test the script with the example inputs provided in the problem statement, you can use the following commands:\n\n```bash\necho \"3 4 5 10 8 100 3 1\" | python soft_drinking.py\necho \"5 100 10 1 19 90 4 3\" | python soft_drinking.py\necho \"10 1000 1000 25 23 1 50 1\" | python soft_drinking.py\n```",
     "ground_truth": "N/A",
     "extracted_answer": "bash\necho \"3 4 5 10 8 100 3 1\" | python soft_drinking.py\necho \"5 100 10 1 19 90 4 3\" | python soft_drinking.py\necho \"10 1000 1000 25 23 1 50 1\" | python soft_drinking.py",
-    "score": 1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 513,
         "completion_token_count": 383,

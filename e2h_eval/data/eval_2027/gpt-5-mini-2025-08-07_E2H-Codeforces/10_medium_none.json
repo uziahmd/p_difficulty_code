@@ -15,7 +15,7 @@
     "response": "import sys,ast\ndata=sys.stdin.read().strip()\ntry:\n    names=ast.literal_eval(data)\n    if isinstance(names,str):\n        names=[names]\nexcept:\n    names=[data]\nres=[\"false\"]*len(names)\nprint(str(res))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys,ast\ndata=sys.stdin.read().strip()\ntry:\n    names=ast.literal_eval(data)\n    if isinstance(names,str):\n        names=[names]\nexcept:\n    names=[data]\nres=[\"false\"]*len(names)\nprint(str(res))",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 494,
         "completion_token_count": 3578,

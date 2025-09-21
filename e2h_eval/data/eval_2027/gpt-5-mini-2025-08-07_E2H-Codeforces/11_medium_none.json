@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = list(map(int, sys.stdin.read().split()))\nif not data:\n    sys.exit(0)\n\nout = []\nnvals = len(data)\n\ndef solve_chunk(chunk):\n    n, k, l, c, d, p, nl, np = chunk\n    total_drink = k * l\n    drink_toasts = total_drink // nl\n    lime_toasts = c * d\n    salt_toasts = p // np\n    total = min(drink_toasts, lime_toasts, salt_toasts)\n    return str(total // n)\n\nif nvals % 8 == 0:\n    for i in range(0, nvals, 8):\n        out.append(solve_chunk(data[i:i+8]))\nelse:\n    T = data[0]\n    if 1 + T * 8 == nvals:\n        idx = 1\n        for _ in range(T):\n            out.append(solve_chunk(data[idx:idx+8]))\n            idx += 8\n    else:\n        out.append(solve_chunk(data[:8]))\n\nsys.stdout.write(\"\\n\".join(out))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = list(map(int, sys.stdin.read().split()))\nif not data:\n    sys.exit(0)\n\nout = []\nnvals = len(data)\n\ndef solve_chunk(chunk):\n    n, k, l, c, d, p, nl, np = chunk\n    total_drink = k * l\n    drink_toasts = total_drink // nl\n    lime_toasts = c * d\n    salt_toasts = p // np\n    total = min(drink_toasts, lime_toasts, salt_toasts)\n    return str(total // n)\n\nif nvals % 8 == 0:\n    for i in range(0, nvals, 8):\n        out.append(solve_chunk(data[i:i+8]))\nelse:\n    T = data[0]\n    if 1 + T * 8 == nvals:\n        idx = 1\n        for _ in range(T):\n            out.append(solve_chunk(data[idx:idx+8]))\n            idx += 8\n    else:\n        out.append(solve_chunk(data[:8]))\n\nsys.stdout.write(\"\\n\".join(out))",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 474,
         "completion_token_count": 942,

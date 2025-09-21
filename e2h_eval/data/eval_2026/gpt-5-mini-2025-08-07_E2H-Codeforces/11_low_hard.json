@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = list(map(int, sys.stdin.read().strip().split()))\nif not data:\n    sys.exit(0)\nout_lines = []\nif len(data) % 8 != 0:\n    # If input is a single line with 8 numbers followed by newlines like the provided example format,\n    # try to parse lines instead.\n    lines = [line.strip() for line in sys.stdin.read().splitlines() if line.strip()]\n    # fallback: treat first 8 numbers only\n    data = data[:8]\ncases = len(data) // 8\nfor i in range(cases):\n    n, k, l, c, d, p, nl, np = data[i*8:(i+1)*8]\n    drink_toasts = (k * l) // nl\n    lime_toasts = c * d\n    salt_toasts = p // np\n    total = min(drink_toasts, lime_toasts, salt_toasts) // n\n    out_lines.append(str(total))\nsys.stdout.write(\"\\n\".join(out_lines))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = list(map(int, sys.stdin.read().strip().split()))\nif not data:\n    sys.exit(0)\nout_lines = []\nif len(data) % 8 != 0:\n    # If input is a single line with 8 numbers followed by newlines like the provided example format,\n    # try to parse lines instead.\n    lines = [line.strip() for line in sys.stdin.read().splitlines() if line.strip()]\n    # fallback: treat first 8 numbers only\n    data = data[:8]\ncases = len(data) // 8\nfor i in range(cases):\n    n, k, l, c, d, p, nl, np = data[i*8:(i+1)*8]\n    drink_toasts = (k * l) // nl\n    lime_toasts = c * d\n    salt_toasts = p // np\n    total = min(drink_toasts, lime_toasts, salt_toasts) // n\n    out_lines.append(str(total))\nsys.stdout.write(\"\\n\".join(out_lines))",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 482,
         "completion_token_count": 357,

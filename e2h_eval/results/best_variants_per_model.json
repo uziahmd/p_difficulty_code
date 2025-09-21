@@ -1,0 +1,27 @@
+{
+  "qwen3-14b": {
+    "variant": "medium_easy",
+    "pass_at_4": 0.6,
+    "success_rate": 0.5375
+  },
+  "gemini-2.5-flash": {
+    "variant": "medium_hard",
+    "pass_at_4": 0.8,
+    "success_rate": 0.625
+  },
+  "gpt-5-mini-2025-08-07": {
+    "variant": "medium_very_easy",
+    "pass_at_4": 0.75,
+    "success_rate": 0.625
+  },
+  "deepseek-r1-0528-qwen3-8b": {
+    "variant": "medium_very_easy",
+    "pass_at_4": 0.6,
+    "success_rate": 0.45
+  },
+  "deepseek-r1-llama-8b": {
+    "variant": "medium_hard",
+    "pass_at_4": 0.55,
+    "success_rate": 0.4625
+  }
+}

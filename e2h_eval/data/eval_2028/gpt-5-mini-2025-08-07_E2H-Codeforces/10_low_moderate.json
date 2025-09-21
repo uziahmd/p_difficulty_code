@@ -15,7 +15,7 @@
     "response": "import sys, ast, json\n\ndata = sys.stdin.read().strip()\nif not data:\n    sys.exit(0)\ntry:\n    names = ast.literal_eval(data)\n    if isinstance(names, str):\n        names = [names]\n    elif not isinstance(names, (list, tuple)):\n        names = [data]\nexcept Exception:\n    names = [data]\n\nres = [\"false\"] * len(names)\n# Output as Python list literal to match sample format\nprint(json.dumps(res).replace('\"false\"', 'false').replace(\"false\", '\"false\"'))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys, ast, json\n\ndata = sys.stdin.read().strip()\nif not data:\n    sys.exit(0)\ntry:\n    names = ast.literal_eval(data)\n    if isinstance(names, str):\n        names = [names]\n    elif not isinstance(names, (list, tuple)):\n        names = [data]\nexcept Exception:\n    names = [data]\n\nres = [\"false\"] * len(names)\n# Output as Python list literal to match sample format\nprint(json.dumps(res).replace('\"false\"', 'false').replace(\"false\", '\"false\"'))",
-    "score": 0,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 503,
         "completion_token_count": 440,

@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = list(map(int, sys.stdin.read().strip().split()))\nif not data:\n    sys.exit(0)\nouts = []\nfor i in range(0, len(data), 8):\n    if i + 8 > len(data):\n        break\n    n, k, l, c, d, p, nl, np = data[i:i+8]\n    total_drink = k * l\n    total_slices = c * d\n    toasts_by_drink = total_drink // nl\n    toasts_by_slices = total_slices\n    toasts_by_salt = p // np\n    max_toasts_per_group = min(toasts_by_drink, toasts_by_slices, toasts_by_salt)\n    outs.append(str(max_toasts_per_group // n))\nsys.stdout.write(\"\\n\".join(outs))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = list(map(int, sys.stdin.read().strip().split()))\nif not data:\n    sys.exit(0)\nouts = []\nfor i in range(0, len(data), 8):\n    if i + 8 > len(data):\n        break\n    n, k, l, c, d, p, nl, np = data[i:i+8]\n    total_drink = k * l\n    total_slices = c * d\n    toasts_by_drink = total_drink // nl\n    toasts_by_slices = total_slices\n    toasts_by_salt = p // np\n    max_toasts_per_group = min(toasts_by_drink, toasts_by_slices, toasts_by_salt)\n    outs.append(str(max_toasts_per_group // n))\nsys.stdout.write(\"\\n\".join(outs))",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 482,
         "completion_token_count": 698,

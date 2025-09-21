@@ -15,7 +15,7 @@
     "response": "import sys\n\ndata = list(map(int, sys.stdin.read().strip().split()))\nif not data:\n    sys.exit(0)\nout = []\nif len(data) % 8 != 0:\n    # If not a multiple of 8, assume first 8 are the test case (fallback)\n    data = data[:8]\nfor i in range(0, len(data), 8):\n    if i+7 >= len(data):\n        break\n    n, k, l, c, d, p, nl, np = data[i:i+8]\n    total_drink = k * l\n    drink_toasts = total_drink // nl\n    lime_toasts = c * d\n    salt_toasts = p // np\n    per_friend = min(drink_toasts, lime_toasts, salt_toasts) // n\n    out.append(str(per_friend))\n\nsys.stdout.write(\"\\n\".join(out))",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndata = list(map(int, sys.stdin.read().strip().split()))\nif not data:\n    sys.exit(0)\nout = []\nif len(data) % 8 != 0:\n    # If not a multiple of 8, assume first 8 are the test case (fallback)\n    data = data[:8]\nfor i in range(0, len(data), 8):\n    if i+7 >= len(data):\n        break\n    n, k, l, c, d, p, nl, np = data[i:i+8]\n    total_drink = k * l\n    drink_toasts = total_drink // nl\n    lime_toasts = c * d\n    salt_toasts = p // np\n    per_friend = min(drink_toasts, lime_toasts, salt_toasts) // n\n    out.append(str(per_friend))\n\nsys.stdout.write(\"\\n\".join(out))",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 483,
         "completion_token_count": 390,

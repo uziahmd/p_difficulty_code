@@ -15,7 +15,7 @@
     "response": "\n\n```python\nn = int(input())\ngrid = [input().strip() for _ in range(n)]\n\n# Check if all diagonal elements are the same\nd_char = grid[0][0]\nfor i in range(n):\n    if grid[i][i] != d_char or grid[i][n-1-i] != d_char:\n        print(\"NO\")\n        exit()\n\n# Check non-diagonal elements\no_char = None\nfor i in range(n):\n    for j in range(n):\n        if i == j or i + j == n - 1:\n            continue\n        if o_char is None:\n            o_char = grid[i][j]\n        else:\n            if grid[i][j] != o_char:\n                print(\"NO\")\n                exit()\n\nif o_char == d_char:\n    print(\"NO\")\nelse:\n    print(\"YES\")\n```",
     "ground_truth": "N/A",
     "extracted_answer": "n = int(input())\ngrid = [input().strip() for _ in range(n)]\n\n# Check if all diagonal elements are the same\nd_char = grid[0][0]\nfor i in range(n):\n    if grid[i][i] != d_char or grid[i][n-1-i] != d_char:\n        print(\"NO\")\n        exit()\n\n# Check non-diagonal elements\no_char = None\nfor i in range(n):\n    for j in range(n):\n        if i == j or i + j == n - 1:\n            continue\n        if o_char is None:\n            o_char = grid[i][j]\n        else:\n            if grid[i][j] != o_char:\n                print(\"NO\")\n                exit()\n\nif o_char == d_char:\n    print(\"NO\")\nelse:\n    print(\"YES\")",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 444,
         "completion_token_count": 181,

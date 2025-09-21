@@ -15,7 +15,7 @@
     "response": "I don't have enough information to reconstruct the exact rules from the brief problem statement and the examples alone. To produce a correct solver I need the precise specification of how the golorp name encodes the constraints (what the jaws/stomach syntax means, what each symbol does, the order variables appear, how expressions are evaluated, and how multiple constraints are combined).\n\nCould you provide the formal rule set (or a link to the original problem statement) that explains how to interpret a golorp name and what constraints the variable digits must satisfy? Once I have that I will produce a complete Python solution.",
     "ground_truth": "N/A",
     "extracted_answer": "I don't have enough information to reconstruct the exact rules from the brief problem statement and the examples alone. To produce a correct solver I need the precise specification of how the golorp name encodes the constraints (what the jaws/stomach syntax means, what each symbol does, the order variables appear, how expressions are evaluated, and how multiple constraints are combined).\n\nCould you provide the formal rule set (or a link to the original problem statement) that explains how to interpret a golorp name and what constraints the variable digits must satisfy? Once I have that I will produce a complete Python solution.",
-    "score": 0,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 503,
         "completion_token_count": 636,

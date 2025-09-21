@@ -15,7 +15,7 @@
     "response": "\n\n```python\ndef main():\n    import sys\n    input = sys.stdin.read().split()\n    n = int(input[0])\n    m = int(input[1])\n    a = list(map(int, input[2:2 + m]))\n    \n    current = 1\n    total_time = 0\n    for target in a:\n        diff = (target - current) % n\n        total_time += diff\n        current = target\n    print(total_time)\n\nif __name__ == \"__main__\":\n    main()\n```",
     "ground_truth": "N/A",
     "extracted_answer": "def main():\n    import sys\n    input = sys.stdin.read().split()\n    n = int(input[0])\n    m = int(input[1])\n    a = list(map(int, input[2:2 + m]))\n    \n    current = 1\n    total_time = 0\n    for target in a:\n        diff = (target - current) % n\n        total_time += diff\n        current = target\n    print(total_time)\n\nif __name__ == \"__main__\":\n    main()",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 509,
         "completion_token_count": 112,

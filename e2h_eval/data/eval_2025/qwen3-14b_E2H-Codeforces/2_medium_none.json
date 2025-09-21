@@ -15,7 +15,7 @@
     "response": "\n\n```python\nn = int(input())\ngrid = [input().strip() for _ in range(n)]\n\ndiagonal = set()\nnon_diagonal = set()\n\nfor i in range(n):\n    for j in range(n):\n        if i == j or i + j == n - 1:\n            diagonal.add(grid[i][j])\n        else:\n            non_diagonal.add(grid[i][j])\n\nif len(diagonal) == 1 and len(non_diagonal) == 1 and diagonal != non_diagonal:\n    print(\"YES\")\nelse:\n    print(\"NO\")\n```",
     "ground_truth": "N/A",
     "extracted_answer": "n = int(input())\ngrid = [input().strip() for _ in range(n)]\n\ndiagonal = set()\nnon_diagonal = set()\n\nfor i in range(n):\n    for j in range(n):\n        if i == j or i + j == n - 1:\n            diagonal.add(grid[i][j])\n        else:\n            non_diagonal.add(grid[i][j])\n\nif len(diagonal) == 1 and len(non_diagonal) == 1 and diagonal != non_diagonal:\n    print(\"YES\")\nelse:\n    print(\"NO\")",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 435,
         "completion_token_count": 122,

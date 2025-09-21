@@ -15,7 +15,7 @@
     "response": "\n\n```python\ndef main():\n    import sys\n    input = sys.stdin.read().split()\n    w = int(input[0])\n    h = int(input[1])\n    k = int(input[2])\n    \n    total = 0\n    for i in range(1, k + 1):\n        current_w = w - 4 * (i - 1)\n        current_h = h - 4 * (i - 1)\n        perimeter = 2 * (current_w + current_h - 2)\n        total += perimeter\n    print(total)\n\nif __name__ == \"__main__\":\n    main()\n```",
     "ground_truth": "N/A",
     "extracted_answer": "def main():\n    import sys\n    input = sys.stdin.read().split()\n    w = int(input[0])\n    h = int(input[1])\n    k = int(input[2])\n    \n    total = 0\n    for i in range(1, k + 1):\n        current_w = w - 4 * (i - 1)\n        current_h = h - 4 * (i - 1)\n        perimeter = 2 * (current_w + current_h - 2)\n        total += perimeter\n    print(total)\n\nif __name__ == \"__main__\":\n    main()",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 419,
         "completion_token_count": 133,

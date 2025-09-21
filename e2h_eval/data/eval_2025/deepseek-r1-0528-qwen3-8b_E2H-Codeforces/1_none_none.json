@@ -15,7 +15,7 @@
     "response": "```python\nw, h, k = map(int, input().split())\n\ntotal = 0\nfor i in range(k):\n    current_w = w - 4 * i\n    current_h = h - 4 * i\n    # Perimeter of the inner rectangle (each ring)\n    perimeter = 2 * (current_w + current_h - 2)\n    total += perimeter\n\nprint(total)\n```",
     "ground_truth": "N/A",
     "extracted_answer": "w, h, k = map(int, input().split())\n\ntotal = 0\nfor i in range(k):\n    current_w = w - 4 * i\n    current_h = h - 4 * i\n    # Perimeter of the inner rectangle (each ring)\n    perimeter = 2 * (current_w + current_h - 2)\n    total += perimeter\n\nprint(total)",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 414,
         "completion_token_count": 87,

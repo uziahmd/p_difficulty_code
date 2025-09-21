@@ -2,8 +2,11 @@
 import multiprocessing as mp, tempfile, os, time, traceback
 from contextlib import redirect_stdout, redirect_stderr
 import io
+import sys
 
-from .reliability_guard import reliability_guard
+# Add the engine directory to the path to find reliability_guard
+sys.path.append(os.path.dirname(__file__))
+from reliability_guard import reliability_guard
 
 def _escape_triple_single_quotes(s: str) -> str:
     return s.replace("'''", "\\'\\'\\'")

@@ -16,7 +16,7 @@
     "response": "```python\ndef soft_drinking():\n    n, k, l, c, d, p, nl, np = map(int, input().split())\n\n    total_drink = k * l\n    total_limes = c * d\n    total_salt = p\n\n    max_toasts_drink = total_drink // (nl * n)\n    max_toasts_limes = total_limes // n\n    max_toasts_salt = total_salt // (np * n)\n\n    return min(max_toasts_drink, max_toasts_limes, max_toasts_salt)\n\n\nif __name__ == \"__main__\":\n    for _ in range(int(input())):\n        print(soft_drinking())\n```\n\nThis script first reads the input values from standard input. It then calculates the maximum number of toasts that can be made based on the drink, limes, and salt. The minimum of these three values is taken as the final answer because each friend must have the same amount of drink, lime, and salt for a toast. The script then prints this value to standard output.",
     "ground_truth": "N/A",
     "extracted_answer": "def soft_drinking():\n    n, k, l, c, d, p, nl, np = map(int, input().split())\n\n    total_drink = k * l\n    total_limes = c * d\n    total_salt = p\n\n    max_toasts_drink = total_drink // (nl * n)\n    max_toasts_limes = total_limes // n\n    max_toasts_salt = total_salt // (np * n)\n\n    return min(max_toasts_drink, max_toasts_limes, max_toasts_salt)\n\n\nif __name__ == \"__main__\":\n    for _ in range(int(input())):\n        print(soft_drinking())",
-    "score": 1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 514,
         "completion_token_count": 222,

@@ -16,7 +16,7 @@
     "response": "```python\ndef soft_drinking():\n    n, k, l, c, d, p, nl, np = map(int, input().split())\n\n    total_drink = k * l\n    total_limes = c * d\n    total_salt = p\n\n    toasts_per_person = min(total_drink // (nl * n), total_limes // n, total_salt // (np * n))\n\n    print(toasts_per_person)\n\nif __name__ == \"__main__\":\n    soft_drinking()\n```\n\nThis script will read the input from the standard input, calculate the number of toasts each person can make, and then print the result to the standard output. It uses the built-in `min` function to find the smallest value among the three possible limits for the number of toasts per person, as this is the actual limiting factor.",
     "ground_truth": "N/A",
     "extracted_answer": "def soft_drinking():\n    n, k, l, c, d, p, nl, np = map(int, input().split())\n\n    total_drink = k * l\n    total_limes = c * d\n    total_salt = p\n\n    toasts_per_person = min(total_drink // (nl * n), total_limes // n, total_salt // (np * n))\n\n    print(toasts_per_person)\n\nif __name__ == \"__main__\":\n    soft_drinking()",
-    "score": 1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 514,
         "completion_token_count": 177,

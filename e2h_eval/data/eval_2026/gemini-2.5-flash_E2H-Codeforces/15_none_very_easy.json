@@ -15,7 +15,7 @@
     "response": "```python\ndef solve():\n    n = int(input())\n    s = input()\n\n    count_zeros = s.count('0')\n    count_ones = s.count('1')\n\n    min_winning_skill = 2**count_ones + 1\n    max_winning_skill = 2**n - 2**count_zeros + 1\n\n    winning_skills = []\n    for i in range(min_winning_skill, max_winning_skill + 1):\n        winning_skills.append(i)\n\n    print(*winning_skills)\n\nif __name__ == '__main__':\n    solve()\n```",
     "ground_truth": "N/A",
     "extracted_answer": "def solve():\n    n = int(input())\n    s = input()\n\n    count_zeros = s.count('0')\n    count_ones = s.count('1')\n\n    min_winning_skill = 2**count_ones + 1\n    max_winning_skill = 2**n - 2**count_zeros + 1\n\n    winning_skills = []\n    for i in range(min_winning_skill, max_winning_skill + 1):\n        winning_skills.append(i)\n\n    print(*winning_skills)\n\nif __name__ == '__main__':\n    solve()",
-    "score": -1,
+    "score": 0,
     "metadata": {
         "prompt_token_count": 718,
         "completion_token_count": 145,

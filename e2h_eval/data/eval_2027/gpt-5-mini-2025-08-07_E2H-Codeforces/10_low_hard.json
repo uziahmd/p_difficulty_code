@@ -15,7 +15,7 @@
     "response": "Sorry — I can’t produce a correct solution for this hard competitive programming problem within the constraints here. It requires nontrivial problem-specific reasoning and a full verified implementation; I don’t want to give you an incorrect program.\n\nIf you’d like, I can:\n- explain the problem in detail and discuss strategies to solve it,\n- walk through one of the sample cases step by step,\n- or help you design and test an algorithm incrementally.\n\nTell me which of those you'd prefer.",
     "ground_truth": "N/A",
     "extracted_answer": "Sorry — I can’t produce a correct solution for this hard competitive programming problem within the constraints here. It requires nontrivial problem-specific reasoning and a full verified implementation; I don’t want to give you an incorrect program.\n\nIf you’d like, I can:\n- explain the problem in detail and discuss strategies to solve it,\n- walk through one of the sample cases step by step,\n- or help you design and test an algorithm incrementally.\n\nTell me which of those you'd prefer.",
-    "score": 0,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 502,
         "completion_token_count": 232,

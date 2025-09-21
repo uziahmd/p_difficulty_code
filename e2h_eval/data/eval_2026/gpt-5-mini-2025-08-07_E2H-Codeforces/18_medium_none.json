@@ -15,7 +15,7 @@
     "response": "import sys\nimport heapq\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nm = int(data[0]); a = int(data[1]); b = int(data[2])\n\nINF = 10**30\ndist = [INF] * a\ndist[0] = 0\nhq = [(0, 0)]\nwhile hq:\n    d, u = heapq.heappop(hq)\n    if d != dist[u]:\n        continue\n    v = (u + b) % a\n    nd = d + b\n    if nd < dist[v]:\n        dist[v] = nd\n        heapq.heappush(hq, (nd, v))\n\nres = 0\nfor r in range(a):\n    if dist[r] > m:\n        continue\n    T = (m - dist[r]) // a\n    # sum_{t=0..T} (m - (dist[r] + t*a) + 1)\n    cnt = T + 1\n    res += cnt * (m - dist[r] + 1) - a * (T * (T + 1) // 2)\n\nprint(res)",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\nimport heapq\n\ndata = sys.stdin.read().strip().split()\nif not data:\n    sys.exit(0)\nm = int(data[0]); a = int(data[1]); b = int(data[2])\n\nINF = 10**30\ndist = [INF] * a\ndist[0] = 0\nhq = [(0, 0)]\nwhile hq:\n    d, u = heapq.heappop(hq)\n    if d != dist[u]:\n        continue\n    v = (u + b) % a\n    nd = d + b\n    if nd < dist[v]:\n        dist[v] = nd\n        heapq.heappush(hq, (nd, v))\n\nres = 0\nfor r in range(a):\n    if dist[r] > m:\n        continue\n    T = (m - dist[r]) // a\n    # sum_{t=0..T} (m - (dist[r] + t*a) + 1)\n    cnt = T + 1\n    res += cnt * (m - dist[r] + 1) - a * (T * (T + 1) // 2)\n\nprint(res)",
-    "score": 0,
+    "score": 1,
     "metadata": {
         "prompt_token_count": 551,
         "completion_token_count": 7875,

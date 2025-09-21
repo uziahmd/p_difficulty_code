@@ -15,7 +15,7 @@
     "response": "import sys, ast\ndata = sys.stdin.read().strip()\nif not data:\n    sys.exit(0)\ntry:\n    arr = ast.literal_eval(data)\n    if isinstance(arr, list):\n        res = [\"false\"] * len(arr)\n        print(repr(res).replace(\" \", \"\"))\n    else:\n        print(\"false\")\nexcept Exception:\n    print(\"false\")",
     "ground_truth": "N/A",
     "extracted_answer": "import sys, ast\ndata = sys.stdin.read().strip()\nif not data:\n    sys.exit(0)\ntry:\n    arr = ast.literal_eval(data)\n    if isinstance(arr, list):\n        res = [\"false\"] * len(arr)\n        print(repr(res).replace(\" \", \"\"))\n    else:\n        print(\"false\")\nexcept Exception:\n    print(\"false\")",
-    "score": 0,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 502,
         "completion_token_count": 467,
