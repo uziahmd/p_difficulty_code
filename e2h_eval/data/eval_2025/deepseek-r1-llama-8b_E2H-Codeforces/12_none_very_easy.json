@@ -16,7 +16,7 @@
     "response": "```python\ndef solve():\n    n, m = map(int, input().split())\n    a = list(map(int, input().split()))\n\n    max_val = max(a)\n    if max_val == 1:\n        return 0\n\n    max_index = a.index(max_val)\n    moves = sum((max_val - 1) % n for _ in range(max_index))\n    moves += n - (max_val - 1) % n\n    moves += (m - max_index - 1) * n\n\n    print(moves)\n\n\nif __name__ == \"__main__\":\n    t = 1\n    while t > 0:\n        solve()\n        t -= 1\n```\n\nThis script uses a simple approach to calculate the minimum time Xenia needs to complete all tasks. It first finds the maximum house number that Xenia needs to visit. Then it calculates the total moves required to visit all houses up to the maximum house number. Finally, it adds the moves required to visit the remaining houses.\n\nPlease note that this problem does not require any complex algorithms or data structures, and the provided solution is efficient and easy to understand.",
     "ground_truth": "N/A",
     "extracted_answer": "def solve():\n    n, m = map(int, input().split())\n    a = list(map(int, input().split()))\n\n    max_val = max(a)\n    if max_val == 1:\n        return 0\n\n    max_index = a.index(max_val)\n    moves = sum((max_val - 1) % n for _ in range(max_index))\n    moves += n - (max_val - 1) % n\n    moves += (m - max_index - 1) * n\n\n    print(moves)\n\n\nif __name__ == \"__main__\":\n    t = 1\n    while t > 0:\n        solve()\n        t -= 1",
-    "score": 0,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 502,
         "completion_token_count": 236,

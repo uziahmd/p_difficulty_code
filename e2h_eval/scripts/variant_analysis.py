@@ -100,14 +100,24 @@ def is_compilation_error(error_msg):
         return False
     
     error_msg = error_msg.lower()
-    compilation_indicators = [
+    
+    # Traditional compilation/syntax errors
+    syntax_indicators = [
         "syntaxerror", "indentationerror", "tabserror", "nameerror",
         "importerror", "modulenotfounderror", "invalid syntax",
         "unexpected indent", "unindent does not match",
         "inconsistent use of tabs and spaces"
     ]
     
-    return any(indicator in error_msg for indicator in compilation_indicators)
+    # Runtime exceptions that indicate programming errors (should be treated like compilation errors)
+    programming_error_indicators = [
+        "typeerror", "indexerror", "keyerror", "attributeerror",
+        "valueerror", "zerodivisionerror", "recursionerror",
+        "unboundlocalerror", "assertionerror", "stopiteration",
+        "traceback (most recent call last)"
+    ]
+    
+    return any(indicator in error_msg for indicator in syntax_indicators + programming_error_indicators)
 
 def calculate_metrics(results):
     """Calculate success rate and pass@k metrics for results."""
@@ -158,12 +168,12 @@ def calculate_metrics(results):
 def analyze_failure_modes(results):
     """Analyze failure modes for a set of results."""
     if not results:
-        return {"correct": 0, "runtime_error": 0, "compilation_error": 0}
+        return {"correct": 0, "incorrect": 0, "compilation_error": 0}
     
     scores = [r['score'] for r in results]
     return {
         "correct": sum(1 for s in scores if s == 1),
-        "runtime_error": sum(1 for s in scores if s == 0),
+        "incorrect": sum(1 for s in scores if s == 0),
         "compilation_error": sum(1 for s in scores if s == -1)
     }
 
@@ -249,7 +259,7 @@ def create_failure_mode_analysis(data):
         if total > 0:
             failure_analysis[variant] = {
                 'correct_pct': failure_modes['correct'] / total * 100,
-                'runtime_error_pct': failure_modes['runtime_error'] / total * 100,
+                'incorrect_pct': failure_modes['incorrect'] / total * 100,
                 'compilation_error_pct': failure_modes['compilation_error'] / total * 100,
                 'total_attempts': total
             }
@@ -310,7 +320,7 @@ def plot_failure_modes(failure_analysis, output_dir='.'):
     """Plot failure mode distribution across variants."""
     variants = list(failure_analysis.keys())
     correct_pcts = [failure_analysis[v]['correct_pct'] for v in variants]
-    runtime_pcts = [failure_analysis[v]['runtime_error_pct'] for v in variants]
+    incorrect_pcts = [failure_analysis[v]['incorrect_pct'] for v in variants]
     compile_pcts = [failure_analysis[v]['compilation_error_pct'] for v in variants]
     
     # Create stacked bar chart
@@ -320,8 +330,8 @@ def plot_failure_modes(failure_analysis, output_dir='.'):
     width = 0.8
     
     p1 = ax.bar(x, correct_pcts, width, label='Correct (score=1)', color='green', alpha=0.7)
-    p2 = ax.bar(x, runtime_pcts, width, bottom=correct_pcts, label='Runtime Error (score=0)', color='orange', alpha=0.7)
-    p3 = ax.bar(x, compile_pcts, width, bottom=np.array(correct_pcts) + np.array(runtime_pcts), 
+    p2 = ax.bar(x, incorrect_pcts, width, bottom=correct_pcts, label='Incorrect (score=0)', color='orange', alpha=0.7)
+    p3 = ax.bar(x, compile_pcts, width, bottom=np.array(correct_pcts) + np.array(incorrect_pcts), 
                 label='Compilation Error (score=-1)', color='red', alpha=0.7)
     
     ax.set_xlabel('Variant (difficulty_complexity)')
@@ -397,11 +407,11 @@ def main():
     # Print failure mode summary
     print("\\n💥 Failure Mode Analysis (Across All Models):")
     print("=" * 80)
-    print(f"{'Variant':15} | {'Correct %':>10} | {'Runtime %':>10} | {'Compile %':>10} | {'Total':>8}")
+    print(f"{'Variant':15} | {'Correct %':>10} | {'Incorrect %':>10} | {'Compile %':>10} | {'Total':>8}")
     print("-" * 80)
     
     for variant, analysis in sorted(failure_analysis.items()):
-        print(f"{variant:15} | {analysis['correct_pct']:>9.1f}% | {analysis['runtime_error_pct']:>9.1f}% | "
+        print(f"{variant:15} | {analysis['correct_pct']:>9.1f}% | {analysis['incorrect_pct']:>9.1f}% | "
               f"{analysis['compilation_error_pct']:>9.1f}% | {analysis['total_attempts']:>8}")
     
     # Create visualizations

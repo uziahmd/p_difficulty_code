@@ -15,7 +15,7 @@
     "response": "```python\nx1, y1 = map(int, input().split())\nx2, y2 = map(int, input().split())\nn = int(input())\n\ncount = 0\nfor _ in range(n):\n    a, b, c = map(int, input().split())\n    val1 = a * x1 + b * y1 + c\n    val2 = a * x2 + b * y2 + c\n\n    if (val1 > 0 and val2 < 0) or (val1 < 0 and val2 > 0):\n        count += 1\n\nprint(count)\n\n```",
     "ground_truth": "N/A",
     "extracted_answer": "x1, y1 = map(int, input().split())\nx2, y2 = map(int, input().split())\nn = int(input())\n\ncount = 0\nfor _ in range(n):\n    a, b, c = map(int, input().split())\n    val1 = a * x1 + b * y1 + c\n    val2 = a * x2 + b * y2 + c\n\n    if (val1 > 0 and val2 < 0) or (val1 < 0 and val2 > 0):\n        count += 1\n\nprint(count)",
-    "score": 0,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 726,
         "completion_token_count": 143,

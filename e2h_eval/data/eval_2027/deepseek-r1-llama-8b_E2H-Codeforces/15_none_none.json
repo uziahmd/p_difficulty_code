@@ -16,7 +16,7 @@
     "response": "```python\ndef solve(n, s):\n    cnt1 = sum(1 for c in s if c == '1')\n    cnt0 = n - cnt1\n\n    start = 1 << (n - cnt1)\n    end = (1 << n) - (1 << cnt0) + 1\n\n    return ' '.join(map(str, range(start, end + 1)))\n\nn = int(input())\ns = input()\nprint(solve(n, s))\n```\n\nThis script reads the input from standard input, solves the problem using the `solve` function, and prints the result to standard output. The `solve` function calculates the range of winning integers based on the given string `s` and returns them as a string.",
     "ground_truth": "N/A",
     "extracted_answer": "def solve(n, s):\n    cnt1 = sum(1 for c in s if c == '1')\n    cnt0 = n - cnt1\n\n    start = 1 << (n - cnt1)\n    end = (1 << n) - (1 << cnt0) + 1\n\n    return ' '.join(map(str, range(start, end + 1)))\n\nn = int(input())\ns = input()\nprint(solve(n, s))",
-    "score": 0,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 693,
         "completion_token_count": 154,

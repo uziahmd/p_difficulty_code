@@ -15,7 +15,7 @@
     "response": "```python\nm = int(input())\n\ndef count_trailing_zeros(n):\n    count = 0\n    i = 5\n    while n // i >= 1:\n        count += n // i\n        i *= 5\n    return count\n\nresults = []\nlow = 1\nhigh = 5 * m\nans = -1\n\nwhile low <= high:\n    mid = (low + high) // 2\n    zeros = count_trailing_zeros(mid)\n    if zeros >= m:\n        ans = mid\n        high = mid - 1\n    else:\n        low = mid + 1\n\nif ans == -1 or count_trailing_zeros(ans) != m:\n    print(0)\nelse:\n    start_n = ans\n    while start_n > 0 and count_trailing_zeros(start_n - 1) == m:\n        start_n -= 1\n    \n    end_n = ans\n    while count_trailing_zeros(end_n + 1) == m:\n        end_n += 1\n        \n    count = end_n - start_n + 1\n    print(count)\n    print(*(range(start_n, end_n + 1)))\n\n```",
     "ground_truth": "N/A",
     "extracted_answer": "m = int(input())\n\ndef count_trailing_zeros(n):\n    count = 0\n    i = 5\n    while n // i >= 1:\n        count += n // i\n        i *= 5\n    return count\n\nresults = []\nlow = 1\nhigh = 5 * m\nans = -1\n\nwhile low <= high:\n    mid = (low + high) // 2\n    zeros = count_trailing_zeros(mid)\n    if zeros >= m:\n        ans = mid\n        high = mid - 1\n    else:\n        low = mid + 1\n\nif ans == -1 or count_trailing_zeros(ans) != m:\n    print(0)\nelse:\n    start_n = ans\n    while start_n > 0 and count_trailing_zeros(start_n - 1) == m:\n        start_n -= 1\n    \n    end_n = ans\n    while count_trailing_zeros(end_n + 1) == m:\n        end_n += 1\n        \n    count = end_n - start_n + 1\n    print(count)\n    print(*(range(start_n, end_n + 1)))",
-    "score": 0,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 394,
         "completion_token_count": 286,

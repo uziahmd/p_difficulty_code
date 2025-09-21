@@ -16,7 +16,7 @@
     "response": "```python\ndef check(n, k):\n    if n == 1:\n        return False\n    if n % 2 == 0:\n        return True\n    if k == 2:\n        return n == 3\n    if n <= k + 1:\n        return False\n    if (n - 1) % (k - 1) != 0:\n        return False\n    return check((n - 1) // (k - 1), k)\n\nt = int(input())\nfor _ in range(t):\n    n = int(input())\n    k = 4\n    while k <= n and not check(n, k):\n        k += 1\n    print(\"YES\" if k <= n else \"NO\")\n```\n\nThis script first checks if the number of vertices `n` is even. If it is, then a snowflake with `n` vertices can exist for any `k > 1`. If `n` is odd, it checks if `n` equals 3 (when `k = 2`) or if `(n - 1)` is divisible by `(k - 1)`, which is the condition for the snowflake to exist when `n` is odd. If none of these conditions are met, it increments `k` and repeats the process until it finds a `k` that satisfies the condition or until `k` exceeds `n`.",
     "ground_truth": "N/A",
     "extracted_answer": "def check(n, k):\n    if n == 1:\n        return False\n    if n % 2 == 0:\n        return True\n    if k == 2:\n        return n == 3\n    if n <= k + 1:\n        return False\n    if (n - 1) % (k - 1) != 0:\n        return False\n    return check((n - 1) // (k - 1), k)\n\nt = int(input())\nfor _ in range(t):\n    n = int(input())\n    k = 4\n    while k <= n and not check(n, k):\n        k += 1\n    print(\"YES\" if k <= n else \"NO\")",
-    "score": 0,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 565,
         "completion_token_count": 293,

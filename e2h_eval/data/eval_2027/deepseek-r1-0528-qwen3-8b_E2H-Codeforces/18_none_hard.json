@@ -15,7 +15,7 @@
     "response": "```python\nimport sys\nimport math\n\ndef main():\n    import sys\n    input = sys.stdin.read\n    m, a, b = map(int, input().split())\n\n    # If the frog can't jump anywhere, all f(i) = 1\n    if a >= b or a == 0 or b == 0:\n        print((m + 1) * (m + 2) // 2)\n        return\n\n    # Compute gcd of a and b\n    g = math.gcd(a, b)\n\n    # All reachable positions are congruent to 0 modulo g\n    # So we only need to consider positions from 0 to m that are multiples of g\n    # Let's find how many such positions exist\n    max_pos = m\n    count = (max_pos // g) + 1\n\n    # The sum of the first n natural numbers is n*(n+1)//2\n    result = count * (count + 1) // 2\n    print(result)\n\nif __name__ == \"__main__\":\n    main()\n```",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\nimport math\n\ndef main():\n    import sys\n    input = sys.stdin.read\n    m, a, b = map(int, input().split())\n\n    # If the frog can't jump anywhere, all f(i) = 1\n    if a >= b or a == 0 or b == 0:\n        print((m + 1) * (m + 2) // 2)\n        return\n\n    # Compute gcd of a and b\n    g = math.gcd(a, b)\n\n    # All reachable positions are congruent to 0 modulo g\n    # So we only need to consider positions from 0 to m that are multiples of g\n    # Let's find how many such positions exist\n    max_pos = m\n    count = (max_pos // g) + 1\n\n    # The sum of the first n natural numbers is n*(n+1)//2\n    result = count * (count + 1) // 2\n    print(result)\n\nif __name__ == \"__main__\":\n    main()",
-    "score": 0,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 592,
         "completion_token_count": 227,

@@ -16,7 +16,7 @@
     "response": "```python\nimport sys\n\ndef golden_plate():\n    w, h, k = map(int, input().split())\n    total = 0\n    for i in range(1, k + 1):\n        total += (w - 4 * (i - 1)) * (h - 4 * (i - 1))\n    return total\n\nif __name__ == \"__main__\":\n    tests = int(input())\n    for _ in range(tests):\n        print(golden_plate())\n```\n\nThis script first imports the necessary module. It then defines a function `golden_plate` that takes no arguments and calculates the total number of cells to be gilded based on the given input. The function uses a loop to iterate over each ring, calculating the area of the current ring and adding it to the total.\n\nIn the main part of the script, it reads the number of tests from standard input and loops over each test case. For each test case, it calls the `golden_plate` function and prints the result to standard output.\n\nTo run this script, save it to a file (e.g., `golden_plate.py`) and execute it using Python (e.g., `python golden_plate.py`). You can then provide the input to the script by piping it into the script or by modifying the script to read from a file.",
     "ground_truth": "N/A",
     "extracted_answer": "import sys\n\ndef golden_plate():\n    w, h, k = map(int, input().split())\n    total = 0\n    for i in range(1, k + 1):\n        total += (w - 4 * (i - 1)) * (h - 4 * (i - 1))\n    return total\n\nif __name__ == \"__main__\":\n    tests = int(input())\n    for _ in range(tests):\n        print(golden_plate())",
-    "score": 0,
+    "score": -1,
     "metadata": {
         "prompt_token_count": 433,
         "completion_token_count": 275,

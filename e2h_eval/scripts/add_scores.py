@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
 Update 'score' field in original log files based on evaluation results:
-- score = -1: compilation error (failed status with compilation-related error)
-- score = 0: runs but incorrect (failed status with runtime/logic error)
-- score = 1: correct (passed status)
+- score = -1: no output generated (compilation errors, runtime exceptions, or empty output)
+- score = 0: output generated but incorrect (failed status with wrong output)
+- score = 1: correct output (passed status)
 """
 import argparse
 import json
@@ -22,13 +22,24 @@ def load_jsonl(path):
                 results.append(json.loads(line))
     return results
 
-def is_compilation_error(error_msg):
-    """Check if error message indicates compilation/syntax error."""
+def is_no_output_error(error_msg):
+    """Check if error indicates no output was generated.
+    
+    Score -1: No output generated (compilation errors, runtime exceptions, or empty output)
+    Score 0: Output generated but wrong
+    Score 1: Correct output
+    """
     if not error_msg:
         return False
     
-    error_msg = error_msg.lower()
-    compilation_indicators = [
+    error_msg_lower = error_msg.lower()
+    
+    # Check for empty output: "got ''" or "got \"\""
+    if "got ''" in error_msg or 'got ""' in error_msg:
+        return True
+    
+    # Traditional compilation/syntax errors (no output generated)
+    syntax_indicators = [
         "syntaxerror",
         "indentationerror", 
         "tabserror",
@@ -38,11 +49,25 @@ def is_compilation_error(error_msg):
         "invalid syntax",
         "unexpected indent",
         "unindent does not match",
-        "inconsistent use of tabs and spaces",
-        "Traceback"
+        "inconsistent use of tabs and spaces"
     ]
     
-    return any(indicator in error_msg for indicator in compilation_indicators)
+    # Runtime exceptions that prevent output generation
+    runtime_exception_indicators = [
+        "traceback",
+        "typeerror",
+        "indexerror", 
+        "keyerror",
+        "attributeerror",
+        "valueerror",
+        "zerodivisionerror",
+        "recursionerror",
+        "unboundlocalerror",
+        "assertionerror",
+        "stopiteration"
+    ]
+    
+    return any(indicator in error_msg_lower for indicator in syntax_indicators + runtime_exception_indicators)
 
 def load_results_mapping(results_dir):
     """Load all result files and create a mapping from task_id to evaluation results."""
@@ -77,12 +102,12 @@ def load_results_mapping(results_dir):
             if status == "passed":
                 score = 1
             elif status == "timed out":
-                score = 0  # Runtime error (could run but took too long)
+                score = 0  # Runtime error (could run but took too long, output may have been generated)
             elif status == "failed":
-                if is_compilation_error(error):
-                    score = -1
+                if is_no_output_error(error):
+                    score = -1  # No output generated (compilation errors, exceptions, or empty output)
                 else:
-                    score = 0
+                    score = 0   # Output generated but wrong
             else:
                 score = 0  # Default to runtime error
                 
